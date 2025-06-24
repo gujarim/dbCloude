@@ -144,7 +144,10 @@ const toggleTable = () => {
     let isExpanded = false;
     const rowBtn = document.querySelector('.search-close');
 
-    toggleTableReset();
+
+    if(rowBtn) {
+        toggleTableReset();
+    } else return;
 
     function toggleRows() {
         console.log('ok')
@@ -168,5 +171,5 @@ const toggleTable = () => {
 
 window.addEventListener('load', () => {
     // includeHtml();
-    // toggleTable();
+    toggleTable();
 });
