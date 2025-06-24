@@ -1,18 +1,41 @@
 // header, footer 공통파일 불러오기
-const includeHtml = () => {
-    const allElements = document.querySelectorAll('[data-include-path]');
-    Array.prototype.forEach.call(allElements, el => {
-        const includePath = el.dataset.includePath;
-        if (includePath) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    el.outerHTML = this.responseText;
-                }
-            };
-            xhttp.open('GET', includePath, true);
-            xhttp.send();
-        }
+// const includeHtml = () => {
+//     const allElements = document.querySelectorAll('[data-include-path]');
+//     Array.prototype.forEach.call(allElements, el => {
+//         const includePath = el.dataset.includePath;
+//         if (includePath) {
+//             const xhttp = new XMLHttpRequest();
+//             xhttp.onreadystatechange = function () {
+//                 if (this.readyState == 4 && this.status == 200) {
+//                     el.outerHTML = this.responseText;
+//                 }
+//             };
+//             xhttp.open('GET', includePath, true);
+//             xhttp.send();
+//         }
+//     });
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+  includeHTML();
+});
+
+function includeHTML() {
+    const includes = document.querySelectorAll('[data-include]');
+    includes.forEach(el => {
+      const file = el.getAttribute('data-include');
+      fetch(file)
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          return response.text();
+        })
+        .then(data => {
+          el.innerHTML = data;
+        })
+        .catch(error => {
+          console.error(`Error including ${file}:`, error);
+          el.innerHTML = `<p style="color:red;">Error loading ${file}</p>`;
+        });
     });
 }
 
@@ -144,6 +167,6 @@ const toggleTable = () => {
 
 
 window.addEventListener('load', () => {
-    includeHtml();
-    toggleTable();
+    // includeHtml();
+    // toggleTable();
 });
