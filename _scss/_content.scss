@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@import "mixin";
+
+// 서브 공통 타이틀
+.tit-h2{
+    @include font(rem(32), 700);
+
+    .refresh{
+        @include bg('refresh');
+        @include fontHidden;
+        width: rem(32);
+        height: rem(32);
+        margin: rem(-3) 0 0 rem(12);
+        vertical-align: middle;
+    }
+}
+
+//공통 버튼
+.btn{
+    @include rounded(rem(8));
+    @include font(rem(14), 600);
+    height: rem(40);
+    padding: 0 rem(16);
+
+    &.-primary{
+        background-color: var(--bg-primary2);
+        color: var(--f-primary);
+    }
+
+    &.-false{
+        background-color: var(--bg-false);
+        color: var(--f-flase);
+    }
+
+    &.-line{
+        border: rem(1) solid var(--line-base);
+
+        &.false{
+            color: var(--f-flase);
+        }
+    }
+
+    &.-underline{
+        height: auto;
+        text-decoration: underline;
+    }
+
+    &.-sm{
+        height: rem(32);
+    }
+}
+
+[class^=i-]{
+    @include rounded(rem(8));
+    @include font(rem(16), 600);
+    height: rem(48);
+    color: var(--f-white);
+}
+.i-edit{ //기안서올리기, 글쓰기
+    background-color: var(--bg-primary);
+    width: rem(172);
+    &::before{
+        @include icon(24, 'edit', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-calendar{ //신청
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'calendar', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-save{ //저장
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'save', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-search{ //조회하기
+    background-color: var(--bg-secondary);
+    width: rem(127);
+    height: rem(40);
+    &::before{
+        @include icon(20, 'search', 'pseudo');
+        margin: rem(-2) rem(4) 0 0;
+    }
+}
+.i-searchB{ //우편번호 검색
+    @include font(rem(14), 600);
+    border: rem(1) solid var(--line-base);
+    color: var(--f-base); 
+    width: rem(132);
+    height: rem(40);
+    &::before{
+        @include icon(20, 'search_b', 'pseudo');
+        margin: 0 rem(4) 0 0;
+    }
+}
+.i-reservation{ //예약하기
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'reservationW', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.pay{
+    @include font(rem(13), 400);
+    @include rounded(rem(14));
+    height: rem(26);
+    padding: 0 rem(10);
+
+    &.-ing{
+        border:rem(1) solid var(--line-false);
+        color: var(--f-flase);
+    }
+    &.-complete{
+        border:rem(1) solid var(--line-true);
+        color: var(--f-true);
+    }   
+}
+
+.flag{
+    @include font(rem(13), 400);
+    @include rounded(rem(14));
+    height: rem(26);
+    padding: 0 rem(10);
+
+    &.-board{
+        border:rem(1) solid #B6E3D0;
+        color: #0DA161;
+    }
+    &.-notice{
+        border:rem(1) solid #B4DFF7;
+        color: #0696E5;
+    }
+    &.-board2{
+        border:rem(1) solid #B6C3E3;
+        color: #2E55B7;
+    }
+}
+
+
+.attach{
+    @include fontHidden;
+
+    &[title="첨부파일, 사진"]{
+        @include bg(attach, 0 0, rem(45) rem(20));
+        width: rem(45);
+    }
+    &[title="첨부파일"]{
+        @include bg(attach2, 0 0, rem(21) rem(20));
+        width: rem(21);
+    }
+    &[title="사진"]{
+        @include bg(attach1, 0 0, rem(21) rem(20));
+        width: rem(21);
+    }
+}
+
+input[type=text]{
+    @include rounded(rem(8)); 
+    @include font(rem(14), 600);
+    border: rem(1) solid var(--line-base);
+    height: rem(40);
+    padding: 0 rem(12);
+    background-color: var(--f-white);
+
+    &:read-only{
+        background-color: var(--bg-base);
+        color: var(--f-menu);
+    }
+}
+
+input[type=checkbox]:not(.chk-imprt){
+    @include bg(chk_off);
+    width: rem(24);
+    height: rem(24);
+    vertical-align: middle;
+
+    &:checked{
+        @include bg(chk_on);
+    }
+}
+
+input[type=radio]{
+    @include bg(radio_off);
+    width: rem(24);
+    height: rem(24);
+    vertical-align: middle;
+}
+input[type=radio]:checked{
+    @include bg-url(radio_on);
+}
+
+.input-calendar{
+    position: relative;
+
+    input[type=text]{
+        padding-right: rem(40);
+    }
+    button{
+        @include bg(calendar, 98% 50%, rem(24) rem(24));
+        @include fontHidden;
+        @include position(absolute, 50%, rem(12), null, null);
+        transform: translateY(-50%);
+        height: rem(24);
+    }
+}
+
+.label{
+    @include font(rem(14), 600);
+}
+
+select{
+    @include rounded(rem(8));
+    @include font(rem(14), 600);
+    @include bg(select, 98% 50%, rem(24));
+    border: rem(1) solid var(--line-base);
+    height: rem(40);
+    padding: 0 rem(30) 0 rem(12);
+    background-color: var(--f-white);
+    min-width: rem(132);
+    color: var(--f-secondary);
+}

@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@import "mixin";
+
+.table-jq{
+    
+    .ui-jqgrid{
+        .ui-jqgrid-htable{
+            table-layout: inherit;
+            width:100% !important;
+            border-top: rem(1) solid var(--line-table);
+            border-bottom: rem(1) solid var(--line-table2);
+            border-collapse: collapse;
+
+            th{
+                @include font(rem(14), 600);
+                background-color: var(--bg-base);
+                height: rem(48);
+                line-height: rem(48);
+                position: relative;
+
+                &::after{
+                    content:'';
+                    width: rem(1);
+                    height: rem(16);
+                    background-color: var(--line-table2);
+                    @include position(absolute, 50%, 0, null, null);
+                    margin-top: rem(-8);
+                }
+
+                div{
+                    height: initial;
+                }
+
+                &.jqgh_rn{
+                    &::after{
+                        display: none;
+                    }
+                }
+
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .ui-jqgrid-btable{
+            table-layout: inherit;
+            width:100% !important;
+            border-collapse: collapse;
+
+            tr.ui-row-ltr:not(:first-child) td{
+                @include font(rem(14), 400);
+                color: var(--f-secondary);
+                border:0;
+                border-bottom: rem(1) solid var(--line-table2);
+                padding: rem(14) rem(2) rem(14) rem(2);
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            td{
+                &.title{
+                    padding: 0 rem(24) !important;
+                }
+            }
+        }
+
+        .btn-imprt{
+            @include bg(add_off);
+            @include fontHidden;
+            width: rem(24);
+            height: rem(24);
+        }
+
+        .chk-imprt:checked{
+            &+label{
+                @include bg(add_on);
+            }
+        }
+
+        .ui-jqgrid-pager{
+            margin-top: rem(32) !important;
+            height: auto;
+
+            ul{
+                @include flex(flex, center, center);
+                gap: 0 rem(4);
+
+                li{
+                    button{
+                        @include font(rem(14), 400);
+                        color: var(--f-menu);
+                        width: rem(32);
+                        height: rem(32);
+                    }
+
+                    &.current{
+                        button{
+                            @include rounded(100%);
+                            background-color: var(--line-table3);
+                            font-weight: 600;
+                            color: var(--f-base);
+                        }
+                    }
+
+                    &.first, &.prev, &.next, &.last{
+                        button{
+                            @include fontHidden;
+                            width: rem(20);
+                            height: rem(20);
+
+                            &:disabled{
+                                opacity: .5;
+                            }
+                        }
+                    }
+
+                    &.first{
+                        button{
+                            @include bg(first_page);
+                        }
+                    }
+                    &.prev{
+                        button{
+                            @include bg(prev_page);
+                        }
+                    }
+                    &.next{
+                        button{
+                            @include bg(next_page);
+                        }
+                    }
+                    &.last{
+                        button{
+                            @include bg(last_page);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

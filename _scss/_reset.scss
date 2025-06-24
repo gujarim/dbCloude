@@ -1,0 +1,155 @@
+@charset "UTF-8";
+@import "mixin";
+/* Reset Asll Element */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, hr,
+dl, dt, dd, ol, ul, li,
+form, fieldset, legend, label, button, input, select, textarea,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+main, menu, nav, footer, header, hgroup, section, summary,
+time, mark, audio, video, meter, progress {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: inherit;
+    font-family: inherit;
+    vertical-align: initial;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+em, address, i {
+    font-style: normal;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+    color: var(--f-base);
+    text-decoration: none;
+}
+// a:hover {
+//     text-decoration: underline;
+// }
+
+img {
+    vertical-align: top;
+}
+
+/* Form */
+legend {
+    @include hidden;
+}
+
+select, textarea, input, label, button {
+    // vertical-align: middle;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+select, textarea, input:not([class^=checkbox]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--f-base);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input, textarea, select {
+    line-height: inherit;
+}
+input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+    color: var(--f-menu);
+    letter-spacing: -0.05rem;
+}
+input::placeholder, textarea::placeholder, select::placeholder {
+    color: var(--f-menu);
+    letter-spacing: -0.05rem;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: inherit;
+    letter-spacing: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+caption{
+    @include hidden;
+}
+
+.mb40{margin-bottom: rem(40);}
+
+ul,ol,li{
+    list-style: none;
+}
+
+// table{
+//     border-collapse: collapse;
+//     border-spacing: 0;
+// }
+
+:focus {
+    outline: none;
+}
+
+/* Root */
+:root {
+    font-size: 0.625rem;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+:root{
+    --f-base: #000;
+    --f-secondary: #606060;
+    --f-primary: #19A619;
+    --f-flase: #EF503A;
+    --f-true: #2E55B7; 
+    --f-menu: #8C9094;
+    --f-white: #fff;
+
+    --bg-base: #F7F8F9;
+    --bg-secondary: #7D848E;
+    --bg-third: #FAFAFA;
+    --bg-primary: #19A619;
+    --bg-primary2: #E5F5E5;
+    --bg-false: #FEF0ED;
+    --bg-menu: #F2F6FC;
+
+    --line-base: #B4B8BD;
+    --line-secondary: #EAEAEA;
+    --line-table: #606060;
+    --line-table2: #D2D6DA;
+    --line-table3: #ECEFF2;
+    --line-false: #FAC3BB;
+    --line-true: #B6C3E3;
+}

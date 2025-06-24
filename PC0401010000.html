@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회의실예약</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/jquery-ui.min.js.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header data-include-path="/layout/header.html"></header>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">회의실예약</h2>
+                <button type="button" class="i-reservation">예약하기</button>
+            </div>
+
+            <div class="search-box">
+                <table>
+                    <caption>회사, 날짜, 위치로 구성된 회의실예약에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>회사</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>날짜</th>
+                            <td>
+                                <p class="input-calendar">
+                                    <input type="text" class="">
+                                    <button type="button">날짜 선택</button>
+                                </p>
+                            </td>
+                            <th>위치</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회하기</button>
+            </div>
+
+            <div class="reservation-box mb40">
+                <div class="r-title">
+                    <p>
+                        <button type="button" class="r-prev">이전</button>
+                        <strong>2025.06.16</strong>
+                        <button type="button" class="r-next">다음</button>
+                    </p>
+                    <button type="button" class="btn -line">오늘</button>
+                </div>
+                
+                <table>
+                    <caption>7:00 ~ 23:00까지 회의실 예약에 대한 표</caption>
+                    <colgroup>
+                        <col style="width:19.8rem">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>회의실</th>
+                            <th colspan="2">07:00</th>
+                            <th colspan="2">08:00</th>
+                            <th colspan="2">09:00</th>
+                            <th colspan="2">10:00</th>
+                            <th colspan="2">11:00</th>
+                            <th colspan="2">12:00</th>
+                            <th colspan="2">13:00</th>
+                            <th colspan="2">14:00</th>
+                            <th colspan="2">15:00</th>
+                            <th colspan="2">16:00</th>
+                            <th colspan="2">17:00</th>
+                            <th colspan="2">18:00</th>
+                            <th colspan="2">19:00</th>
+                            <th colspan="2">20:00</th>
+                            <th colspan="2">21:00</th>
+                            <th colspan="2">22:00</th>
+                            <th colspan="2">23:00</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 
+                            class 정리
+                            td class="" : 예약가능
+                            td class="no" : no 선택불가
+                            td class="no currentTime":  현재시각(선택불가 마지막영억)
+                            td class="on" : 예약된 회의시간
+                            td class="on start" : 예약된 회의 시작 시간
+                            td class="on end" : 예약된 회의 끝나는 시간
+                        -->
+                        <tr>
+                            <th>
+                                <p>
+                                    B1층 1-1 
+                                    <button type="button" class="detail-view">회의실 상세보기</button>
+                                </p>
+                            </th>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no currentTime"></td>
+                            <td class="on start" style="background-color: #D1E7FF;">
+                                <p class="tooltip">서다비 13:00~18:00</p>
+                            </td>
+                            <td class="on" style="background-color: #D1E7FF;"></td>
+                            <td class="on" style="background-color: #D1E7FF;"></td>
+                            <td class="on end" style="background-color: #D1E7FF;"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>
+                                    1층 1-2 
+                                    <button type="button" class="detail-view">회의실 상세보기</button>
+                                </p>
+                            </th>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no"></td>
+                            <td class="no currentTime"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="on start" style="background-color: #DBD1FF;"></td>
+                            <td class="on" style="background-color: #DBD1FF;"></td>
+                            <td class="on" style="background-color: #DBD1FF;"></td>
+                            <td class="on" style="background-color: #DBD1FF;"></td>
+                            <td class="on" style="background-color: #DBD1FF;"></td>
+                            <td class="on end" style="background-color: #DBD1FF;"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="tbl-wrap">
+                <div class="hgroup">
+                    <strong>내 예약</strong>
+                </div>
+
+                <table>
+                    <caption>NO, 대상자 정보, 사용목적, 변경전, 예약취소로 구성된 회의실 내예약에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 5.5rem">
+                        <col style="width: 24rem">
+                        <col style="width: auto">
+                        <col style="width: 32rem">
+                        <col style="width: 24rem">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>대상자 정보</th>
+                            <th>사용목적</th>
+                            <th>변경전</th>
+                            <th>예약취소</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2층 1-2</td>
+                            <td>DB클라우드 그룹웨어 디자인 회의</td>
+                            <td>2025.05.27(화) 14:00~16:00</td>
+                            <td><button type="button" class="btn -underline">취소</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer data-include-path="/layout/footer.html"></footer>
+    </div>
+</body>
+</html>
+

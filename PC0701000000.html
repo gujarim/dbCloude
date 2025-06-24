@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의현황</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/jquery-ui.min.js.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header data-include-path="/layout/header.html"></header>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">나의현황</h2>
+            </div>
+
+            <div class="calendar-box close"> <!-- 일정확인 닫기 클래스  class="calendar-box close" -->
+                <div id='calendar'></div>
+                <div class="calendar-list">
+                    <p>일정확인
+                        <em>2025.06.17</em>
+                    </p>
+                    <ul>
+                        <li class="on">
+                            <a href="">
+                                다가오는 일정
+                                <em>오후반차</em>
+                                <strong>2025.06.20</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                결재진행중
+                                <strong>3건</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                잔여연차
+                                <strong>3.5<em>/4.4일</em></strong>
+                            </a>
+                        </li>
+                    </ul>
+                    <button type="button" class="llst-close">닫기</button>
+                    <button type="button" class="llst-close2">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <footer data-include-path="/layout/footer.html"></footer>
+    </div>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: "ko",
+            headerToolbar: {
+                left: '',
+                center: 'prev title next',
+                right: 'today'
+            },
+            dayCellContent: function (arg) {
+                const { date } = arg;
+                return date.getDate();
+            },
+            height: 830,
+        });
+        calendar.render();
+      });
+</script>

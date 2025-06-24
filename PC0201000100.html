@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/jquery-ui.min.js.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header data-include-path="/layout/header.html"></header>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">통합게시판</h2>
+                <button type="button" class="i-edit">글쓰기</button>
+            </div>
+
+            <div class="search-box">
+                <table>
+                    <caption>제목, 작성자, 게시글번호로 구성된 통합게시판에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td><input type="text" placeholder="문서제목 입력"></td>
+                            <th>작성자</th>
+                            <td><input type="text" placeholder="작성자 입력"></td>
+                            <th>게시글번호</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회하기</button>
+            </div>
+ 
+            <div class="table-jq">
+                <div class="hgroup">
+                    <p>조회결과 총 <em class="f-primary">143</em>건</p>
+
+                    <div class="sort">
+                        <select name="" id="">
+                            <option value="">10개씩보기</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table id="grid"></table>
+                <div id="pager"></div>
+            </div>
+            <button type="button" class="btn -false">삭제</button>
+        </div>
+
+        <footer data-include-path="/layout/footer.html"></footer>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        var localData = [
+            { 
+                inx1: "1", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "2", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "3", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "4", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "5", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "6", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "7", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            }
+        ];
+
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순번', 
+                '선택', 
+                '게시판분류', 
+                '제목',
+                '첨부파일',
+                '조회수',
+                '작성자',
+                '등록일시'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true},
+                { name: 'inx3', index: 'inx3', width: '5%',
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<em class="flag -board">자유게시판</em>';
+                        // class="flag -board" : 자유게시판
+                        // class="flag -board2" : 협력사게시판
+                        // class="flag -notice" : 공지사항
+                    }  
+                },
+                { name: 'inx4', index: 'inx4', width: '30%', align: 'left', classes: "title"},
+                { name: 'inx5', index: 'inx5', width: '5%',
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<em class="attach" title="'+ cellvalue +'">'+ cellvalue +'</em>';
+                    } 
+                },
+                { name: 'inx6', index: 'inx6', width: '5%'},
+                { name: 'inx7', index: 'inx7', width: '5%'},
+                { name: 'inx8', index: 'inx8', width: '7%'}
+            ],
+            pager: '#pager', // 페이징을 위한 요소
+            rowNum: 3,
+            sortname: 'id', // 기본 정렬할 컬럼
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 25,
+            multiselect: true,
+            multiselectWidth: 60,
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    });
+</script>

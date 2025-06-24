@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가이드</title>
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/fullcalendar.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/jquery-ui.min.js.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/include.js"></script>
+    <style>
+        h1{font-size: 32px;}
+        .tit-h2{font-size: 24px;margin-bottom:20px;}
+        .tit-h2 span, .tit-h3 span{position: relative;}
+        .tit-h2 span::after{content:'';width:100%;height:15px;background-color: rgba(25, 166, 25, 0.2);position: absolute;bottom:2px;left:0;}
+        .tit-h3{font-size: 18px;margin-bottom: 15px;}
+        .tit-h3 span::after{content:'';width:100%;height:8px;background-color: rgba(25, 166, 25, 0.2);position: absolute;bottom:2px;left:0;}
+        .guide-wrap{padding: 50px;}
+        .gcontainer{padding: 30px 0;}
+        .gcontent{margin-bottom: 80px;}
+        .address-wrap{border:1px solid #B4B8BD;padding: 24px;border-radius: 8px;}
+    </style>
+</head>
+<body>
+    <div class="guide-wrap">
+        <header>
+            <h1 class="tit-h1">DBInc 클라우드 그룹웨어</h1>
+        </header>
+        <div class="gcontainer">
+            <!-- 폰트 -->
+            <div class="gcontent">
+                <h2 class="tit-h2"><span>폰트</span></h2>
+
+                <h2 class="tit-h2">통합게시판</h2>
+            </div>
+
+            <!-- 타이틀 -->
+            <div class="gcontent">
+                <h2 class="tit-h2"><span>타이틀</span></h2>
+
+                <div class="hgroup">
+                    <p>조회결과 총 <em class="f-primary">143</em>건</p>
+
+                    <div class="sort">
+                        <select name="" id="">
+                            <option value="">10개씩보기</option>
+                        </select>
+                        <button type="button" class="btn -primary">일괄승인</button>
+                    </div>
+                </div>
+
+                <div class="hgroup">
+                    <strong>추가정보입력</strong>
+                </div>
+            </div>
+
+            <!-- 버튼 -->
+            <div class="gcontent">
+                <h2 class="tit-h2"><span>버튼</span></h2>
+
+                <button type="button" class="i-edit">글쓰기</button> <button type="button" class="i-calendar">신청</button> <button type="button" class="i-save">저장</button> <br>
+                <button type="button" class="i-search">조회하기</button> <button type="button" class="i-searchB">우편번호 검색</button><br>
+                <button type="button" class="btn -primary">일괄승인</button> <button type="button" class="btn -false">삭제</button><br>
+                <button type="button" class="btn -line">변경</button> <button type="button" class="btn -line false">삭제</button><br>
+                <button type="button" class="pay -ing">결재진행중</button> <button type="button" class="pay -complete">결재완료</button>
+            </div>
+
+            <!-- 입력폼 -->
+             <div class="gcontent">
+                <h2 class="tit-h2"><span>입력폼</span></h2>
+
+                <input class="cbox" type="checkbox"> <input class="cbox" type="checkbox" checked> <input type="radio"> <input type="radio" checked><br><br>
+
+                <input type="text" value="텍스트입니다."> <input type="text" value="readonly" readonly> <br><br>
+
+                <div class="address-wrap">
+                    <p class="addr1"><input type="text"><button type="button" class="i-searchB">우편번호 검색</button></p>
+                    <p class="addr2"><input type="text"><input type="text" placeholder="상세주소 입력"></p>
+                </div>
+
+                 <br><br>
+
+                <select name="" id="">
+                    <option value="">선택</option>
+                </select>
+             </div>
+
+            <!-- 플래그 -->
+             <div class="gcontent">
+                <h2 class="tit-h2"><span>플래그</span></h2>
+
+                <em class="flag -board">자유게시판</em> <em class="flag -board2">협력사게시판</em> <em class="flag -notice">공지사항</em>
+             </div>
+
+            <!-- 탭 -->
+             <div class="gcontent">
+                <h2 class="tit-h2"><span>탭</span></h2>
+
+                <div class="tab-wrap-box">
+                    <ul class="tablist -sm">
+                        <li class="on"><a href="">오늘</a></li>
+                        <li><a href="">일간</a></li>
+                        <li><a href="">월간</a></li>
+                    </ul>
+                </div><br>
+                <div class="tab-wrap-line">
+                    <ul class="tablist">
+                        <li class="on"><a href="">겸직정보</a></li>
+                        <li><a href="">외부연결계정</a></li>
+                        <li><a href="">학력사항</a></li>
+                        <li><a href="">기술자격사항</a></li>
+                        <li><a href="">가족사항</a></li>
+                        <li><a href="">발령사항</a></li>
+                    </ul>
+                </div>
+             </div>
+
+            <!-- 테이블 -->
+             <div class="gcontent">
+                <h2 class="tit-h2"><span>테이블</span></h2>
+                
+                <div class="tbl-wrap">
+                    <table>
+                        <caption>성명, 사번, 직위, 현소속으로 구성된 초과근무자에 대한 표</caption>
+                        <colgroup>
+                            <col style="width: 25%" span="4">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>성명</th>
+                                <th>사번</th>
+                                <th>직위</th>
+                                <th>현소속</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>이디비</td>
+                                <td>userm3</td>
+                                <td>대리</td>
+                                <td>개발2팀</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br>
+
+                <div class="tbl-wrap2">
+                    <table>
+                        <caption>초과근무구분, 초과근무장소, 초과근무사유로 구성된 초과 근무 신청 기본사항에 대한 표</caption>
+                        <colgroup>
+                            <col style="width: 16rem">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>초과근무구분</th>
+                                <td>
+                                    <input type="radio" name="rd" id="type1">
+                                    <label for="type1" class="label">휴일근무</label>
+                                    <input type="radio" name="rd" id="type2">
+                                    <label for="type2" class="label">야간근무<em>야간근무는 대체휴일이 발생하지 않으며, 오늘 이후 날짜는 선택할 수 없습니다.</em></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>초과근무장소</th>
+                                <td><input type="text" placeholder="초과근무장소 입력"></td>
+                            </tr>
+                            <tr>
+                                <th>초과근무사유</th>
+                                <td><input type="text" placeholder="초과근무사유 입력"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br>
+
+                <div class="tbl-wrap2 -sm">
+                    <table>
+                        <caption>초과근무구분, 초과근무장소, 초과근무사유로 구성된 초과 근무 신청 기본사항에 대한 표</caption>
+                        <colgroup>
+                            <col style="width: 16rem">
+                            <col style="width: 41%">
+                            <col style="width: 16rem">
+                            <col style="width: 41%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>회사</th>
+                                <td>파도</td>
+                                <th>부서</th>
+                                <td>파도/개발2팀/부서장</td>
+                            </tr>
+                            <tr>
+                                <th>성명</th>
+                                <td>이디비</td>
+                                <th>이메일</th>
+                                <td>abcd@dbinc.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br>
+
+                <h3 class="tit-h3"><span>jqgrid</span></h3>
+                <div class="table-jq">
+                    <table id="grid1"></table>
+                    <div id="pager1"></div>
+                </div>
+             </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+    $(document).ready(function () {
+        // 겸직정보
+        var localData1 = [
+            { 
+                inx1: "1", //No
+                inx2: "userm3", //회사
+                inx3: "대리", //부서명
+                inx4: "개발2팀", //부서장 구분
+            },
+            { 
+                inx1: "2", //No
+                inx2: "userm3", //회사
+                inx3: "대리", //부서명
+                inx4: "개발2팀", //부서장 구분
+            },
+            { 
+                inx1: "3", //No
+                inx2: "userm3", //회사
+                inx3: "대리", //부서명
+                inx4: "개발2팀", //부서장 구분
+            },
+            { 
+                inx1: "4", //No
+                inx2: "userm3", //회사
+                inx3: "대리", //부서명
+                inx4: "개발2팀", //부서장 구분
+            },
+            { 
+                inx1: "5", //No
+                inx2: "userm3", //회사
+                inx3: "대리", //부서명
+                inx4: "개발2팀", //부서장 구분
+            },
+        ];
+        $("#grid1").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData1, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '회사',
+                '부서명',
+                '부서장 구분'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'}
+            ],
+            pager: '#pager1', // 페이징을 위한 요소
+            rowNum: 3,
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            loadComplete: function () {
+                createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    })
+</script>

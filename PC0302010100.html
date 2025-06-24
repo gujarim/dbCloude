@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/jquery-ui.min.js.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header data-include-path="/layout/header.html"></header>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">미결함<button type="button" class="refresh">새로고침</button></h2>
+                <button type="button" class="i-edit">기안올리기</button>
+            </div>
+
+            <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
+                <table>
+                    <caption>문서제목, 문서번호, 문서유형, 작성자, 문서양식으로 구성된 미결함에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>문서제목</th>
+                            <td><input type="text" placeholder="문서제목 입력"></td>
+                            <th>문서번호</th>
+                            <td><input type="text" placeholder="문서번호 입력"></td>
+                            <th>문서유형</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>작성자</th>
+                            <td><input type="text" placeholder="작성자 입력"></td>
+                            <th>문서양식</th>
+                            <td><input type="text" placeholder="문서양식 입력"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회하기</button>
+            </div>
+ 
+            <div class="table-jq">
+                <div class="hgroup">
+                    <p>조회결과 총 <em class="f-primary">143</em>건</p>
+
+                    <div class="sort">
+                        <select name="" id="">
+                            <option value="">10개씩보기</option>
+                        </select>
+                        <button type="button" class="btn -primary">일괄승인</button>
+                    </div>
+                </div>
+
+                <table id="grid"></table>
+                <div id="pager"></div>
+            </div>
+        </div>
+
+        <footer data-include-path="/layout/footer.html"></footer>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        var localData = [
+            {   
+                inx1: "1", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "기안서", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "기안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2024-11-21 \n 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결제유형
+                inx12: "pado.co.kr-2024", //문서번호
+            }
+        ];
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순번', 
+                '선택',
+                '중요', 
+                '문서유형',
+                '문서양식',
+                '문서제목',
+                '작성자',
+                '상신일시',
+                '상태',
+                '결재대기자',
+                '결제유형',
+                '문서번호',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true},
+                { name: 'inx3', index: 'inx3', width: '5%', sorttype: "int",
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<input type="checkbox" id="chk-imp" class="chk-imprt"><label for="chk-imp" class="btn-imprt">즐겨찾기</label>';
+                    }
+                },
+                { name: 'inx4', index: 'inx4', width: '10%'},
+                { name: 'inx5', index: 'inx5', width: '10%'},
+                { name: 'inx6', index: 'inx6', width: '10%'},
+                { name: 'inx7', index: 'inx7', width: '12%'},
+                { name: 'inx8', index: 'inx8', width: '10%'},
+                { name: 'inx9', index: 'inx9', width: '10%',
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<button type="button" class="pay -ing">결재진행중</button>';
+                        // class="pay -ing" : 결재진행중
+                        // class="pay -complete" : 결재완료
+                    }  
+                },
+                { name: 'inx10', index: 'inx10', width: '12%'},
+                { name: 'inx11', index: 'inx11', width: '10%'},
+                { name: 'inx12', index: 'inx12', width: '12%'}
+            ],
+            pager: '#pager', // 페이징을 위한 요소
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 25,
+            multiselect: true,
+            multiselectWidth: 60,
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    });
+</script>

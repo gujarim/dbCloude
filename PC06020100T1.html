@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출퇴근</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/jquery-ui.min.js.js"></script>
+    <script src="js/grid.locale-en.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header data-include-path="/layout/header.html"></header>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">전사 근태현황</h2>
+            </div>
+
+            <div class="search-box">
+                <table>
+                    <caption>회사, 사용자, 부서로 구성된 통합게시판에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                        <col style="width: 7.2rem">
+                        <col style="width: 27%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>회사</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>사용자</th>
+                            <td><input type="text" placeholder="사용자 입력"></td>
+                            <th>부서</th>
+                            <td><input type="text" placeholder="부서 입력"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회하기</button>
+            </div>
+
+            <!-- 날짜별 전사근테현황 -->
+            <div class="tab-wrap-box mb40">
+                <ul class="tablist -sm">
+                    <li class="on"><a href="">오늘</a></li>
+                    <li><a href="">일간</a></li>
+                    <li><a href="">월간</a></li>
+                </ul>
+                <div class="panels">
+                    <div class="on">
+                        <strong class="date">2025.06.16</strong>
+                        
+                        <div class="table-jq">
+                            <div class="hgroup">
+                                <p>조회결과 총 <em class="f-primary">143</em>건</p>
+
+                                <div class="sort">
+                                    <select name="" id="">
+                                        <option value="">10개씩보기</option>
+                                    </select>
+                                    <button type="button" class="btn -primary">엑셀 다운로드</button>
+                                </div>
+                            </div>
+                        
+                            <table id="grid1"></table>
+                            <div id="pager1"></div>
+                        </div>
+                    </div>
+                    <div>일간</div>
+                    <div>월간</div>
+                </div>
+            </div>
+
+            <!-- 변경이력 -->
+            <div class="table-jq">
+                <div class="hgroup">
+                    <strong>변경이력</strong>
+                </div>
+
+                <table id="grid4"></table>
+                <div id="pager4"></div>
+            </div>
+        </div>
+
+        <footer data-include-path="/layout/footer.html"></footer>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        //오늘
+        var localData = [
+            { 
+                inx1: "1", //No
+                inx2: "개발1팀", //부서
+                inx3: "이디비", //성명
+                inx4: "userm3", //사번
+                inx5: "07:53", //출근
+                inx6: "미입력", //퇴근
+                inx7: "07:53", //실제근무시간
+                inx8: "-", //초과근무시간
+                inx9: "-", //근태사항
+                inx10: "000.000.000", //IP
+                inx11: "근무테스트", //근무유형
+                inx12: "07:00~19:00", //근무시간
+                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
+            },
+            { 
+                inx1: "2", //No
+                inx2: "개발1팀", //부서
+                inx3: "이디비", //성명
+                inx4: "userm3", //사번
+                inx5: "07:53", //출근
+                inx6: "미입력", //퇴근
+                inx7: "07:53", //실제근무시간
+                inx8: "-", //초과근무시간
+                inx9: "-", //근태사항
+                inx10: "000.000.000", //IP
+                inx11: "근무테스트", //근무유형
+                inx12: "07:00~19:00", //근무시간
+                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
+            },
+            { 
+                inx1: "3", //No
+                inx2: "개발1팀", //부서
+                inx3: "이디비", //성명
+                inx4: "userm3", //사번
+                inx5: "07:53", //출근
+                inx6: "미입력", //퇴근
+                inx7: "07:53", //실제근무시간
+                inx8: "-", //초과근무시간
+                inx9: "-", //근태사항
+                inx10: "000.000.000", //IP
+                inx11: "근무테스트", //근무유형
+                inx12: "07:00~19:00", //근무시간
+                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
+            },
+            { 
+                inx1: "4", //No
+                inx2: "개발1팀", //부서
+                inx3: "이디비", //성명
+                inx4: "userm3", //사번
+                inx5: "07:53", //출근
+                inx6: "미입력", //퇴근
+                inx7: "07:53", //실제근무시간
+                inx8: "-", //초과근무시간
+                inx9: "-", //근태사항
+                inx10: "000.000.000", //IP
+                inx11: "근무테스트", //근무유형
+                inx12: "07:00~19:00", //근무시간
+                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
+            },
+            { 
+                inx1: "5", //No
+                inx2: "개발1팀", //부서
+                inx3: "이디비", //성명
+                inx4: "userm3", //사번
+                inx5: "07:53", //출근
+                inx6: "미입력", //퇴근
+                inx7: "07:53", //실제근무시간
+                inx8: "-", //초과근무시간
+                inx9: "-", //근태사항
+                inx10: "000.000.000", //IP
+                inx11: "근무테스트", //근무유형
+                inx12: "07:00~19:00", //근무시간
+                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
+            }
+        ];
+        $("#grid1").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '부서',
+                '성명',
+                '사번',
+                '출근',
+                '퇴근',
+                '실제근무시간',
+                '초과근무시간',
+                '근태사항',
+                'IP',
+                '근무유형',
+                '근무시간',
+                '휴게시간'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '5%'},
+                { name: 'inx3', index: 'inx3', width: '5%'},
+                { name: 'inx4', index: 'inx4', width: '5%'},
+                { name: 'inx5', index: 'inx5', width: '5%'},
+                { name: 'inx6', index: 'inx6', width: '5%'},
+                { name: 'inx7', index: 'inx7', width: '5%'},
+                { name: 'inx8', index: 'inx8', width: '5%'},
+                { name: 'inx9', index: 'inx9', width: '5%'},
+                { name: 'inx10', index: 'inx10', width: '5%'},
+                { name: 'inx11', index: 'inx11', width: '5%'},
+                { name: 'inx12', index: 'inx12', width: '5%'},
+                { name: 'inx13', index: 'inx13', width: '5%'}
+            ],
+            pager: '#pager1', // 페이징을 위한 요소
+            rowNum: 3,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            loadComplete: function () {
+                createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+
+
+        // 변경이력
+        var localData4 = [
+            { 
+                inx1: "1", //No
+                inx2: "개발2팀/이디비/userm3", //대상자 정보
+                inx3: "2025.05.27 09:44", //변경일시
+                inx4: "개발2팀/이디비", //변경자 정보
+                inx5: "211.147.44.106", //IP
+                inx6: "수정", //변경상태
+                inx7: "출근", //변경타입
+                inx8: "13:17:24", //변경전
+                inx9: "출근 후 버튼 미선택", //변경사유
+            },
+            { 
+                inx1: "2", //No
+                inx2: "개발2팀/이디비/userm3", //대상자 정보
+                inx3: "2025.05.27 09:44", //변경일시
+                inx4: "개발2팀/이디비", //변경자 정보
+                inx5: "211.147.44.106", //IP
+                inx6: "수정", //변경상태
+                inx7: "출근", //변경타입
+                inx8: "13:17:24", //변경전
+                inx9: "출근 후 버튼 미선택", //변경사유
+            },
+            { 
+                inx1: "3", //No
+                inx2: "개발2팀/이디비/userm3", //대상자 정보
+                inx3: "2025.05.27 09:44", //변경일시
+                inx4: "개발2팀/이디비", //변경자 정보
+                inx5: "211.147.44.106", //IP
+                inx6: "수정", //변경상태
+                inx7: "출근", //변경타입
+                inx8: "13:17:24", //변경전
+                inx9: "출근 후 버튼 미선택", //변경사유
+            },
+            { 
+                inx1: "4", //No
+                inx2: "개발2팀/이디비/userm3", //대상자 정보
+                inx3: "2025.05.27 09:44", //변경일시
+                inx4: "개발2팀/이디비", //변경자 정보
+                inx5: "211.147.44.106", //IP
+                inx6: "수정", //변경상태
+                inx7: "출근", //변경타입
+                inx8: "13:17:24", //변경전
+                inx9: "출근 후 버튼 미선택", //변경사유
+            }
+        ];
+        $("#grid4").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData4, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '대상자 정보',
+                '변경일시',
+                '변경자 정보',
+                'IP',
+                '변경상태',
+                '변경타입',
+                '변경전',
+                '변경사유'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'},
+                { name: 'inx5', index: 'inx5', width: '10%'},
+                { name: 'inx6', index: 'inx6', width: '5%'},
+                { name: 'inx7', index: 'inx7', width: '5%'},
+                { name: 'inx8', index: 'inx8', width: '5%'},
+                { name: 'inx9', index: 'inx9', width: '13%'}
+            ],
+            pager: '#pager4', // 페이징을 위한 요소
+            rowNum: 2,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            loadComplete: function () {
+                createCustomPager("grid4", "#pager4"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    });
+</script>

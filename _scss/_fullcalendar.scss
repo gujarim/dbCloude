@@ -1,0 +1,193 @@
+@charset "UTF-8";
+@import "mixin";
+
+.calendar-box{
+    position: relative;
+    display: grid;
+    gap: 0 rem(76);
+    grid-template-columns: 1fr rem(334);
+
+    &.close{
+        grid-template-columns: 1fr;
+
+        .calendar-list{
+            right: rem(-384);
+
+            .llst-close2{
+                @include bg-url(calendar_open);
+            }
+        }
+    }
+    .fc-theme-standard{
+        border-color: var(--line-table3);
+        th, td{
+            border-color: var(--line-table3);
+        }
+        .fc-scrollgrid{
+            border-color: var(--line-table3);
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-top: rem(1) solid var(--line-table);
+        }
+
+        .fc-col-header{
+            th{
+                .fc-scrollgrid-sync-inner{
+                    text-align: right;
+                    background-color: #FBFBFB;
+
+                    a{
+                        padding: rem(8);
+                        @include font(rem(14), 400);
+                    }
+                }
+            }
+        }
+
+        .fc-daygrid-day-number{
+            @include font(rem(16), 400);
+            padding: rem(12);
+        }
+        
+        .fc-header-toolbar{
+            margin-bottom: rem(32);
+
+            .fc-toolbar-chunk:has(.fc-toolbar-title){
+                @include flex(flex, center, center);
+
+                button{
+                    @include fontHidden;
+                    width: rem(32);
+                    height: rem(32);
+                    margin-top: rem(4);
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+
+                    &.fc-prev-button{
+                        @include bg(date_prev, 0 0, rem(32) rem(32));
+                    }
+
+                    &.fc-next-button{
+                        @include bg(date_next, 0 0, rem(32) rem(32));
+                    }
+
+                    &:active, &:hover{
+                        box-shadow: none;
+                    }
+                }
+
+                .fc-toolbar-title{
+                    @include font(rem(28), 700);
+                    margin-left: 0;
+                    padding: 0 rem(24);
+                }
+            }
+
+            
+        }
+
+        .fc-today-button{
+            @include font(rem(14), 600);
+            @include rounded(rem(8));
+            color: var(--f-base);
+            background-color: var(--f-white);
+            height: rem(40);
+            padding: 0 rem(28);
+            border: rem(1) solid var(--line-base);
+        }
+        
+    }
+
+    .calendar-list{
+        @include rounded(rem(20));
+        width: rem(334);
+        @include position(absolute, rem(72), 0, null, null);
+        height: calc(100% - rem(72));
+        background-color: var(--bg-base);
+        border: rem(1) solid var(--line-table3);
+        padding: rem(32);
+        transform: translateX(0);
+        transition: transform .3s;
+
+        p{
+            @include font(rem(20), 600);
+            margin-bottom: rem(24);
+
+            em{
+                @include font(rem(14), 600);
+                color: var(--f-menu);
+                display: block;
+                padding-top: rem(2);
+            }
+        }
+
+        .llst-close{
+            @include fontHidden;
+            @include bg(close, 0 0, rem(32) rem(32));
+            @include position(absolute, rem(32), rem(32), null, null);
+            width: rem(32);
+            height: rem(32);
+        }
+
+        .llst-close2{
+            @include fontHidden;
+            @include bg(calendar_close, 0 0, rem(36) rem(72));
+            @include position(absolute, 50%, null, null, rem(-36));
+            width: rem(36);
+            height: rem(72);
+        }
+
+        ul{
+            li{
+                &:not(:last-child){
+                    margin-bottom: rem(12);
+                }
+
+                a{
+                    @include font(rem(15), 600);
+                    @include rounded(rem(12));
+                    color: var(--f-secondary);
+                    background-color: var(--f-white);
+                    display: block;
+                    padding: rem(24) rem(20);
+
+                    &>em{
+                        @include font(rem(14), 400);
+                        margin-top: rem(8);
+                        display: block;
+
+                        &::before{
+                            content:'';
+                            width: rem(4);
+                            height: rem(4);
+                            background-color: var(--f-white);
+                            @include rounded(100%);
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: rem(6);
+                        }
+                    }
+
+                    strong{
+                        @include font(rem(24), 600);
+                        @include flex(flex, flex-end, center);
+                        display: block;
+                        text-align: right;
+
+                        em{
+                            color: var(--f-menu);
+                        }
+                    }
+                }
+
+                &.on{
+                    a{
+                        background-color: var(--bg-primary);
+                        color: var(--f-white);
+                    }
+                }
+            }
+        }
+    }
+}
