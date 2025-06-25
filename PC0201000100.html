@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/include.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -72,10 +73,10 @@
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
-<script src="js/jquery-ui.min.js.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
 <script src="js/jquery.jqGrid.min.js"></script>
-<script src="js/include.js"></script>
+<script src="js/ui-content.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -179,7 +180,10 @@
                 { name: 'inx4', index: 'inx4', width: '30%', align: 'left', classes: "title"},
                 { name: 'inx5', index: 'inx5', width: '5%',
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<em class="attach" title="'+ cellvalue +'">'+ cellvalue +'</em>';
+                        return '<em class="attach -file"></em>';
+                        // class="attach -file" :  첨부파일
+                        // class="attach -image" : 이미지
+                        // class="attach -total" : 첨부파일, 이미지
                     } 
                 },
                 { name: 'inx6', index: 'inx6', width: '5%'},

@@ -478,7 +478,6 @@ footer{
     }
 
     select, input[type=text]{
-        // width: calc(100% - rem(60));
         width: 100%;
     }
 }
@@ -805,7 +804,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 
     table{
         width: 100%;
-        // border-collapse: collapse;
         border-spacing: 0;
         border-top: rem(1) solid var(--f-menu);
 
@@ -863,19 +861,36 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                 border-top-right-radius: rem(8);
                 border-bottom-right-radius: rem(8);
             }
-            &.on:not(.end){
-                border-right-color: transparent;
+            &.on{
+                &:not(.end){
+                    border-right-color: transparent;
+                }
+
+                &:hover{
+                    .tooltip{
+                        display: block;
+                    }
+                }
             }
 
             &.currentTime{
-                border-right-width: rem(2);
-                border-right-color: var(--bg-primary);
+                position: relative;
+
+                &::after{
+                    content:'';
+                    width: rem(2);
+                    height: 102%;
+                    border-right: rem(2) solid var(--bg-primary);
+                    @include position(absolute, rem(-1), 0, null, null);
+                }
             }
 
             .tooltip{
+                display: none;
                 @include rounded(rem(12));
                 @include position(absolute, null, null, rem(-57), 0, 2);
                 @include font(rem(14), 600);
+                @include shadow(0 rem(5) rem(10) 0);
                 padding: rem(16);
                 background-color: var(--f-white);
                 border: rem(1) solid #D9D9D9;

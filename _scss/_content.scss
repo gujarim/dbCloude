@@ -145,19 +145,19 @@
     }
 }
 
-
 .attach{
     @include fontHidden;
+    height: rem(20);
 
-    &[title="첨부파일, 사진"]{
+    &.-total{
         @include bg(attach, 0 0, rem(45) rem(20));
         width: rem(45);
     }
-    &[title="첨부파일"]{
+    &.-file{
         @include bg(attach2, 0 0, rem(21) rem(20));
-        width: rem(21);
+        width: rem(21);;
     }
-    &[title="사진"]{
+    &.-image{
         @include bg(attach1, 0 0, rem(21) rem(20));
         width: rem(21);
     }
