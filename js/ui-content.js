@@ -130,7 +130,6 @@ const toggleTable = () => {
 const navToggle = () => {
     const nav = document.querySelector('nav');
     const sub = document.querySelector('.gnb');
-    console.log(sub)
 }
 
 

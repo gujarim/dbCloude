@@ -7,12 +7,11 @@
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/include.js"></script>
 </head>
 <body>
     <div class="wrap">
-        <header data-include="layout/header.html"></header>
-        <nav data-include="layout/nav.html"></nav>
+        <header id="header"></header>
+        <nav id="nav"></nav>
 
         <div class="container">
             <div class="tit-box">
@@ -66,11 +65,12 @@
             <button type="button" class="btn -false">삭제</button>
         </div>
 
-        <footer data-include="layout/footer.html"></footer>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>
 
+<script src="js/include.js" defer></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
