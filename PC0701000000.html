@@ -18,7 +18,7 @@
                 <h2 class="tit-h2">나의현황</h2>
             </div>
 
-            <div class="calendar-box close"> <!-- 일정확인 닫기 클래스  class="calendar-box close" -->
+            <div class="calendar-box"> <!-- 일정확인 닫기 클래스  class="calendar-box close" -->
                 <div id='calendar'></div>
                 <div class="calendar-list">
                     <p>일정확인
@@ -66,8 +66,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
+        const calendarEl = document.getElementById('calendar');
+
+        const calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             locale: "ko",
             headerToolbar: {
@@ -80,7 +81,20 @@
                 return date.getDate();
             },
             height: 830,
+            expandRows: true
         });
         calendar.render();
-      });
+
+        //나의현황 사이드 바 토글시 calendar resize
+        const box = document.querySelector('.calendar-box');
+        const btn = document.querySelector('.llst-close2');
+
+        btn.addEventListener('click', () => {
+            box.classList.toggle('close');
+
+            setTimeout(() => {
+                calendar.updateSize();
+            }, 100);
+        });
+    });
 </script>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap main">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container">
+            <div class="tit-box -main">
+                <p>김디비님! 새 메일 <strong><em>3</em>건</strong>, 전자결재 <strong><em>3</em>건</strong>이 있어요</p>
+                <div class="weather">
+                    <strong>서울</strong>
+                    <p>23℃ <em>맑은 후 흐림</em></p>
+                </div>
+            </div>
+
+            <div class="main-wrap">
+                <div class="line">
+                    <div class="box -w">
+                        <div class="hgroup">
+                            <strong>캘린더<button type="button" class="more">더보기</button></strong>
+                        </div>
+                        <div class="tab-wrap -box2">
+                            <ul class="tablist" role="tablist">
+                                <li class="on" role="tab"><a href="">내 캘린더</a></li>
+                                <li role="tab"><a href="">공유캘린더</a></li>
+                            </ul>
+                            <div class="panels">
+                                <div class="on" role="tabpanel">
+                                    <div class="calendar-wrap">
+                                        <div id="calendar"></div>
+                                        <ul class="calendar-list">
+                                            <li class="scd1"><a href=""><em>5월 1일</em>5월 2주차 본사 주간업무보고</a></li>
+                                            <li class="scd2"><a href=""><em>5월 2일</em>DT 이행과제 회의</a></li>
+                                            <li class="scd3"><a href=""><em>5월 3일</em>디자인 리뷰 업체 미팅<br>AI 업무 효율 워크샵 진행 회의</a></li>
+                                            <li class="scd4"><a href=""><em>5월 4일</em>김동부님 휴가<br>클라우드오피스 그룹웨어 사용자 교육</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div role="tabpanel">
+                                    <div class="calendar-wrap">
+                                        <div id="calendar2"></div>
+                                        <ul class="calendar-list">
+                                            <li class="scd1"><a href=""><em>6월 12일</em>6월 22S주차 본사 주간업무보고</a></li>
+                                            <li class="scd4"><a href=""><em>6월 6일</em>김동부님 휴가<br>클라우드오피스 그룹웨어 사용자 교육</a></li>
+                                            <li class="scd2"><a href=""><em>6월 13일</em>DT 이행과제 회의</a></li>
+                                            <li class="scd3"><a href=""><em>6월 14일</em>디자인 리뷰 업체 미팅<br>AI 업무 효율 워크샵 진행 회의</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box -w">
+                        <div class="hgroup">
+                            <strong>통합게시판<button type="button" class="more">더보기</button></strong>
+                            <button type="button" class="refresh">새로고침</button>
+                        </div>
+                        <div class="tab-wrap -box3">
+                                <ul class="tablist" role="tablist">
+                                    <li class="on" role="tab"><a href="">통합</a></li>
+                                    <li role="tab"><a href="">공지사항</a></li>
+                                    <li role="tab"><a href="">자유게시판</a></li>
+                                    <li role="tab"><a href="">협력사게시판</a></li>
+                                </ul>
+                                <div class="panels">
+                                    <div class="on" role="tabpanel">
+                                        <ul class="notice-list">
+
+                                            <!-- 
+                                                클래스 정리
+
+                                                플래그
+                                                class="flag -notice -sm" : 공지
+                                                class="flag -board -sm" : 자유
+                                                class="flag -board2 -sm" : 협력사
+
+                                                첨부파일
+                                                class="attach -file" : 첨부파일
+                                                class="attach -image" : 이미지
+                                                class="attach -total" : 첨부파일, 이미지
+                                            -->
+                                            <li>
+                                                <a href="">
+                                                    <em class="flag -notice -sm">공지</em> 
+                                                    <p>클라우드오피스 그룹웨어 사용자 교육</p>
+                                                    <em class="attach -file">첨부파일</em>
+                                                    <strong>서다비</strong>
+                                                    <em class="bdate">2025.05.28</em>
+                                                    <em class="view">보기</em>
+                                                    <em class="num">58</em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <em class="flag -board -sm">자유</em> 
+                                                    <p>클라우드오피스 그룹웨어 사용자 교육</p>
+                                                    <em class="attach -image">이미지</em>
+                                                    <strong>서다비</strong>
+                                                    <em class="bdate">2025.05.28</em>
+                                                    <em class="view">보기</em>
+                                                    <em class="num">58</em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <em class="flag -board2 -sm">협력사</em> 
+                                                    <p>[자료] 구글 어센티케이션 앱으로 OTP를 구현해보자(소스코드 있음) [자료] 구글 어센티케이션 앱으로 OTP를 구현해보자(소스코드 있음)</p>
+                                                    <em class="attach -total">첨부파일, 이미지</em>
+                                                    <strong>서다비</strong>
+                                                    <em class="bdate">2025.05.28</em>
+                                                    <em class="view">보기</em>
+                                                    <em class="num">58</em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <em class="flag -notice -sm">공지</em> 
+                                                    <p>클라우드오피스 그룹웨어 사용자 교육</p>
+                                                    <em class="attach -file">첨부파일</em>
+                                                    <strong>서다비</strong>
+                                                    <em class="bdate">2025.05.28</em>
+                                                    <em class="view">보기</em>
+                                                    <em class="num">58</em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <em class="flag -notice -sm">공지</em> 
+                                                    <p>[복리후생] DB Inc. 임직원을 위한 삼성전자 패밀리몰 6월 행사안내</p>
+                                                    <em class="attach -file">첨부파일</em>
+                                                    <strong>서다비</strong>
+                                                    <em class="bdate">2025.05.28</em>
+                                                    <em class="view">보기</em>
+                                                    <em class="num">58</em>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <em class="flag -notice -sm">공지</em> 
+                                                    <p>클라우드오피스 그룹웨어 사용자 교육</p>
+                                                    <em class="attach -file">첨부파일</em>
+                                                    <strong>서다비</strong>
+                                                    <em class="bdate">2025.05.28</em>
+                                                    <em class="view">보기</em>
+                                                    <em class="num">58</em>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div role="tabpanel">공지사항</div>
+                                    <div role="tabpanel">자유게시판</div>
+                                    <div role="tabpanel">협력사게시판</div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="box -b -flex">
+                        <div class="hgroup">
+                            <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        </div>
+                        <ul class="payment-list">
+                                <li>
+                                    <a href="">
+                                        통보문서
+                                        <strong>2</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        미결문서
+                                        <strong>5</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
+                    <div class="box -w">
+                        <div class="hgroup">
+                            <strong>DX포털 데일리뉴스<button type="button" class="more">더보기</button></strong>
+                            <span class="sub-tit"><em>김디비</em>님의 부서와 관련된 뉴스를 모아봤어요! </span>
+                        </div>
+                        <ul class="dx-list">
+                            <li>
+                                <a href="">
+                                    <strong>정부클라우드 전략적 관심 시작</strong>
+                                    <em class="flag -dx -sm">트렌트</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <strong>AI 시대,놓쳐선 안될 클라우드</strong>
+                                    <em class="flag -dx -sm">칼럼</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <strong>사이버 보안 클라우드 역량 강화 M&A</strong>
+                                    <em class="flag -dx -sm">과학</em>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="dx-list2">
+                            <li>
+                                <a href="">
+                                    <strong>[데스크칼럼] AI 시대, 놓쳐선 안 될 클라우드</strong>
+                                    <em>2025.06.09</em>
+                                    <p>다행히 최근 정부는 공공 정보시스템의 클라우드 전환 확대, 보안 인증...</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <strong>[데스크칼럼] AI 시대, 놓쳐선 안 될 클라우드</strong>
+                                    <em>2025.06.09</em>
+                                    <p>다행히 최근 정부는 공공 정보시스템의 클라우드 전환 확대, 보안 인증...</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid">
+                        <ul class="operate-list">
+                            <li class="box -w admin">업무 시스템 운영자 안내</li>
+                            <li class="box -w news">DB Daily News</li>
+                            <li class="box -w cop"><a href="">함께 변화</a></li>
+                        </ul>
+                        <div class="box -r flex-down">
+                            <div class="hgroup">
+                                <strong>드라이브<button type="button" class="more">더보기</button></strong>
+                            </div>
+                            <p class="drive-list">
+                                210.0GB
+                                <strong>34.3GB</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="box -g">
+                        <div class="attendance-list">
+                            <p>오늘은 6월 9일 월요일이에요 :)
+                                <strong><em>출근시간</em>08:21:15</strong>
+                            </p>
+                            <button class="btn -white -la">업무시작</button> 
+                        </div>
+                    </div>
+                    <div class="box -w">
+                        <div class="hgroup">
+                            <strong>나의할일<button type="button" class="more">더보기</button></strong>
+                            <button type="button" class="refresh">새로고침</button>
+                        </div>
+                        <ul class="my-list">
+                            <li>
+                                <strong>5월 4주차 주간 업무보고</strong>
+                                기한없음
+                            </li>
+                            <li>
+                                <strong>보고서 제출</strong>
+                                기한없음
+                            </li>
+                            <li>
+                                <strong>5월 4주차 주간 업무보고</strong>
+                                기한없음
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box -w">
+                        <div class="hgroup">
+                            <strong>우리 회사 시스템<button type="button" class="more">더보기</button></strong>
+                            <p class="btn-box">
+                                <button type="button" class="prev">이전</button>
+                                <button type="button" class="next">다음</button>
+                            </p>
+                        </div>
+                        <ul class="system-list">
+                            <li class="business"><a href="">영업관리</a></li>
+                            <li class="work"><a href="">업무관리</a></li>
+                            <li class="bizplay"><a href="">BizPlay</a></li>
+                            <li class="dbnews"><a href="">DB Daily<br> News</a></li>
+                            <li class="cloudhp"><a href="">클라우드오피스<br> HP</a></li>
+                            <li class="smartoff"><a href="">스마트오피스</a></li>
+                            <li class="shr"><a href="">SHR</a></li>
+                            <li class="book"><a href="">사규집</a></li>
+                            <li class="securityservice"><a href="">스마트오피스</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: "ko",
+            headerToolbar: {
+                left: 'title',
+                center: '',
+                right: 'prev next'
+            },
+            dayCellContent: function (arg) {
+                const { date } = arg;
+                return date.getDate();
+            },
+            height: 210,
+            expandRows: true
+        });
+        calendar.render();
+        
+
+        const calendarEl2 = document.getElementById('calendar2');
+        const calendar2 = new FullCalendar.Calendar(calendarEl2, {
+            initialView: 'dayGridMonth',
+            locale: "ko",
+            headerToolbar: {
+                left: 'title',
+                center: '',
+                right: 'prev next'
+            },
+            dayCellContent: function (arg) {
+                const { date } = arg;
+                return date.getDate();
+            },
+            height: 210,
+            expandRows: true
+        });
+        calendar2.render();
+    });
+</script>

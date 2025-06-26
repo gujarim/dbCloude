@@ -12,7 +12,7 @@
             border-collapse: collapse;
 
             th{
-                @include font(rem(14), 600);
+                @include font(rem(16), 600);
                 background-color: var(--bg-base);
                 height: rem(48);
                 line-height: rem(48);
@@ -50,7 +50,7 @@
             border-collapse: collapse;
 
             tr.ui-row-ltr:not(:first-child) td{
-                @include font(rem(14), 400);
+                @include font(rem(16), 400);
                 color: var(--f-secondary);
                 border:0;
                 border-bottom: rem(1) solid var(--line-table2);

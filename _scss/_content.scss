@@ -3,7 +3,7 @@
 
 // 서브 공통 타이틀
 .tit-h2{
-    @include font(rem(32), 700);
+    @include font(rem(34), 700);
 
     .refresh{
         @include bg('refresh');
@@ -45,20 +45,31 @@
         text-decoration: underline;
     }
 
+    &.-white{
+        background-color: var(--f-white);
+        color: #00854A;
+        font-weight: 800;
+    }
+
     &.-sm{
         height: rem(32);
+    }
+
+    &.-la{
+        height: rem(48);
     }
 }
 
 [class^=i-]{
     @include rounded(rem(8));
-    @include font(rem(16), 600);
+    @include font(rem(18), 600);
     height: rem(48);
     color: var(--f-white);
 }
 .i-edit{ //기안서올리기, 글쓰기
     background-color: var(--bg-primary);
-    width: rem(172);
+    padding: 0 rem(22);
+
     &::before{
         @include icon(24, 'edit', 'pseudo');
         margin-right: rem(4);
@@ -82,7 +93,7 @@
 }
 .i-search{ //조회하기
     background-color: var(--bg-secondary);
-    width: rem(127);
+    width: rem(103);
     height: rem(40);
     &::before{
         @include icon(20, 'search', 'pseudo');
@@ -126,10 +137,14 @@
 }
 
 .flag{
-    @include font(rem(13), 400);
+    @include font(rem(12), 400);
     @include rounded(rem(14));
-    height: rem(26);
-    padding: 0 rem(10);
+    display: block;
+    margin: 0 auto;
+    width: rem(68);
+    height: rem(20);
+    line-height: rem(20);
+    text-align: center;
 
     &.-board{
         border:rem(1) solid #B6E3D0;
@@ -142,6 +157,15 @@
     &.-board2{
         border:rem(1) solid #B6C3E3;
         color: #2E55B7;
+    }
+    &.-dx{
+        background-color: var(--f-white);
+        color: #0DA161;
+    }
+    &.-sm{
+        width: rem(48);
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -161,6 +185,13 @@
         @include bg(attach1, 0 0, rem(21) rem(20));
         width: rem(21);
     }
+}
+
+.view{
+    @include fontHidden;
+    @include bg(view);
+    width: rem(20);
+    height: rem(20);
 }
 
 input[type=text]{
@@ -214,17 +245,17 @@ input[type=radio]:checked{
 }
 
 .label{
-    @include font(rem(14), 600);
+    @include font(rem(16), 600);
 }
 
 select{
     @include rounded(rem(8));
-    @include font(rem(14), 600);
+    @include font(rem(16), 600);
     @include bg(select, 98% 50%, rem(24));
     border: rem(1) solid var(--line-base);
     height: rem(40);
     padding: 0 rem(30) 0 rem(12);
     background-color: var(--f-white);
-    min-width: rem(132);
+    min-width: rem(143);
     color: var(--f-secondary);
 }

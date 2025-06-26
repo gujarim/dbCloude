@@ -126,13 +126,61 @@ const toggleTable = () => {
     });
 }
 
-//메뉴
+// 메뉴
 const navToggle = () => {
     const nav = document.querySelector('nav');
-    const sub = document.querySelector('.gnb');
+    const subUI = nav.querySelector('.sub-gnb > ul.on');
+    const menuliAll = subUI.querySelectorAll("li");
+
+    menuliAll.forEach(li => {
+        const submenu = li.querySelector('ul');
+
+        if (submenu) { // 메뉴 중 하위메뉴 있는 항목
+            li.classList.add('has-submenu');
+
+            li.addEventListener('click', e => {
+                e.stopPropagation();
+                e.preventDefault();
+
+                const isOpen = li.classList.contains('on');
+
+                menuliAll.forEach(item => {
+                    item.classList.remove('on');
+                });
+
+                if (!isOpen) {
+                    li.classList.add('on'); // 현재 클릭한 메뉴 강조
+                }
+            });
+        }
+    });
 }
 
+// 탭
+const tab = () => {
+    const tabWraps = document.querySelectorAll('.tab-wrap');
+
+    tabWraps.forEach(wrap => {
+        const tabs = wrap.querySelectorAll('[role="tab"]');
+        const panels = wrap.querySelectorAll('[role="tabpanel"]');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // 해당 tab-wrap 내 모든 탭과 패널에서 'on' 클래스 제거
+                tabs.forEach(t => t.classList.remove('on'));
+                panels.forEach(p => p.classList.remove('on'));
+
+                // 클릭한 탭과 해당 인덱스의 패널에 'on' 클래스 추가
+                tab.classList.add('on');
+                panels[index].classList.add('on');
+            });
+        });
+    });
+};
 
 window.addEventListener('load', () => {
     toggleTable();
+    tab();
 });

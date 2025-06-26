@@ -79,8 +79,11 @@
 
                 .fc-toolbar-title{
                     @include font(rem(28), 700);
+                    @include bg(datepicker , 100% 50%, rem(33) rem(30));
                     margin-left: 0;
-                    padding: 0 rem(24);
+                    padding-right: rem(45);
+                    margin: 0 rem(24);
+                    cursor: pointer;
                 }
             }
 
@@ -97,6 +100,9 @@
             border: rem(1) solid var(--line-base);
         }
         
+        .fc-license-message, .fc-daygrid-day.fc-day-other{
+            display: none;
+        }
     }
 
     .calendar-list{
@@ -107,8 +113,7 @@
         background-color: var(--bg-base);
         border: rem(1) solid var(--line-table3);
         padding: rem(32);
-        transform: translateX(0);
-        transition: transform .3s;
+        transition: right .2s;
 
         p{
             @include font(rem(20), 600);
