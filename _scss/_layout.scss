@@ -12,7 +12,6 @@ html, body{
     &:has(.main){
         background-color: var(--bg-menu);
     }
-    // @include scrollbar;
 }
 
 .wrap{
@@ -31,6 +30,10 @@ html, body{
                     display: block;
                 }
             }
+        }
+
+        nav{
+            width: rem(76);
         }
 
         .container{
@@ -153,6 +156,9 @@ nav{
     display: grid;
     grid-template-columns: 76px 1fr;
     background-color: var(--f-white);
+    @include position(fixed, 0, null, null, 0, 10);
+    width: rem(296);
+    height: 100%;
 
     .gnb{ // 1depth
         padding: rem(32) rem(6);
@@ -318,6 +324,7 @@ nav{
         background-color: var(--bg-menu);
         padding: rem(40) rem(20);
         border-right: rem(1) solid #E5EAEF;
+        overflow-y: auto;
 
         >ul{ // 2depth
             display: none;
@@ -629,91 +636,83 @@ footer{
             flex-direction: column;
         }
 
-        .calendar-wrap{
+        .scd-list{
             display: grid;
             grid-template-columns: rem(268) 1fr;
 
-            .fc{
-                flex: 1;
-                .fc-header-toolbar{
-                    .fc-toolbar-chunk:has(.fc-toolbar-title){
-                        display: flex;
+            .calendar-wrap{
+                .calendar-title{
+                    @include flex(flex, space-between, center);
+                    
+                    strong{
+                        @include font(rem(16), 600);
+                    }
 
-                        .fc-toolbar-title{
-                            @include font(rem(16), 600);
+                    p{
+                        button{
+                            @include fontHidden;
+                            width: rem(24);
+                            height: rem(24);
+                        }
+                        .prev{
+                            @include bg(prev_main);
+                        }
+
+                        .next{
+                            @include bg(next_main);
+                            margin-left: rem(2);
                         }
                     }
-                    .fc-button{
-                        border:0;
-                        @include fontHidden;
-                        padding: 0;
-                        width: rem(24);
-                        height: rem(24);
-
-                        &:active, &:hover, &:focus{
-                            border: 0;
-                        }
-                    }
-                    .fc-prev-button{
-                        @include bg(prev_main);
-                    }
-
-                    .fc-next-button{
-                        @include bg(next_main);
-                        margin-left: rem(2);
-                    }
-                }
-
-                .fc-scrollgrid{
-                    border: 0;
                 }
 
                 table{
-                    border: 0;
+                    text-align: center;
+                    width: 100%;
+                    margin-top: rem(16);
+                    border-spacing: 0;
 
                     th{
                         @include font(rem(13), 400);
                         color: var(--f-secondary);
-                        border: 0;
+                        padding-bottom: rem(10);
                     }
 
                     td{
-                        border: 0;
+                        @include font(rem(13), 600);
+                        color: var(--f-base);
+                        height: rem(26);
                         vertical-align: middle;
+                        position: relative;
 
-                        &.fc-day-sun, &.fc-day-sat{
-                            a{
-                                color: var(--f-menu);
-                            }
+                        &.day-weekend{
+                            color: var(--f-menu);
+                        }
+
+                        &::after{
+                            content:'';
+                            @include rounded(100%);
+                            @include position(absolute, 50%, null, null, 50%);
+                            transform: translate(-50%, -50%);
+                            width: rem(26);
+                            height: rem(26);
+                            color: var(--f-base);
+                            
+                        }
+
+                        &.bgType1::after{
+                            background-color: rgba(184, 146, 255, 0.4);
+                        }
+                        &.bgType2::after{
+                            background-color: rgba(63, 133, 255, 0.4);
+                        }
+                        &.bgType3::after{
+                            background-color: rgba(117, 209, 112, 0.4);
+                        }
+                        &.bgType4::after{
+                            background-color: rgba(255, 174, 137, 0.4);
                         }
                     }
-
-                    .fc-daygrid-day-top{
-                        justify-content: center;
-                    }
-
-                    .fc-daygrid-day-number{
-                        padding: rem(5) rem(4);
-                        @include font(rem(13), 600);
-                    }
-
-                    .fc-daygrid-day.fc-day-other {
-                        display: none;
-                    }
                 }
-
-                .fc-license-message{
-                    display: none;
-                }
-
-                .fc-col-header-cell-cushion{
-                    padding: 0;
-                }
-
-                .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
-                    min-height: auto;
-                }
-                
             }
 
             .tab-wrap{
@@ -738,25 +737,25 @@ footer{
                     @include position(absolute, rem(9), null, null, 0);
                 }
 
-                &.scd1{
+                &.bgType1{
                     &::before{
                         background-color: #B892FF;
                     }
                 }
 
-                &.scd2{
+                &.bgType2{
                     &::before{
                         background-color: #62ADFF;
                     }
                 }
 
-                &.scd3{
+                &.bgType3{
                     &::before{
                         background-color: #75D170;
                     }
                 }
 
-                &.scd4{
+                &.bgType4{
                     &::before{
                         background-color: #FFAE89;
                     }

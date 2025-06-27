@@ -176,11 +176,27 @@ const tab = () => {
                 tab.classList.add('on');
                 panels[index].classList.add('on');
 
+                
+                // jqgrid 그려주기
                 const grid = panels[index].querySelector('table[id^="grid"]');
                 if (grid && $(grid).length > 0) {
                     const panelWidth = panels[index].clientWidth;
                     $(grid).jqGrid('setGridWidth', panelWidth);
                 }
+
+                // fullcalendar 그려주기
+                // if(document.querySelector('.wrap').classList.contains('main')) {
+                //     if (index === 0 && calendar) {
+                //         calendar.updateSize(); // 이미 render 되었음
+                //     } else if (index === 1 && calendar2) {
+                //         if (!calendar2Rendered) {
+                //             calendar2.render();
+                //             calendar2Rendered = true;
+                //         } else {
+                //             calendar2.updateSize(); // render 되어 있으면 사이즈만 업데이트
+                //         }
+                //     }
+                // }
             });
         });
     });
