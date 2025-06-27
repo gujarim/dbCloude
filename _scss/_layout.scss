@@ -8,6 +8,11 @@ html, body{
     &:has(.container .calendar-box){
         overflow-x: hidden;
     }
+    
+    &:has(.main){
+        background-color: var(--bg-menu);
+    }
+    // @include scrollbar;
 }
 
 .wrap{
@@ -18,7 +23,6 @@ html, body{
     min-width: rem(1200);
 
     &.main{
-        background-color: var(--bg-menu);
         grid-template-columns: rem(76) 1fr rem(92);
 
         header{
@@ -68,6 +72,8 @@ header{
         gap: 0 40px;
 
         .h-search{
+            @include flex(flex);
+
             input[type=text]{
                 @include bg(search, 8px 50%, rem(16) rem(16), var(--line-table3));
                 width: rem(160);
@@ -77,8 +83,9 @@ header{
             }
             select{
                 width: rem(120);
-                margin-right: rem(4);
+                margin-right: rem(8);
                 font-size: rem(13);
+                @include bg(select, 95% 50%, rem(20));
             }
         }
 
@@ -1102,7 +1109,7 @@ footer{
             @include font(rem(16), 600);
             text-align: left;
             padding-right: rem(30);
-            padding-left: rem(60);
+            padding-left: rem(20);
 
             &:first-child{
                 padding-left: 0;
@@ -1142,6 +1149,10 @@ footer{
             margin-left: rem(12);
         }
     }
+
+    select{
+        @include bg(select, 95% 50%, rem(20));
+    }
 }
 
 // 탭
@@ -1152,7 +1163,29 @@ footer{
         .date{
             @include font(rem(28), 700);
             @include position(absolute, 0, null, null, 50%);
+            @include flex(flex, center, center);
             transform: translateX(-50%);
+
+            &:has(button){
+                span{
+                    @include bg(datepicker , 100% 50%, rem(33) rem(30));
+                    padding-right: rem(45);
+                    margin: 0 rem(24);
+                    cursor: pointer;
+                }
+            }
+
+            button{
+                @include fontHidden;
+                width: rem(32);
+                height: rem(32);
+                &.prev{
+                    @include bg(date_prev, 0 0, rem(32) rem(32));
+                }
+                &.next{
+                    @include bg(date_next, 0 0, rem(32) rem(32));
+                }
+            }
         }
         
         >div{

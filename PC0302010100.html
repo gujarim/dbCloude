@@ -15,36 +15,43 @@
 
         <div class="container">
             <div class="tit-box">
-                <h2 class="tit-h2">미결함<button type="button" class="refresh">새로고침</button></h2>
+                <h2 class="tit-h2">미결함</h2>
                 <button type="button" class="i-edit">기안올리기</button>
             </div>
 
             <div class="search-box">
                 <button type="button" class="search-close">더보기</button>
                 <table>
-                    <caption>문서제목, 문서번호, 문서유형, 작성자, 문서양식으로 구성된 미결함에 대한 표</caption>
+                    <caption>조직명, 문서제목, 문서번호, 문서유형, 작성자, 문서양식으로 구성된 미결함에 대한 표</caption>
                     <colgroup>
-                        <col style="width: 7.2rem">
-                        <col style="width: 27%">
-                        <col style="width: 7.2rem">
-                        <col style="width: 27%">
-                        <col style="width: 7.2rem">
-                        <col style="width: 27%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
                     </colgroup>
                     <tbody>
                         <tr>
+                            <th>조직명</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
                             <th>문서제목</th>
                             <td><input type="text" placeholder="문서제목 입력"></td>
                             <th>문서번호</th>
                             <td><input type="text" placeholder="문서번호 입력"></td>
+                        </tr>
+                        <tr class="hidden">
                             <th>문서유형</th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                        </tr>
-                        <tr class="hidden">
                             <th>작성자</th>
                             <td><input type="text" placeholder="작성자 입력"></td>
                             <th>문서양식</th>
@@ -57,7 +64,7 @@
 
             <div class="table-jq">
                 <div class="hgroup">
-                    <p>조회결과 총 <em class="f-primary">143</em>건</p>
+                    <p>총 <em class="f-primary">143</em>건</p>
 
                     <div class="sort">
                         <select name="" id="">
@@ -143,6 +150,7 @@
                 { name: 'inx12', index: 'inx12', width: '12%'}
             ],
             pager: '#pager', // 페이징을 위한 요소
+            rowNum: 5,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 'auto', // 그리드 높이를 자동 조절

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전사 근태현황(오늘)</title>
+    <title>전사 근태현황(일간)</title>
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/style.css">
@@ -51,13 +51,18 @@
             <!-- 날짜별 전사근테현황 -->
             <div class="tab-wrap -box mb40">
                 <ul class="tablist -sm" role="tablist">
-                    <li class="on" role="tab"><a href="">오늘</a></li>
-                    <li role="tab"><a href="">일간</a></li>
+                    <li role="tab"><a href="">오늘</a></li>
+                    <li class="on" role="tab"><a href="">일간</a></li>
                     <li role="tab"><a href="">월간</a></li>
                 </ul>
                 <div class="panels">
+                    <div role="tabpanel">오늘</div>
                     <div class="on" role="tabpanel">
-                        <strong class="date"><span>2025.06.16</span></strong>
+                        <strong class="date">
+                            <button type="button" class="prev">이전</button>
+                            <span>2025.06</span>
+                            <button type="button" class="next">다음</button>
+                        </strong>
                         
                         <div class="table-jq">
                             <div class="hgroup">
@@ -75,7 +80,6 @@
                             <div id="pager1"></div>
                         </div>
                     </div>
-                    <div role="tabpanel">일간</div>
                     <div role="tabpanel">월간</div>
                 </div>
             </div>
@@ -106,7 +110,7 @@
 
 <script>
     $(document).ready(function () {
-        //오늘
+        //일간
         var localData = [
             { 
                 inx1: "1", //No

@@ -80,7 +80,33 @@
                 const { date } = arg;
                 return date.getDate();
             },
-            height: 830,
+            events: [
+                {
+                    title: '현충일',
+                    url: 'http://google.com/',
+                    start: '2025-06-06',
+                    color: '#FFD8FB'
+                },
+                {
+                    title: '현충일2',
+                    url: 'http://google.com/',
+                    start: '2025-06-06',
+                    color: '#C3F1AE'
+                },
+                {
+                    title: '어린이날',
+                    url: 'http://google.com/',
+                    start: '2025-06-08',
+                    color: '#FFD8FB'
+                },
+                {
+                    title: '오후 반차',
+                    url: 'http://google.com/',
+                    start: '2025-06-20',
+                    color: '#C3F1AE'
+                }
+            ],
+            height: 720,
             expandRows: true
         });
         calendar.render();

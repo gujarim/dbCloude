@@ -35,8 +35,8 @@
                             <td colspan="2" rowspan="6" class="profile">
                                 <img src="image/profile.png" alt="">
                                 <div>
-                                    <button type="button" class="btn -line">변경</button>
                                     <button type="button" class="btn -line false">삭제</button>
+                                    <button type="button" class="btn -line">변경</button>
                                 </div>
                             </td>
                             <th>회사</th>
@@ -142,16 +142,36 @@
                     <li role="tab"><a href="">발령사항</a></li>
                 </ul>
                 <div class="panels">
-                    <div class="on" role="tabpanel">
+                    <div role="tabpanel">
                         <div class="table-jq">
-                            <table id="grid01" class="grid"></table>
+                            <table id="grid01"></table>
                         </div>
                     </div>
-                    <div role="tabpanel">외부연결계정</div>
-                    <div role="tabpanel">학력사항</div>
-                    <div role="tabpanel">기술자격사항</div>
-                    <div role="tabpanel">가족사항</div>
-                    <div role="tabpanel">발령사항</div>
+                    <div class="on" role="tabpanel">
+                        <div class="table-jq">
+                            <table id="grid02"></table>
+                        </div>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="table-jq">
+                            <table id="grid03"></table>
+                        </div>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="table-jq">
+                            <table id="grid04"></table>
+                        </div>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="table-jq">
+                            <table id="grid05"></table>
+                        </div>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="table-jq">
+                            <table id="grid06"></table>
+                        </div>
+                    </div>
                 </div>
             </div> 
         </div>
@@ -194,6 +214,191 @@
                 { name: 'inx2', index: 'inx2', width: '10%'},
                 { name: 'inx3', index: 'inx3', width: '10%'},
                 { name: 'inx4', index: 'inx4', width: '10%'}
+            ],
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+        });
+
+        // 외부연결계정
+        var localData2 = [
+            { 
+                inx1: "1", //No
+                inx2: "SMART", //연결계정구분
+                inx3: "userm3", //연결계정ID
+                inx4: "", //비고
+            }
+        ];
+        $("#grid02").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData2, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '연결계정구분',
+                '연결계정ID',
+                '비고'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'}
+            ],
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+        });
+
+        // 학력사항
+        var localData3 = [
+            { 
+                inx1: "1", //No
+                inx2: "학력구분", //학력구분
+                inx3: "졸업일자", //졸업일자
+                inx4: "학위", //학위
+                inx5: "학교명", //학교명
+                inx6: "전공", //전공
+                inx7: "세부전공" //세부전공
+            }
+        ];
+        $("#grid03").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData3, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '학력구분',
+                '졸업일자',
+                '학위',
+                '학교명',
+                '전공',
+                '세부전공'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'},
+                { name: 'inx5', index: 'inx5', width: '10%'},
+                { name: 'inx6', index: 'inx6', width: '10%'},
+                { name: 'inx7', index: 'inx7', width: '10%'}
+            ],
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+
+        // 기술자격사항
+        var localData4 = [
+            { 
+                inx1: "1", //No
+                inx2: "자격증명", //자격증명
+                inx3: "취득일자", //취득일자
+                inx4: "등급", //등급
+                inx5: "발행처", //발행처
+                inx6: "자격증번호", //자격증번호
+                inx7: "등록일자" //등록일자
+            }
+        ];
+        $("#grid04").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData4, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '자격증명',
+                '취득일자',
+                '등급',
+                '발행처',
+                '자격증번호',
+                '등록일자'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'},
+                { name: 'inx5', index: 'inx5', width: '10%'},
+                { name: 'inx6', index: 'inx6', width: '10%'},
+                { name: 'inx7', index: 'inx7', width: '10%'}
+            ],
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+
+        // 가족사항
+        var localData5 = [
+            { 
+                inx1: "1", //No
+                inx2: "관계", //관계
+                inx3: "성명", //성명
+                inx4: "생년월일", //생년월일
+                inx5: "직업", //직업
+                inx6: "근무처", //근무처
+                inx7: "동거여부" //동거여부
+            }
+        ];
+        $("#grid05").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData5, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '관계',
+                '성명',
+                '생년월일',
+                '직업',
+                '근무처',
+                '동거여부'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'},
+                { name: 'inx5', index: 'inx5', width: '10%'},
+                { name: 'inx6', index: 'inx6', width: '10%'},
+                { name: 'inx7', index: 'inx7', width: '10%'}
+            ],
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+
+        // 발령사항
+        var localData6 = [
+            { 
+                inx1: "1", //No
+                inx2: "발령일", //발령일
+                inx3: "발령구분", //발령구분
+                inx4: "부서", //부서
+                inx5: "직위", //직위
+                inx6: "경직여부", //경직여부
+                inx7: "부서장구분" //부서장구분
+            }
+        ];
+        $("#grid06").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData6, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '발령일',
+                '발령구분',
+                '부서',
+                '직위',
+                '경직여부',
+                '부서장구분'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '10%'},
+                { name: 'inx3', index: 'inx3', width: '10%'},
+                { name: 'inx4', index: 'inx4', width: '10%'},
+                { name: 'inx5', index: 'inx5', width: '10%'},
+                { name: 'inx6', index: 'inx6', width: '10%'},
+                { name: 'inx7', index: 'inx7', width: '10%'}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절

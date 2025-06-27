@@ -34,6 +34,7 @@
 
     &.-line{
         border: rem(1) solid var(--line-base);
+        padding: 0 rem(28);
 
         &.false{
             color: var(--f-flase);
@@ -63,6 +64,7 @@
 [class^=i-]{
     @include rounded(rem(8));
     @include font(rem(18), 600);
+    @include flex(flex, center, center);
     height: rem(48);
     color: var(--f-white);
 }
@@ -97,7 +99,7 @@
     height: rem(40);
     &::before{
         @include icon(20, 'search', 'pseudo');
-        margin: rem(-2) rem(4) 0 0;
+        margin: rem(1) rem(4) 0 0;
     }
 }
 .i-searchB{ //우편번호 검색
@@ -251,7 +253,7 @@ input[type=radio]:checked{
 select{
     @include rounded(rem(8));
     @include font(rem(16), 600);
-    @include bg(select, 98% 50%, rem(24));
+    @include bg(select24, 96% 50%, rem(24));
     border: rem(1) solid var(--line-base);
     height: rem(40);
     padding: 0 rem(30) 0 rem(12);

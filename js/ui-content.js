@@ -175,6 +175,12 @@ const tab = () => {
                 // 클릭한 탭과 해당 인덱스의 패널에 'on' 클래스 추가
                 tab.classList.add('on');
                 panels[index].classList.add('on');
+
+                const grid = panels[index].querySelector('table[id^="grid"]');
+                if (grid && $(grid).length > 0) {
+                    const panelWidth = panels[index].clientWidth;
+                    $(grid).jqGrid('setGridWidth', panelWidth);
+                }
             });
         });
     });

@@ -20,27 +20,35 @@
             </div>
 
             <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
                 <table>
-                    <caption>제목, 작성자, 게시글번호로 구성된 통합게시판에 대한 표</caption>
+                    <caption>조직명, 제목, 작성자, 게시글번호로 구성된 통합게시판에 대한 표</caption>
                     <colgroup>
-                        <col style="width: 7.2rem">
-                        <col style="width: 27%">
-                        <col style="width: 7.2rem">
-                        <col style="width: 27%">
-                        <col style="width: 7.2rem">
-                        <col style="width: 27%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th>제목</th>
-                            <td><input type="text" placeholder="문서제목 입력"></td>
-                            <th>작성자</th>
-                            <td><input type="text" placeholder="작성자 입력"></td>
-                            <th>게시글번호</th>
+                            <th>조직명</th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
                                 </select>
+                            </td>
+                            <th>제목</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>작성자</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <th>게시글번호</th>
+                            <td>
+                                <input type="text" placeholder="검색어를 입력하세요">
                             </td>
                         </tr>
                     </tbody>
@@ -50,7 +58,7 @@
  
             <div class="table-jq">
                 <div class="hgroup">
-                    <p>조회결과 총 <em class="f-primary">143</em>건</p>
+                    <p>총 <em class="f-primary">143</em>건</p>
 
                     <div class="sort">
                         <select name="" id="">
@@ -191,7 +199,7 @@
                 { name: 'inx8', index: 'inx8', width: '7%'}
             ],
             pager: '#pager', // 페이징을 위한 요소
-            rowNum: 3,
+            rowNum: 5,
             sortname: 'id', // 기본 정렬할 컬럼
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절

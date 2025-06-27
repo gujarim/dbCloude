@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전사 근태현황(오늘)</title>
+    <title>전사 근태현황(월간)</title>
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/style.css">
@@ -51,13 +51,19 @@
             <!-- 날짜별 전사근테현황 -->
             <div class="tab-wrap -box mb40">
                 <ul class="tablist -sm" role="tablist">
-                    <li class="on" role="tab"><a href="">오늘</a></li>
+                    <li role="tab"><a href="">오늘</a></li>
                     <li role="tab"><a href="">일간</a></li>
-                    <li role="tab"><a href="">월간</a></li>
+                    <li class="on" role="tab"><a href="">월간</a></li>
                 </ul>
                 <div class="panels">
+                    <div role="tabpanel">오늘</div>
+                    <div role="tabpanel">일간</div>
                     <div class="on" role="tabpanel">
-                        <strong class="date"><span>2025.06.16</span></strong>
+                        <strong class="date">
+                            <button type="button" class="prev">이전</button>
+                            <span>2025.06</span>
+                            <button type="button" class="next">다음</button>
+                        </strong>
                         
                         <div class="table-jq">
                             <div class="hgroup">
@@ -75,8 +81,6 @@
                             <div id="pager1"></div>
                         </div>
                     </div>
-                    <div role="tabpanel">일간</div>
-                    <div role="tabpanel">월간</div>
                 </div>
             </div>
 
@@ -106,100 +110,10 @@
 
 <script>
     $(document).ready(function () {
-        //오늘
+        //월간
         var localData = [
             { 
                 inx1: "1", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
-            },
-            { 
-                inx1: "2", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
-            },
-            { 
-                inx1: "3", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
-            },
-            { 
-                inx1: "4", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
-            },
-            { 
-                inx1: "5", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
-            },
-            { 
-                inx1: "6", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
-            },
-            { 
-                inx1: "7", //No
                 inx2: "개발1팀", //부서
                 inx3: "이디비", //성명
                 inx4: "userm3", //사번
@@ -233,18 +147,18 @@
                 '휴게시간'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '2%'},
-                { name: 'inx2', index: 'inx2', width: '3%'},
-                { name: 'inx3', index: 'inx3', width: '3%'},
-                { name: 'inx4', index: 'inx4', width: '4%'},
-                { name: 'inx5', index: 'inx5', width: '3%'},
-                { name: 'inx6', index: 'inx6', width: '3%'},
-                { name: 'inx7', index: 'inx7', width: '4%'},
-                { name: 'inx8', index: 'inx8', width: '4%'},
-                { name: 'inx9', index: 'inx9', width: '4%'},
-                { name: 'inx10', index: 'inx10', width: '4%'},
-                { name: 'inx11', index: 'inx11', width: '4%'},
-                { name: 'inx12', index: 'inx12', width: '4%'},
+                { name: 'inx1', index: 'inx1', width: '5%'},
+                { name: 'inx2', index: 'inx2', width: '5%'},
+                { name: 'inx3', index: 'inx3', width: '5%'},
+                { name: 'inx4', index: 'inx4', width: '5%'},
+                { name: 'inx5', index: 'inx5', width: '5%'},
+                { name: 'inx6', index: 'inx6', width: '5%'},
+                { name: 'inx7', index: 'inx7', width: '5%'},
+                { name: 'inx8', index: 'inx8', width: '5%'},
+                { name: 'inx9', index: 'inx9', width: '5%'},
+                { name: 'inx10', index: 'inx10', width: '5%'},
+                { name: 'inx11', index: 'inx11', width: '5%'},
+                { name: 'inx12', index: 'inx12', width: '5%'},
                 { name: 'inx13', index: 'inx13', width: '5%'}
             ],
             pager: '#pager1', // 페이징을 위한 요소

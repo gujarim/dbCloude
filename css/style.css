@@ -204,6 +204,9 @@ html, body {
 html:has(.container .calendar-box), body:has(.container .calendar-box) {
   overflow-x: hidden;
 }
+html:has(.main), body:has(.main) {
+  background-color: var(--bg-menu);
+}
 
 .wrap {
   height: 100%;
@@ -213,7 +216,6 @@ html:has(.container .calendar-box), body:has(.container .calendar-box) {
   min-width: 120rem;
 }
 .wrap.main {
-  background-color: var(--bg-menu);
   grid-template-columns: 7.6rem 1fr 9.2rem;
 }
 .wrap.main header .logo a {
@@ -269,6 +271,11 @@ header .uniq {
           align-items: center;
   gap: 0 40px;
 }
+header .uniq .h-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 header .uniq .h-search input[type=text] {
   background: var(--line-table3) url("../image/bg_search.png") 8px 50%/1.6rem 1.6rem no-repeat;
   width: 16rem;
@@ -278,8 +285,9 @@ header .uniq .h-search input[type=text] {
 }
 header .uniq .h-search select {
   width: 12rem;
-  margin-right: 0.4rem;
+  margin-right: 0.8rem;
   font-size: 1.3rem;
+  background: url("../image/bg_select.png") 95% 50%/2rem no-repeat;
 }
 header .uniq .login-time {
   display: -webkit-box;
@@ -1400,7 +1408,7 @@ footer .f-uniq select {
   font-weight: 600;
   text-align: left;
   padding-right: 3rem;
-  padding-left: 6rem;
+  padding-left: 2rem;
 }
 .search-box table th:first-child {
   padding-left: 0;
@@ -1437,6 +1445,9 @@ footer .f-uniq select {
 .hgroup:not(.-main) .sort button {
   margin-left: 1.2rem;
 }
+.hgroup:not(.-main) select {
+  background: url("../image/bg_select.png") 95% 50%/2rem no-repeat;
+}
 
 .tab-wrap .panels {
   margin-top: 2.4rem;
@@ -1447,8 +1458,37 @@ footer .f-uniq select {
   position: absolute;
   top: 0;
   left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+.tab-wrap .panels .date:has(button) span {
+  background: url("../image/bg_datepicker.png") 100% 50%/3.3rem 3rem no-repeat;
+  padding-right: 4.5rem;
+  margin: 0 2.4rem;
+  cursor: pointer;
+}
+.tab-wrap .panels .date button {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.tab-wrap .panels .date button.prev {
+  background: url("../image/bg_date_prev.png") 0 0/3.2rem 3.2rem no-repeat;
+}
+.tab-wrap .panels .date button.next {
+  background: url("../image/bg_date_next.png") 0 0/3.2rem 3.2rem no-repeat;
 }
 .tab-wrap .panels > div {
   display: none;
@@ -1985,7 +2025,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   color: var(--f-secondary);
   border: 0;
   border-bottom: 0.1rem solid var(--line-table2);
-  padding: 1.4rem 0.2rem 1.4rem 0.2rem;
+  padding: 1.4rem 0;
   text-align: center;
   vertical-align: middle;
 }
@@ -2096,6 +2136,9 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 .calendar-box .fc-theme-standard .fc-daygrid-day-number {
   font-size: 1.6rem;
   font-weight: 400;
+  padding: 0;
+}
+.calendar-box .fc-theme-standard .fc-daygrid-day-frame {
   padding: 1.2rem;
 }
 .calendar-box .fc-theme-standard .fc-header-toolbar {
@@ -2124,6 +2167,9 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   margin: 0;
   padding: 0;
 }
+.calendar-box .fc-theme-standard .fc-header-toolbar .fc-toolbar-chunk:has(.fc-toolbar-title) button .fc-icon {
+  display: none;
+}
 .calendar-box .fc-theme-standard .fc-header-toolbar .fc-toolbar-chunk:has(.fc-toolbar-title) button.fc-prev-button {
   background: url("../image/bg_date_prev.png") 0 0/3.2rem 3.2rem no-repeat;
 }
@@ -2138,7 +2184,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   font-size: 2.8rem;
   font-weight: 700;
   background: url("../image/bg_datepicker.png") 100% 50%/3.3rem 3rem no-repeat;
-  margin-left: 0;
   padding-right: 4.5rem;
   margin: 0 2.4rem;
   cursor: pointer;
@@ -2152,6 +2197,30 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   height: 4rem;
   padding: 0 2.8rem;
   border: 0.1rem solid var(--line-base);
+}
+.calendar-box .fc-theme-standard .fc-event {
+  margin: 0 0 0.6rem;
+}
+.calendar-box .fc-theme-standard .fc-event-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--f-base);
+  padding: 0 0.6rem;
+}
+.calendar-box .fc-theme-standard .fc-daygrid-day-frame {
+  min-height: 12rem;
+}
+.calendar-box .fc-theme-standard .fc-daygrid-day.fc-day-today {
+  background-color: transparent;
+}
+.calendar-box .fc-theme-standard .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+  border-radius: 100%;
+  color: var(--f-white);
+  background-color: var(--bg-primary);
+  width: 2.8rem;
+  height: 2.8rem;
+  line-height: 2.9rem;
+  text-align: center;
 }
 .calendar-box .fc-theme-standard .fc-license-message, .calendar-box .fc-theme-standard .fc-daygrid-day.fc-day-other {
   display: none;
@@ -2289,6 +2358,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 .btn.-line {
   border: 0.1rem solid var(--line-base);
+  padding: 0 2.8rem;
 }
 .btn.-line.false {
   color: var(--f-flase);
@@ -2313,6 +2383,15 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   border-radius: 0.8rem;
   font-size: 1.8rem;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 4.8rem;
   color: var(--f-white);
 }
@@ -2379,7 +2458,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   width: 2rem;
   height: 2rem;
   background-image: url("../image/icon_search.png");
-  margin: -0.2rem 0.4rem 0 0;
+  margin: 0.1rem 0.4rem 0 0;
 }
 
 .i-searchB {
@@ -2565,7 +2644,7 @@ select {
   border-radius: 0.8rem;
   font-size: 1.6rem;
   font-weight: 600;
-  background: url("../image/bg_select.png") 98% 50%/2.4rem no-repeat;
+  background: url("../image/bg_select24.png") 96% 50%/2.4rem no-repeat;
   border: 0.1rem solid var(--line-base);
   height: 4rem;
   padding: 0 3rem 0 1.2rem;

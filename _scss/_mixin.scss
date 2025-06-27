@@ -3,7 +3,6 @@
 $root-px: 10;
 $font-name: '맑은고딕', sans-serif;
 
-
 //FONT
 @mixin font($font-size: null, $font-weight: null, $line-height: null){
     font-size: $font-size;
@@ -142,7 +141,6 @@ $font-name: '맑은고딕', sans-serif;
 }
 
 @mixin border($direction: all, $color: #000, $weight: rem(1), $type: solid){
-
     @if $direction == top{
         border-top: $weight $type $color;
     } @else if $direction == right{
