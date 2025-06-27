@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     // nav 불러오기
-    fetch("layout/nav.html")
+    fetch("layout/sidebar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("nav").innerHTML = data;

@@ -1584,6 +1584,10 @@ footer .f-uniq select {
   white-space: nowrap;
   max-width: 39.4rem;
 }
+.tab-wrap.-box3 .panels .notice-list li a .attach {
+  width: 4.5rem;
+  background-position: 100% 50%;
+}
 .tab-wrap.-box3 .panels .notice-list li a .bdate {
   color: var(--f-menu);
 }

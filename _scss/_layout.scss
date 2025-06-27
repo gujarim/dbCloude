@@ -1284,6 +1284,11 @@ footer{
                             @include ellipsis(1);
                             max-width: rem(394)
                         }
+                        
+                        .attach{
+                            width: rem(45);
+                            background-position: 100% 50%;
+                        }
 
                         .bdate{
                             color: var(--f-menu);
