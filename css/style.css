@@ -2159,6 +2159,13 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 .table-jq .ui-jqgrid .ui-jqgrid-pager ul li.last button {
   background: url("../image/bg_last_page.png") 0 0/contain no-repeat;
 }
+.table-jq .info {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--f-secondary);
+  text-align: right;
+  margin-top: 1rem;
+}
 
 .tree-wrap {
   width: 46.4rem;

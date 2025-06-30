@@ -155,4 +155,11 @@
             }
         }
     }
+
+    .info{
+        @include font(rem(16), 400);
+        color: var(--f-secondary);
+        text-align: right;
+        margin-top: rem(10);
+    }
 }
