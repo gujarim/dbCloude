@@ -58,7 +58,7 @@
                     <div role="tabpanel">직원구분별</div>
                     <div class="on" role="tabpanel">
                         <div class="file-wrap">
-                            <div id="file1" class="tree-wrap"></div>
+                            <div id="file1" class="tree-wrap ver2"></div>
                             <div class="table-jq">
                                 <div class="hgroup">
                                     <div class="sort">
@@ -176,13 +176,17 @@
                 'data' : [
                     { 
                         "text" : "파도",
-                        // "state" : { "opened" : true },
+                        "state" : { "opened" : true },
+                        "type":"dep1",
                         "children" : [
                             { 
                                 "text" : "개발본부",
-                                // "state" : { "selected" : true },
+                                "type":"file",
+                                // "state" : { "opened" : true },
                                 "children" : [
-                                    { "text" : "개발1팀" },
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
                                     { "text" : "개발2팀" },
                                     { "text" : "개발3팀" }
                                 ] 
@@ -191,6 +195,15 @@
                             { "text" : "기획팀" }
                     ]}
                 ]
+            },
+            'plugins' : ["types"],
+            'types': {
+                'default':{
+                    "icon":"ico-hr-def" //기본 아이콘
+                },
+                'dep1':{
+                    "icon":"ico-hr-dep1", //depth1 아이콘
+                }
             }
         });
     });

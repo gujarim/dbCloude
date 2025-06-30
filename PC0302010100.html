@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전자결재</title>
+    <title>미결함</title>
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/style.css">
@@ -16,7 +16,6 @@
         <div class="container">
             <div class="tit-box">
                 <h2 class="tit-h2">미결함</h2>
-                <button type="button" class="i-edit">기안올리기</button>
             </div>
 
             <div class="search-box">
@@ -108,6 +107,76 @@
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결제유형
                 inx12: "pado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "2", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "기안서", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "기안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2024-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결제유형
+                inx12: "pado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "3", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "기안서", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "기안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2024-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결제유형
+                inx12: "pado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "4", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "기안서", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "기안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2024-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결제유형
+                inx12: "pado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "5", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "기안서", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "기안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2024-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결제유형
+                inx12: "pado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "6", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "기안서", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "기안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2024-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결제유형
+                inx12: "pado.co.kr-2024", //문서번호
             }
         ];
         $("#grid").jqGrid({
@@ -142,7 +211,10 @@
                 { name: 'inx8', index: 'inx8', width: '12%'},
                 { name: 'inx9', index: 'inx9', width: '10%',
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<button type="button" class="btn -primary">결재진행중</button>';
+                        return '<button type="button" class="btn -ing">결재진행중</button>';
+                        // 클래스 정리
+                        // class="btn -ing" : 결재진행중
+                        // class="btn -complete" : 결재완료
                     }  
                 },
                 { name: 'inx10', index: 'inx10', width: '12%'},

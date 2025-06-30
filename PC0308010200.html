@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재기본설정</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">전자결재기본설정</h2>
+                <div class="btn-wrap">
+                    <button type="button" class="i-list">목록</button>
+                    <button type="button" class="i-save">저장</button>
+                </div>
+            </div>
+
+            <div class="tbl-wrap2 mb40">
+                <div class="hgroup">
+                    <strong>기본설정</strong>
+                </div>
+                <table>
+                    <caption>전자결재기본성정, 영문회사명, 도메인명, 사용여부, 표준시간로 구성된 기본설정에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>전자결재<br>기본성정<span class="star">*</span></th>
+                            <td><input type="text"></td>
+                            <th>영문회사명<span class="star">*</span></th>
+                            <td><input type="text"></td>
+                            <th>도메인명<span class="star">*</span></th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>사용여부<span class="star">*</span></th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>표준시간</th>
+                            <td colspan="3">
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tbl-wrap2 mb40">
+                <div class="hgroup">
+                    <strong>메인설정 </strong>
+                </div>
+                <table>
+                    <caption>doc manager 이메일, 수신처메일발송여부, 협조처메일발송여부, 기안 후 메일 알림 대상, 최종 승인 후 메일 알림대상, 반려 후 메일알림대상, 결제메일 발송여부, 결재자통보메일발송 제외여부로 구성된 기본설정에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>doc manager<br>이메일<span class="star">*</span></th>
+                            <td colspan="3"><input type="text"></td>
+                            <th>수신처메일<br>발송여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>협조처메일<br>발송여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>기안 후 메일<br>알림 대상</th>
+                            <td>
+                                <input type="checkbox" id="chk1">
+                                <label for="chk1">기안자</label>
+                            </td>
+                            <th>최종 승인 후<br>메일 알림대상</th>
+                            <td>
+                                <input type="checkbox" id="chk2">
+                                <label for="chk2">기안자</label>
+                                <input type="checkbox" id="chk3">
+                                <label for="chk3">이전결재자</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>반려 후 메일<br>알림대상</th>
+                            <td>
+                                <input type="checkbox" id="chk4">
+                                <label for="chk4">기안자</label>
+                                <input type="checkbox" id="chk5">
+                                <label for="ch5k">이전 결재자</label>
+                                <input type="checkbox" id="chk6">
+                                <label for="chk6">결재 예정자</label>
+                            </td>
+                            <th>결제메일<br>발송여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>결재자통보<br>메일발송<br>제외여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tbl-wrap2 mb40">
+                <div class="hgroup">
+                    <strong>사용여부 설정</strong>
+                </div>
+                <table>
+                    <caption>로 구성된 기본설정에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>공람 사용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>수신처 사용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>협조처 사용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>결재승인 이후<br>
+                                상신취소 사용<br>
+                                여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>의견 수정<br>사용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>팀통보 사용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>타조직 결재선<br>
+                                사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>전결 사용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>마지막 결재<br>
+                                유형 사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>결재서명<br>
+                                사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>Google Chat<br> 
+                                사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>일괄승인 
+                                사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>문서댓글<br> 
+                                사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>예결함 열람일시 <br>
+                                사용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tbl-wrap2 mb40">
+                <div class="hgroup">
+                    <strong>기능설정</strong>
+                </div>
+                <table>
+                    <caption>로 구성된 기본설정에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                        <col style="width: 16rem">
+                        <col style="width: auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <th></th>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="btn-wrap mb40">
+                <button type="button" class="i-list">목록</button>
+                <button type="button" class="i-save">저장</button>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/ui-content.js"></script>

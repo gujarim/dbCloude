@@ -34,7 +34,7 @@
 
     &.-line{
         border: rem(1) solid var(--line-base);
-        padding: 0 rem(28);
+        padding: 0 rem(16);
 
         &.false{
             color: var(--f-flase);
@@ -58,6 +58,16 @@
 
     &.-la{
         height: rem(48);
+    }
+
+    &.-ing{
+        border: rem(1) solid #FAC3BB;
+        color: #EF503A;
+    }
+
+    &.-complete{
+        border: rem(1) solid #B6C3E3;
+        color: #2E55B7;
     }
 }
 
@@ -118,6 +128,15 @@
     width: rem(120);
     &::before{
         @include icon(24, 'reservationW', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-list{ //목록
+    color: var(--f-base);
+    border: rem(1) solid var(--line-base);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'list', 'pseudo');
         margin-right: rem(4);
     }
 }

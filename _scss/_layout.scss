@@ -1136,7 +1136,7 @@ footer{
     align-items: end;
 
     strong{
-        @include font(rem(20), 600);
+        @include font(rem(22), 600);
     }
 
     p{
@@ -1388,9 +1388,13 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     border-bottom: rem(1) solid var(--line-table2);
 
     th{
-        @include font(rem(14), 600);
+        @include font(rem(16), 600);
         border-bottom: rem(1) solid var(--line-table3);
         background-color: var(--bg-base);
+
+        .star{
+            color: var(--f-primary);
+        }
     }
 }
 
@@ -1417,7 +1421,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         }
 
         td{
-            @include font(rem(14), 400);
+            @include font(rem(16), 400);
             color: var(--f-secondary);
             padding: rem(14) rem(24);
             text-align: center;
@@ -1441,7 +1445,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         }
 
         td{
-            @include font(rem(14), 400);
+            @include font(rem(16), 400);
             padding: rem(14) rem(24);
             border-bottom: rem(1) solid var(--line-table3);
             vertical-align: middle;
@@ -1517,6 +1521,10 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     margin-top: rem(24);
     display: flex;
     justify-content: flex-end;
+
+    button:not(:nth-last-of-type(1)){
+        margin-right: rem(16);
+    }
 }
 
 // 주소

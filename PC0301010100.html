@@ -151,8 +151,12 @@
                     { 
                         "text" : "파도",
                         // "state" : { "opened" : true },
+                        "type":"dep1",
                         "children" : [
-                            { "text" : "기안서" },
+                            { 
+                                "text" : "기안서",
+                                "type":"file",
+                             },
                             { 
                                 "text" : "일반품의서",
                                 "state" : { "selected" : true },
@@ -165,6 +169,15 @@
                             { "text" : "연장/야간/휴일근무신청서" }
                     ]}
                 ]
+            },
+            'plugins' : ["types"],
+            'types': {
+                'default':{
+                    "icon":"ico-paym-def" //기본 아이콘
+                },
+                'dep1':{
+                    "icon":"ico-paym-dep1", //depth1 아이콘
+                }
             }
         });
     });

@@ -13,8 +13,24 @@
             position: relative;
         }
 
+        .ico-hr-def{ // hr>인원현황조회
+            @include bg(dep3);
+        }
+
+        .ico-hr-dep1{ // hr>인원현황조회
+            @include bg(dep1_on);
+        }
+
+        .ico-paym-def{ // 전자결재>문서작성
+            @include bg(paym_def);
+        }
+
+        .ico-paym-dep1{ // 전자결재>문서작성
+            @include bg(paym_dep1);
+        }
+
         .jstree-node{
-            margin:0;
+            margin-left:0;
 
             .jstree-ocl{
                 width: rem(16);
@@ -28,12 +44,17 @@
                 height: rem(16);
                 vertical-align: middle;
                 margin: rem(-3) rem(4) 0 0;
-                @include bg(dep1_v);
             }
 
             .jstree-clicked{
                 background-color: transparent;
                 box-shadow: none;
+            }
+
+            &.jstree-open{
+                &>a{
+                    color: var(--f-base);
+                }
             }
         }
 
@@ -52,35 +73,50 @@
                 @include bg(dep1_down);
             }
 
-            &>a{
-                .jstree-themeicon{
-                    @include bg(dep1_v_on);
-                    margin: rem(-3) rem(4) 0 0;
-                }
-            }
-
             &.jstree-open{
                 &>.jstree-ocl{
                     @include bg(dep1_up);
                 }
             }
             
-
-            .jstree-children{
+            &>.jstree-children{
                 margin-top: rem(14);
 
-                li{
-                    // .jstree-ocl{
-                    //     display: none;
-                    // }
+                &:has(.jstree-closed, .jstree-open){
+                    margin-left: rem(25);
+                }
 
+                &>li{
+
+                    &:not(.jstree-leaf){
+
+                        &>.jstree-ocl{
+                            @include bg(dep2_down);
+                        }
+
+                        &.jstree-open>.jstree-ocl{
+                            @include bg(dep2_up);
+                        }
+                    }
+ 
                     &:not(:last-child){
                         margin-bottom: rem(16);
                     }
 
-                    &>a{
-                        &.jstree-clicked{
-                            color: var(--f-base);
+                    // &>a{
+                    //     &.jstree-clicked{
+                    //         color: var(--f-base);
+                    //     }
+                    // }
+
+                    &>.jstree-children{
+                        margin-top: rem(10);
+                        margin-left: rem(25);
+
+                        li{
+                            &:not(:last-child){
+                                margin-bottom: rem(12);
+                            }
                         }
                     }
                 }
