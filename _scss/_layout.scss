@@ -396,6 +396,14 @@ nav{
             }
         }
     }
+
+    .side-btn{
+        @include position(absolute, null, rem(-32), rem(44), null);
+        @include bg(sidemenu_open);
+        @include fontHidden;
+        width: rem(32);
+        height: rem(63);
+    }
 }
 
 .container{
@@ -1108,7 +1116,7 @@ footer{
             @include font(rem(16), 600);
             text-align: left;
             padding-right: rem(30);
-            padding-left: rem(20);
+            padding-left: rem(60);
 
             &:first-child{
                 padding-left: 0;
@@ -1702,6 +1710,30 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 
             &:not(.on, .no){
                 cursor: pointer;
+            }
+        }
+    }
+}
+
+.file-wrap{
+    @include flex(flex, space-between);
+    gap: 0 rem(24);
+
+    .table-jq{
+        flex: 1;
+        .ui-jqgrid{
+            .ui-jqgrid-btable{
+                border-bottom: 0.1rem solid var(--line-table2);
+                tr.ui-row-ltr:not(:first-child) td{
+                    border-bottom:0;
+                    color: var(--f-base);
+                }
+            }
+
+            &:has(.ui-jqgrid-ftable){
+                .ui-jqgrid-btable{
+                    border-bottom:0;
+                }
             }
         }
     }

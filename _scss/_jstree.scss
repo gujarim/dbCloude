@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.tree-wrap{
+    width: rem(464);
+    @include rounded(rem(20));
+    border: rem(1) solid #DFE3E6;
+    padding: rem(30) rem(24);
+
+    .jstree-container-ul{
+        a{
+            @include font(rem(16), 600);
+            color: var(--f-secondary);
+            position: relative;
+        }
+
+        .jstree-node{
+            margin:0;
+
+            .jstree-ocl{
+                width: rem(16);
+                height: rem(16);
+                vertical-align: middle;
+                margin: rem(-3) rem(6) 0 0;
+            }
+
+            .jstree-themeicon{
+                width: rem(16);
+                height: rem(16);
+                vertical-align: middle;
+                margin: rem(-3) rem(4) 0 0;
+                @include bg(dep1_v);
+            }
+
+            .jstree-clicked{
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+
+        &>.jstree-node{
+            position: relative;
+
+            &::after{
+                content:'';
+                width: rem(1);
+                height: calc(100% - rem(23));
+                background-color: var(--line-table3);
+                @include position(absolute, rem(23), null, null, rem(7));
+            }
+
+            &>.jstree-ocl{
+                @include bg(dep1_down);
+            }
+
+            &>a{
+                .jstree-themeicon{
+                    @include bg(dep1_v_on);
+                    margin: rem(-3) rem(4) 0 0;
+                }
+            }
+
+            &.jstree-open{
+                &>.jstree-ocl{
+                    @include bg(dep1_up);
+                }
+            }
+            
+
+            .jstree-children{
+                margin-top: rem(14);
+
+                li{
+                    // .jstree-ocl{
+                    //     display: none;
+                    // }
+
+                    &:not(:last-child){
+                        margin-bottom: rem(16);
+                    }
+
+                    &>a{
+                        &.jstree-clicked{
+                            color: var(--f-base);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

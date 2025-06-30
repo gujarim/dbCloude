@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서작성</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">문서작성</h2>
+            </div>
+
+            <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
+                <table>
+                    <caption>조직명, 문서유형, 문서양식으로 구성된 문서작성에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>조직명</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
+                            <th>문서유형</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>문서양식</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회</button>
+            </div>
+
+            <div class="file-wrap">
+                <div id="file1" class="tree-wrap"></div>
+                <div class="table-jq">
+                    <table id="grid"></table>
+                    <p>*특정 문서를 더블클릭하여 새 문서를 작성하세요.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var localData = [
+            {   
+                inx1: "1", //No
+                inx2: "기안서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "2", //No
+                inx2: "경조금신청서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "3", //No
+                inx2: "교육신청서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "4", //No
+                inx2: "구매요청서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "5", //No
+                inx2: "업무협조전", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "6", //No
+                inx2: "일반품의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "7", //No
+                inx2: "지출결의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "8", //No
+                inx2: "연장/야간/휴일근무 신청서", //문서양식
+                inx3: "연장/야간/휴일근무 신청서", //문서유형
+            }
+        ];
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '문서양식',
+                '문서유형',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true},
+                { name: 'inx2', index: 'inx2', width: '10%',
+                    formatter: function(cellvalue, options, rowObject) {
+                        console.log(cellvalue)
+                        return cellvalue+'<em class="attach -doc"></em>';
+                    }
+                },
+                { name: 'inx3', index: 'inx3', width: '10%'},
+            ],
+            rowNum: 10,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 80,
+        });
+    
+        $('#file1').jstree({
+            'core' : {
+                'data' : [
+                    { 
+                        "text" : "파도",
+                        // "state" : { "opened" : true },
+                        "children" : [
+                            { "text" : "기안서" },
+                            { 
+                                "text" : "일반품의서",
+                                "state" : { "selected" : true },
+                            },
+                            { "text" : "구매요청서" },
+                            { "text" : "업무협조전" },
+                            { "text" : "경조금신청서" },
+                            { "text" : "교육신청서" },
+                            { "text" : "지출결의서" },
+                            { "text" : "연장/야간/휴일근무신청서" }
+                    ]}
+                ]
+            }
+        });
+    });
+</script>

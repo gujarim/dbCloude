@@ -54,7 +54,7 @@
                 color: var(--f-secondary);
                 border:0;
                 border-bottom: rem(1) solid var(--line-table2);
-                padding: rem(14) 0;
+                padding: rem(17) 0;
                 text-align: center;
                 vertical-align: middle;
             }
@@ -63,6 +63,21 @@
                 &.title{
                     padding: 0 rem(24) !important;
                 }
+            }
+        }
+
+        .ui-jqgrid-ftable{
+            table-layout: inherit;
+            width:100% !important;
+            border-collapse: collapse;
+            background-color: #E8F6E8;
+
+            td{
+                @include font(rem(16), 700);
+                border: 0;
+                text-align: center;
+                padding: rem(14) 0;
+                color: var(--f-primary);
             }
         }
 
