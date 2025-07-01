@@ -93,13 +93,13 @@ header{
 
     .uniq{
         @include flex(flex, space-between, center);
-        gap: 0 40px;
+        gap: 0 rem(40);
 
         .h-search{
             @include flex(flex);
 
             input[type=text]{
-                @include bg(search, 8px 50%, rem(16) rem(16), var(--line-table3));
+                @include bg(search, rem(8) 50%, rem(16) rem(16), var(--line-table3));
                 width: rem(160);
                 border: 0;
                 padding-left: rem(27);
@@ -136,7 +136,7 @@ header{
 
     .control{
         @include flex(flex, space-between, center);
-        gap: 0 8px;
+        gap: 0 rem(8);
 
         li{
             a{
@@ -175,7 +175,7 @@ nav{
     grid-column: 1 / 1;
     grid-row: 1 / 4;
     display: grid;
-    grid-template-columns: 76px 1fr;
+    grid-template-columns: rem(76) 1fr;
     background-color: var(--f-white);
     @include position(fixed, 0, null, null, 0, 10);
     width: rem(296);
@@ -1432,7 +1432,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         background-color: var(--bg-base);
 
         .star{
-            color: var(--f-primary);
+            color: var(--f-flase);
         }
     }
 }
@@ -1577,7 +1577,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     p{
         &.addr1{
             @include flex(flex);
-            gap: 8px;
+            gap: rem(8);
             margin-bottom: rem(12);
 
             input[type=text]{
@@ -1587,7 +1587,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 
         &.addr2{
             @include flex(flex);
-            gap: 8px;
+            gap: rem(8);
 
             input[type=text]{
                 &:first-child{
