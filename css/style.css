@@ -613,17 +613,23 @@ nav .sub-gnb > ul {
 nav .sub-gnb > ul.on {
   display: block;
 }
+nav .sub-gnb > ul > li {
+  cursor: pointer;
+}
 nav .sub-gnb > ul > li.on ul {
   display: block;
 }
 nav .sub-gnb > ul > li.on > a {
   color: var(--f-base);
 }
+nav .sub-gnb > ul > li.on .sidem-refresh {
+  background: url("../image/bg_refresh_sidem.png") 0 0/2rem 2rem no-repeat;
+}
 nav .sub-gnb > ul > li > a {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--f-menu);
-  display: block;
+  display: inline-block;
   padding: 1rem 0;
   border-radius: 0.6rem;
 }
@@ -633,20 +639,45 @@ nav .sub-gnb > ul > li ul {
 nav .sub-gnb > ul > li ul li a {
   font-size: 1.4rem;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: var(--f-menu);
-  display: block;
   padding: 0.7rem 1.2rem;
+}
+nav .sub-gnb > ul > li ul li a em {
+  color: var(--f-menu);
 }
 nav .sub-gnb > ul > li ul li.on a {
   border-radius: 0.6rem;
   background-color: #DDE6F6;
   color: var(--f-base);
 }
-nav .sub-gnb > ul > li:has(ul).on > a {
-  background: url("../image/bg_menu_close.png") 100% 50%/2rem 2rem no-repeat;
+nav .sub-gnb > ul > li ul li.on a em {
+  color: var(--f-primary);
 }
-nav .sub-gnb > ul > li:has(ul) > a {
-  background: url("../image/bg_menu_open.png") 100% 50%/2rem 2rem no-repeat;
+nav .sub-gnb > ul > li:has(ul) {
+  background: url("../image/bg_menu_open.png") 100% 0.9rem/2rem 2rem no-repeat;
+}
+nav .sub-gnb > ul > li:has(ul).on {
+  background: url("../image/bg_menu_close.png") 100% 0.9rem/2rem 2rem no-repeat;
+}
+nav .sub-gnb > ul > li .sidem-refresh {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  background: url("../image/bg_refresh_sidem_off.png") 0 0/2rem 2rem no-repeat;
+  width: 2rem;
+  height: 2rem;
+  margin: -0.4rem 0 0 0.8rem;
+  vertical-align: middle;
 }
 nav .side-btn {
   position: absolute;

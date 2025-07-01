@@ -355,6 +355,8 @@ nav{
             }
 
             >li{
+                cursor: pointer;
+
                 &.on{
                     ul{
                         display: block;
@@ -363,12 +365,16 @@ nav{
                     >a{
                         color: var(--f-base);
                     }
+
+                    .sidem-refresh{
+                        @include bg(refresh_sidem, 0 0, rem(20) rem(20));
+                    }
                 }
 
                 >a{
                     @include font(rem(15), 600);
                     color: var(--f-menu);
-                    display: block;
+                    display: inline-block;
                     padding: rem(10) 0;
                     @include rounded(rem(6));
                 }
@@ -379,9 +385,13 @@ nav{
                     li{
                         a{
                             @include font(rem(14), 600);
+                            @include flex(flex, space-between, center);
                             color: var(--f-menu);
-                            display: block;
                             padding: rem(7) rem(12);
+
+                            em{
+                                color: var(--f-menu);
+                            }
                         }
 
                         &.on{
@@ -389,31 +399,31 @@ nav{
                                 @include rounded(rem(6));
                                 background-color: #DDE6F6;
                                 color: var(--f-base);
+
+                                em{
+                                    color: var(--f-primary);
+                                }
                             }
                         }
                     }
                 }
 
                 &:has(ul){
+                    @include bg('menu_open', 100% rem(9), rem(20) rem(20));
+                    
                     &.on{
-                        >a{
-                            @include bg('menu_close', 100% 50%, rem(20) rem(20));
-                        }
-                    }
-                    >a{
-                        @include bg('menu_open', 100% 50%, rem(20) rem(20));
+                        @include bg('menu_close', 100% rem(9), rem(20) rem(20));
                     }
                 }
 
-                // &:not(ul){
-                //     &.on{
-                //         >a{
-                //             background-color: #DDE6F6;
-                //             color: var(--f-base);
-                //             padding: rem(10) rem(12);
-                //         }
-                //     }
-                // }
+                .sidem-refresh{
+                    @include fontHidden;
+                    @include bg(refresh_sidem_off, 0 0, rem(20) rem(20));
+                    width: rem(20);
+                    height: rem(20);
+                    margin: rem(-4) 0 0 rem(8);
+                    vertical-align: middle;
+                }
             }
         }
     }

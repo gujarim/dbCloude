@@ -133,11 +133,29 @@ const navToggle = () => {
 
     menuliAll.forEach(li => {
         const submenu = li.querySelector('ul');
+        const button = li.querySelector('button');
 
-        if (submenu) { // 메뉴 중 하위메뉴 있는 항목
+        // 새로고침 버튼 처리
+        if (button) {
+            button.addEventListener('click', e => {
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        }
+
+        if (submenu) {
             li.classList.add('has-submenu');
 
             li.addEventListener('click', e => {
+                // 만약 클릭된 대상이 하위 메뉴 내의 a 태그라면 무시
+                const clickedInsideSubmenu = submenu.contains(e.target);
+
+                if (clickedInsideSubmenu) {
+                    // 하위 메뉴 클릭이면 메뉴 토글하지 않음
+                    return;
+                }
+
+                // 기본 동작 차단
                 e.stopPropagation();
                 e.preventDefault();
 
@@ -148,7 +166,7 @@ const navToggle = () => {
                 });
 
                 if (!isOpen) {
-                    li.classList.add('on'); // 현재 클릭한 메뉴 강조
+                    li.classList.add('on');
                 }
             });
         }
@@ -194,16 +212,16 @@ const tab = () => {
     });
 };
 
+// sidemenu 토글
 const sideNavToggle = () => {
     const btn = document.querySelector('.side-btn');
     const wrap = document.querySelector('.wrap');
-    const container = wrap.querySelector('.container');
     const calendarEl = document.querySelector('.calendar-box #calendar');
 
     btn.addEventListener("click", () => {
         wrap.classList.toggle('sidem-close');
 
-        //그리드 다시 그려주기(탭안에 그리드 제외)
+        //그리드 다시 그려주기(탭안에 그리드 제외됨)
         const allGridsInContainer = document.querySelectorAll('.container table[id^="grid"]');
         allGridsInContainer.forEach(grid => {
             const tableJq = grid.closest('.table-jq');
@@ -212,7 +230,7 @@ const sideNavToggle = () => {
                 $(grid).jqGrid('setGridWidth', width);
             }
         });
-        
+
         //탭안에 그리드 그려주기
         const currentPanel = document.querySelector('.tab-wrap .panels > div.on');
         if (currentPanel) {
