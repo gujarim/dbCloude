@@ -108,7 +108,6 @@ const toggleTable = () => {
     } else return;
 
     function toggleRows() {
-        console.log('ok')
         const extraRows = document.querySelectorAll('.hidden');
         const btn = document.querySelector('.search-close');
         isExpanded = !isExpanded;
@@ -156,6 +155,18 @@ const navToggle = () => {
     });
 }
 
+// 레이아웃 변경시 jqgrid 그려주기
+const resizeJqGrid = (container) => {
+    const grid = container.querySelector('table[id^="grid"]');
+    if (grid && $(grid).length > 0) {
+        const tableJq = container.querySelector('.table-jq');
+        if (tableJq) {
+            const width = tableJq.clientWidth;
+            $(grid).jqGrid('setGridWidth', width);
+        }
+    }
+};
+
 // 탭
 const tab = () => {
     const tabWraps = document.querySelectorAll('.tab-wrap');
@@ -176,31 +187,44 @@ const tab = () => {
                 tab.classList.add('on');
                 panels[index].classList.add('on');
 
-                
                 // jqgrid 그려주기
-                const grid = panels[index].querySelector('table[id^="grid"]');
-                if (grid && $(grid).length > 0) {
-                    const panelWidth = panels[index].clientWidth;
-                    $(grid).jqGrid('setGridWidth', panelWidth);
-                }
-
-                // fullcalendar 그려주기
-                // if(document.querySelector('.wrap').classList.contains('main')) {
-                //     if (index === 0 && calendar) {
-                //         calendar.updateSize(); // 이미 render 되었음
-                //     } else if (index === 1 && calendar2) {
-                //         if (!calendar2Rendered) {
-                //             calendar2.render();
-                //             calendar2Rendered = true;
-                //         } else {
-                //             calendar2.updateSize(); // render 되어 있으면 사이즈만 업데이트
-                //         }
-                //     }
-                // }
+                resizeJqGrid(panels[index]);
             });
         });
     });
 };
+
+const sideNavToggle = () => {
+    const btn = document.querySelector('.side-btn');
+    const wrap = document.querySelector('.wrap');
+    const container = wrap.querySelector('.container');
+    const calendarEl = document.querySelector('.calendar-box #calendar');
+
+    btn.addEventListener("click", () => {
+        wrap.classList.toggle('sidem-close');
+
+        //그리드 다시 그려주기(탭안에 그리드 제외)
+        const allGridsInContainer = document.querySelectorAll('.container table[id^="grid"]');
+        allGridsInContainer.forEach(grid => {
+            const tableJq = grid.closest('.table-jq');
+            if (tableJq) {
+                const width = tableJq.clientWidth;
+                $(grid).jqGrid('setGridWidth', width);
+            }
+        });
+        
+        //탭안에 그리드 그려주기
+        const currentPanel = document.querySelector('.tab-wrap .panels > div.on');
+        if (currentPanel) {
+            resizeJqGrid(currentPanel);
+        }
+
+        // 캘린더 그려주기
+        if (calendarEl && calendarEl._fullCalendar) {
+            calendarEl._fullCalendar.updateSize();
+        }
+    });
+}
 
 window.addEventListener('load', () => {
     toggleTable();

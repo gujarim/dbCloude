@@ -36,13 +36,12 @@ html, body{
             width: rem(76);
 
             .side-btn{
-                @include position(absolute, null, rem(-32), rem(44), null);
-                @include bg(sidemenu_open);
+                display: none;
             }
         }
 
         .container{
-            padding-bottom: 0;
+            margin-bottom: 0;
         }
 
         footer{
@@ -55,6 +54,23 @@ html, body{
 
         .sub-gnb{
             display: none;
+        }
+    }
+
+    &.sidem-close{
+        grid-template-columns: rem(76) 1fr rem(92);
+
+        nav{
+            width: auto;
+
+            .sub-gnb{
+                display: none;
+            }
+
+            .side-btn{
+                @include position(absolute, null, rem(-32), rem(44), null);
+                @include bg(sidemenu_open);
+            }
         }
     }
 }
@@ -413,7 +429,7 @@ nav{
 
 .container{
     grid-column: 2 / 4;
-    padding: 0 rem(50) rem(28);
+    margin: 0 rem(50) rem(28);
 }
 
 footer{
@@ -1446,6 +1462,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             padding: rem(24);
             vertical-align: middle;
             text-align: left;
+            position: relative;
         }
 
         td{
@@ -1501,6 +1518,11 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                     @include flex(flex, center, center);
                     gap: rem(12);
                 }
+            }
+
+            .flex{
+                @include flex(flex, space-between, center);
+                gap: 0 rem(8);
             }
         }
 
@@ -1728,17 +1750,16 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 
 .file-wrap{
-    @include flex(flex, space-between);
+    @include flex(flex, flex-start);
     gap: 0 rem(24);
 
     .table-jq{
-        // flex: 1;
+        flex: 1;
         width: rem(1036);
         .ui-jqgrid{
             .ui-jqgrid-btable{
                 border-bottom: 0.1rem solid var(--line-table2);
                 tr.ui-row-ltr:not(:first-child) td{
-                    // border-bottom:0;
                     color: var(--f-base);
                 }
             }

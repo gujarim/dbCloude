@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("nav").innerHTML = data;
 
             navToggle();
+            sideNavToggle();
         });
 
     // footer 불러오기

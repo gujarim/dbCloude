@@ -102,21 +102,25 @@
                             </td>
                             <th>최종 승인 후<br>메일 알림대상</th>
                             <td>
-                                <input type="checkbox" id="chk2">
-                                <label for="chk2">기안자</label>
-                                <input type="checkbox" id="chk3">
-                                <label for="chk3">이전결재자</label>
+                                <div class="chk-wrap">
+                                    <input type="checkbox" id="chk2">
+                                    <label for="chk2">기안자</label>
+                                    <input type="checkbox" id="chk3">
+                                    <label for="chk3">이전결재자</label>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <th>반려 후 메일<br>알림대상</th>
                             <td>
-                                <input type="checkbox" id="chk4">
-                                <label for="chk4">기안자</label>
-                                <input type="checkbox" id="chk5">
-                                <label for="ch5k">이전 결재자</label>
-                                <input type="checkbox" id="chk6">
-                                <label for="chk6">결재 예정자</label>
+                                <div class="chk-wrap -line">
+                                    <input type="checkbox" id="chk4">
+                                    <label for="chk4">기안자</label>
+                                    <input type="checkbox" id="chk5">
+                                    <label for="ch5k">이전 결재자</label>
+                                    <input type="checkbox" id="chk6">
+                                    <label for="chk6">결재 예정자</label>
+                                </div>
                             </td>
                             <th>결제메일<br>발송여부</th>
                             <td>
@@ -185,7 +189,12 @@
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                            <th>의견 수정<br>사용여부</th>
+                            <th>의견 수정<br>사용여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
@@ -215,6 +224,11 @@
                             </td>
                             <th>마지막 결재<br>
                                 유형 사용여부
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
                             </th>
                             <td>
                                 <select name="" id="">
@@ -239,8 +253,13 @@
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                            <th>일괄승인 
+                            <th>일괄승인<br> 
                                 사용여부
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
                             </th>
                             <td>
                                 <select name="" id="">
@@ -290,7 +309,13 @@
                         <tr>
                             <th>완결함 내<br> 
                                 기안자 완결<br>
-                                문서 포함여부</th>
+                                문서 포함여부
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
@@ -298,10 +323,12 @@
                             </td>
                             <th>합의타입</th>
                             <td>
-                                <input type="checkbox" id="chk7">
-                                <label for="chk7">병렬</label>
-                                <input type="checkbox" id="chk8">
-                                <label for="chk8">순차</label>
+                                <div class="chk-wrap">
+                                    <input type="checkbox" id="chk7">
+                                    <label for="chk7">병렬</label>
+                                    <input type="checkbox" id="chk8">
+                                    <label for="chk8">순차</label>
+                                </div>
                             </td>
                             <th>임시 연동문서<br>
                                 삭제시 CallBack 여부</th>
@@ -320,12 +347,20 @@
                                 </select>
                             </td>
                             <th>1인 결재<br>
-                                허용여부</th>
+                                허용여부
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
-                                <select name="" id="">
-                                    <option value="">선택</option>
-                                </select>
-                                <button type="button" class="btn -line">모든템플릿에적용</button>
+                                <div class="flex">
+                                    <select name="" id="">
+                                        <option value="">선택</option>
+                                    </select>
+                                    <button type="button" class="btn -line">모든템플릿에적용</button>
+                                </div>
                             </td>
                             <th>검색기간 제한</th>
                             <td>
@@ -337,15 +372,29 @@
                         <tr>
                             <th>결재알림 내<br> 
                                 문서양식명<br>
-                                표기여부</th>
+                                표기여부
+                            
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
-                                <select name="" id="">
-                                    <option value="">선택</option>
-                                </select>
-                                <button type="button" class="btn -line">모든템플릿에적용</button>
+                                <div class="flex">
+                                    <select name="" id="">
+                                        <option value="">선택</option>
+                                    </select>
+                                    <button type="button" class="btn -line">모든템플릿에적용</button>
+                                </div>
                             </td>
                             <th>대행결재선 <br>
-                                소속 표기방식</th>
+                                소속 표기방식
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
@@ -370,7 +419,13 @@
                             </td> 
                             <th>예결함 내 <br>
                                 통보문서포함<br>
-                                여부</th>
+                                여부
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
@@ -388,12 +443,20 @@
                                 </select>
                             </td>
                             <th>상신취소 시<br>
-                                알림 발송여부</th>
-                            <td colspan="3">
+                                알림 발송여부
+
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
+                            <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
                                 </select>
                             </td>
+                            <th></th>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>

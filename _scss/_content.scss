@@ -236,14 +236,37 @@ input[type=text]{
     }
 }
 
-input[type=checkbox]:not(.chk-imprt){
+.chk-wrap{
+    &.-line{
+        width: rem(231);
+        label{
+            &:last-child{
+                display: inline-block;
+                margin-top: rem(12);
+            }
+        }
+    }
+
+    label{
+        &:not(:last-child){
+            margin-right: rem(20) !important;
+        }
+    }
+}
+
+input[type=checkbox]:not(.chk-imprt){ // 테이블에 즐겨찾기빼고
     @include bg(chk_off);
     width: rem(24);
     height: rem(24);
     vertical-align: middle;
+    margin-top: rem(-3);
 
     &:checked{
         @include bg(chk_on);
+    }
+
+    &+label{
+        margin-left: rem(8);
     }
 }
 
@@ -279,7 +302,7 @@ input[type=radio]:checked{
 select{
     @include rounded(rem(8));
     @include font(rem(16), 600);
-    @include bg(select24, 96% 50%, rem(24));
+    @include bg(select24, right rem(12) center, rem(24));
     border: rem(1) solid var(--line-base);
     height: rem(40);
     padding: 0 rem(30) 0 rem(12);
@@ -289,5 +312,26 @@ select{
 }
 
 .tooltip{
-    display: none;
+
+
+    button{
+        @include position(absolute, 50%, rem(24), null, null);
+        @include fontHidden;
+        @include bg(tooltip_b);
+        transform: translateY(-50%);
+        width: rem(20);
+        height: rem(20);
+
+        &:hover{
+            ~div{
+                display: block;
+            }
+        }
+    }
+    
+    div{
+        display: none;
+         @include position(absolute, 60%, 0, null, null);
+         background-color: red;
+    }
 }
