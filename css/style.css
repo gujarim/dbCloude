@@ -2173,6 +2173,12 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   }
 }
 
+.table-jq.-scroll .ui-jqgrid .ui-jqgrid-htable {
+  table-layout: fixed;
+}
+.table-jq.-scroll .ui-jqgrid .ui-jqgrid-btable {
+  table-layout: fixed;
+}
 .table-jq .ui-jqgrid .ui-jqgrid-htable {
   table-layout: inherit;
   width: 100% !important;

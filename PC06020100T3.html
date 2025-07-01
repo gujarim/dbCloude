@@ -66,7 +66,7 @@
                             <button type="button" class="next">다음</button>
                         </strong>
                         
-                        <div class="table-jq">
+                        <div class="table-jq -scroll">
                             <div class="hgroup">
                                 <p>총 <em class="f-primary">143</em>건</p>
 
@@ -116,18 +116,35 @@
         var localData = [
             { 
                 inx1: "1", //No
-                inx2: "개발1팀", //부서
-                inx3: "이디비", //성명
-                inx4: "userm3", //사번
-                inx5: "07:53", //출근
-                inx6: "미입력", //퇴근
-                inx7: "07:53", //실제근무시간
-                inx8: "-", //초과근무시간
-                inx9: "-", //근태사항
-                inx10: "000.000.000", //IP
-                inx11: "근무테스트", //근무유형
-                inx12: "07:00~19:00", //근무시간
-                inx13: "07:00~19:00 \n 00:00~00:00" //휴게시간
+                inx2: "이디비 \nuserm3", //성명
+                inx3: "출근", //구분
+                inx4: "-",
+                inx5: "07:53",
+                inx6: "-",
+                inx7: "-",
+                inx8: "07:53",
+                inx9: "07:53",
+                inx10: "07:53",
+                inx11: "07:53",
+                inx12: "07:53",
+                inx13: "07:53",
+                inx14: "-",
+                inx15: "07:53",
+                inx16: "-",
+                inx17: "-",
+                inx18: "07:53",
+                inx19: "07:53",
+                inx20: "07:53",
+                inx21: "07:53",
+                inx22: "07:53",
+                inx23: "07:53",
+                inx24: "-",
+                inx25: "07:53",
+                inx26: "-",
+                inx27: "-",
+                inx28: "07:53",
+                inx29: "07:53",
+                inx30: "07:53"
             }
         ];
         $("#grid1").jqGrid({
@@ -135,33 +152,67 @@
             data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
             colNames: [
                 'No', 
-                '부서',
                 '성명',
-                '사번',
-                '출근',
-                '퇴근',
-                '실제근무시간',
-                '초과근무시간',
-                '근태사항',
-                'IP',
-                '근무유형',
-                '근무시간',
-                '휴게시간'
+                '구분',
+                '1',
+                '2',
+                '3',
+                '4',
+                '5',
+                '6',
+                '7',
+                '8',
+                '9',
+                '10',
+                '11',
+                '12',
+                '13',
+                '14',
+                '15',
+                '16',
+                '17',
+                '18',
+                '19',
+                '20',
+                '21',
+                '22',
+                '23',
+                '24',
+                '25',
+                '26',
+                '27'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '5%'},
-                { name: 'inx3', index: 'inx3', width: '5%'},
-                { name: 'inx4', index: 'inx4', width: '5%'},
-                { name: 'inx5', index: 'inx5', width: '5%'},
-                { name: 'inx6', index: 'inx6', width: '5%'},
-                { name: 'inx7', index: 'inx7', width: '5%'},
-                { name: 'inx8', index: 'inx8', width: '5%'},
-                { name: 'inx9', index: 'inx9', width: '5%'},
-                { name: 'inx10', index: 'inx10', width: '5%'},
-                { name: 'inx11', index: 'inx11', width: '5%'},
-                { name: 'inx12', index: 'inx12', width: '5%'},
-                { name: 'inx13', index: 'inx13', width: '5%'}
+                { name: 'inx1', index: 'inx1', width: 55},
+                { name: 'inx2', index: 'inx2', width: 120},
+                { name: 'inx3', index: 'inx3', width: 120},
+                { name: 'inx4', index: 'inx4', width: 62},
+                { name: 'inx5', index: 'inx5', width: 62},
+                { name: 'inx6', index: 'inx6', width: 62},
+                { name: 'inx7', index: 'inx7', width: 62},
+                { name: 'inx8', index: 'inx8', width: 62},
+                { name: 'inx9', index: 'inx9', width: 62},
+                { name: 'inx10', index: 'inx10', width: 62},
+                { name: 'inx11', index: 'inx11', width: 62},
+                { name: 'inx12', index: 'inx12', width: 62},
+                { name: 'inx13', index: 'inx13', width: 62},
+                { name: 'inx14', index: 'inx14', width: 62},
+                { name: 'inx15', index: 'inx15', width: 62},
+                { name: 'inx16', index: 'inx16', width: 62},
+                { name: 'inx17', index: 'inx17', width: 62},
+                { name: 'inx18', index: 'inx18', width: 62},
+                { name: 'inx19', index: 'inx19', width: 62},
+                { name: 'inx20', index: 'inx20', width: 62},
+                { name: 'inx21', index: 'inx21', width: 62},
+                { name: 'inx22', index: 'inx22', width: 62},
+                { name: 'inx23', index: 'inx23', width: 62},
+                { name: 'inx24', index: 'inx24', width: 62},
+                { name: 'inx25', index: 'inx25', width: 62},
+                { name: 'inx26', index: 'inx26', width: 62},
+                { name: 'inx27', index: 'inx27', width: 62},
+                { name: 'inx28', index: 'inx28', width: 62},
+                { name: 'inx29', index: 'inx29', width: 62},
+                { name: 'inx30', index: 'inx30', width: 62}
             ],
             pager: '#pager1', // 페이징을 위한 요소
             rowNum: 6,
@@ -169,6 +220,7 @@
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
+            shrinkToFit :false,
             loadComplete: function () {
                 createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
             }

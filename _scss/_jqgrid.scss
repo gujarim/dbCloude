@@ -3,6 +3,16 @@
 
 .table-jq{
     
+    &.-scroll{
+        .ui-jqgrid{
+            .ui-jqgrid-htable{
+                table-layout: fixed;
+            }
+            .ui-jqgrid-btable{
+                table-layout: fixed;
+            }
+        }
+    }
     .ui-jqgrid{
         .ui-jqgrid-htable{
             table-layout: inherit;
