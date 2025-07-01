@@ -506,12 +506,20 @@ nav .gnb li.hr a::before {
   height: 2.4rem;
   background-image: url("../image/icon_hr.png");
 }
-nav .gnb li.on a {
+nav .gnb li:hover a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+nav .gnb li:hover a::before {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+nav .gnb li:hover a, nav .gnb li.on a {
   font-weight: 700;
   color: var(--f-primary);
   background-color: rgba(25, 166, 25, 0.1);
 }
-nav .gnb li.on.home a::before {
+nav .gnb li:hover.home a::before, nav .gnb li.on.home a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -521,7 +529,7 @@ nav .gnb li.on.home a::before {
   height: 2.4rem;
   background-image: url("../image/icon_home_on.png");
 }
-nav .gnb li.on.favorite a::before {
+nav .gnb li:hover.favorite a::before, nav .gnb li.on.favorite a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -531,7 +539,7 @@ nav .gnb li.on.favorite a::before {
   height: 2.4rem;
   background-image: url("../image/icon_favorite_on.png");
 }
-nav .gnb li.on.mail a::before {
+nav .gnb li:hover.mail a::before, nav .gnb li.on.mail a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -541,7 +549,7 @@ nav .gnb li.on.mail a::before {
   height: 2.4rem;
   background-image: url("../image/icon_mail_on.png");
 }
-nav .gnb li.on.nboard a::before {
+nav .gnb li:hover.nboard a::before, nav .gnb li.on.nboard a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -551,7 +559,7 @@ nav .gnb li.on.nboard a::before {
   height: 2.4rem;
   background-image: url("../image/icon_nboard_on.png");
 }
-nav .gnb li.on.epayment a::before {
+nav .gnb li:hover.epayment a::before, nav .gnb li.on.epayment a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -561,7 +569,7 @@ nav .gnb li.on.epayment a::before {
   height: 2.4rem;
   background-image: url("../image/icon_epayment_on.png");
 }
-nav .gnb li.on.reservation a::before {
+nav .gnb li:hover.reservation a::before, nav .gnb li.on.reservation a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -571,7 +579,7 @@ nav .gnb li.on.reservation a::before {
   height: 2.4rem;
   background-image: url("../image/icon_reservation_on.png");
 }
-nav .gnb li.on.drive a::before {
+nav .gnb li:hover.drive a::before, nav .gnb li.on.drive a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -581,7 +589,7 @@ nav .gnb li.on.drive a::before {
   height: 2.4rem;
   background-image: url("../image/icon_drive_on.png");
 }
-nav .gnb li.on.management a::before {
+nav .gnb li:hover.management a::before, nav .gnb li.on.management a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -591,7 +599,7 @@ nav .gnb li.on.management a::before {
   height: 2.4rem;
   background-image: url("../image/icon_management_on.png");
 }
-nav .gnb li.on.hr a::before {
+nav .gnb li:hover.hr a::before, nav .gnb li.on.hr a::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -2094,6 +2102,75 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 .file-wrap .table-jq .ui-jqgrid:has(.ui-jqgrid-ftable) .ui-jqgrid-btable {
   border-bottom: 0;
+}
+
+.chat-wrap {
+  position: fixed;
+  right: 5.5rem;
+  bottom: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-animation: chatbot 1s linear 0.5s infinite alternate;
+          animation: chatbot 1s linear 0.5s infinite alternate;
+}
+.chat-wrap em {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  background: url("../image/bg_chat.png") 0 0/8.9rem 8.9rem no-repeat;
+  width: 8.9rem;
+  height: 8.9rem;
+}
+.chat-wrap p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 10rem;
+  background-color: #5BCA89;
+  color: var(--f-white);
+  padding: 0.3rem 0.7rem;
+  position: relative;
+}
+.chat-wrap p::after {
+  content: "";
+  border-right: 0 solid #2FB170;
+  border-top: 0.6rem solid #2FB170;
+  border-left: 0.5rem solid transparent;
+  position: absolute;
+  bottom: -0.6rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@-webkit-keyframes chatbot {
+  from {
+    -webkit-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+  }
+  to {
+    -webkit-transform: translateY(0.3rem);
+            transform: translateY(0.3rem);
+  }
+}
+@keyframes chatbot {
+  from {
+    -webkit-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+  }
+  to {
+    -webkit-transform: translateY(0.3rem);
+            transform: translateY(0.3rem);
+  }
 }
 
 .table-jq .ui-jqgrid .ui-jqgrid-htable {

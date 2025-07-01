@@ -265,7 +265,16 @@ nav{
             }
 
             //활성화
-            &.on{
+            &:hover{
+                a{
+                    transition: all .3s;
+
+                    &::before{
+                        transition: all .3s;
+                    }
+                }
+            }
+            &:hover, &.on{
                 a{
                     font-weight: 700;
                     color: var(--f-primary);
@@ -1779,6 +1788,48 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                     border-bottom:0;
                 }
             }
+        }
+    }
+}
+
+.chat-wrap{
+    @include position(fixed, null, rem(55), rem(90), null);
+    @include flex(flex, null, flex-end);
+    flex-direction: column;
+    transform: translateY(rem(-3));
+    animation: chatbot 1s linear 0.5s infinite alternate;
+
+    em{
+        @include fontHidden;
+        @include bg(chat, 0 0, rem(89) rem(89));
+        width: rem(89);
+        height: rem(89);
+    }
+
+    p{
+        @include font(rem(13), 600);
+        @include rounded(rem(100));
+        background-color: #5BCA89;
+        color: var(--f-white);
+        padding: rem(3) rem(7);
+        position: relative;
+
+        &::after{
+            content:'';
+            border-right: 0 solid #2FB170;
+            border-top: rem(6) solid #2FB170;
+            border-left: rem(5) solid transparent;
+            @include position(absolute, null, null, rem(-6), 50%);
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes chatbot {
+        from {
+            transform: translateY(rem(-3));
+        }
+        to {
+            transform: translateY(rem(3));
         }
     }
 }
