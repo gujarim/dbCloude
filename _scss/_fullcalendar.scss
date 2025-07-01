@@ -13,7 +13,7 @@
         .calendar-list{
             right: rem(-384);
 
-            .llst-close2{
+            .llst-close{
                 @include bg-url(calendar_open);
             }
         }
@@ -161,14 +161,6 @@
         }
 
         .llst-close{
-            @include fontHidden;
-            @include bg(close, 0 0, rem(32) rem(32));
-            @include position(absolute, rem(32), rem(32), null, null);
-            width: rem(32);
-            height: rem(32);
-        }
-
-        .llst-close2{
             @include fontHidden;
             @include bg(calendar_close, 0 0, rem(36) rem(72));
             @include position(absolute, 50%, null, null, rem(-36));

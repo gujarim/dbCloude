@@ -2,6 +2,7 @@
 
 .tree-wrap{
     width: rem(464);
+    // flex: 1;
     @include rounded(rem(20));
     border: rem(1) solid #DFE3E6;
     padding: rem(30) rem(24);

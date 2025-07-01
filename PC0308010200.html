@@ -65,7 +65,7 @@
 
             <div class="tbl-wrap2 mb40">
                 <div class="hgroup">
-                    <strong>메인설정 </strong>
+                    <strong>메인설정</strong>
                 </div>
                 <table>
                     <caption>doc manager 이메일, 수신처메일발송여부, 협조처메일발송여부, 기안 후 메일 알림 대상, 최종 승인 후 메일 알림대상, 반려 후 메일알림대상, 결제메일 발송여부, 결재자통보메일발송 제외여부로 구성된 기본설정에 대한 표</caption>
@@ -124,7 +124,12 @@
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                            <th>결재자통보<br>메일발송<br>제외여부</th>
+                            <th>결재자통보<br>메일발송<br>제외여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>내용입니다.</div>
+                                </div>
+                            </th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
@@ -267,7 +272,7 @@
                 </table>
             </div>
 
-            <div class="tbl-wrap2 mb40">
+            <div class="tbl-wrap2">
                 <div class="hgroup">
                     <strong>기능설정</strong>
                 </div>
@@ -283,48 +288,118 @@
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
+                            <th>완결함 내<br> 
+                                기안자 완결<br>
+                                문서 포함여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>합의타입</th>
+                            <td>
+                                <input type="checkbox" id="chk7">
+                                <label for="chk7">병렬</label>
+                                <input type="checkbox" id="chk8">
+                                <label for="chk8">순차</label>
+                            </td>
+                            <th>임시 연동문서<br>
+                                삭제시 CallBack 여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
+                            <th>결재자 중복 등록<br>
+                                허용여부</th>           
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>1인 결재<br>
+                                허용여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                                <button type="button" class="btn -line">모든템플릿에적용</button>
+                            </td>
+                            <th>검색기간 제한</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
+                            <th>결재알림 내<br> 
+                                문서양식명<br>
+                                표기여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                                <button type="button" class="btn -line">모든템플릿에적용</button>
+                            </td>
+                            <th>대행결재선 <br>
+                                소속 표기방식</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>관리자 결재문서<br> 
+                                다운로드개수</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td></td>
+                            <th>필수 결재선 결재<br>
+                                유형 변경가능<br>
+                                여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td> 
+                            <th>예결함 내 <br>
+                                통보문서포함<br>
+                                여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>마이그레이션팝업<br>URL</th>
+                            <td><input type="text"></td>
                         </tr>
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <th></th>
-                            <td colspan="3"></td>
+                            <th>결재선 내 부서장<br>
+                                구분표기여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>상신취소 시<br>
+                                알림 발송여부</th>
+                            <td colspan="3">
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="btn-wrap mb40">
+            <div class="btn-wrap">
                 <button type="button" class="i-list">목록</button>
                 <button type="button" class="i-save">저장</button>
             </div>

@@ -34,6 +34,11 @@ html, body{
 
         nav{
             width: rem(76);
+
+            .side-btn{
+                @include position(absolute, null, rem(-32), rem(44), null);
+                @include bg(sidemenu_open);
+            }
         }
 
         .container{
@@ -398,8 +403,8 @@ nav{
     }
 
     .side-btn{
-        @include position(absolute, null, rem(-32), rem(44), null);
-        @include bg(sidemenu_open);
+        @include position(absolute, null, 0, rem(44), null);
+        @include bg(sidemenu_close);
         @include fontHidden;
         width: rem(32);
         height: rem(63);
@@ -408,7 +413,7 @@ nav{
 
 .container{
     grid-column: 2 / 4;
-    padding: 0 rem(50) rem(60);
+    padding: 0 rem(50) rem(28);
 }
 
 footer{
@@ -431,8 +436,7 @@ footer{
         p{
             color: #8C9094;
         }
-        strong{
-            font-weight: 600;
+        a{
             color: var(--f-secondary);
             padding: 0 rem(36);
         }
@@ -1728,12 +1732,13 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     gap: 0 rem(24);
 
     .table-jq{
-        flex: 1;
+        // flex: 1;
+        width: rem(1036);
         .ui-jqgrid{
             .ui-jqgrid-btable{
                 border-bottom: 0.1rem solid var(--line-table2);
                 tr.ui-row-ltr:not(:first-child) td{
-                    border-bottom:0;
+                    // border-bottom:0;
                     color: var(--f-base);
                 }
             }

@@ -224,6 +224,12 @@ html:has(.main), body:has(.main) {
 .wrap.main nav {
   width: 7.6rem;
 }
+.wrap.main nav .side-btn {
+  position: absolute;
+  right: -3.2rem;
+  bottom: 4.4rem;
+  background: url("../image/bg_sidemenu_open.png") 0 0/contain no-repeat;
+}
 .wrap.main .container {
   padding-bottom: 0;
 }
@@ -632,9 +638,9 @@ nav .sub-gnb > ul > li:has(ul) > a {
 }
 nav .side-btn {
   position: absolute;
-  right: -3.2rem;
+  right: 0;
   bottom: 4.4rem;
-  background: url("../image/bg_sidemenu_open.png") 0 0/contain no-repeat;
+  background: url("../image/bg_sidemenu_close.png") 0 0/contain no-repeat;
   overflow: hidden;
   white-space: nowrap;
   text-indent: 100%;
@@ -645,7 +651,7 @@ nav .side-btn {
 
 .container {
   grid-column: 2/4;
-  padding: 0 5rem 6rem;
+  padding: 0 5rem 2.8rem;
 }
 
 footer {
@@ -687,8 +693,7 @@ footer .f-uniq {
 footer .f-uniq p {
   color: #8C9094;
 }
-footer .f-uniq strong {
-  font-weight: 600;
+footer .f-uniq a {
   color: var(--f-secondary);
   padding: 0 3.6rem;
 }
@@ -2020,15 +2025,12 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   gap: 0 2.4rem;
 }
 .file-wrap .table-jq {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: 103.6rem;
 }
 .file-wrap .table-jq .ui-jqgrid .ui-jqgrid-btable {
   border-bottom: 0.1rem solid var(--line-table2);
 }
 .file-wrap .table-jq .ui-jqgrid .ui-jqgrid-btable tr.ui-row-ltr:not(:first-child) td {
-  border-bottom: 0;
   color: var(--f-base);
 }
 .file-wrap .table-jq .ui-jqgrid:has(.ui-jqgrid-ftable) .ui-jqgrid-btable {
@@ -2273,7 +2275,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 .calendar-box.close .calendar-list {
   right: -38.4rem;
 }
-.calendar-box.close .calendar-list .llst-close2 {
+.calendar-box.close .calendar-list .llst-close {
   background-image: url("../image/bg_calendar_open.png");
 }
 .calendar-box .fc-theme-standard {
@@ -2415,18 +2417,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   padding-top: 0.2rem;
 }
 .calendar-box .calendar-list .llst-close {
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 100%;
-  display: inline-block;
-  background: url("../image/bg_close.png") 0 0/3.2rem 3.2rem no-repeat;
-  position: absolute;
-  top: 3.2rem;
-  right: 3.2rem;
-  width: 3.2rem;
-  height: 3.2rem;
-}
-.calendar-box .calendar-list .llst-close2 {
   overflow: hidden;
   white-space: nowrap;
   text-indent: 100%;
@@ -2847,4 +2837,8 @@ select {
   background-color: var(--f-white);
   min-width: 14.3rem;
   color: var(--f-secondary);
+}
+
+.tooltip {
+  display: none;
 }
