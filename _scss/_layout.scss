@@ -663,6 +663,11 @@ footer{
                 strong{
                     color: var(--f-white);
                 }
+
+                .refresh{
+                    @include bg(refresh_main_w);
+                    display: none;
+                }
             }
 
             &.-flex{
@@ -857,6 +862,45 @@ footer{
             }
         }
 
+        .payment-list2{
+            display: none;
+            margin-top: rem(30);
+
+            li{
+                a{
+                    @include flex(flex, flex-start, center);
+                    @include font(rem(14), 400);
+                    color: var(--f-white);
+                    gap: 0 rem(12);
+
+                    .flag{
+                        &.-disabled{
+                            border-color: #9BC7FF;
+                            color: #9BC7FF;
+                        }
+                    }
+
+                    p{
+                        flex:1;
+                        @include ellipsis(1);
+                    }
+
+                    strong{
+                        font-weight: 400;
+                    }
+
+                    .bdate{
+                        
+
+                    }
+                }
+
+                &:not(:last-child){
+                    margin-bottom: rem(16);
+                }
+            }
+        }
+
         .dx-list{
             counter-reset: number;
             margin-bottom: rem(20);
@@ -932,23 +976,74 @@ footer{
         }
 
         .attendance-list{
-            display: grid;
-            grid-template-columns: 1fr rem(120);
+            @include flex(grid, space-between);
             align-items: center;
 
             p{
                 @include font(rem(14), 400);
                 color: var(--f-white);
+                grid-column: 1 / 1;
+            }
 
-                strong{
-                    @include font(rem(18), 700);
-                    margin-top: rem(8);
-                    display: block;
+            strong{
+                @include font(rem(18), 700);
+                margin-top: rem(8);
+                // display: block;
+                color: var(--f-white);
+                grid-column: 2 / 1;
 
-                    em{
-                        @include font(rem(14), 400);
-                        margin-right: rem(8);
-                        display: none;
+                em{
+                    @include font(rem(14), 400);
+                    margin-right: rem(8);
+                    display: none;
+                    height: rem(19);
+                    vertical-align: middle;
+                }
+            }
+
+            button{
+                grid-column: 2 / 2;
+                grid-row: 1 / 3;
+                width: rem(120);
+            }
+
+            ul{
+                @include flex(flex, center, center);
+                grid-column: 3 / 3;
+                grid-row: 1 / 3;
+                margin-right: rem(24);
+                display: none;
+
+                li{
+                    position: relative;
+
+                    strong{
+                        display: block;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+
+                    span{
+                        @include font(rem(20), 700);
+                        color: #80C2A4;
+                        margin-top: rem(4);
+                        display: block;
+
+                        em{
+                            color: var(--f-white);
+                        }
+                    }
+
+                    &:last-child{
+                        margin-left: rem(48);
+
+                        &::before{
+                            content:'';
+                            width: rem(1);
+                            height: rem(48);
+                            background-color: #39926A;
+                            @include position(absolute, 0, null, null, rem(-24));
+                        }
                     }
                 }
             }
@@ -1096,6 +1191,229 @@ footer{
                             @include icon(40, 'securityservice', 'pseudo');
                         }
                     }
+                }
+            }
+        }
+
+        //위젯 284
+        &.s284{
+            &.h100{
+                display: block;
+
+                .hgroup{
+                    display: none;
+                }
+                
+                .payment-list{
+                    li{
+                        flex: 1;
+                        text-align: center;
+                    }
+                }
+            }
+
+            &.h265{
+                display: block;
+
+                .hgroup{
+                    margin-bottom: rem(23);
+
+                    .refresh{
+                        display: block;
+                    }
+                }
+
+                .payment-list{
+                    justify-content: flex-start;
+
+                    li{
+                        a{
+                            @include flex(flex, null, center);
+                            strong{
+                                display: inline-block;
+                                margin-left: rem(16);
+                            }
+                        }
+
+                        &:last-child{
+                            &::before{
+                                height: rem(28);
+                                top: rem(5);
+                            }
+                        }
+                    }
+                }
+                .payment-list2{
+                    display: block;
+
+                    .bdate{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        //위젯 316
+        &.s316{
+            .scd-list{
+                .calendar-list{
+                    display:none;
+                }
+            }
+        }
+
+        //위젯 400
+        &.s400{
+            .tablist{
+                overflow-x: auto;
+            }
+            .notice-list{
+                .attach, .view, .num{
+                    display: none;
+                }
+
+                li{
+                    a{
+                        p{
+                            max-width: rem(148) !important;
+                        }
+                    }
+                }
+            }
+
+            .scd-list{
+                display: block;
+
+                .calendar-wrap{
+                    display: none;
+                }
+
+                .calendar-list{
+                    border-left: 0;
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+            }
+
+            .my-list{
+                li{
+                    &:nth-of-type(n+4){
+                        display: none;
+                    }
+                }
+            }
+
+            .attendance-list{
+                &.-check{
+                    strong{
+                        em{
+                            display: inline-block
+                        }
+                    }
+                }
+
+                &.-leav{
+                    .btn{
+                        display:none;
+                    }
+
+                    strong{
+                        em{
+                            display: inline-block;
+
+                            &:nth-child(2){
+                                margin-top: rem(1);
+
+                                &::before{
+                                    content:'';
+                                    width: rem(1);
+                                    height: rem(14);
+                                    margin: rem(-1) rem(12) 0;
+                                    background-color: #2C9869;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.h290{
+                .system-list{
+                    li{
+                        &:nth-child(n+7){
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        //위젯 568
+        &.s568{
+            &.h265{
+                display: block;
+
+                .hgroup{
+                    margin-bottom: rem(23);
+
+                    .refresh{
+                        display: block;
+                    }
+                }
+
+                .payment-list{
+                    justify-content: flex-start;
+
+                    li{
+                        a{
+                            @include flex(flex, null, center);
+                            strong{
+                                display: inline-block;
+                                margin-left: rem(16);
+                            }
+                        }
+
+                        &:last-child{
+                            &::before{
+                                height: rem(28);
+                                top: rem(5);
+                            }
+                        }
+                    }
+                }
+                .payment-list2{
+                    display: block;
+                }
+            }
+
+            &.h190{
+                display: block;
+
+                .hgroup{
+
+                    .refresh{
+                        display: block;
+                    }
+                }
+
+                .payment-list{
+                    display: none;
+                }
+
+                .payment-list2{
+                    display: block;
+                    margin-top: rem(22);
+                }
+            }
+        }
+
+        //위젯 752
+        &.s752{
+            .attendance-list{
+                ul{
+                    display: flex;
                 }
             }
         }
@@ -1281,7 +1599,7 @@ footer{
 
         .tablist{
             @include flex(flex, center, center);
-            @include position(absolute, rem(-48), rem(24), null, null);
+            @include position(absolute, rem(-48), 0, null, null);
 
             li{
                 a{

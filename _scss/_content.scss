@@ -188,6 +188,10 @@
         padding: 0;
         margin: 0;
     }
+    &.-paym{
+        border: rem(1) solid var(--f-white);
+        color: var(--f-white);
+    }
 }
 
 .attach{
@@ -328,8 +332,7 @@ select{
         @include bg(tooltip_b);
         width: rem(20);
         height: rem(20);
-        position: relative;
-        z-index: 1;
+        cursor: auto;
     }
     
     div{
