@@ -186,6 +186,7 @@ ul, ol, li {
   --bg-third: #FAFAFA;
   --bg-primary: #19A619;
   --bg-primary2: #E5F5E5;
+  --bg-primary3: #E8F6E8;
   --bg-false: #FEF0ED;
   --bg-menu: #F2F6FC;
   --line-base: #B4B8BD;
@@ -2996,32 +2997,64 @@ select {
   color: var(--f-secondary);
 }
 
-.tooltip button {
+.tooltip:not(header .tooltip) {
   position: absolute;
   top: 50%;
   right: 2.4rem;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.tooltip:not(header .tooltip):hover {
+  z-index: 2;
+}
+.tooltip:not(header .tooltip):hover div {
+  display: block;
+}
+.tooltip:not(header .tooltip) button {
   overflow: hidden;
   white-space: nowrap;
   text-indent: 100%;
   display: inline-block;
   background: url("../image/bg_tooltip_b.png") 0 0/contain no-repeat;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
+  position: relative;
+  z-index: 1;
 }
-.tooltip button:hover ~ div {
-  display: block;
-}
-.tooltip div {
-  border-radius: 1.2rem;
+.tooltip:not(header .tooltip) div {
   position: absolute;
-  top: 60%;
-  right: 0;
+  top: 0;
+  left: -2.7rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  min-width: 32rem;
   display: none;
-  background-color: var(--bg-secondary);
-  color: var(--f-white);
-  padding: 1rem;
+  background-color: transparent;
+}
+.tooltip:not(header .tooltip) div::after {
+  content: "";
+  border-right: 0 solid var(--bg-primary3);
+  border-top: 1.5rem solid var(--bg-primary3);
+  border-left: 1.5rem solid transparent;
+  position: absolute;
+  top: 2.4rem;
+  left: 3rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.tooltip:not(header .tooltip) div p {
+  border-radius: 2rem;
+  margin-top: 3.1rem;
+  background-color: var(--bg-primary3);
+  color: var(--f-secondary);
+  padding: 1.8rem 2rem 1.6rem;
+  line-height: 160%;
+  word-break: break-all;
+}
+.tooltip:not(header .tooltip) div strong {
+  font-weight: 600;
+  color: var(--f-primary);
 }
 
 .loading-wrap {

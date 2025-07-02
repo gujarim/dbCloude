@@ -129,10 +129,15 @@
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                            <th>결재자통보<br>메일발송<br>제외여부
+                            <th>
+                                결재자통보<br>메일발송<br>제외여부
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -193,7 +198,11 @@
                             <th>의견 수정<br>사용여부
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 자신의 결재 순번이 아니더라도 결재 의견 입력 및 수정이 가능합니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -228,7 +237,13 @@
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, <strong>가장 마지막 결재선에서는 [결재]만 선택 가능합니다.</strong><br>
+                                            - 합의, 전결, 협조처 등 결재 이외의 타입 선택 불가<br>
+                                            - 이 옵션은 통보선에는 영향을 끼치지 않습니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -254,12 +269,17 @@
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                            <th>일괄승인<br> 
+                            <th>
+                                일괄승인<br> 
                                 사용여부
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, <strong>미결함</strong>에서 일괄승인이 가능합니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -314,7 +334,12 @@
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, <strong>완결함과 상신함</strong>에서 자신의 상신 문서를 조회할 수 있습니다.<br>
+                                            <strong>[사용 안함]</strong>으로 설정할 시, <strong>상신함에서만</strong> 자신의 상신문서를 조회할 수 있습니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -352,7 +377,13 @@
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[허용]</strong>으로 설정할 시, 상신자가 단독으로 문서를 상신할 수 있습니다. 이 경우, 상신과 동시에 결재가 완료됩니다.<br>
+                                            <strong>[불가]</strong>로 설정할 시, 상신자 외의 결재자를 한 명 이상 반드시 추가해야 상신이 가능합니다.<br>
+                                            <strong>단, 이 설정은 각 템플릿의 1인 결재 설정을 우선으로 합니다.</strong> 템플릿 별 1인 결재 허용 설정이 없는 경우에 한하여 적용됩니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -377,7 +408,13 @@
                             
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            사용 시 문서의 결재알림(ex.메일)의 제목에 문서양식이 표기됩니다.<br>
+                                            예) [전자결재][결재도착]<strong>[문서양식명]</strong> 문서명<br>
+                                            <strong>모든 템플릿에 일괄 적용</strong>되며, 템플릿 별 설정은 템플릿 관리 화면에서 가능합니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -393,7 +430,14 @@
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[결재대행관리 등록정보 기준]</strong><br>
+                                            결재대행관리화면에 등록된 조직과 부서 정보를 기반으로 대행결재가 진행됩니다.<br>
+                                            <strong>[현재 로그인정보 기준]</strong><br>
+                                            현재 로그인되어있는 조직과 부서 정보를 기반으로 대행결재가 진행됩니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -424,7 +468,11 @@
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 예결함에서 통보 예정인 문서를 확인할 수 있습니다. 문서가 완결된 후에는 통보함에서 확인 가능합니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -448,7 +496,11 @@
 
                                 <div class="tooltip">
                                     <button>툴팁</button>
-                                    <div>내용입니다.</div>
+                                    <div>
+                                        <p>
+                                            이전 결재자, 미결자에게 안내 알림이 발송됩니다.
+                                        </p>
+                                    </div>
                                 </div>
                             </th>
                             <td>
@@ -456,8 +508,34 @@
                                     <option value="">선택</option>
                                 </select>
                             </td>
-                            <th></th>
-                            <td></td>
+                            <th>개인별 미결<br>
+                                알림설정<br>
+                                허용여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, <strong>개인기본설정 화면에서 개인별로 미결 알림 설정이 가능합니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                미결자 첨부파일<br>
+                                삭제 허용여부
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

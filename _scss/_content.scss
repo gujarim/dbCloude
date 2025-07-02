@@ -311,29 +311,57 @@ select{
     color: var(--f-secondary);
 }
 
-.tooltip{
+.tooltip:not(header .tooltip){
+    @include position(absolute, 50%, rem(24), null, null, 1);
+    transform: translateY(-50%);
+
+    &:hover{
+        z-index: 2;
+
+        div{
+            display: block;
+        }
+    }
+
     button{
-        @include position(absolute, 50%, rem(24), null, null);
         @include fontHidden;
         @include bg(tooltip_b);
-        transform: translateY(-50%);
         width: rem(20);
         height: rem(20);
-
-        &:hover{
-            ~div{
-                display: block;
-            }
-        }
+        position: relative;
+        z-index: 1;
     }
     
     div{
-        @include rounded(rem(12));
-        @include position(absolute, 60%, 0, null, null);
+        @include position(absolute, 0, null, null, rem(-27));
+        @include font(rem(14), 400);
+        min-width: rem(320);
         display: none;
-        background-color: var(--bg-secondary);
-        color: var(--f-white);
-        padding: rem(10);
+        background-color: transparent;
+
+        &::after{
+            content:'';
+            border-right: 0 solid var(--bg-primary3);
+            border-top: rem(15) solid var(--bg-primary3);
+            border-left: rem(15) solid transparent;
+            @include position(absolute, rem(24), null, null, rem(30));
+            transform: rotate(-45deg);
+        }
+
+        p{
+            @include rounded(rem(20));
+            margin-top: rem(31);
+            background-color: var(--bg-primary3);
+            color: var(--f-secondary);
+            padding: rem(18) rem(20) rem(16);
+            line-height: 160%;
+            word-break: break-all;
+        }
+
+        strong{
+            font-weight: 600;
+            color: var(--f-primary);
+        }
     }
 }
 
