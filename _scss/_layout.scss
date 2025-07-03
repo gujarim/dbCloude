@@ -73,6 +73,13 @@ html, body{
             }
         }
     }
+
+    //전자결재 헤더
+    &:has(.-epayment){
+        .h-search, .login-time, .control .mypage, .control .setting{
+            display: none;
+        }
+    }
 }
 
 header{
@@ -650,33 +657,6 @@ footer{
             }
         }
 
-        &.-b{
-            background-color: #3F74F8;
-
-            .hgroup{
-                .more{
-                    @include bg(moreview_w);
-                }
-
-                strong{
-                    color: var(--f-white);
-                }
-
-                .refresh{
-                    @include bg(refresh_main_w);
-                    display: none;
-                }
-            }
-
-            &.-flex{
-                @include flex(flex, space-between, center);
-            }
-        }
-
-        &.-g{
-            background-color: #00854A;
-        }
-
         &.drive-wrap{
             @include flex(grid, null, center);
             background-color: #CFF160;
@@ -744,6 +724,321 @@ footer{
                             &::before{
                                 @include icon(60, 'drive3', 'pseudo');
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.payment-wrap{
+            background-color: #3F74F8;
+            @include flex(flex, space-between, center);
+
+            .hgroup{
+                .more{
+                    @include bg(moreview_w);
+                }
+
+                strong{
+                    color: var(--f-white);
+                }
+
+                .refresh{
+                    @include bg(refresh_main_w);
+                    display: none;
+                }
+            }
+
+            .info{
+                @include flex(flex, center, center);
+
+                li{
+                    position: relative;
+                    a{
+                        @include font(rem(16), 400);
+                        color: var(--f-white);
+
+                        strong{
+                            @include font(rem(28), 700);
+                            display: block;
+                            text-align: center;
+                            line-height: rem(33);
+                        }
+                    }
+
+                    &:last-child{
+                        padding-left: rem(48);
+
+                        &::before{
+                            content:'';
+                            width: rem(1);
+                            height: rem(48);
+                            background-color: #5F8DFF; 
+                            @include position(absolute, rem(9), null, null, rem(24));
+                        }
+                    }
+                }
+            }
+
+            .list{
+                display: none;
+                margin-top: rem(30);
+
+                li{
+                    a{
+                        @include flex(flex, flex-start, center);
+                        @include font(rem(14), 400);
+                        color: var(--f-white);
+                        gap: 0 rem(12);
+
+                        .flag{
+                            &.-disabled{
+                                border-color: #9BC7FF;
+                                color: #9BC7FF;
+                            }
+                        }
+
+                        p{
+                            flex:1;
+                            @include ellipsis(1);
+                        }
+
+                        strong{
+                            font-weight: 400;
+                        }
+
+                        .bdate{
+                            
+
+                        }
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: rem(16);
+                    }
+                }
+            }
+        }
+
+        &.system-wrap{
+            ul{
+                @include flex(flex, space-between, center);
+                flex-wrap: wrap;
+                gap: rem(12) 0;
+
+                li{
+                    width: 33.33%;
+                    height: rem(84);
+                    text-align: center;
+
+                    a{
+                        @include font(rem(13), 400);
+                        color: var(--f-secondary);
+                        display: block;
+
+                        &::before{
+                            content:'';
+                            display: block !important;
+                            margin: 0 auto rem(8);
+                        }
+                    }
+
+                    &.business{
+                        a{
+                            &::before{
+                                @include icon(40, 'business', 'pseudo');
+                            }
+                        }
+                    }
+                    &.work{
+                        a{
+                            &::before{
+                                @include icon(40, 'work', 'pseudo');
+                            }
+                        }
+                    }
+                    &.bizplay{
+                        a{
+                            &::before{
+                                @include icon(40, 'bizplay', 'pseudo');
+                            }
+                        }
+                    }
+                    &.dbnews{
+                        a{
+                            &::before{
+                                @include icon(40, 'dbnews', 'pseudo');
+                            }
+                        }
+                    }
+                    &.cloudhp{
+                        a{
+                            &::before{
+                                @include icon(40, 'cloudhp', 'pseudo');
+                            }
+                        }
+                    }
+                    &.smartoff{
+                        a{
+                            &::before{
+                                @include icon(40, 'smartoff', 'pseudo');
+                            }
+                        }
+                    }
+                    &.shr{
+                        a{
+                            &::before{
+                                @include icon(40, 'shr', 'pseudo');
+                            }
+                        }
+                    }
+                    &.book{
+                        a{
+                            &::before{
+                                @include icon(40, 'book', 'pseudo');
+                            }
+                        }
+                    }
+                    &.securityservice{
+                        a{
+                            &::before{
+                                @include icon(40, 'securityservice', 'pseudo');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.attendance-wrap{
+            @include flex(grid, space-between);
+            align-items: center;
+            background-color: #00854A;
+
+            p{
+                @include font(rem(14), 400);
+                color: var(--f-white);
+                grid-column: 1 / 1;
+            }
+
+            strong{
+                @include font(rem(18), 700);
+                margin-top: rem(8);
+                // display: block;
+                color: var(--f-white);
+                grid-column: 2 / 1;
+
+                em{
+                    @include font(rem(14), 400);
+                    margin-right: rem(8);
+                    display: none;
+                    height: rem(19);
+                    vertical-align: middle;
+                }
+            }
+
+            button{
+                grid-column: 2 / 2;
+                grid-row: 1 / 3;
+                width: rem(120);
+            }
+
+            ul{
+                @include flex(flex, center, center);
+                grid-column: 3 / 3;
+                grid-row: 1 / 3;
+                margin-right: rem(24);
+                display: none;
+
+                li{
+                    position: relative;
+
+                    strong{
+                        display: block;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+
+                    span{
+                        @include font(rem(20), 700);
+                        color: #80C2A4;
+                        margin-top: rem(4);
+                        display: block;
+
+                        em{
+                            color: var(--f-white);
+                        }
+                    }
+
+                    &:last-child{
+                        margin-left: rem(48);
+
+                        &::before{
+                            content:'';
+                            width: rem(1);
+                            height: rem(48);
+                            background-color: #39926A;
+                            @include position(absolute, 0, null, null, rem(-24));
+                        }
+                    }
+                }
+            }
+        }
+
+        &.my-wrap{
+            ul{
+                margin-top: rem(27);
+                @include flex(flex, space-between, center);
+                @include font(rem(13), 400);
+                color: var(--f-menu);
+
+                li{
+                    flex: 1;
+                    position: relative;
+                    padding-left: rem(13);
+
+                    &::before{
+                        content: '';
+                        width: rem(3);
+                        height: rem(64);
+                        @include rounded(rem(3));
+                        @include position(absolute, 50%, null, null, 0);
+                        transform: translateY(-50%);
+                    }
+
+                    strong{
+                        @include font(rem(14), 600);
+                        color: var(--f-base);
+                        margin-bottom: rem(6);
+                        display: block;
+                        min-height: rem(44);
+                    }
+
+                    
+
+                    &:nth-child(1){
+                        &::before{
+                            background-color: #D5AAFF;
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            background-color: #FDBC73;
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            background-color: #8AB5F7;
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            background-color: #FF85C4;
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            background-color: #87E76F;
                         }
                     }
                 }
@@ -894,76 +1189,6 @@ footer{
             }
         }
 
-        .payment-list{
-            @include flex(flex, center, center);
-
-            li{
-                position: relative;
-                a{
-                    @include font(rem(16), 400);
-                    color: var(--f-white);
-
-                    strong{
-                        @include font(rem(28), 700);
-                        display: block;
-                        text-align: center;
-                        line-height: rem(33);
-                    }
-                }
-
-                &:last-child{
-                    padding-left: rem(48);
-
-                    &::before{
-                        content:'';
-                        width: rem(1);
-                        height: rem(48);
-                        background-color: #5F8DFF; 
-                        @include position(absolute, rem(9), null, null, rem(24));
-                    }
-                }
-            }
-        }
-
-        .payment-list2{
-            display: none;
-            margin-top: rem(30);
-
-            li{
-                a{
-                    @include flex(flex, flex-start, center);
-                    @include font(rem(14), 400);
-                    color: var(--f-white);
-                    gap: 0 rem(12);
-
-                    .flag{
-                        &.-disabled{
-                            border-color: #9BC7FF;
-                            color: #9BC7FF;
-                        }
-                    }
-
-                    p{
-                        flex:1;
-                        @include ellipsis(1);
-                    }
-
-                    strong{
-                        font-weight: 400;
-                    }
-
-                    .bdate{
-                        
-
-                    }
-                }
-
-                &:not(:last-child){
-                    margin-bottom: rem(16);
-                }
-            }
-        }
-
         .dx-list{
             counter-reset: number;
             margin-bottom: rem(20);
@@ -1022,226 +1247,6 @@ footer{
                 &:not(:last-child){
                     border-bottom: rem(1) solid var(--line-table3);
                     padding-bottom: rem(12);
-                }
-            }
-        }
-
-        .attendance-list{
-            @include flex(grid, space-between);
-            align-items: center;
-
-            p{
-                @include font(rem(14), 400);
-                color: var(--f-white);
-                grid-column: 1 / 1;
-            }
-
-            strong{
-                @include font(rem(18), 700);
-                margin-top: rem(8);
-                // display: block;
-                color: var(--f-white);
-                grid-column: 2 / 1;
-
-                em{
-                    @include font(rem(14), 400);
-                    margin-right: rem(8);
-                    display: none;
-                    height: rem(19);
-                    vertical-align: middle;
-                }
-            }
-
-            button{
-                grid-column: 2 / 2;
-                grid-row: 1 / 3;
-                width: rem(120);
-            }
-
-            ul{
-                @include flex(flex, center, center);
-                grid-column: 3 / 3;
-                grid-row: 1 / 3;
-                margin-right: rem(24);
-                display: none;
-
-                li{
-                    position: relative;
-
-                    strong{
-                        display: block;
-                        font-weight: 600;
-                        margin: 0;
-                    }
-
-                    span{
-                        @include font(rem(20), 700);
-                        color: #80C2A4;
-                        margin-top: rem(4);
-                        display: block;
-
-                        em{
-                            color: var(--f-white);
-                        }
-                    }
-
-                    &:last-child{
-                        margin-left: rem(48);
-
-                        &::before{
-                            content:'';
-                            width: rem(1);
-                            height: rem(48);
-                            background-color: #39926A;
-                            @include position(absolute, 0, null, null, rem(-24));
-                        }
-                    }
-                }
-            }
-        }
-
-        .my-list{
-            margin-top: rem(27);
-            @include flex(flex, space-between, center);
-            @include font(rem(13), 400);
-            color: var(--f-menu);
-
-            li{
-                flex: 1;
-                position: relative;
-                padding-left: rem(13);
-
-                &::before{
-                    content: '';
-                    width: rem(3);
-                    height: rem(64);
-                    @include rounded(rem(3));
-                    @include position(absolute, 50%, null, null, 0);
-                    transform: translateY(-50%);
-                }
-
-                strong{
-                    @include font(rem(14), 600);
-                    color: var(--f-base);
-                    margin-bottom: rem(6);
-                    display: block;
-                    min-height: rem(44);
-                }
-
-                
-
-                &:nth-child(1){
-                    &::before{
-                        background-color: #D5AAFF;
-                    }
-                }
-                &:nth-child(2){
-                    &::before{
-                        background-color: #FDBC73;
-                    }
-                }
-                &:nth-child(3){
-                    &::before{
-                        background-color: #8AB5F7;
-                    }
-                }
-                &:nth-child(4){
-                    &::before{
-                        background-color: #FF85C4;
-                    }
-                }
-                &:nth-child(5){
-                    &::before{
-                        background-color: #87E76F;
-                    }
-                }
-            }
-        }
-
-        .system-list{
-            @include flex(flex, space-between, center);
-            flex-wrap: wrap;
-            gap: rem(12) 0;
-
-            li{
-                width: 33.33%;
-                height: rem(84);
-                text-align: center;
-
-                a{
-                    @include font(rem(13), 400);
-                    color: var(--f-secondary);
-                    display: block;
-
-                    &::before{
-                        content:'';
-                        display: block !important;
-                        margin: 0 auto rem(8);
-                    }
-                }
-
-                &.business{
-                    a{
-                        &::before{
-                            @include icon(40, 'business', 'pseudo');
-                        }
-                    }
-                }
-                &.work{
-                    a{
-                        &::before{
-                            @include icon(40, 'work', 'pseudo');
-                        }
-                    }
-                }
-                &.bizplay{
-                    a{
-                        &::before{
-                            @include icon(40, 'bizplay', 'pseudo');
-                        }
-                    }
-                }
-                &.dbnews{
-                    a{
-                        &::before{
-                            @include icon(40, 'dbnews', 'pseudo');
-                        }
-                    }
-                }
-                &.cloudhp{
-                    a{
-                        &::before{
-                            @include icon(40, 'cloudhp', 'pseudo');
-                        }
-                    }
-                }
-                &.smartoff{
-                    a{
-                        &::before{
-                            @include icon(40, 'smartoff', 'pseudo');
-                        }
-                    }
-                }
-                &.shr{
-                    a{
-                        &::before{
-                            @include icon(40, 'shr', 'pseudo');
-                        }
-                    }
-                }
-                &.book{
-                    a{
-                        &::before{
-                            @include icon(40, 'book', 'pseudo');
-                        }
-                    }
-                }
-                &.securityservice{
-                    a{
-                        &::before{
-                            @include icon(40, 'securityservice', 'pseudo');
-                        }
-                    }
                 }
             }
         }
@@ -1446,57 +1451,67 @@ footer{
 
         //위젯 284
         &.s284{
-            &.h100{
-                display: block;
-
-                .hgroup{
-                    display: none;
-                }
-                
-                .payment-list{
-                    li{
-                        flex: 1;
-                        text-align: center;
-                    }
-                }
-            }
-
-            &.h265{
-                display: block;
-
-                .hgroup{
-                    margin-bottom: rem(23);
-
-                    .refresh{
-                        display: block;
-                    }
-                }
-
-                .payment-list{
-                    justify-content: flex-start;
-
-                    li{
-                        a{
-                            @include flex(flex, null, center);
-                            strong{
-                                display: inline-block;
-                                margin-left: rem(16);
-                            }
-                        }
-
-                        &:last-child{
-                            &::before{
-                                height: rem(28);
-                                top: rem(5);
-                            }
-                        }
-                    }
-                }
-                .payment-list2{
+            &.payment-wrap{
+                &.h100{
                     display: block;
 
-                    .bdate{
+                    .hgroup{
                         display: none;
+                    }
+                    
+                    .info{
+                        li{
+                            flex: 1;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &.h265{
+                    display: block;
+
+                    .hgroup{
+                        margin-bottom: rem(23);
+
+                        .refresh{
+                            display: block;
+                        }
+                    }
+
+                    .info{
+                        justify-content: flex-start;
+
+                        li{
+                            a{
+                                @include flex(flex, null, center);
+                                strong{
+                                    display: inline-block;
+                                    margin-left: rem(16);
+                                }
+                            }
+
+                            &:last-child{
+                                &::before{
+                                    height: rem(28);
+                                    top: rem(5);
+                                }
+                            }
+                        }
+                    }
+                    .list{
+                        display: block;
+
+                        li{
+                            a{
+                                p{
+                                    max-width: rem(127);
+                                }
+
+                                .bdate{
+                                    display: none;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1639,15 +1654,17 @@ footer{
                 }
             }
             
-            .my-list{
-                li{
-                    &:nth-of-type(n+4){
-                        display: none;
+            &.my-wrap{
+                ul{
+                    li{
+                        &:nth-of-type(n+4){
+                            display: none;
+                        }
                     }
                 }
             }
 
-            .attendance-list{
+            &.attendance-wrap{
                 &.-check{
                     strong{
                         em{
@@ -1697,11 +1714,13 @@ footer{
                 }
             }
 
-            &.h290{
-                .system-list{
-                    li{
-                        &:nth-child(n+7){
-                            display: none;
+            &.system-wrap{
+                &.h290{
+                    ul{
+                        li{
+                            &:nth-child(n+7){
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -1736,8 +1755,8 @@ footer{
                 }
             }
 
-            &.h210{
-                &.drive-wrap{
+            &.drive-wrap{
+                &.h210{
                     gap: rem(24) 0;
 
                     p{
@@ -1754,66 +1773,80 @@ footer{
                 }
             }
 
-            &.h265{
-                display: block;
+            &.payment-wrap{
+                &.h265{
+                    display: block;
 
-                .hgroup{
-                    margin-bottom: rem(23);
+                    .hgroup{
+                        margin-bottom: rem(23);
 
-                    .refresh{
-                        display: block;
-                    }
-                }
-
-                .payment-list{
-                    justify-content: flex-start;
-
-                    li{
-                        a{
-                            @include flex(flex, null, center);
-                            strong{
-                                display: inline-block;
-                                margin-left: rem(16);
-                            }
-                        }
-
-                        &:last-child{
-                            &::before{
-                                height: rem(28);
-                                top: rem(5);
-                            }
+                        .refresh{
+                            display: block;
                         }
                     }
-                }
-                .payment-list2{
-                    display: block;
-                }
-            }
 
-            &.h190{
-                display: block;
+                    .info{
+                        justify-content: flex-start;
 
-                .hgroup{
+                        li{
+                            a{
+                                @include flex(flex, null, center);
+                                strong{
+                                    display: inline-block;
+                                    margin-left: rem(16);
+                                }
+                            }
 
-                    .refresh{
+                            &:last-child{
+                                &::before{
+                                    height: rem(28);
+                                    top: rem(5);
+                                }
+                            }
+                        }
+                    }
+                    .list{
                         display: block;
+
+                        li{
+                            p{
+                                max-width: rem(327);
+                            }
+                        }
                     }
                 }
 
-                .payment-list{
-                    display: none;
-                }
-
-                .payment-list2{
+                &.h190{
                     display: block;
-                    margin-top: rem(22);
+
+                    .hgroup{
+
+                        .refresh{
+                            display: block;
+                        }
+                    }
+
+                    .info{
+                        display: none;
+                    }
+
+                    .list{
+                        display: block;
+                        margin-top: rem(22);
+
+                        li{
+                            p{
+                                max-width: rem(327);
+                            }
+                        }
+                    }
                 }
             }
         }
 
         //위젯 752
         &.s752{
-            .attendance-list{
+            &.attendance-wrap{
                 ul{
                     display: flex;
                 }
@@ -1822,6 +1855,7 @@ footer{
     }
 }
 
+// 테이터 없음
 .no-data{
     padding: rem(90) 0 rem(88);
 
