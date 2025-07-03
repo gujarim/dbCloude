@@ -216,7 +216,7 @@ const tab = () => {
 const sideNavToggle = () => {
     const btn = document.querySelector('.side-btn');
     const wrap = document.querySelector('.wrap');
-    const calendarEl = document.querySelector('.calendar-box #calendar');
+    const calendarEl = document.querySelector('.calendar-wrap #calendar');
 
     btn.addEventListener("click", () => {
         wrap.classList.toggle('sidem-close');

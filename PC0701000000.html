@@ -19,7 +19,7 @@
                 <h2 class="tit-h2">나의현황</h2>
             </div>
 
-            <div class="calendar-box"> <!-- 일정확인 닫기 클래스  class="calendar-box close" -->
+            <div class="calendar-wrap"> <!-- 일정확인 닫기 클래스  class="calendar-wrap close" -->
                 <div id='calendar'></div>
                 <div class="calendar-list">
                     <p>일정확인
@@ -114,7 +114,7 @@
         calendarEl._fullCalendar = calendar;
 
         //나의현황 사이드 바 토글시 calendar resize
-        const box = document.querySelector('.calendar-box');
+        const box = document.querySelector('.calendar-wrap');
         const btn = document.querySelector('.llst-close');
 
         btn.addEventListener('click', () => {

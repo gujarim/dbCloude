@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -19,7 +20,7 @@
 </head>
 <body>
     <div class="main-wrap">
-        <p style="color: red;margin-bottom:30px;">*주석과 주석 안에 있는것만 보시면 됩니다.</p>
+        <p style="color: red;margin-bottom:30px;font-size:14px;">*소스 확인시 주석과 주석 안에 있는것만 보시면 됩니다. ( &lt;div class="box ~~~"&gt; )</p>
 
 
         <h2>1. 통합게시판</h2><br>
@@ -27,7 +28,7 @@
             <div style="width:400px">
                 <h3>1단 400</h3>
                 <!-- 통합게시판 400 -->
-                <div class="box -w s400">
+                <div class="box s400">
                     <div class="hgroup">
                         <strong>통합게시판<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
@@ -136,7 +137,7 @@
             <div style="width:752px">
                 <h3>2단 752</h3>
                 <!-- 통합게시판 752 -->
-                <div class="box -w s752">
+                <div class="box s752">
                     <div class="hgroup">
                         <strong>통합게시판<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
@@ -248,7 +249,7 @@
             <div style="width:316px">
                 <h3>1단 316</h3>
                 <!-- 캘린더 316 -->
-                <div class="box -w s316">
+                <div class="box scd-wrap s316">
                     <div class="hgroup">
                         <strong>캘린더<button type="button" class="more">더보기</button></strong>
                     </div>
@@ -260,7 +261,7 @@
                         <div class="panels">
                             <div role="tabpanel">
                                 <div class="scd-list">
-                                    <div class="calendar-wrap">
+                                    <div class="calendar-wrapM">
                                         <div class="calendar-title">
                                             <strong>2025년 6월</strong>
                                             <p>
@@ -349,7 +350,7 @@
                             </div>
                             <div class="on" role="tabpanel">
                                 <div class="scd-list">
-                                    <div class="calendar-wrap">
+                                    <div class="calendar-wrapM">
                                         <div class="calendar-title">
                                             <strong>2025년 6월</strong>
                                             <p>
@@ -438,7 +439,7 @@
             <div style="width:400px">
                 <h3>1단 400</h3>
                 <!-- 캘린더 400 -->
-                <div class="box -w s400">
+                <div class="box scd-wrap s400">
                     <div class="hgroup">
                         <strong>캘린더<button type="button" class="more">더보기</button></strong>
                     </div>
@@ -450,7 +451,7 @@
                         <div class="panels">
                             <div role="tabpanel">
                                 <div class="scd-list">
-                                    <div class="calendar-wrap">
+                                    <div class="calendar-wrapM">
                                         <div class="calendar-title">
                                             <strong>2025년 6월</strong>
                                             <p>
@@ -539,7 +540,7 @@
                             </div>
                             <div class="on" role="tabpanel">
                                 <div class="scd-list">
-                                    <div class="calendar-wrap">
+                                    <div class="calendar-wrapM">
                                         <div class="calendar-title">
                                             <strong>2025년 6월</strong>
                                             <p>
@@ -628,7 +629,7 @@
             <div style="width:752px">
                 <h3>2단 752</h3>
                 <!-- 캘린더 752 -->
-                <div class="box -w s752">
+                <div class="box scd-wrap s752">
                     <div class="hgroup">
                         <strong>캘린더<button type="button" class="more">더보기</button></strong>
                     </div>
@@ -640,7 +641,7 @@
                         <div class="panels">
                             <div role="tabpanel">
                                 <div class="scd-list">
-                                    <div class="calendar-wrap">
+                                    <div class="calendar-wrapM">
                                         <div class="calendar-title">
                                             <strong>2025년 6월</strong>
                                             <p>
@@ -729,7 +730,7 @@
                             </div>
                             <div class="on" role="tabpanel">
                                 <div class="scd-list">
-                                    <div class="calendar-wrap">
+                                    <div class="calendar-wrapM">
                                         <div class="calendar-title">
                                             <strong>2025년 6월</strong>
                                             <p>
@@ -817,20 +818,539 @@
         </div>
 
         <h2>3. 휴가현황</h2><br>
-        <div class="flex"></div>
+        <div class="flex">
+            <div style="width:316px">
+                <h3>1단 316</h3>
 
-        <h2>4. 오늘의 이벤트</h2><br>
-        <div class="flex"></div>
+                <!-- 휴가현황 316 -->
+                <div class="box vacation-wrap s316">
+                    <div class="hgroup">
+                        <strong>휴가현황</strong>
+                    </div>
+                    <div class="tab-wrap -box2">
+                        <ul class="tablist" role="tablist">
+                            <li class="on" role="tab"><a href="">일별</a></li>
+                            <li role="tab"><a href="">월별</a></li>
+                        </ul>
+                        <div class="panels">
+                            <div class="on" role="tabpanel">
+                                <div class="scd-list">
+                                    <div class="calendar-wrapM">
+                                        <div class="calendar-title">
+                                            <strong>2025년 6월</strong>
+                                            <p> 
+                                                <button type="button" class="prev">이전</button>
+                                                <button type="button" class="next">다음</button>
+                                            </p>
+                                        </div>
+                                        <table>
+                                            <colgroup>
+                                                <col styyle="width:28px" span="7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>일</th>
+                                                    <th>월</th>
+                                                    <th>화</th>
+                                                    <th>수</th>
+                                                    <th>목</th>
+                                                    <th>금</th>
+                                                    <th>토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="day-weekend">1</td>
+                                                    <td class="bgType3"><span>2</span></td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td class="day-weekend">7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">8</td>
+                                                    <td>9</td>
+                                                    <td class="bgType3">10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td class="bgType3">13</td>
+                                                    <td class="day-weekend">14</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">15</td>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td class="day-weekend">21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td class="bgType3">25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td class="day-weekend">28</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">29</td>
+                                                    <td>30</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="day-weekend"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class="calendar-list">
+                                        <li class="bgType3"><a href=""><em>6월 2일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 10일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 13일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 25일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div role="tabpanel">
+                                <div class="scd-list">
+                                    <div class="calendar-wrapM">
+                                        <div class="calendar-title">
+                                            <strong>2025년 6월</strong>
+                                            <p>
+                                                <button type="button" class="prev">이전</button>
+                                                <button type="button" class="next">다음</button>
+                                            </p>
+                                        </div>
+                                        <table>
+                                            <colgroup>
+                                                <col styyle="width:28px" span="7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>일</th>
+                                                    <th>월</th>
+                                                    <th>화</th>
+                                                    <th>수</th>
+                                                    <th>목</th>
+                                                    <th>금</th>
+                                                    <th>토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- 
+                                                    클래스 정리
+                                                    class="bgType1" : 보라
+                                                    class="bgType2" : 하늘
+                                                    class="bgType3" : 초록
+                                                    class="bgType4" : 주황
+                                                -->
+                                                <tr>
+                                                    <td class="day-weekend">1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td class="bgType3">4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td class="day-weekend">7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td class="bgType3">13</td>
+                                                    <td class="day-weekend">14</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">15</td>
+                                                    <td class="bgType3">16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td class="day-weekend">21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td>25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td class="day-weekend">28</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">29</td>
+                                                    <td class="bgType3">30</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="day-weekend"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class="calendar-list">
+                                        <li class="bgType3"><a href=""><em>6월 4일</em><strong>김동부님</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 13일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 16일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 30일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 휴가현황 316 -->
+            </div>
+
+            <div style="width:568px">
+                <h3>2단 568</h3>
+
+                <!-- 휴가현황 568 -->
+                <div class="box vacation-wrap">
+                    <div class="hgroup">
+                        <strong>휴가현황</strong>
+                    </div>
+                    <div class="tab-wrap -box2">
+                        <ul class="tablist" role="tablist">
+                            <li class="on" role="tab"><a href="">일별</a></li>
+                            <li role="tab"><a href="">월별</a></li>
+                        </ul>
+                        <div class="panels">
+                            <div class="on" role="tabpanel">
+                                <div class="scd-list">
+                                    <div class="calendar-wrapM">
+                                        <div class="calendar-title">
+                                            <strong>2025년 6월</strong>
+                                            <p> 
+                                                <button type="button" class="prev">이전</button>
+                                                <button type="button" class="next">다음</button>
+                                            </p>
+                                        </div>
+                                        <table>
+                                            <colgroup>
+                                                <col styyle="width:28px" span="7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>일</th>
+                                                    <th>월</th>
+                                                    <th>화</th>
+                                                    <th>수</th>
+                                                    <th>목</th>
+                                                    <th>금</th>
+                                                    <th>토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="day-weekend">1</td>
+                                                    <td class="bgType3"><span>2</span></td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td class="day-weekend">7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">8</td>
+                                                    <td>9</td>
+                                                    <td class="bgType3">10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td class="bgType3">13</td>
+                                                    <td class="day-weekend">14</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">15</td>
+                                                    <td>16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td class="day-weekend">21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td class="bgType3">25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td class="day-weekend">28</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">29</td>
+                                                    <td>30</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="day-weekend"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class="calendar-list">
+                                        <li class="bgType3"><a href=""><em>6월 2일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 10일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 13일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 25일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div role="tabpanel">
+                                <div class="scd-list">
+                                    <div class="calendar-wrapM">
+                                        <div class="calendar-title">
+                                            <strong>2025년 6월</strong>
+                                            <p>
+                                                <button type="button" class="prev">이전</button>
+                                                <button type="button" class="next">다음</button>
+                                            </p>
+                                        </div>
+                                        <table>
+                                            <colgroup>
+                                                <col styyle="width:28px" span="7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>일</th>
+                                                    <th>월</th>
+                                                    <th>화</th>
+                                                    <th>수</th>
+                                                    <th>목</th>
+                                                    <th>금</th>
+                                                    <th>토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- 
+                                                    클래스 정리
+                                                    class="bgType1" : 보라
+                                                    class="bgType2" : 하늘
+                                                    class="bgType3" : 초록
+                                                    class="bgType4" : 주황
+                                                -->
+                                                <tr>
+                                                    <td class="day-weekend">1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td class="bgType3">4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td class="day-weekend">7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                    <td class="bgType3">13</td>
+                                                    <td class="day-weekend">14</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">15</td>
+                                                    <td class="bgType3">16</td>
+                                                    <td>17</td>
+                                                    <td>18</td>
+                                                    <td>19</td>
+                                                    <td>20</td>
+                                                    <td class="day-weekend">21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">22</td>
+                                                    <td>23</td>
+                                                    <td>24</td>
+                                                    <td>25</td>
+                                                    <td>26</td>
+                                                    <td>27</td>
+                                                    <td class="day-weekend">28</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="day-weekend">29</td>
+                                                    <td class="bgType3">30</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="day-weekend"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class="calendar-list">
+                                        <li class="bgType3"><a href=""><em>6월 4일</em><strong>김동부님</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 13일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 16일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                        <li class="bgType3"><a href=""><em>6월 30일</em><strong>김소연 프로</strong>오후반차</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 휴가현황 568 -->
+            </div>
+        </div>
+
+        <h2>4. 드라이브</h2><br>
+        <div class="flex">
+            <div style="width:220px">
+                <h3>1단 220</h3>
+
+                <!-- 드라이브 220 -->
+                <div class="box drive-wrap s220">
+                    <div class="hgroup">
+                        <strong>드라이브<button type="button" class="more">더보기</button></strong>
+                    </div>
+                    <ul>
+                        <li class="drive-ic1"><a href="">공유문서</a></li>
+                        <li class="drive-ic2"><a href="">최근문서</a></li>
+                        <li class="drive-ic3"><a href="">중요문서</a></li>
+                    </ul>
+                    <p>
+                        210.0GB
+                        <strong>34.3GB</strong>
+                    </p>
+                </div>
+                <!--드라이브 220 -->
+            </div>
+
+            <div style="width:568px">
+                <h3>2단 568</h3>
+
+                <!-- 드라이브 568 -->
+                <div class="box drive-wrap s568 h210">
+                    <div class="hgroup">
+                        <strong>드라이브<button type="button" class="more">더보기</button></strong>
+                    </div>
+                    <ul>
+                        <li class="drive-ic1"><a href="">공유문서</a></li>
+                        <li class="drive-ic2"><a href="">최근문서</a></li>
+                        <li class="drive-ic3"><a href="">중요문서</a></li>
+                    </ul>
+                    <p>
+                        210.0GB
+                        <strong>34.3GB</strong>
+                    </p>
+                </div>
+                <!--드라이브 568 -->
+            </div>
+        </div>
         
         <h2>5. 오늘의 이벤트</h2><br>
-        <div class="flex"></div>
+        <div class="flex">
+            <div style="width:336px">
+                <h3>1단 336</h3>
+
+                <!-- 오늘의 이벤트 336 -->
+                <div class="box event-wrap s336">
+                    <div class="hgroup">
+                        <strong>오늘의 이벤트<button type="button" class="more">더보기</button></strong>
+                    </div>
+                    
+                    <ul class="event-list">
+                        <li>
+                            <strong>생일을 축하해요!</strong>
+                            <img src="/image/img_tmp.png" alt="">
+                        </li>
+                        <li>
+                            <strong>신규입사자</strong>
+                            <figure>
+                                <img src="/image/img_tmp.png" alt="">
+                                <img src="/image/img_tmp.png" alt="">
+                                <span>+3</span>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+                <!--오늘의 이벤트 336 -->
+            </div>
+
+            <div style="width:752px">
+                <h3>2단 752</h3>
+
+                <!-- 오늘의 이벤트 752 -->
+                <div class="box event-wrap s752">
+                    <div class="hgroup">
+                        <strong>오늘의 이벤트<button type="button" class="more">더보기</button></strong>
+                    </div>
+                    
+                    <div class="event-list">
+                        <strong>생일을 축하해요!</strong>
+                        <div class="slider">
+                            <div>
+                                <img src="/image/img_tmp.png" alt="">
+                                <p>
+                                    <strong>이동비 <em>프로</em></strong>
+                                    <span>인프라 기술팀 <em>06.21</em></span>
+                                </p>
+                            </div>
+                            <div>
+                                <img src="/image/img_tmp.png" alt="">
+                                <p>
+                                    <strong>홍길동 <em>프로</em></strong>
+                                    <span>인프라 기술팀 <em>06.21</em></span>
+                                </p>
+                            </div>
+                            <div>
+                                <img src="/image/img_tmp.png" alt="">
+                                <p>
+                                    <strong>김동부 <em>프로</em></strong>
+                                    <span>인프라 기술팀 <em>06.21</em></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-list">
+                        <strong>입사를 환영합니다!</strong>
+                        <div class="slider">
+                            <div>
+                                <img src="/image/img_tmp.png" alt="">
+                                <p>
+                                    <strong>이동비 <em>프로</em></strong>
+                                    <span>인프라 기술팀 <em>06.21</em></span>
+                                </p>
+                            </div>
+                            <!-- <div>
+                                <img src="/image/img_tmp.png" alt="">
+                                <p>
+                                    <strong>홍길동 <em>프로</em></strong>
+                                    <span>인프라 기술팀 <em>06.21</em></span>
+                                </p>
+                            </div>
+                            <div>
+                                <img src="/image/img_tmp.png" alt="">
+                                <p>
+                                    <strong>김동부 <em>프로</em></strong>
+                                    <span>인프라 기술팀 <em>06.21</em></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!--오늘의 이벤트 752 -->
+            </div>
+        </div>
         
         <h2>6. 나의할일</h2><br>
         <div class="flex">
             <div style="width:400px">
-                <h3>1단 316</h3>
-                <!-- 나의할일 316 -->
-                <div class="box -w s400">
+                <h3>1단 400</h3>
+                <!-- 나의할일 400 -->
+                <div class="box s400">
                         <div class="hgroup">
                             <strong>나의할일<button type="button" class="more">더보기</button></strong>
                             <button type="button" class="refresh">새로고침</button>
@@ -857,14 +1377,14 @@
                                 2025.05.19
                             </li>
                         </ul>
-                    </div>
-                <!-- //나의할일 316 -->
+                </div>
+                <!-- //나의할일 400 -->
             </div>
 
             <div style="width:752px">
                 <h3>2단 752</h3>
                 <!-- 나의할일 752 -->
-                <div class="box -w s752">
+                <div class="box s752">
                         <div class="hgroup">
                             <strong>나의할일<button type="button" class="more">더보기</button></strong>
                             <button type="button" class="refresh">새로고침</button>
@@ -891,13 +1411,85 @@
                                 2025.05.19
                             </li>
                         </ul>
-                    </div>
+                </div>
                 <!-- //나의할일 752 -->
             </div>
         </div>
         
         <h2>7. 이메일</h2><br>
-        <div class="flex"></div>
+        <div class="flex">
+            <div style="width:400px">
+                <h3>1단 400</h3>
+                <!-- 이메일 400 -->
+                <div class="box mail-wrap s400">
+                    <div class="hgroup">
+                        <strong>이메일<em class="btn -line -sm">999+</em><button type="button" class="more">더보기</button></strong>
+                        <button type="button" class="refresh">새로고침</button>
+                    </div>
+
+                    <ul>
+                        <li class="new">
+                            <a href="">
+                                <p>전자결재][문서댓글 알림도착] 기안서-문서댓글 테스트</p>
+                                <strong>docmanager@dbinc.co.kr</strong>
+                                <em>2025.05.22</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>전자결재][문서댓글 알림도착] 기안서-문서댓글 테스트</p>
+                                <strong>docmanager@dbinc.co.kr</strong>
+                                <em>2025.05.22</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>전자결재][문서댓글 알림도착] 기안서-문서댓글 테스트</p>
+                                <strong>docmanager@dbinc.co.kr</strong>
+                                <em>2025.05.22</em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 이메일 400 -->
+            </div>
+
+            <div style="width:568px">
+                <h3>2단 568</h3>
+                <!-- 이메일 568 -->
+                <div class="box mail-wrap s568">
+                    <div class="hgroup">
+                        <strong>이메일<em class="btn -line -sm">999+</em><button type="button" class="more">더보기</button></strong>
+                        <button type="button" class="refresh">새로고침</button>
+                    </div>
+
+                    <ul>
+                        <li class="new">
+                            <a href="">
+                                <p>전자결재][문서댓글 알림도착] 기안서-문서댓글 테스트</p>
+                                <strong>docmanager@dbinc.co.kr</strong>
+                                <em>2025.05.22</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>전자결재][문서댓글 알림도착] 기안서-문서댓글 테스트</p>
+                                <strong>docmanager@dbinc.co.kr</strong>
+                                <em>2025.05.22</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>전자결재][문서댓글 알림도착] 기안서-문서댓글 테스트</p>
+                                <strong>docmanager@dbinc.co.kr</strong>
+                                <em>2025.05.22</em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 이메일 568 -->
+            </div>
+        </div>
         
         <h2>8. 출퇴근</h2><br>
         <div class="flex">
@@ -970,7 +1562,7 @@
                 <!-- 전자결재_미결재 568 -->
                 <div class="box -b -flex s568">
                     <div class="hgroup">
-                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <strong>전자결재<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
                     </div>
                     <ul class="payment-list">
@@ -997,7 +1589,7 @@
                 <!-- 전자결재_미결재 568 -->
                 <div class="box -b -flex s568 h265">
                     <div class="hgroup">
-                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <strong>전자결재<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
                     </div>
                     <ul class="payment-list">
@@ -1051,7 +1643,7 @@
                 <!-- 전자결재_미결재 568 -->
                 <div class="box -b -flex s568 h190">
                     <div class="hgroup">
-                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <strong>전자결재<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
                     </div>
                     <ul class="payment-list">
@@ -1107,7 +1699,7 @@
                 <!-- 전자결재_미결재 284 -->
                 <div class="box -b -flex s284 h100">
                     <div class="hgroup">
-                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <strong>전자결재<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
                     </div>
                     <ul class="payment-list">
@@ -1161,7 +1753,7 @@
                 <!-- 전자결재_미결재 284 -->
                 <div class="box -b -flex s284 h265">
                     <div class="hgroup">
-                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <strong>전자결재<button type="button" class="more">더보기</button></strong>
                         <button type="button" class="refresh">새로고침</button>
                     </div>
                     <ul class="payment-list">
@@ -1211,7 +1803,154 @@
         </div>
         
         <h2>10. 전자결재 알림</h2><br>
-        <div class="flex"></div>
+        <div class="flex">
+            <div style="width:400px">
+                <h3>1단 400</h3>
+
+                <!-- 전자결재 알림 400 -->
+                <div class="box payment-alarm s400">
+                    <div class="hgroup">
+                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <button type="button" class="refresh">새로고침</button>
+                    </div>
+                    <div class="tab-wrap -box3">
+                        <ul class="tablist" role="tablist">
+                            <li class="on" role="tab"><a href="">전자결재</a></li>
+                            <li role="tab"><a href="">멘션</a></li>
+                        </ul>
+                        <div class="panels">
+                            <div class="on" role="tabpanel">
+                                <ul class="main-list">
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div role="tabpanel">멘션</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 전자결재 알림 400 -->
+            </div>
+            
+            <div style="width:400px">
+                <h3>1단 400</h3>
+
+                <!-- 전자결재 알림 400 -->
+                <div class="box payment-alarm s400">
+                    <div class="hgroup">
+                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <button type="button" class="refresh">새로고침</button>
+                    </div>
+                    <div class="tab-wrap -box3">
+                        <ul class="tablist" role="tablist">
+                            <li role="tab"><a href="">전자결재</a></li>
+                            <li class="on" role="tab"><a href="">멘션</a></li>
+                        </ul>
+                        <div class="panels">
+                            <div role="tabpanel">
+                                <ul class="main-list">
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="on" role="tabpanel">
+                                <div class="no-data">
+                                    <p>
+                                        검색 결과가 없습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 전자결재 알림 400 -->
+            </div>
+
+            <div style="width:568px">
+                <h3>1단 568</h3>
+
+                <!-- 전자결재 알림 568 -->
+                <div class="box payment-alarm s568">
+                    <div class="hgroup">
+                        <strong>전자결재 알림<button type="button" class="more">더보기</button></strong>
+                        <button type="button" class="refresh">새로고침</button>
+                    </div>
+                    <div class="tab-wrap -box3">
+                        <ul class="tablist" role="tablist">
+                            <li class="on" role="tab"><a href="">전자결재</a></li>
+                            <li role="tab"><a href="">멘션</a></li>
+                        </ul>
+                        <div class="panels">
+                            <div class="on" role="tabpanel">
+                                <ul class="main-list">
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <strong>[댓글의견] 김디비님의 댓글</strong>
+                                            <em>2025.05.28 11:21</em>
+                                            <p>김디비님 , 예산 항목이 누락되어 있습니다. 수정하시어 재상신 바랍니다.</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div role="tabpanel">멘션</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 전자결재 알림 568 -->
+            </div>
+        </div>
         
         <h2>11. 우리회사 시스템</h2><br>
         <div class="flex">
@@ -1219,7 +1958,7 @@
             <div style="width:400px">
                 <h3>1단 400x290</h3>
                 <!-- 우리회사 시스템 400 -->
-                <div class="box -w s400 h290">
+                <div class="box s400 h290">
                         <div class="hgroup">
                             <strong>우리 회사 시스템<button type="button" class="more">더보기</button></strong>
                             <p class="btn-box">
@@ -1245,7 +1984,7 @@
             <div style="width:400px">
                 <h3>2단 400x420</h3>
                 <!-- 우리회사 시스템 400 -->
-                <div class="box -w s400">
+                <div class="box s400">
                         <div class="hgroup">
                             <strong>우리 회사 시스템<button type="button" class="more">더보기</button></strong>
                             <p class="btn-box">
@@ -1270,7 +2009,6 @@
         </div>
         
 
-
     </div>
 </body>
 </html>
@@ -1283,3 +2021,23 @@
 <script src="js/jquery.jqGrid.min.js"></script>
 <script src="js/jstree.js"></script>
 <script src="js/ui-content.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('.slider').slick({
+        slidesToShow: 2,
+        infinite: false,
+        centerMode: false,
+        variableWidth: false,
+    });
+
+    $('.slider2').slick({
+        slidesToShow: 2,
+        infinite: false,
+        centerMode: false,
+        variableWidth: false,
+    });
+});
+</script>
