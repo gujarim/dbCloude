@@ -1323,6 +1323,10 @@ footer{
                 position: absolute;
                 top: rem(-35);
 
+                &.slick-disabled{
+                    opacity: .5;
+                }
+
                 &.slick-prev{
                     @include bg(prev_main, 0 0, rem(20) rem(20));
                     right: rem(24);

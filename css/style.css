@@ -1656,6 +1656,9 @@ footer .f-uniq select {
   position: absolute;
   top: -3.5rem;
 }
+.main-wrap .box.event-wrap .slick-arrow.slick-disabled {
+  opacity: 0.5;
+}
 .main-wrap .box.event-wrap .slick-arrow.slick-prev {
   background: url("../image/bg_prev_main.png") 0 0/2rem 2rem no-repeat;
   right: 2.4rem;
