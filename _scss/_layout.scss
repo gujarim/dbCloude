@@ -2012,6 +2012,12 @@ footer{
 
     strong{
         @include font(rem(22), 600);
+
+        em{
+            color: var(--f-primary);
+            margin-left: rem(4);
+            display: inline-block;
+        }
     }
 
     p{
