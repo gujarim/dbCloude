@@ -23,7 +23,7 @@ html, body{
 
     &.main{
         grid-template-columns: rem(76) 1fr rem(92);
-        transition: grid-template-columns .3s;
+        transition: grid-template-columns .2s;
 
         header{
             .logo{
@@ -34,8 +34,7 @@ html, body{
         }
 
         nav{
-            width: rem(76);
-            transition: width .3s;
+            // width: rem(76);
 
             .side-btn{
                 display: none;
@@ -185,7 +184,6 @@ nav{
     grid-row: 1 / 4;
     display: grid;
     grid-template-columns: rem(76) 1fr;
-    background-color: var(--f-white);
     @include position(fixed, 0, null, null, 0, 10);
     width: rem(296);
     height: 100%;
@@ -368,7 +366,7 @@ nav{
         border-right: rem(1) solid #E5EAEF;
         overflow-y: auto;
         transform: translateX(0);
-        transition: transform .3s;
+        transition: transform .2s;
 
         >ul{ // 2depth
             display: none;
