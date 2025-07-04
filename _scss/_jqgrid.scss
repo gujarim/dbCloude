@@ -55,6 +55,7 @@
                 }
             }
         }
+
         .ui-jqgrid-btable{
             table-layout: inherit;
             width:100% !important;
@@ -200,6 +201,10 @@
                 }
             }
         }
+    }
+
+    .btn-wrap{
+        margin-top: rem(16);
     }
 
     .info{

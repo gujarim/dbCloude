@@ -27,6 +27,11 @@
         color: var(--f-white);
     }
 
+    &.-secondary{
+        background-color: var(--bg-primary2);
+        color: var(--f-primary);
+    }
+
     &.-false{
         background-color: var(--bg-false);
         color: var(--f-flase);
@@ -146,6 +151,81 @@
         margin-right: rem(4);
     }
 }
+.i-listw{ //목록2
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'list_white', 'pseudo');
+        margin:rem(3) rem(4) 0 0;
+    }
+}
+.i-approval{ //승인
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'approval', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-companion{ //반려
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'companion', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-publicview{ //공람
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'publicview', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-print{ //인쇄
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'print', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-del{ //삭제
+    @include font(rem(14), 600);
+    @include rounded(rem(8));
+    border: rem(1) solid var(--line-base);
+    background-color: var(--f-white);
+    color: var(--f-secondary);
+    width: rem(65);
+    height: rem(32);
+    margin: 0 auto;
+    &::after{
+        @include icon(16, 'del', 'pseudo');
+        margin-left: rem(4);
+    }
+
+    &.la{
+        &::after{
+            @include icon(20, 'del', 'pseudo');
+        }
+    }
+}
+
+.i-add{ //추가
+    @include font(rem(14), 600);
+    @include rounded(rem(8));
+    border: rem(1) solid var(--line-base);
+    background-color: var(--f-white);
+    color: var(--f-secondary);
+    width: rem(65);
+    height: rem(32);
+    margin: 0 auto;
+    &::after{
+        @include icon(20, 'add', 'pseudo');
+        margin-left: rem(4);
+    }
+}
 
 .pay{
     @include font(rem(13), 400);
@@ -232,6 +312,13 @@
     height: rem(20);
 }
 
+.download{
+    @include fontHidden;
+    @include bg(download);
+    width: rem(24);
+    height: rem(24);
+}
+
 input[type=text]{
     @include rounded(rem(8)); 
     @include font(rem(14), 600);
@@ -276,7 +363,21 @@ input[type=checkbox]:not(.chk-imprt){ // 테이블에 즐겨찾기빼고
     }
 
     &+label{
+        @include font(rem(16), 600);
         margin-left: rem(8);
+    }
+}
+
+.rd-wrap{
+
+    label{
+        @include font(rem(16), 600);
+        line-height: rem(24);
+        margin-left: rem(8);
+
+        &:not(:last-child){
+            margin-right: rem(24);
+        }
     }
 }
 
@@ -285,9 +386,19 @@ input[type=radio]{
     width: rem(24);
     height: rem(24);
     vertical-align: middle;
-}
-input[type=radio]:checked{
-    @include bg-url(radio_on);
+    margin-top: rem(-3);
+
+    &:checked{
+        @include bg-url(radio_on);
+    }
+
+    &:checked:disabled{
+        @include bg-url(radio_on_disabled);
+
+        +label{
+            color: var(--f-menu);
+        }
+    }
 }
 
 .input-calendar{

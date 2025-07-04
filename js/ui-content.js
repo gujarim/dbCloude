@@ -86,7 +86,7 @@ const createCustomPager = (gridId, pagerSelector) => {
 
 // 조회영역 2행 미만이면 더보기 버튼 숨기기
 const toggleTableReset = () => {
-    const allRows = document.querySelectorAll('.search-box tbody tr');
+    const allRows = document.querySelectorAll('.search-box:not(.-nobtn) tbody tr');
     const toggleContainer = document.querySelector('.search-close');
 
     if (allRows.length < 2) {

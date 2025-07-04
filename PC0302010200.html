@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>전자결재>미결함 상세</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container -epayment"> <!-- [D] : 전자결재페이지만 class="containe -epayment" 추가해주세요. -->
+            <div class="tit-box">
+                <h2 class="tit-h2">미결함 문서상세</h2>
+                <div class="btn-wrap">
+                    <button type="button" class="i-approval">승인</button>
+                    <button type="button" class="i-companion">반려</button>
+                    <button type="button" class="i-save">임시저장</button>
+                    <button type="button" class="i-publicview">공람 </button>
+                    <button type="button" class="i-print">인쇄</button>
+                    <button type="button" class="i-listw">목록</button>
+                </div>
+            </div>
+
+            <div class="search-box -nobtn">
+                <table>
+                    <caption>문서번호, 문서제목, 부서내공개여부, 문서유형, 문서등급, 보존연한으로 구성된 미결함에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.3rem">
+                        <col style="width: 20%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 20%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 20%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 20%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>문서번호</th>
+                            <td><input type="text" value="Abcd-2025-11" placeholder="문서제목 입력" readonly></td>
+                            <th>문서제목</th>
+                            <td colspan="5"><input type="text" value="구매요청" placeholder="문서제목 입력"></td>
+                        </tr>
+                        <tr>
+                            <th>부서내<br>공개여부</th>
+                            <td>
+                                <div class="rd-wrap">
+                                    <input type="radio" name="ra" id="ra1"disabled>
+                                    <label for="ra1">공개</label>
+                                    <input type="radio" name="ra" id="ra2" checked disabled>
+                                    <label for="ra2">비공개</label>
+                                </div>
+                            </td>
+                            <th>문서유형</th>
+                            <td><input type="text" value="구매요청서" placeholder="문서유형 입력" readonly></td>
+                            <th>문서등급</th>
+                            <td><input type="text" value="일반" placeholder="문서등급 입력" readonly></td>
+                            <th>보존연한</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-jq mb40">
+                <div class="hgroup">
+                    <strong>결재선</strong>
+                    <div class="sort">
+                        <button type="button" class="btn -line">진행상황</button>
+                        <button type="button" class="btn -line">결재선편집</button>
+                    </div>
+                </div>
+
+                <table id="grid1"></table>
+            </div>
+
+            <div class="table-jq mb40">
+                <div class="hgroup">
+                    <strong>수신처 및 (추가)통보선<em>1</em></strong>
+                    <div class="sort">
+                        <button type="button" class="tbl-close">닫기</button>
+                    </div>
+                </div>
+
+                <table id="grid2"></table>
+
+                <div class="btn-wrap">
+                    <button type="button" class="btn -line">원본문서확인</button>
+                </div>
+            </div>
+
+            <div class="edit-wrap mb40">
+                <div class="hgroup">
+                    <strong>결재 문서 내용</strong>
+                </div>
+
+                <div style="background-color: #D9D9D9;height: 540px;"></div>
+            </div>
+
+            <div class="table-jq mb40">
+                <div class="hgroup">
+                    <strong>기결재문서 첨부</strong>
+                    <div class="sort">
+                        <button type="button" class="btn -secondary">추가</button>
+                    </div>
+                </div>
+
+                <table id="grid3"></table>
+            </div>
+
+            <div class="mb40">
+                <div class="hgroup">
+                    <strong>첨부파일</strong>
+                    <div class="sort">
+                        <button type="button" class="btn -line">삭제</button>
+                        <button type="button" class="btn -secondary">추가</button>
+                    </div>
+                </div>
+
+                <ul class="attach-wrap">
+                    <li>
+                        <div class="chk-wrap">
+                            <input type="checkbox" id="chk1">
+                            <label for="chk1">free_Icon_key_722933.png<em>[9.9kb]</em></label>
+                        </div>
+                        <button type="button" class="download">다운로드</button>
+                    </li>
+                    <li>
+                        <div class="chk-wrap">
+                            <input type="checkbox" id="chk2">
+                            <label for="chk2">free_Icon_key_722933.png<em>[9.9kb]</em></label>
+                        </div>
+                        <button type="button" class="download">다운로드</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb32">
+                <div class="hgroup">
+                    <strong>댓글의견</strong>
+                </div>
+
+                <ul class="comment-wrap">
+                    <li>
+                        <div class="cot-info">
+                            <img src="image/img_tmp.png" alt="">
+                            <div>
+                                <strong>박디비</strong>
+                                <p>개발2팀<em>2025.06.20 10:55:47</em></p>
+                            </div>
+                        </div>
+                        <p class="cot-contents">
+                            이디비님, 예상 항목이 누락되었습니다. 수정하여 재상신 바랍니다.
+                        </p>
+                        <div class="cot-uniq">
+                            <div class="btn-wrap">
+                                <button type="button" class="i-add">추가</button>
+                                <button type="button" class="i-del -la">삭제</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cot-info">
+                            <img src="image/img_tmp.png" alt="">
+                            <div>
+                                <strong>박디비</strong>
+                                <p>개발2팀<em>2025.06.20 10:55:47</em></p>
+                            </div>
+                        </div>
+                        <p class="cot-contents">
+                            <a href="" class="hashtag">@박디비</a>
+                            이디비님, 예상 항목이 누락되었습니다. 수정하여 재상신 바랍니다.
+                        </p>
+                        <div class="cot-uniq">
+                            <div class="chk-wrap">
+                                <input type="checkbox" id="chk1">
+                                <label for="chk1">상신문서 수정.pdf</label>
+                                <input type="checkbox" id="chk2">
+                                <label for="chk2">테스트양식 첨부.pdf</label>
+                                <input type="checkbox" id="chk3">
+                                <label for="chk3 ">파일명은최대10자까지.pdf</label>
+                            </div>
+                            <div class="btn-wrap">
+                                <button type="button" class="i-add">추가</button>
+                                <button type="button" class="i-del -la">삭제</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="hgroup -flexS">
+                    <strong>@알파멘션 상대지정</strong>
+                    <select name="" id="">
+                        <option value="">선택</option>
+                    </select>
+                </div>
+
+                <div class="alpa-wrap">
+                    <textarea name="" id="" placeholder="내용을 입력하세요"></textarea>
+                    <button class="btn -line">등록</button>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <button type="button" class="i-approval">승인</button>
+                <button type="button" class="i-companion">반려</button>
+                <button type="button" class="i-save">임시저장</button>
+                <button type="button" class="i-publicview">공람 </button>
+                <button type="button" class="i-print">인쇄</button>
+                <button type="button" class="i-listw">목록</button>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //결재선
+        var localData1 = [
+            { 
+                inx1: "기안", //결재유형
+                inx2: "개발1팀", //부서명
+                inx3: "이디비", //성명
+                inx4: "주임", //직위
+                inx5: "-", //부서장구분
+                inx6: "2025.05.01 15:44:57", //처리일시
+                inx7: "상신합니다.", //의견
+                inx8: "승인", //처리
+            }
+        ];
+        $("#grid1").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData1, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '결재유형', 
+                '부서명',
+                '성명',
+                '직위',
+                '부서장구분',
+                '처리일시',
+                '의견',
+                '처리'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '8%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '15%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '5%', sortable: false},
+            ],
+            // pager: '#pager1', // 페이징을 위한 요소
+            rowNum: 4,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            // loadComplete: function () {
+            //     createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
+            // }
+        });
+
+        //수신처 및(추가)통보선
+        var localData2 = [
+            { 
+                inx1: "기안", //결재유형
+                inx2: "파도", //조직명
+                inx3: "개발1팀", //부서명
+                inx4: "이디비", //성명
+                inx5: "주임", //직위
+                inx6: "2025.05.01 15:44:57", //처리일시
+                inx7: "상신합니다.", //의견
+                inx8: "승인", //처리
+            }
+        ];
+        $("#grid2").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData2, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '결재유형', 
+                '조직명',
+                '부서명',
+                '성명',
+                '직위',
+                '처리일시',
+                '의견',
+                '처리'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '8%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '15%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '5%', sortable: false},
+            ],
+            // pager: '#pager1', // 페이징을 위한 요소
+            rowNum: 4,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            // loadComplete: function () {
+            //     createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
+            // }
+        });
+
+        //기결재문서 첨부
+        var localData3 = [
+            { 
+                inx1: "1", //No
+                inx2: "구매요청서", //문서유형
+                inx3: "pado.co.kr-2024-71", //문서번호
+                inx4: "구매요청서_모니터_Z-1234", //문서제목
+                inx5: "한디비", //작성자
+                inx6: "완결", //상태
+                inx7: "2025.05.01", //상신일시
+                inx8: "삭제", //삭제
+            }
+        ];
+        $("#grid3").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData3, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                'No', 
+                '문서유형',
+                '문서번호',
+                '문서제목',
+                '작성자',
+                '상태',
+                '상신일시',
+                '삭제'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '3%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '5%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '5%', sortable: false, align: 'center',
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<button type="button" class="i-del">삭제</button>';
+                    }  
+                },
+            ],
+            // pager: '#pager1', // 페이징을 위한 요소
+            rowNum: 4,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            // loadComplete: function () {
+            //     createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
+            // }
+        });
+
+        
+        //수신처 및 (추가)통보선 테이블 접고/펼치기
+        $("#grid2").closest(".ui-jqgrid").hide();
+        $(".tbl-close").on("click", function () {
+            const gridContainer = $("#grid2").closest(".ui-jqgrid");
+            const btn = $(this);
+
+            gridContainer.slideToggle(200, function () {
+                if (gridContainer.is(":visible")) {
+                    btn.removeClass("close").addClass("open");
+                } else {
+                    btn.removeClass("open").addClass("close");
+                }
+            });
+        });
+    });
+</script>
