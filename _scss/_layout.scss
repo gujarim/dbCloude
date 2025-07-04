@@ -23,6 +23,7 @@ html, body{
 
     &.main{
         grid-template-columns: rem(76) 1fr rem(92);
+        transition: grid-template-columns .3s;
 
         header{
             .logo{
@@ -34,6 +35,7 @@ html, body{
 
         nav{
             width: rem(76);
+            transition: width .3s;
 
             .side-btn{
                 display: none;
@@ -61,10 +63,10 @@ html, body{
         grid-template-columns: rem(76) 1fr rem(92);
 
         nav{
-            width: auto;
+            width: rem(76);
 
             .sub-gnb{
-                display: none;
+                transform: translateX(-100%);
             }
 
             .side-btn{
@@ -191,6 +193,9 @@ nav{
     .gnb{ // 1depth
         padding: rem(32) rem(6);
         border-right: rem(1) solid #E5EAEF;
+        position: relative;
+        z-index: 1;
+        background-color: var(--f-white);
 
         li{
             a{
@@ -362,6 +367,8 @@ nav{
         padding: rem(40) rem(20);
         border-right: rem(1) solid #E5EAEF;
         overflow-y: auto;
+        transform: translateX(0);
+        transition: transform .3s;
 
         >ul{ // 2depth
             display: none;
@@ -821,6 +828,10 @@ footer{
         }
 
         &.system-wrap{
+            .hgroup{
+                margin-bottom: rem(32);
+            }
+
             ul{
                 @include flex(flex, space-between, center);
                 flex-wrap: wrap;
@@ -925,6 +936,7 @@ footer{
             @include flex(grid, space-between);
             align-items: center;
             background-color: #00854A;
+            height: rem(100);
 
             p{
                 @include font(rem(14), 400);
@@ -934,8 +946,6 @@ footer{
 
             strong{
                 @include font(rem(18), 700);
-                margin-top: rem(8);
-                // display: block;
                 color: var(--f-white);
                 grid-column: 2 / 1;
 
@@ -997,6 +1007,10 @@ footer{
         }
 
         &.my-wrap{
+            .hgroup{
+                margin-bottom: rem(43);
+            }
+
             ul{
                 margin-top: rem(27);
                 @include flex(flex, space-between, center);
@@ -1052,6 +1066,59 @@ footer{
                             background-color: #87E76F;
                         }
                     }
+                }
+            }
+        }
+
+        &.news-wrap{
+            position: relative;
+
+            .hgroup{
+                @include position(absolute, rem(24), rem(24), null, null);
+                margin-bottom: 0;
+                line-height: rem(34);
+
+                .refresh{
+                    margin-left: rem(4);
+                }
+            }
+
+            .dx-list{
+                counter-reset: number;
+                margin-bottom: rem(20);
+
+                li{
+                    a{
+                        @include rounded(rem(12));
+                        @include flex(flex, space-between, center);
+                        background-color: #EDF4F4;
+                        padding: rem(12) rem(16);
+
+                        strong{
+                            @include font(rem(14), 600);
+
+                            &::before{
+                                content: counter(number) " .";
+                                counter-increment: number;
+                                @include font(rem(14), 600);
+                                padding-right: rem(8);
+                            }
+                        }
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: rem(8);
+                    }
+                }
+            }
+
+            .-primary{
+                @include font(rem(13), 400);
+                width: 100%;
+                margin-top: rem(32);
+
+                strong{
+                    font-weight: 700;
                 }
             }
         }
@@ -1200,34 +1267,7 @@ footer{
             }
         }
 
-        .dx-list{
-            counter-reset: number;
-            margin-bottom: rem(20);
-
-            li{
-                a{
-                    @include rounded(rem(12));
-                    @include flex(flex, space-between, center);
-                    background-color: #EDF4F4;
-                    padding: rem(12) rem(16);
-
-                    strong{
-                        @include font(rem(14), 600);
-
-                        &::before{
-                            content: counter(number) " .";
-                            counter-increment: number;
-                            @include font(rem(14), 600);
-                            padding-right: rem(8);
-                        }
-                    }
-                }
-
-                &:not(:last-child){
-                    margin-bottom: rem(8);
-                }
-            }
-        }
+        
 
         .main-list{
             li{
