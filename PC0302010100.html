@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -91,7 +92,9 @@
 <script src="js/grid.locale-en.js"></script>
 <script src="js/jquery.jqGrid.min.js"></script>
 <script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/ui-content.js"></script>
+
 <script>
     $(document).ready(function () {
         var localData = [
@@ -99,7 +102,7 @@
                 inx1: "1", //순번
                 inx2: "선택", //선택
                 inx3: "즐겨찾기", 
-                inx4: "기안서", //문서유형
+                inx4: "가", //문서유형
                 inx5: "기안서", //문서양식
                 inx6: "기안서", //문서제목
                 inx7: "한디비/개발1팀", //작성자
@@ -107,77 +110,161 @@
                 inx9: "결재진행중", //상태
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결재유형
-                inx12: "pado.co.kr-2024", //문서번호
+                inx12: "apado.co.kr-2024", //문서번호
             },
             {   
                 inx1: "2", //순번
                 inx2: "선택", //선택
                 inx3: "즐겨찾기", 
-                inx4: "기안서", //문서유형
+                inx4: "나", //문서유형
                 inx5: "기안서", //문서양식
-                inx6: "기안서", //문서제목
+                inx6: "나안서", //문서제목
                 inx7: "한디비/개발1팀", //작성자
-                inx8: "2024-11-21 15:44:09", //상신일시
+                inx8: "2025-11-21 15:44:09", //상신일시
                 inx9: "결재진행중", //상태
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결재유형
-                inx12: "pado.co.kr-2024", //문서번호
+                inx12: "cpado.co.kr-2024", //문서번호
             },
             {   
                 inx1: "3", //순번
                 inx2: "선택", //선택
                 inx3: "즐겨찾기", 
-                inx4: "기안서", //문서유형
+                inx4: "다", //문서유형
                 inx5: "기안서", //문서양식
-                inx6: "기안서", //문서제목
+                inx6: "자안서", //문서제목
                 inx7: "한디비/개발1팀", //작성자
-                inx8: "2024-11-21 15:44:09", //상신일시
+                inx8: "2026-11-21 15:44:09", //상신일시
                 inx9: "결재진행중", //상태
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결재유형
-                inx12: "pado.co.kr-2024", //문서번호
+                inx12: "vpado.co.kr-2024", //문서번호
             },
             {   
                 inx1: "4", //순번
                 inx2: "선택", //선택
                 inx3: "즐겨찾기", 
-                inx4: "기안서", //문서유형
+                inx4: "라", //문서유형
                 inx5: "기안서", //문서양식
-                inx6: "기안서", //문서제목
+                inx6: "아안서", //문서제목
                 inx7: "한디비/개발1팀", //작성자
-                inx8: "2024-11-21 15:44:09", //상신일시
+                inx8: "2027-11-21 15:44:09", //상신일시
                 inx9: "결재진행중", //상태
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결재유형
-                inx12: "pado.co.kr-2024", //문서번호
+                inx12: "wpado.co.kr-2024", //문서번호
             },
             {   
                 inx1: "5", //순번
                 inx2: "선택", //선택
                 inx3: "즐겨찾기", 
-                inx4: "기안서", //문서유형
+                inx4: "마", //문서유형
                 inx5: "기안서", //문서양식
-                inx6: "기안서", //문서제목
+                inx6: "마안서", //문서제목
                 inx7: "한디비/개발1팀", //작성자
-                inx8: "2024-11-21 15:44:09", //상신일시
+                inx8: "2028-11-21 15:44:09", //상신일시
                 inx9: "결재진행중", //상태
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결재유형
-                inx12: "pado.co.kr-2024", //문서번호
+                inx12: "qpado.co.kr-2024", //문서번호
             },
             {   
                 inx1: "6", //순번
                 inx2: "선택", //선택
                 inx3: "즐겨찾기", 
-                inx4: "기안서", //문서유형
+                inx4: "바", //문서유형
                 inx5: "기안서", //문서양식
-                inx6: "기안서", //문서제목
+                inx6: "바안서", //문서제목
                 inx7: "한디비/개발1팀", //작성자
-                inx8: "2024-11-21 15:44:09", //상신일시
+                inx8: "2029-11-21 15:44:09", //상신일시
                 inx9: "결재진행중", //상태
                 inx10: "이디비/개발2팀", //결재대기자
                 inx11: "합의(순차)", //결재유형
-                inx12: "pado.co.kr-2024", //문서번호
+                inx12: "apado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "7", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "다", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "자안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2026-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결재유형
+                inx12: "vpado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "8", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "카", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "아안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2027-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결재유형
+                inx12: "wpado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "9", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "하", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "마안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2028-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결재유형
+                inx12: "qpado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "10", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "타", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "바안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2029-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결재유형
+                inx12: "apado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "11", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "마", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "마안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2028-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결재유형
+                inx12: "qpado.co.kr-2024", //문서번호
+            },
+            {   
+                inx1: "12", //순번
+                inx2: "선택", //선택
+                inx3: "즐겨찾기", 
+                inx4: "바", //문서유형
+                inx5: "기안서", //문서양식
+                inx6: "바안서", //문서제목
+                inx7: "한디비/개발1팀", //작성자
+                inx8: "2029-11-21 15:44:09", //상신일시
+                inx9: "결재진행중", //상태
+                inx10: "이디비/개발2팀", //결재대기자
+                inx11: "합의(순차)", //결재유형
+                inx12: "apado.co.kr-2024", //문서번호
             }
         ];
         $("#grid").jqGrid({
@@ -198,32 +285,32 @@
                 '문서번호',
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%', hidden: true},
-                { name: 'inx2', index: 'inx2', width: '5%', hidden: true},
-                { name: 'inx3', index: 'inx3', width: '5%', sorttype: "int",
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '5%', sorttype: "int",sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<input type="checkbox" id="chk-imp" class="chk-imprt"><label for="chk-imp" class="btn-imprt">즐겨찾기</label>';
                     }
                 },
-                { name: 'inx4', index: 'inx4', width: '10%'},
-                { name: 'inx5', index: 'inx5', width: '10%'},
-                { name: 'inx6', index: 'inx6', width: '10%'},
-                { name: 'inx7', index: 'inx7', width: '12%'},
-                { name: 'inx8', index: 'inx8', width: '12%'},
-                { name: 'inx9', index: 'inx9', width: '10%',
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: true},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: true},
+                { name: 'inx7', index: 'inx7', width: '12%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '12%', sortable: true, sorttype: 'date'},
+                { name: 'inx9', index: 'inx9', width: '10%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<button type="button" class="btn -ing">결재진행중</button>';
+                        return '<button type="button" class="btn -xsm -ing">결재진행중</button>';
                         // 클래스 정리
-                        // class="btn -ing" : 결재진행중
-                        // class="btn -complete" : 결재완료
+                        // class="btn -xsm -ing" : 결재진행중
+                        // class="btn -xsm -complete" : 결재완료
                     }  
                 },
-                { name: 'inx10', index: 'inx10', width: '12%'},
-                { name: 'inx11', index: 'inx11', width: '10%'},
-                { name: 'inx12', index: 'inx12', width: '12%'}
+                { name: 'inx10', index: 'inx10', width: '12%', sortable: false},
+                { name: 'inx11', index: 'inx11', width: '10%', sortable: false},
+                { name: 'inx12', index: 'inx12', width: '12%', sortable: true}
             ],
             pager: '#pager', // 페이징을 위한 요소
-            rowNum: 5,
+            rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 'auto', // 그리드 높이를 자동 조절

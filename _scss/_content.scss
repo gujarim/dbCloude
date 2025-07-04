@@ -52,6 +52,12 @@
         font-weight: 800;
     }
 
+    &.-xsm{
+        @include rounded(rem(20));
+        height: rem(26);
+        padding: 0 rem(12);
+    }
+
     &.-sm{
         height: rem(32);
     }

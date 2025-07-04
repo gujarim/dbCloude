@@ -13,6 +13,7 @@
             }
         }
     }
+
     .ui-jqgrid{
         .ui-jqgrid-htable{
             table-layout: inherit;
@@ -159,6 +160,41 @@
                     &.last{
                         button{
                             @include bg(last_page);
+                        }
+                    }
+                }
+            }
+        }
+
+        .ui-jqgrid-sortable {
+            .s-ico{
+                // display: none;
+
+                .ui-grid-ico-sort{
+                    position: relative;
+
+                    &::after{
+                        height: rem(18) !important;
+                        margin-left: rem(6);
+                    }
+
+                    &.ui-state-disabled{
+                        &::after{
+                            display: none !important;
+                        }
+                    }
+
+                    //오름차순
+                    &.ui-icon-asc{
+                        &::after{
+                            @include icon(10, 'asc', 'pseudo');
+                        }
+                    }
+
+                    //내림차순
+                    &.ui-icon-desc{
+                        &::after{
+                            @include icon(10, 'des', 'pseudo');
                         }
                     }
                 }

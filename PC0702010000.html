@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -191,6 +192,7 @@
 <script src="js/grid.locale-en.js"></script>
 <script src="js/jquery.jqGrid.min.js"></script>
 <script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/ui-content.js"></script>
 
 <script>
@@ -214,10 +216,10 @@
                 '부서장 구분'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
@@ -242,10 +244,10 @@
                 '비고'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
@@ -276,13 +278,13 @@
                 '세부전공'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'},
-                { name: 'inx5', index: 'inx5', width: '10%'},
-                { name: 'inx6', index: 'inx6', width: '10%'},
-                { name: 'inx7', index: 'inx7', width: '10%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '10%', sortable: false}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
@@ -316,13 +318,13 @@
                 '등록일자'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'},
-                { name: 'inx5', index: 'inx5', width: '10%'},
-                { name: 'inx6', index: 'inx6', width: '10%'},
-                { name: 'inx7', index: 'inx7', width: '10%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '10%', sortable: false}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
@@ -356,13 +358,13 @@
                 '동거여부'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'},
-                { name: 'inx5', index: 'inx5', width: '10%'},
-                { name: 'inx6', index: 'inx6', width: '10%'},
-                { name: 'inx7', index: 'inx7', width: '10%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '10%', sortable: false}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
@@ -396,13 +398,13 @@
                 '부서장구분'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'},
-                { name: 'inx5', index: 'inx5', width: '10%'},
-                { name: 'inx6', index: 'inx6', width: '10%'},
-                { name: 'inx7', index: 'inx7', width: '10%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '10%', sortable: false}
             ],
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절

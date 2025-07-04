@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -104,6 +105,7 @@
 <script src="js/grid.locale-en.js"></script>
 <script src="js/jquery.jqGrid.min.js"></script>
 <script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/ui-content.js"></script>
 
 <script>
@@ -235,19 +237,19 @@
                 '휴게시간'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '2%'},
-                { name: 'inx2', index: 'inx2', width: '3%'},
-                { name: 'inx3', index: 'inx3', width: '3%'},
-                { name: 'inx4', index: 'inx4', width: '4%'},
-                { name: 'inx5', index: 'inx5', width: '3%'},
-                { name: 'inx6', index: 'inx6', width: '3%'},
-                { name: 'inx7', index: 'inx7', width: '4%'},
-                { name: 'inx8', index: 'inx8', width: '4%'},
-                { name: 'inx9', index: 'inx9', width: '4%'},
-                { name: 'inx10', index: 'inx10', width: '4%'},
-                { name: 'inx11', index: 'inx11', width: '4%'},
-                { name: 'inx12', index: 'inx12', width: '4%'},
-                { name: 'inx13', index: 'inx13', width: '5%'}
+                { name: 'inx1', index: 'inx1', width: '2%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '3%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '3%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '4%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '3%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '3%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '4%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '4%', sortable: false},
+                { name: 'inx9', index: 'inx9', width: '4%', sortable: false},
+                { name: 'inx10', index: 'inx10', width: '4%', sortable: false},
+                { name: 'inx11', index: 'inx11', width: '4%', sortable: false},
+                { name: 'inx12', index: 'inx12', width: '4%', sortable: false},
+                { name: 'inx13', index: 'inx13', width: '5%', sortable: false}
             ],
             pager: '#pager1', // 페이징을 위한 요소
             rowNum: 6,
@@ -290,15 +292,15 @@
                 '변경사유'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%'},
-                { name: 'inx2', index: 'inx2', width: '10%'},
-                { name: 'inx3', index: 'inx3', width: '10%'},
-                { name: 'inx4', index: 'inx4', width: '10%'},
-                { name: 'inx5', index: 'inx5', width: '10%'},
-                { name: 'inx6', index: 'inx6', width: '5%'},
-                { name: 'inx7', index: 'inx7', width: '5%'},
-                { name: 'inx8', index: 'inx8', width: '5%'},
-                { name: 'inx9', index: 'inx9', width: '13%'}
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '5%', sortable: false},
+                { name: 'inx9', index: 'inx9', width: '13%', sortable: false}
             ],
             pager: '#pager4', // 페이징을 위한 요소
             rowNum: 2,

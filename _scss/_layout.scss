@@ -830,6 +830,7 @@ footer{
                     width: 33.33%;
                     height: rem(84);
                     text-align: center;
+                    position: relative;
 
                     a{
                         @include font(rem(13), 400);
@@ -841,6 +842,16 @@ footer{
                             display: block !important;
                             margin: 0 auto rem(8);
                         }
+                    }
+
+                    em{
+                        @include font(rem(12), 600);
+                        @include rounded(rem(12));
+                        @include position(absolute, rem(2), rem(25), null, null);
+                        color: var(--f-white);
+                        background-color: var(--bg-primary);
+                        padding: 0 rem(4);
+                        height: rem(15);
                     }
 
                     &.business{
@@ -1879,8 +1890,8 @@ footer{
     position: relative;
     background-color: var(--bg-third);
     border: rem(1) solid var(--line-secondary);
-    padding: rem(28) rem(60);
-    margin-bottom: rem(40);
+    padding: rem(20) rem(40);
+    margin-bottom: rem(34);
     gap: 0 rem(60);
 
     .search-close{

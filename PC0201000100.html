@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -88,6 +89,7 @@
 <script src="js/grid.locale-en.js"></script>
 <script src="js/jquery.jqGrid.min.js"></script>
 <script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/ui-content.js"></script>
 
 <script>
@@ -162,6 +164,46 @@
                 inx6: "49", //조회수
                 inx7: "한디비", //작성자
                 inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "8", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "9", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "10", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
+            },
+            { 
+                inx1: "111", //순번
+                inx2: "선택", //선택
+                inx3: "자유게시판", //게시판분류
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx5: "첨부파일, 사진", //첨부파일
+                inx6: "49", //조회수
+                inx7: "한디비", //작성자
+                inx8: "2024-11-21", //등록일시
             }
         ];
 
@@ -179,9 +221,9 @@
                 '등록일시'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%', hidden: true},
-                { name: 'inx2', index: 'inx2', width: '5%', hidden: true},
-                { name: 'inx3', index: 'inx3', width: '5%',
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '5%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<em class="flag -board">자유게시판</em>';
                         // class="flag -board" : 자유게시판
@@ -189,8 +231,8 @@
                         // class="flag -notice" : 공지사항
                     }  
                 },
-                { name: 'inx4', index: 'inx4', width: '30%', align: 'left', classes: "title"},
-                { name: 'inx5', index: 'inx5', width: '5%',
+                { name: 'inx4', index: 'inx4', width: '30%', align: 'left', classes: "title", sortable: false},
+                { name: 'inx5', index: 'inx5', width: '5%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<em class="attach -file"></em>';
                         // class="attach -file" :  첨부파일
@@ -198,12 +240,12 @@
                         // class="attach -total" : 첨부파일, 이미지
                     } 
                 },
-                { name: 'inx6', index: 'inx6', width: '5%'},
-                { name: 'inx7', index: 'inx7', width: '5%'},
-                { name: 'inx8', index: 'inx8', width: '7%'}
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '7%', sortable: false}
             ],
             pager: '#pager', // 페이징을 위한 요소
-            rowNum: 5,
+            rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
