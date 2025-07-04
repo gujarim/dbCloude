@@ -1279,6 +1279,7 @@ footer{
                     strong{
                         @include font(rem(14), 600);
                         grid-column: 1 / 1;
+                        line-height: rem(22);
                     }
 
                     em{
@@ -1289,9 +1290,12 @@ footer{
                     }
 
                     p{
-                        margin-top: rem(4);
                         @include font(rem(14), 400);
+                        @include ellipsis(1);
+                        margin-top: rem(4);
                         grid-column: 1 / 3;
+                        line-height: rem(22);
+                        max-width: rem(520);
                     }
                 }
 
