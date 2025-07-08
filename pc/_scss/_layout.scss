@@ -2069,10 +2069,21 @@ footer{
 
             &:has(button){
                 span{
-                    @include bg(datepicker , 100% 50%, rem(33) rem(30));
-                    padding-right: rem(45);
                     margin: 0 rem(24);
-                    cursor: pointer;
+
+                    input{
+                        @include font(rem(28), 700);
+                        @include bg(datepicker , 100% 50%, rem(33) rem(30));
+                        border: 0;
+                        padding: 0 rem(40) 0 0;
+                        width: rem(200);
+                        text-align: center;
+                        cursor: default;
+
+                        &::placeholder, &:read-only{
+                            color: var(--f-base);
+                        }
+                    }
                 }
             }
 
@@ -2275,7 +2286,7 @@ footer{
 
 // 테이블
 // 공통 테이블
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table){
+table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table){
     width: 100%;
     border-collapse: collapse;
     border-top: rem(1) solid var(--line-table);

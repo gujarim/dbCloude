@@ -31,7 +31,6 @@ $(window).resize(function() {
 
 })(FullCalendar);
 
-
 //jqgrid 페이징
 const createCustomPager = (gridId, pagerSelector) => {
     const grid = $(`#${gridId}`);

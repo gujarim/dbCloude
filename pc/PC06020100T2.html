@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -62,7 +64,7 @@
                     <div class="on" role="tabpanel">
                         <strong class="date">
                             <button type="button" class="prev">이전</button>
-                            <span>2025.06</span>
+                            <span><input type="text" id="datepicker" placeholder="2025.05.23" readonly></span>
                             <button type="button" class="next">다음</button>
                         </strong>
                         
@@ -110,6 +112,8 @@
 <script src="js/jquery.jqGrid.min.js"></script>
 <script src="js/jstree.js"></script>
 <script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
 <script src="js/ui-content.js"></script>
 
 <script>
@@ -315,6 +319,14 @@
             loadComplete: function () {
                 createCustomPager("grid4", "#pager4"); // 데이터 로드 후 커스텀 페이징 생성
             }
+        });
+    
+        
+        //데이터피커
+        $('#datepicker').datepicker({
+            format: "yyyy.mm.dd",
+            language: "ko",
+            autoclose: true
         });
     });
 </script>

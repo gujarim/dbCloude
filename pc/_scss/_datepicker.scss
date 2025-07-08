@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import "mixin";
+
+.dropdown-menu{
+    @include shadow(0, rem(5), rem(10), 0, rgba(0,0,0,.05));
+    @include rounded(rem(20));
+    margin: 0;
+    padding: 0;
+    border-color: #D9D9D9;
+    padding: rem(24) rem(24) rem(22);
+    width: rem(278);
+    margin-top: rem(10);
+
+    table{
+        width: 100%;
+
+        th{
+            &.dow{
+                color: var(--f-menu);
+                font-weight: 400;
+            }
+
+            &.datepicker-switch{
+                @include font(rem(18), 600);
+                padding: 0 rem(8) rem(18);
+                vertical-align: middle;
+
+                &:hover{
+                    background-color: #fff;
+                }
+            }
+
+            &.prev{
+                @include fontHidden;
+                @include bg(prev_main);
+                width: rem(24);
+                height: rem(24);
+                color: transparent;
+                vertical-align: middle;
+
+                &:hover{
+                    @include bg(prev_main);
+                }
+            }
+
+            &.next{
+                @include fontHidden;
+                @include bg(next_main);
+                width: rem(24);
+                height: rem(24);
+                color: transparent;
+                vertical-align: middle;
+
+                &:hover{
+                    @include bg(next_main);
+                }
+            }
+        }
+
+        td.day{
+            @include font(rem(15), 600);
+            color: var(--f-base);
+            padding: rem(3) 0;
+
+            &:first-child, &:last-child{
+                color: var(--f-menu);
+            }
+
+            &.old{
+                color: transparent;
+            }
+
+            &.new{
+                display: none;
+            }
+        }
+    }
+
+    .table-condensed{
+        td{
+            padding:0;
+
+            span{
+                width: 31%;
+                padding: 0;
+                border: rem(1) solid var(--line-base);
+                height: rem(32);
+                line-height: rem(32);
+                color: var(--f-secondary);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.datepicker-dropdown.datepicker-orient-top:before{
+    left: rem(36);
+    border-top-color: #D9D9D9;
+}
+.datepicker-dropdown.datepicker-orient-top:after{
+    left: rem(37);
+}
+
+.datepicker-dropdown.datepicker-orient-bottom:before{
+    left: rem(36);
+    border-bottom-color: #D9D9D9;
+}
+.datepicker-dropdown.datepicker-orient-bottom:after{
+    left: rem(37);
+}
