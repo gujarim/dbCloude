@@ -229,6 +229,9 @@ html:has(.main), body:has(.main) {
 .wrap.main header .logo a {
   display: block;
 }
+.wrap.main nav {
+  width: 7.6rem;
+}
 .wrap.main nav .side-btn {
   display: none;
 }

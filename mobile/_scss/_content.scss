@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import "mixin";
+
+.btn{
+    @include rounded(rem(111));
+    font-weight: 500;
+    padding: 0 rem(40);
+    height: rem(32);
+
+    &.-primary{
+        background-color: var(--bg-primary);
+        color: var(--f-white);
+    }
+
+    &.-line{
+        border: rem(1) solid var(--bg-primary);
+        color: var(--f-primary);
+    }
+}
+
+
+.chat-wrap{
+    a{
+        @include position(fixed, null, rem(20), rem(97), null, 1);
+        @include bg(chat, 0 0, rem(60) rem(60));
+        @include fontHidden;
+        width: rem(60);
+        height: rem(60);
+    }
+}
