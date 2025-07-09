@@ -264,7 +264,18 @@ const sideNavToggle = () => {
     });
 }
 
+// 챗봇
+const chatToggle = () => {
+    const charWrap = document.querySelector('.chat-wrap');
+    const bigsizebtn = charWrap.querySelector('.chat-sideMenu button');
+
+    bigsizebtn.addEventListener('click', () => {
+        charWrap.classList.toggle('open');
+    })
+}
+
 window.addEventListener('load', () => {
     toggleTable();
     tab();
+    chatToggle();
 });

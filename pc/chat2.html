@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
+    <title>챗봇메인</title>
     
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="css/datepicker.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        html,body{
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <div class="wrap main">
@@ -528,6 +533,130 @@
         </div>
 
         <footer id="footer"></footer>
+
+        <div class="chat-wrap main on"> 
+            <div class="chat-sideMenu">
+                <button type="button">채팅크게보기</button>
+                <ul>
+                    <li class="conversation on"><a href="">일반대화</a></li>
+                    <li class="regulations"><a href="">사내규정</a></li>
+                    <li class="secretary"><a href="">개인비서</a></li>
+                    <li class="newssummary"><a href="">뉴스요약</a></li>
+                    <li class="corporatesearch"><a href="">기업서치</a></li>
+                    <li class="workspace"><a href="">워크<br>스페이스</a></li>
+                </ul>
+            </div>
+            <div class="chat-list">
+                <div class="chat-head">
+                    <div class="chat-info">
+                        <a href="" class="logo">DBINC</a>
+                        <button type="button">홈</button>
+                    </div>
+
+                    <button type="button" class="add-chat">채팅 새로 만들기</button>
+
+                    <strong>최근채팅</strong>
+                    <ul class="recent-chat">
+                        <li class="conversation"><a href="">안녕하세요, 인사팀입니다. 일반대화 입니다.</a></li>
+                        <li class="regulations"><a href="">안녕하세요, 인사팀입니다. 사내규정 입니다.</a></li>
+                        <li class="secretary"><a href="">안녕하세요, 인사팀입니다. 개인비서 입니다.</a></li>
+                        <li class="newssummary"><a href="">안녕하세요, 인사팀입니다. 뉴스요약 입니다.</a></li>
+                        <li class="corporatesearch"><a href="">안녕하세요, 인사팀입니다. 기업서치 입니다.</a></li>
+                        <li class="workspace"><a href="">안녕하세요, 인사팀입니다. 워크스페이스 입니다.</a></li>
+                    </ul>
+
+                    <strong>추천채팅</strong>
+                    <ul class="recommended-chat">
+                        <li><a href="">Python 코드에 대해 알려줘</a></li>
+                        <li><a href="">외국인 친구와 영어로 대화할 때 외국인 친구와 영어로 대화할 때</a></li>
+                        <li><a href="">요즘 MZ세대들 사이에서 인기 요즘 MZ세대들 사이에서 인기</a></li>
+                    </ul>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-main-list">
+                        <div class="caht-title">
+                            <strong>다양한 AI 챗봇 서비스</strong>
+                            <p>목적에 맞는<em>맞춤형 AI챗봇</em>으로 업무 효율을 높여보세요!</p>
+                        </div>
+
+                        <ul>
+                            <li class="conversation">
+                                <a href="">
+                                    <strong>일반대화 봇</strong>
+                                    <p>AI 챗봇과 함께<br> 다양한 주제로 대화해보세요.</p>
+                                    <span>
+                                        <em>#GPT-4o</em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="regulations">
+                                <a href="">
+                                    <strong>사내규정 봇</strong>
+                                    <p>업무 규정 준수를 위해<br> 회사의 정책에 대해 물어보세요.</p>
+                                    <span>
+                                        <em>#GPT-4o</em>
+                                        <em>#RAG</em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="secretary">
+                                <a href="">
+                                    <strong>개인비서 봇</strong>
+                                    <p>개인 업무를 효율적으로<br> 도와주는 AI비서에요.</p>
+                                    <span>
+                                        <em>#GPT-4o</em>
+                                        <em>#Assistant</em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="newssummary">
+                                <a href="">
+                                    <strong>뉴스요약 봇</strong>
+                                    <p>최신 뉴스와 트렌드를<br> 빠르게 요약해줘요.</p>
+                                    <span>
+                                        <em>#GPT-4o</em>
+                                        <em>#네이버뉴스</em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="chat-main-list">
+                        <div class="caht-title">
+                            <strong>사내 AI Agent 서비스</strong>
+                            <p>외부 기업 정보부터 개인 업무 데이터까지,<em>필요에 맞는 에이전트를 선택</em>해 업무를 간편하게!</p>
+                        </div>
+
+                        <ul>
+                            <li class="corporatesearch">
+                                <a href="">
+                                    <strong>기업서치 Agent</strong>
+                                    <p>다양한 기업 정보를 수집하여<br> 구조화된 보고서를 만들어줘요.</p>
+                                    <span>
+                                        <em>#Mulit-Agents</em>
+                                        <em>#Websearch</em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="workspace">
+                                <a href="">
+                                    <strong>사내규정 봇</strong>
+                                    <p>업무 규정 준수를 위해<br> 회사의 정책에 대해 물어보세요.</p>
+                                    <span>
+                                        <em>#Single-Agents</em>
+                                        <em>#G-Workspace</em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button type="button" class="chat-close">닫기</button>
+                    <button type="button" class="chat-up">맨위로 이동</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

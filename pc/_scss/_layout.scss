@@ -2764,7 +2764,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     }
 }
 
-.chat-wrap{
+.chat{
     @include position(fixed, null, rem(55), rem(90), null);
     @include flex(flex, null, flex-end);
     flex-direction: column;

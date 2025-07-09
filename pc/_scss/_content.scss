@@ -585,3 +585,677 @@ select{
         }
     }
 }
+
+.chat-wrap{
+    @include position(fixed, 0, null, null, 0, 10);
+    @include flex(flex, flex-end, center);
+    gap: 0 rem(8);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .6);
+    padding-right: rem(50);
+    display: none;
+
+    &.on{
+        display: flex;
+    }
+
+    &.open{
+        .chat-sideMenu{
+            button{
+                transform: rotate(180deg);
+            }
+        }
+        .chat-list{
+            max-width: rem(1500);
+
+            .chat-head{
+                display: block;
+            }
+
+            .chat-container{
+                padding: rem(80) rem(50) rem(60);
+
+                .caht-title{
+                    text-align: center;
+                    display: block;
+
+                    strong{
+                        @include font(rem(32), 700);
+                        margin: 0 0 rem(6);
+
+                        &::before{
+                            display: block;
+                        }
+                    }
+
+                    p{
+                        @include font(rem(18), 600);
+                        
+                        br{
+                            display: none;
+                        }
+                    }
+                }
+
+                .chat-content{
+                    li{
+                        &:not(:last-child){
+                            margin-bottom: rem(14);
+                        }
+                        
+                    }
+                }
+
+                .chat-up{
+                    bottom: rem(172);
+                }
+            }
+        }
+    }
+    
+    .chat-sideMenu{
+        @include rounded(rem(20));
+        @include flex(flex, space-between);
+        flex-direction: column;
+        background-color: var(--line-table3);
+        height: calc(100% - rem(100));
+        padding: rem(16) rem(15) rem(60);
+
+        button{
+            @include fontHidden;
+            @include bg(chat_btn, 50% 50%, rem(48) rem(48));
+            width: rem(48);
+            height: rem(48);
+            transform: rotate(0);
+        }
+
+        ul{
+            li{
+                text-align: center;
+
+                &:not(:last-child){
+                    margin-bottom: rem(24);
+                }
+
+                a{
+                    font-weight: 600;
+                    color: var(--f-secondary);
+
+                    &::before{
+                        display: block !important;
+                        margin: 0 auto rem(8);
+                    }
+                }
+
+                &.conversation{
+                    a{
+                        &::before{
+                            @include icon(32, 'conversation', 'pseudo');
+                        }
+                    }
+                }
+
+                &.regulations{
+                    a{
+                        &::before{
+                            @include icon(32, 'regulations', 'pseudo');
+                        }
+                    }
+                }
+
+                &.secretary{
+                    a{
+                        &::before{
+                            @include icon(32, 'secretary', 'pseudo');
+                        }
+                    }
+                }
+
+                &.newssummary{
+                    a{
+                        &::before{
+                            @include icon(32, 'newssummary', 'pseudo');
+                        }
+                    }
+                }
+
+                &.corporatesearch{
+                    a{
+                        &::before{
+                            @include icon(32, 'corporatesearch', 'pseudo');
+                        }
+                    }
+                }
+
+                &.workspace{
+                    a{
+                        &::before{
+                            @include icon(32, 'workspace', 'pseudo');
+                        }
+                    }
+                }
+
+                &.on{
+                    a{
+                        color: var(--f-primary);
+                    }
+
+                    &.conversation{
+                        a{
+                            &::before{
+                                @include icon(32, 'conversation_on', 'pseudo');
+                            }
+                        }
+                    }
+
+                    &.regulations{
+                        a{
+                            &::before{
+                                @include icon(32, 'regulations_on', 'pseudo');
+                            }
+                        }
+                    }
+
+                    &.secretary{
+                        a{
+                            &::before{
+                                @include icon(32, 'secretary_on', 'pseudo');
+                            }
+                        }
+                    }
+
+                    &.newssummary{
+                        a{
+                            &::before{
+                                @include icon(32, 'newssummary_on', 'pseudo');
+                            }
+                        }
+                    }
+
+                    &.corporatesearch{
+                        a{
+                            &::before{
+                                @include icon(32, 'corporatesearch_on', 'pseudo');
+                            }
+                        }
+                    }
+
+                    &.workspace{
+                        a{
+                            &::before{
+                                @include icon(32, 'workspace_on', 'pseudo');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-list{
+        @include rounded(rem(20));
+        @include flex(flex, flex-start, flex-start);
+        max-width: rem(480);
+        background-color: var(--f-white);
+        height: calc(100% - rem(100));
+        transition: max-width .3s;
+
+        .chat-head{
+            width: rem(240);
+            height: 100%;
+            padding: rem(24) rem(16);
+            @include shadow(rem(6), rem(4), rem(8), 0, rgba(0,0,0, .08));
+            display:none;
+
+            .chat-info{
+                @include flex(flex, space-between, center);
+
+                .logo{
+                    @include bg(logo, 0 0, rem(89) rem(32));
+                    @include fontHidden;
+                    width: rem(89);
+                    height: rem(32);
+                }
+
+                button{
+                    @include bg(chat_home, 0 0, rem(24) rem(24));
+                    @include fontHidden;
+                    width: rem(24);
+                    height: rem(24);
+                }
+            }
+
+            .add-chat{
+                @include rounded(rem(8));
+                background-color: var(--bg-secondary);
+                color: var(--f-white);
+                font-weight: 600;
+                width: 100%;
+                height: rem(40);
+                margin-top: rem(40);
+                
+                &::before{
+                    @include icon(16, 'add_chat', 'pseudo');
+                    margin-right: rem(4);
+                }
+            }
+
+            strong{
+                @include font(rem(15), 600);
+                display: block;
+                margin-top: rem(30);
+            }
+
+            .recent-chat{
+                margin-top: rem(19);
+
+                li{
+                    position: relative;
+                    padding-left: rem(40);
+
+                    a{
+                        @include ellipsis(1);
+                        font-weight: 600;
+                        color: var(--f-menu);
+                        display: block;
+                        line-height: rem(34);
+                    }
+
+                    &::before{
+                        @include position(absolute, rem(6), null, null, 0);
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: rem(4);
+                    }
+
+                    &.conversation{
+                        &::before{
+                            @include icon(24, 'conversation', 'pseudo');
+                        }
+                    }
+
+                    &.regulations{
+                        &::before{
+                            @include icon(24, 'regulations', 'pseudo');
+                        }
+                    }
+
+                    &.secretary{
+                        &::before{
+                            @include icon(24, 'secretary', 'pseudo');
+                        }
+                    }
+
+                    &.newssummary{
+                        &::before{
+                            @include icon(24, 'newssummary', 'pseudo');
+                        }
+                    }
+
+                    &.corporatesearch{
+                        &::before{
+                            @include icon(24, 'corporatesearch', 'pseudo');
+                        }
+                    }
+
+                    &.workspace{
+                        &::before{
+                            @include icon(24, 'workspace', 'pseudo');
+                        }
+                    }
+                }
+            }
+
+            .recommended-chat{
+                margin-top: rem(19);
+
+                li{
+                    a{
+                        @include rounded(rem(6));
+                        @include ellipsis(1);
+                        background-color: rgba(75, 190, 134, 0.1);
+                        line-height: rem(34);
+                        display: block;
+                        padding: 0 rem(12);
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: rem(8);
+                    }
+                }
+            }
+        }
+
+        .chat-container{
+            @include flex(flex, space-between);
+            flex-direction: column;
+            flex: 1;
+            height: 100%;
+            padding: rem(50) rem(50) rem(60);
+            position: relative;
+
+            .caht-title{
+                text-align: left;
+                display: grid;
+
+                strong{
+                    @include font(rem(16), 400);
+                    display: block;
+                    margin: rem(16) 0 0;
+                    grid-row: 2 / 2;
+
+                    &::before{
+                        @include icon(74, 'chat_icon', 'pseudo');
+                        display: block;
+                        margin: 0 auto rem(40);
+                        display: none;
+                    }
+                }
+
+                p{
+                    @include font(rem(32), 600);
+                    grid-row: 1 / 1;
+                }
+
+                em{
+                    color: var(--f-primary);
+                }
+            }
+
+            .chat-content{
+                overflow-y: auto;
+                li{
+                    text-align: right;
+
+                    div{
+                        display: inline-block;
+
+                        strong{
+                            @include font(rem(16), 600);
+                            color: var(--f-secondary);
+                            display: block;
+                            margin-bottom: rem(12);
+                            position: relative;
+                            padding-left: rem(56);
+                            height: rem(48);
+
+                            &::before{
+                                @include icon(48, 'chat_profile', 'pseudo');
+                                @include position(absolute, 0, null, null, 0);
+                            }
+
+                            em{
+                                @include font(rem(14), 400);
+                                color: var(--line-base);
+                                display: block;
+                            }
+                        }
+    
+                        p{
+                            @include rounded(rem(20));
+                            background-color: var(--line-table3);
+                            font-size: rem(15);
+                            color: #4F5C53;
+                            padding: rem(12) rem(20);
+                            text-align: left;
+                            word-break: break-all;
+                        }
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: rem(40);
+                    }
+
+                    &:nth-child(2n){
+                        text-align: left;
+
+                        div{
+                            p{
+                                background-color: rgba(75, 190, 134, 0.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .chat-text{
+                .btn.-primary{
+                    @include rounded(rem(111));
+                    margin-bottom: rem(12);
+
+                    &::before{
+                        @include icon(24, 'chat_btn', 'pseudo');
+                        margin-right: rem(4);
+                    }
+                }
+                .chat-area{
+                    position: relative;
+
+                    textarea{
+                        @include rounded(rem(16));
+                        padding: rem(20);
+                        width: 100%;
+                        border: rem(1) solid var(--line-base);
+                        min-height: rem(140);
+                    }
+
+                    .chat-btn{
+                        @include rounded(rem(12));
+                        @include position(absolute, null, null, rem(16), rem(20));
+                        @include flex(flex, center, center);
+                        border: rem(1) solid var(--line-table2);
+                        background-color: var(--bg-base);
+                        height: rem(38);
+                        width: rem(83);
+
+                        button{
+                            @include fontHidden;
+                            width: rem(16);
+                            height: 100%;
+                            flex: 1;
+                        }
+                        .chat-plus{
+                            @include bg(chat_plus, 50% 50%, rem(16) rem(16));
+                            border-right: rem(1) solid var(--line-table3);
+                        }
+
+                        .chat-search{
+                            @include bg(chat_search, 50% 50%, rem(16) rem(16));
+                        }
+                    }
+                }
+
+                p{
+                    color: var(--f-secondary);
+                    margin-top: rem(24);
+
+                    &::before{
+                        @include icon(20, 'import', 'pseudo');
+                        margin: rem(-3) rem(6) 0 0;
+                    }
+                }
+            }
+
+            .chat-close{
+                @include bg(chat_close, 0 0, rem(40) rem(40));
+                @include fontHidden;
+                @include position(absolute, rem(28), rem(28), null, null);
+                width: rem(40);
+                height: rem(40);
+            }
+
+            .chat-up{
+                @include bg(chat_up, 0 0, rem(36) rem(36));
+                @include fontHidden;
+                @include position(fixed, null, rem(120), rem(192), null);
+                width: rem(36);
+                height: rem(36);
+            }
+        }
+    }
+
+    &.main{
+        &.open{
+            .chat-container{
+                .chat-main-list{
+                    .caht-title{
+                        strong{
+                            &::before{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .chat-list{
+            max-width: rem(1500);
+            min-width: rem(1500);
+
+            .chat-head{
+                display: block;
+            }
+
+            .chat-container{
+                padding: rem(80) rem(50) rem(60);
+                overflow-y: auto;
+
+                .chat-main-list{
+
+                    &:not(:last-of-type){
+                        margin-bottom: rem(80);
+                    }
+
+                    .caht-title{
+                        text-align: center;
+                        display: block;
+
+                        strong{
+                            @include font(rem(32), 700);
+                            margin: 0 0 rem(6);
+                        }
+
+                        p{
+                            @include font(rem(18), 600);
+                        }
+
+                    }
+
+                    ul{
+                        @include flex(flex, center, center);
+                        gap: 0 rem(20);
+                        margin-top: rem(40);
+                        
+                        li{ 
+
+                            a{
+                                min-width: rem(275);
+                                min-height: rem(212);
+                                @include rounded(rem(20));
+                                @include shadow(0, rem(4), rem(8), 0, rgba(0,0,0,.04));
+                                padding: rem(24);
+                                display: block;
+                                border: rem(1) solid var(--line-table3);
+                                position: relative;
+
+                                &::after{
+                                    @include position(absolute, null, rem(24), rem(24), null);
+                                }
+
+                                strong{
+                                    @include font(rem(18), 600);
+                                }
+
+                                p{
+                                    @include font(rem(13), 400);
+                                    color: var(--f-secondary);
+                                    margin-top: rem(8);
+                                }
+
+                                span{
+                                    @include flex(flex, flex-end);
+                                    flex-direction: column;
+                                    margin-top: rem(43);
+                                    height: rem(46);
+                                    
+                                    em{
+                                        color: var(--f-primary);
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            &.conversation{
+                                a{
+                                    background: linear-gradient(180deg, #D9FD9F 1.63%, #FFFFFF 93.75%);
+
+                                    &::after{
+                                        @include icon(100, 'conversationM', 'pseudo');
+                                        height: rem(64);
+                                    }
+                                }
+                            }
+                            &.regulations{
+                                a{
+                                    background: linear-gradient(180deg, #9FD4FD 1.63%, #FFFFFF 93.75%);
+
+                                    &::after{
+                                        @include icon(58, 'regulationsM', 'pseudo');
+                                        height: rem(64);
+                                    }
+                                }
+                            }
+                            &.secretary{
+                                a{
+                                    background: linear-gradient(180deg, #FD9FAF 1.63%, #FFFFFF 93.75%);
+
+                                    &::after{
+                                        @include icon(75, 'secretaryM', 'pseudo');
+                                        height: rem(64);
+                                    }
+                                }
+                            }
+                            &.newssummary{
+                                a{
+                                    background: linear-gradient(180deg, #FDD29F 1.63%, #FFFFFF 93.75%);
+
+                                    &::after{
+                                        @include icon(45, 'newssummaryM', 'pseudo');
+                                        height: rem(64);
+                                    }
+                                }
+                            }
+                            &.corporatesearch{
+                                a{
+                                    background: linear-gradient(180deg, #FBFD9F 1.63%, #FFFFFF 93.75%);
+
+                                    &::after{
+                                        @include icon(71, 'corporatesearchM', 'pseudo');
+                                        height: rem(64);
+                                    }
+                                }
+                            }
+                            &.workspace{
+                                a{
+                                    background: linear-gradient(180deg, #A89FFD 1.63%, #FFFFFF 93.75%);
+
+                                    &::after{
+                                        @include icon(44, 'workspaceM', 'pseudo');
+                                        height: rem(64);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .chat-up{
+                    display: none;
+                }
+            }
+        }
+    }
+}
