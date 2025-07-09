@@ -416,9 +416,9 @@ input[type=radio]{
     }
 }
 
-.label{
-    @include font(rem(16), 600);
-}
+// .label{
+//     @include font(rem(16), 600);
+// }
 
 select{
     @include rounded(rem(8));
@@ -432,7 +432,7 @@ select{
     color: var(--f-secondary);
 }
 
-.tooltip:not(header .tooltip){
+.tooltip:not(header .tooltip, .reservation-box table td .tooltip){
     @include position(absolute, 50%, rem(24), null, null, 1);
     transform: translateY(-50%);
 

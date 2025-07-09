@@ -196,16 +196,37 @@ const tab = () => {
             tab.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // 해당 tab-wrap 내 모든 탭과 패널에서 'on' 클래스 제거
-                tabs.forEach(t => t.classList.remove('on'));
-                panels.forEach(p => p.classList.remove('on'));
+                // 현재 클릭한 tab-wrap 범위 지정
+                const currentWrap = tab.closest('.tab-wrap');
+                const localTabs = currentWrap.querySelectorAll('[role="tab"]');
+                const localPanels = currentWrap.querySelectorAll('[role="tabpanel"]');
 
-                // 클릭한 탭과 해당 인덱스의 패널에 'on' 클래스 추가
+                // 모든 탭, 패널에서 on 제거
+                localTabs.forEach(t => t.classList.remove('on'));
+                localPanels.forEach(p => p.classList.remove('on'));
+
+                // 현재 탭 활성화
                 tab.classList.add('on');
-                panels[index].classList.add('on');
+                localPanels[index].classList.add('on');
 
-                // jqgrid 그려주기
-                resizeJqGrid(panels[index]);
+                // jqGrid 있을 경우 다시 그리기
+                resizeJqGrid(localPanels[index]);
+
+                // 중첩된 tab-wrap이 있다면 첫 번째 탭을 선택 상태로 초기화
+                const innerTabWrap = localPanels[index].querySelector('.tab-wrap');
+                if (innerTabWrap) {
+                    const innerTabs = innerTabWrap.querySelectorAll('[role="tab"]');
+                    const innerPanels = innerTabWrap.querySelectorAll('[role="tabpanel"]');
+
+                    innerTabs.forEach(t => t.classList.remove('on'));
+                    innerPanels.forEach(p => p.classList.remove('on'));
+
+                    // 첫 번째 탭/패널 활성화
+                    innerTabs[0].classList.add('on');
+                    innerPanels[0].classList.add('on');
+
+                    resizeJqGrid(innerPanels[0]);
+                }
             });
         });
     });

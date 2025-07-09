@@ -22,7 +22,7 @@
                 <h2 class="tit-h2">나의현황</h2>
             </div>
 
-            <div class="calendar-wrap"> <!-- 일정확인 닫기 클래스  class="calendar-wrap close" -->
+            <div class="calendar-wrap"> <!-- 일정확인 닫기 클래스  class="calendar-wrap no" -->
                 <div id='calendar'></div>
                 <div class="calendar-list">
                     <p>일정확인
@@ -124,7 +124,7 @@
         const btn = document.querySelector('.llst-close');
 
         btn.addEventListener('click', () => {
-            box.classList.toggle('close');
+            box.classList.toggle('no');
 
             setTimeout(() => {
                 calendar.updateSize();

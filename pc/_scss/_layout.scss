@@ -4,6 +4,7 @@
 html, body{
     height: 100%;
     font-family: "Pretendard";
+    font-size: rem(14);
 
     &:has(.container .calendar-wrap){
         overflow-x: hidden;
@@ -666,6 +667,7 @@ footer{
             @include flex(grid, null, center);
             background-color: #CFF160;
             gap: rem(60) 0;
+            height: rem(210);
 
             .hgroup{
                 grid-column: 1 / 3;
@@ -834,6 +836,7 @@ footer{
                 @include flex(flex, space-between, center);
                 flex-wrap: wrap;
                 gap: rem(12) 0;
+                padding-bottom: rem(35);
 
                 li{
                     width: 33.33%;
@@ -1005,6 +1008,8 @@ footer{
         }
 
         &.my-wrap{
+            height: rem(190);
+
             .hgroup{
                 margin-bottom: rem(43);
             }
@@ -1070,6 +1075,7 @@ footer{
 
         &.news-wrap{
             position: relative;
+            height: rem(622);
 
             .hgroup{
                 @include position(absolute, rem(24), rem(24), null, null);
@@ -1117,6 +1123,63 @@ footer{
 
                 strong{
                     font-weight: 700;
+                }
+            }
+
+            .daily-news{
+                li{
+                    &:not(:last-child){
+                        border-bottom: rem(1) solid var(--line-table3);
+                    }
+
+                    a{
+                        padding: rem(14) rem(16);
+                        display: grid;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: rem(8) rem(24);
+                        grid-template-columns: rem(64) 1fr;
+
+                        img{
+                            width: rem(64);
+                            grid-column: 1 / 2;
+                            grid-row: 1 / 3;
+                        }
+                        
+                        strong{
+                            grid-column: 2 / 2;
+                            font-weight: 600;
+                            margin-bottom: rem(-10);
+                        }
+
+                        p{
+                            grid-column: 2 / 2;
+                            @include flex(flex, space-between, center);
+
+                            em{
+                                &:first-child{
+                                    color: var(--f-menu);
+
+                                    i{
+                                        border-left: rem(1) solid var(--line-table3);
+                                        padding-left: rem(4);
+                                    }
+                                }
+
+                                &:last-child{
+                                    color: var(--f-primary);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tab-wrap.-line{
+                &:has(.daily-news){
+                    button{
+                        margin-top: rem(16);
+                    }
                 }
             }
         }
@@ -1265,12 +1328,10 @@ footer{
             }
         }
 
-        
-
         .main-list{
             li{
                 a{
-                    padding: rem(12) 0 0;
+                    // padding: rem(12) 0 0;
                     display: grid;
                     grid-template-columns: 3fr 1fr;
 
@@ -1300,6 +1361,7 @@ footer{
                 &:not(:last-child){
                     border-bottom: rem(1) solid var(--line-table3);
                     padding-bottom: rem(12);
+                    margin-bottom: rem(12);
                 }
             }
         }
@@ -1373,27 +1435,27 @@ footer{
                     }
                 }
             }
+        }
 
-            .slick-arrow{
-                @include fontHidden;
-                width: rem(20);
-                height: rem(20);
-                position: absolute;
-                top: rem(-35);
+        .slick-arrow{
+            @include fontHidden;
+            width: rem(20);
+            height: rem(20);
+            position: absolute;
+            top: rem(-35);
 
-                &.slick-disabled{
-                    opacity: .5;
-                }
+            &.slick-disabled{
+                opacity: .5;
+            }
 
-                &.slick-prev{
-                    @include bg(prev_main, 0 0, rem(20) rem(20));
-                    right: rem(24);
-                }
+            &.slick-prev{
+                @include bg(prev_main, 0 0, rem(20) rem(20));
+                right: rem(24);
+            }
 
-                &.slick-next{
-                    @include bg(next_main, 0 0, rem(20) rem(20));
-                    right: 0;
-                }
+            &.slick-next{
+                @include bg(next_main, 0 0, rem(20) rem(20));
+                right: 0;
             }
         }
 
@@ -1404,6 +1466,9 @@ footer{
                     color: var(--f-primary);
                     padding: 0 rem(4);
                     margin-left: rem(4);
+                    height: rem(19);
+                    line-height: rem(19);
+                    margin-top: rem(-1);
                 }
             }
 
@@ -1499,6 +1564,40 @@ footer{
                         }
                     }
                 }
+            }
+        }
+
+        &.album-wrap{
+            .slick-arrow{
+                top: rem(-40);
+
+                &.slick-prev{
+                    right: rem(40);
+                }
+
+                &.slick-next{
+                    right: rem(16);
+                }
+            }
+
+            .slick-slider{
+                margin-right: rem(-16);
+
+                .slick-slide{
+                    &> div {
+                        padding-right: 16px;
+                    }
+                }
+            }
+
+            img{
+                width: 100%;
+            }
+
+            p{
+                @include font(rem(18), 600);
+                margin-top: rem(8);
+                text-align: center;
             }
         }
 
@@ -1674,18 +1773,21 @@ footer{
 
         //위젯 400
         &.s400{
-            .tablist{
-                overflow-x: auto;
-            }
-            .notice-list{
-                .attach, .view, .num{
-                    display: none;
+            &.board-wrap{
+                .tablist{
+                    overflow: hidden;
+                    overflow-x: auto;
                 }
+                .notice-list{
+                    .attach, .view, .num{
+                        display: none;
+                    }
 
-                li{
-                    a{
-                        p{
-                            max-width: rem(148) !important;
+                    li{
+                        a{
+                            p{
+                                max-width: rem(148) !important;
+                            }
                         }
                     }
                 }
@@ -1893,6 +1995,10 @@ footer{
                             }
                         }
                     }
+                }
+
+                &.h100{
+                    height: rem(100);
                 }
             }
         }
@@ -2190,7 +2296,7 @@ footer{
     }
 
     &.-box3{
-        .tablist{
+        >.tablist{
             @include flex(flex, flex-start, center);
             gap: 0 rem(8);
             
@@ -2227,7 +2333,7 @@ footer{
                         p{
                             flex: 1;
                             @include ellipsis(1);
-                            max-width: rem(394)
+                            max-width: rem(348)
                         }
                         
                         .attach{
@@ -2370,7 +2476,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             }
 
             label{
-                min-width: rem(100);
+                // min-width: rem(100);
 
                 &:not(:last-child){
                     margin-right: rem(50);

@@ -68,6 +68,10 @@
 
             &.old{
                 color: transparent;
+
+                &:hover{
+                    background-color: transparent;
+                }
             }
 
             &.new{
