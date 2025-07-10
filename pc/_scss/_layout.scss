@@ -2178,49 +2178,50 @@ footer{
     }
 }
 
+.date{
+    @include font(rem(28), 700);
+    @include position(absolute, 0, null, null, 50%);
+    @include flex(flex, center, center);
+    transform: translateX(-50%);
+
+    &:has(button){
+        span{
+            margin: 0 rem(24);
+
+            input{
+                @include font(rem(28), 700);
+                @include bg(datepicker , 100% 50%, rem(33) rem(30));
+                border: 0;
+                padding: 0 rem(40) 0 0;
+                width: rem(200);
+                text-align: center;
+                cursor: default;
+
+                &::placeholder, &:read-only{
+                    background-color: var(--f-white);
+                    color: var(--f-base);
+                }
+            }
+        }
+    }
+
+    button{
+        @include fontHidden;
+        width: rem(32);
+        height: rem(32);
+        &.prev{
+            @include bg(date_prev, 0 0, rem(32) rem(32));
+        }
+        &.next{
+            @include bg(date_next, 0 0, rem(32) rem(32));
+        }
+    }
+}
+
 // 탭
 .tab-wrap{
     .panels{
         margin-top: rem(24);
-
-        .date{
-            @include font(rem(28), 700);
-            @include position(absolute, 0, null, null, 50%);
-            @include flex(flex, center, center);
-            transform: translateX(-50%);
-
-            &:has(button){
-                span{
-                    margin: 0 rem(24);
-
-                    input{
-                        @include font(rem(28), 700);
-                        @include bg(datepicker , 100% 50%, rem(33) rem(30));
-                        border: 0;
-                        padding: 0 rem(40) 0 0;
-                        width: rem(200);
-                        text-align: center;
-                        cursor: default;
-
-                        &::placeholder, &:read-only{
-                            color: var(--f-base);
-                        }
-                    }
-                }
-            }
-
-            button{
-                @include fontHidden;
-                width: rem(32);
-                height: rem(32);
-                &.prev{
-                    @include bg(date_prev, 0 0, rem(32) rem(32));
-                }
-                &.next{
-                    @include bg(date_next, 0 0, rem(32) rem(32));
-                }
-            }
-        }
         
         >div{
             display: none;
@@ -2404,8 +2405,65 @@ footer{
             }
         }
     }
+
+    &.-cal{
+        position: relative;
+
+        .tablist{
+            @include flex(flex, center, center);
+            @include position(absolute, 0, rem(98), null, null, 1);
+            gap: 0 rem(12);
+
+            li{
+                a{
+                    @include fontHidden;
+                    @include rounded(rem(8));
+                    width: rem(40);
+                    height: rem(40);
+                }
+
+                &.cal-btn{
+                    a{
+                        @include bg(calB, 50% 50%, rem(24) rem(24), var(--bg-base));
+                    }
+
+                    &.on{
+                        a{
+                            @include bg(calB_on, 50% 50%, rem(24) rem(24),var(--bg-primary));
+                        }
+                    }
+                }
+                &.caslist-btn{
+                    a{
+                        @include bg(callist, 50% 50%, rem(24) rem(24),var(--bg-base));
+                    }
+
+                    &.on{
+                        a{
+                            @include bg(callist_on, 50% 50%, rem(24) rem(24), var(--bg-primary));
+                        }
+                    }
+                }
+            }
+        }
+
+        .date:has(button) span input{
+            width: rem(190);
+        }
+
+        .calendar-wrap .fc-theme-standard .fc-header-toolbar{
+            margin-bottom: rem(16);
+        }
+        
+        .calendar-wrap .fc-theme-standard .fc-header-toolbar .fc-toolbar-chunk:has(.fc-toolbar-title){
+            margin-left: rem(80);
+        }
+    }
 }
 
+.star{
+    color: var(--f-flase) !important;
+}
 // 테이블
 // 공통 테이블
 table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table){
@@ -2418,10 +2476,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         @include font(rem(16), 600);
         border-bottom: rem(1) solid var(--line-table3);
         background-color: var(--bg-base);
-
-        .star{
-            color: var(--f-flase);
-        }
     }
 }
 
@@ -2430,6 +2484,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         th{
             padding: rem(14) rem(24);
             position: relative;
+            text-align: center;
 
             &::after{
                 content:'';
@@ -2551,6 +2606,8 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 
 .tbl-wrap3{
     table{
+        width: 100%;
+
         th{
             @include font(rem(16), 600);
             color: var(--f-base);
@@ -3118,8 +3175,107 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     }
 
     .btn.-line{
-        // @include position(absolute, rem(12), rem(12), null, null);
         padding:0;
         width: rem(84);
+    }
+}
+
+.payment-progress{
+    ul{
+        li{
+            @include flex(flex, flex-start, center);
+            gap: 0 rem(24);
+            position: relative;
+            
+            &:not(:last-child){
+                margin-bottom: rem(104);
+
+                &::after{
+                    content:'';
+                    width: rem(4);
+                    height: rem(100);
+                    background-color: var(--bg-primary);
+                    @include rounded(rem(111));
+                    @include position(absolute, null, null, rem(-100), rem(26));
+                }
+            }
+
+            img{
+                @include rounded(100%);
+                border: rem(4) solid var(--f-primary);
+                width: rem(56);
+                height: rem(56);
+            }
+
+            .prgress-profile{
+                .status{
+                    @include font(rem(16), 600);
+                    color: var(--f-secondary);
+                    margin-bottom: rem(6);
+
+                    em{
+                        margin: 0 0 0 rem(4);
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+                strong{
+                    @include font(rem(22), 600);
+
+                    span{
+                        @include font(rem(16), 400);
+                        color: var(--f-secondary);
+                        display: inline-block;
+                        margin-left: rem(8);
+
+                        em{
+                            border-left: rem(1) solid var(--line-table2);
+                            display: inline-block;
+                            line-height: rem(14);
+                            margin-left: rem(8);
+                            padding-left: rem(12);
+                        }
+                    }
+                }
+                .day{
+                    @include font(rem(16), 400);
+                    display: block;
+                    color: var(--f-secondary);
+                    margin-top: rem(6);
+                }
+            }
+        }
+    }
+}
+
+.approval-line{
+    @include rounded(rem(8));
+    border: rem(1) solid var(--line-base);
+    padding: rem(12);
+    min-height: rem(360);
+    max-height: rem(360); 
+    overflow-y: auto;
+
+    li{
+        &:not(:last-child){
+            margin-bottom: rem(8);
+        }
+
+        label{
+            @include font(rem(16), 400);
+            display: block;
+            line-height: rem(28);
+                padding: 0 rem(8);
+        }
+
+        input[type=radio], input[type=checkbox]{
+            position: absolute;
+
+            &:checked{
+                &~label{
+                    background-color: rgba(25, 166, 25, 0.1);
+                }
+            }
+        }
     }
 }

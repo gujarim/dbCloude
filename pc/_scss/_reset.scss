@@ -62,6 +62,10 @@ input[type=search] {
     appearance: textfield;
 }
 
+// input[type=checkbox], input[type=radio]{
+//     position: absolute;
+// }
+
 button::-moz-focus-inner, input::-moz-focus-inner {
     border: 0;
     padding: 0;

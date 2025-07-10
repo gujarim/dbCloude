@@ -279,6 +279,8 @@ const chatToggle = () => {
 // 통합게시판 스크롤 (400X420)
 const tablistScroll = () => {
     const tablist = document.querySelector('.board-wrap.s400 .tablist');
+    if (!tablist) return; // 요소가 없으면 함수 종료
+
     let isDown = false;
     let startX;
     let scrollLeft;

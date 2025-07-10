@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결재선</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pop-wrap -lg">
+        <div class="pop-box">
+            <div class="pop-top">
+                <strong>결재선</strong>
+            </div>
+
+            <div class="pop-container">
+                <div class="table-jq">
+                    <table id="grid01"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var localData1 = [
+            { 
+                inx1: "기안", //결재유형
+                inx2: "개발1팀", //부서명
+                inx3: "한디비", //성명
+                inx4: "승인", //처리
+                inx5: "2025.05.21 15:42:57", //열람일시
+                inx6: "2025.05.21 15:42:57", //처리일시
+                inx7: "-", //소요(시간)
+            },
+            { 
+                inx1: "합의(순차)", //결재유형
+                inx2: "개발1팀", //부서명
+                inx3: "한디비", //성명
+                inx4: "승인", //처리
+                inx5: "2025.05.21 15:42:57", //열람일시
+                inx6: "2025.05.21 15:42:57", //처리일시
+                inx7: "-", //소요(시간)
+            },
+            { 
+                inx1: "합의(순차)", //결재유형
+                inx2: "개발1팀", //부서명
+                inx3: "한디비", //성명
+                inx4: "승인", //처리
+                inx5: "2025.05.21 15:42:57", //열람일시
+                inx6: "2025.05.21 15:42:57", //처리일시
+                inx7: "-", //소요(시간)
+            },
+            { 
+                inx1: "기안", //결재유형
+                inx2: "개발1팀", //부서명
+                inx3: "한디비", //성명
+                inx4: "승인", //처리
+                inx5: "2025.05.21 15:42:57", //열람일시
+                inx6: "2025.05.21 15:42:57", //처리일시
+                inx7: "-", //소요(시간)
+            }
+        ];
+        $("#grid01").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData1, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '결재유형', 
+                '부서명',
+                '성명',
+                '처리',
+                '열람일시',
+                '처리일시',
+                '소요(시간)'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '8%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '8%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '8%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '8%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '12%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '12%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '8%', sortable: false}
+            ],
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+        });
+    })
+</script>

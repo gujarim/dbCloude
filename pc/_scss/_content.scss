@@ -46,6 +46,11 @@
         }
     }
 
+    &.-line2{
+        border: rem(1) solid var(--line-base);
+        padding: 0 rem(28);
+    }
+
     &.-underline{
         height: auto;
         text-decoration: underline;
@@ -278,6 +283,18 @@
         border: rem(1) solid var(--f-white);
         color: var(--f-white);
     }
+
+    &.-affirmation{
+        border: rem(1) solid #B6E3D0;
+        background-color: #ECFCF6;
+        color: #0DA161;
+    }
+
+    &.-negative{
+        border: rem(1) solid #FAC3BB;
+        background-color: #FFF5F3;
+        color: #EF503A;
+    }
 }
 
 .attach{
@@ -381,7 +398,7 @@ input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테�
     }
 }
 
-input[type=radio]{
+input[type=radio]:not(.approval-line input){ //결재선선택 결재선상세 빼고
     @include bg(radio_off);
     width: rem(24);
     height: rem(24);
@@ -416,10 +433,6 @@ input[type=radio]{
     }
 }
 
-// .label{
-//     @include font(rem(16), 600);
-// }
-
 select{
     @include rounded(rem(8));
     @include font(rem(16), 600);
@@ -430,6 +443,10 @@ select{
     background-color: var(--f-white);
     min-width: rem(143);
     color: var(--f-secondary);
+
+    option{
+        @include rounded(rem(8))
+    }
 }
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip){
@@ -553,6 +570,26 @@ select{
     height: 100%;
     background-color: rgba(0,0,0,.6);
 
+    &.-sm{
+        .pop-box{
+            min-width: rem(480);
+        }
+    }
+
+    &.-lg{
+        .pop-box{
+            min-width: rem(1160);
+        }
+    }
+
+    &:has(.pop-btn){
+        .pop-box{
+            .pop-container{
+                max-height: rem(700);
+            }
+        }
+    }
+
     .pop-box{
         @include rounded(rem(20));
         gap: 0 rem(24);
@@ -572,7 +609,7 @@ select{
 
         .pop-container{
             overflow-y: auto;
-            max-height: rem(700);
+            max-height: rem(770);
             padding: rem(32) rem(32) rem(40);
         }
 

@@ -787,6 +787,10 @@ ul, ol, li {
   color: var(--f-white);
 }
 
+.pop-wrap .calendar-wrap {
+  display: block;
+}
+
 html, body {
   height: 100%;
   font-family: "Pretendard";
@@ -2946,10 +2950,7 @@ footer .f-uniq select {
   background: url("../image/bg_select.png") right 1.2rem center/2rem no-repeat;
 }
 
-.tab-wrap .panels {
-  margin-top: 2.4rem;
-}
-.tab-wrap .panels .date {
+.date {
   font-size: 2.8rem;
   font-weight: 700;
   position: absolute;
@@ -2967,10 +2968,10 @@ footer .f-uniq select {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.tab-wrap .panels .date:has(button) span {
+.date:has(button) span {
   margin: 0 2.4rem;
 }
-.tab-wrap .panels .date:has(button) span input {
+.date:has(button) span input {
   font-size: 2.8rem;
   font-weight: 700;
   background: url("../image/bg_datepicker.png") 100% 50%/3.3rem 3rem no-repeat;
@@ -2980,25 +2981,31 @@ footer .f-uniq select {
   text-align: center;
   cursor: default;
 }
-.tab-wrap .panels .date:has(button) span input::-webkit-input-placeholder {
+.date:has(button) span input::-webkit-input-placeholder {
+  background-color: var(--f-white);
   color: var(--f-base);
 }
-.tab-wrap .panels .date:has(button) span input::-moz-placeholder {
+.date:has(button) span input::-moz-placeholder {
+  background-color: var(--f-white);
   color: var(--f-base);
 }
-.tab-wrap .panels .date:has(button) span input:-ms-input-placeholder {
+.date:has(button) span input:-ms-input-placeholder {
+  background-color: var(--f-white);
   color: var(--f-base);
 }
-.tab-wrap .panels .date:has(button) span input::-ms-input-placeholder {
+.date:has(button) span input::-ms-input-placeholder {
+  background-color: var(--f-white);
   color: var(--f-base);
 }
-.tab-wrap .panels .date:has(button) span input:-moz-read-only {
+.date:has(button) span input:-moz-read-only {
+  background-color: var(--f-white);
   color: var(--f-base);
 }
-.tab-wrap .panels .date:has(button) span input::placeholder, .tab-wrap .panels .date:has(button) span input:read-only {
+.date:has(button) span input::placeholder, .date:has(button) span input:read-only {
+  background-color: var(--f-white);
   color: var(--f-base);
 }
-.tab-wrap .panels .date button {
+.date button {
   overflow: hidden;
   white-space: nowrap;
   text-indent: 100%;
@@ -3006,11 +3013,15 @@ footer .f-uniq select {
   width: 3.2rem;
   height: 3.2rem;
 }
-.tab-wrap .panels .date button.prev {
+.date button.prev {
   background: url("../image/bg_date_prev.png") 0 0/3.2rem 3.2rem no-repeat;
 }
-.tab-wrap .panels .date button.next {
+.date button.next {
   background: url("../image/bg_date_next.png") 0 0/3.2rem 3.2rem no-repeat;
+}
+
+.tab-wrap .panels {
+  margin-top: 2.4rem;
 }
 .tab-wrap .panels > div {
   display: none;
@@ -3191,6 +3202,59 @@ footer .f-uniq select {
   bottom: -0.1rem;
   left: 0;
 }
+.tab-wrap.-cal {
+  position: relative;
+}
+.tab-wrap.-cal .tablist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  right: 9.8rem;
+  z-index: 1;
+  gap: 0 1.2rem;
+}
+.tab-wrap.-cal .tablist li a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  border-radius: 0.8rem;
+  width: 4rem;
+  height: 4rem;
+}
+.tab-wrap.-cal .tablist li.cal-btn a {
+  background: var(--bg-base) url("../image/bg_calB.png") 50% 50%/2.4rem 2.4rem no-repeat;
+}
+.tab-wrap.-cal .tablist li.cal-btn.on a {
+  background: var(--bg-primary) url("../image/bg_calB_on.png") 50% 50%/2.4rem 2.4rem no-repeat;
+}
+.tab-wrap.-cal .tablist li.caslist-btn a {
+  background: var(--bg-base) url("../image/bg_callist.png") 50% 50%/2.4rem 2.4rem no-repeat;
+}
+.tab-wrap.-cal .tablist li.caslist-btn.on a {
+  background: var(--bg-primary) url("../image/bg_callist_on.png") 50% 50%/2.4rem 2.4rem no-repeat;
+}
+.tab-wrap.-cal .date:has(button) span input {
+  width: 19rem;
+}
+.tab-wrap.-cal .calendar-wrap .fc-theme-standard .fc-header-toolbar {
+  margin-bottom: 1.6rem;
+}
+.tab-wrap.-cal .calendar-wrap .fc-theme-standard .fc-header-toolbar .fc-toolbar-chunk:has(.fc-toolbar-title) {
+  margin-left: 8rem;
+}
+
+.star {
+  color: var(--f-flase) !important;
+}
 
 table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) {
   width: 100%;
@@ -3204,13 +3268,11 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   border-bottom: 0.1rem solid var(--line-table3);
   background-color: var(--bg-base);
 }
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) th .star {
-  color: var(--f-flase);
-}
 
 .tbl-wrap table th {
   padding: 1.4rem 2.4rem;
   position: relative;
+  text-align: center;
 }
 .tbl-wrap table th::after {
   content: "";
@@ -3315,6 +3377,9 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   padding: 1.4rem 2.4rem;
 }
 
+.tbl-wrap3 table {
+  width: 100%;
+}
 .tbl-wrap3 table th {
   font-size: 1.6rem;
   font-weight: 600;
@@ -3944,6 +4009,100 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   width: 8.4rem;
 }
 
+.payment-progress ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 2.4rem;
+  position: relative;
+}
+.payment-progress ul li:not(:last-child) {
+  margin-bottom: 10.4rem;
+}
+.payment-progress ul li:not(:last-child)::after {
+  content: "";
+  width: 0.4rem;
+  height: 10rem;
+  background-color: var(--bg-primary);
+  border-radius: 11.1rem;
+  position: absolute;
+  bottom: -10rem;
+  left: 2.6rem;
+}
+.payment-progress ul li img {
+  border-radius: 100%;
+  border: 0.4rem solid var(--f-primary);
+  width: 5.6rem;
+  height: 5.6rem;
+}
+.payment-progress ul li .prgress-profile .status {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--f-secondary);
+  margin-bottom: 0.6rem;
+}
+.payment-progress ul li .prgress-profile .status em {
+  margin: 0 0 0 0.4rem;
+  display: inline-block;
+  vertical-align: top;
+}
+.payment-progress ul li .prgress-profile strong {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.payment-progress ul li .prgress-profile strong span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--f-secondary);
+  display: inline-block;
+  margin-left: 0.8rem;
+}
+.payment-progress ul li .prgress-profile strong span em {
+  border-left: 0.1rem solid var(--line-table2);
+  display: inline-block;
+  line-height: 1.4rem;
+  margin-left: 0.8rem;
+  padding-left: 1.2rem;
+}
+.payment-progress ul li .prgress-profile .day {
+  font-size: 1.6rem;
+  font-weight: 400;
+  display: block;
+  color: var(--f-secondary);
+  margin-top: 0.6rem;
+}
+
+.approval-line {
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--line-base);
+  padding: 1.2rem;
+  min-height: 36rem;
+  max-height: 36rem;
+  overflow-y: auto;
+}
+.approval-line li:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+.approval-line li label {
+  font-size: 1.6rem;
+  font-weight: 400;
+  display: block;
+  line-height: 2.8rem;
+  padding: 0 0.8rem;
+}
+.approval-line li input[type=radio], .approval-line li input[type=checkbox] {
+  position: absolute;
+}
+.approval-line li input[type=radio]:checked ~ label, .approval-line li input[type=checkbox]:checked ~ label {
+  background-color: rgba(25, 166, 25, 0.1);
+}
+
 .tit-h2 {
   font-size: 3.4rem;
   font-weight: 700;
@@ -3985,6 +4144,10 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 .btn.-line.false {
   color: var(--f-flase);
+}
+.btn.-line2 {
+  border: 0.1rem solid var(--line-base);
+  padding: 0 2.8rem;
 }
 .btn.-underline {
   height: auto;
@@ -4338,6 +4501,16 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   border: 0.1rem solid var(--f-white);
   color: var(--f-white);
 }
+.flag.-affirmation {
+  border: 0.1rem solid #B6E3D0;
+  background-color: #ECFCF6;
+  color: #0DA161;
+}
+.flag.-negative {
+  border: 0.1rem solid #FAC3BB;
+  background-color: #FFF5F3;
+  color: #EF503A;
+}
 
 .attach {
   overflow: hidden;
@@ -4441,20 +4614,20 @@ input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label 
   margin-right: 2.4rem;
 }
 
-input[type=radio] {
+input[type=radio]:not(.approval-line input) {
   background: url("../image/bg_radio_off.png") 0 0/contain no-repeat;
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
   margin-top: -0.3rem;
 }
-input[type=radio]:checked {
+input[type=radio]:not(.approval-line input):checked {
   background-image: url("../image/bg_radio_on.png");
 }
-input[type=radio]:checked:disabled {
+input[type=radio]:not(.approval-line input):checked:disabled {
   background-image: url("../image/bg_radio_on_disabled.png");
 }
-input[type=radio]:checked:disabled + label {
+input[type=radio]:not(.approval-line input):checked:disabled + label {
   color: var(--f-menu);
 }
 
@@ -4489,6 +4662,9 @@ select {
   background-color: var(--f-white);
   min-width: 14.3rem;
   color: var(--f-secondary);
+}
+select option {
+  border-radius: 0.8rem;
 }
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip) {
@@ -4661,6 +4837,15 @@ select {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
+.pop-wrap.-sm .pop-box {
+  min-width: 48rem;
+}
+.pop-wrap.-lg .pop-box {
+  min-width: 116rem;
+}
+.pop-wrap:has(.pop-btn) .pop-box .pop-container {
+  max-height: 70rem;
+}
 .pop-wrap .pop-box {
   border-radius: 2rem;
   gap: 0 2.4rem;
@@ -4682,7 +4867,7 @@ select {
 }
 .pop-wrap .pop-box .pop-container {
   overflow-y: auto;
-  max-height: 70rem;
+  max-height: 77rem;
   padding: 3.2rem 3.2rem 4rem;
 }
 .pop-wrap .pop-box .pop-btn {
