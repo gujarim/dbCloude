@@ -22,7 +22,7 @@
             <div class="pop-container">
                 <div class="search-box">
                     <table>
-                        <caption>조직명, 제목, 작성자, 게시글번호로 구성된 통합게시판에 대한 표</caption>
+                        <caption>부서, 성명, 대리로 구성된 월 근태 현황에 대한 표</caption>
                         <colgroup>
                             <col style="width: 7.3rem">
                             <col style="width: 25%">
@@ -45,10 +45,20 @@
                 </div>
 
                 <div class="tab-wrap -cal mb40">
+                    <div class="situation-title">
+                        <strong class="date">
+                            <button type="button" class="prev">이전</button>
+                            <span><input type="text" id="datepicker" placeholder="2025.05" readonly></span>
+                            <button type="button" class="next">다음</button>
+                        </strong>
+                        <button type="button" class="btn -line2">오늘 </button>
+                    </div>
+
                     <ul class="tablist -sm" role="tablist">
                         <li class="cal-btn on" role="tab"><a href="">달력</a></li>
                         <li class="caslist-btn" role="tab"><a href="">리스트</a></li>
                     </ul>
+
                     <div class="panels">
                         <div class="on" role="tabpanel">
                             <div class="calendar-wrap">
@@ -56,24 +66,12 @@
                             </div>
                         </div>
                         <div role="tabpanel">
-                            <strong class="date">
-                                <button type="button" class="prev">이전</button>
-                                <span><input type="text" id="datepicker" placeholder="2025년 7월" readonly></span>
-                                <button type="button" class="next">다음</button>
-                            </strong>
                             <div class="table-jq">
-                                <div class="hgroup">
-                                    <div class="sort">
-                                        <button type="button" class="btn -line2">오늘 </button>
-                                    </div>
-                                </div>
-                            
                                 <table id="grid01"></table>
                             </div>
                         </div>
                     </div>
                 </div>
-
 
                 <!-- 변경이력 -->
                 <div class="table-jq">

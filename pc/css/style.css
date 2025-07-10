@@ -552,6 +552,9 @@ ul, ol, li {
   color: var(--f-secondary);
   font-weight: 600;
 }
+.dropdown-menu .table-condensed td span:active {
+  background-color: red;
+}
 
 .datepicker-dropdown.datepicker-orient-top:before {
   left: 3.6rem;
@@ -3242,14 +3245,22 @@ footer .f-uniq select {
 .tab-wrap.-cal .tablist li.caslist-btn.on a {
   background: var(--bg-primary) url("../image/bg_callist_on.png") 50% 50%/2.4rem 2.4rem no-repeat;
 }
-.tab-wrap.-cal .date:has(button) span input {
-  width: 19rem;
+.tab-wrap.-cal .panels {
+  margin-top: 1.6rem;
 }
-.tab-wrap.-cal .calendar-wrap .fc-theme-standard .fc-header-toolbar {
-  margin-bottom: 1.6rem;
+.tab-wrap.-cal .situation-title {
+  padding-bottom: 4.2rem;
 }
-.tab-wrap.-cal .calendar-wrap .fc-theme-standard .fc-header-toolbar .fc-toolbar-chunk:has(.fc-toolbar-title) {
-  margin-left: 8rem;
+.tab-wrap.-cal .situation-title .date:has(button) span input {
+  width: 15rem;
+}
+.tab-wrap.-cal .situation-title .btn {
+  position: absolute;
+  top: 0;
+  right: 0rem;
+}
+.tab-wrap.-cal .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+  display: none;
 }
 
 .star {

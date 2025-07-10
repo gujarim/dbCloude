@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월 근태현황 (달력형)</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pop-wrap -lg">
+        <div class="pop-box">
+            <div class="pop-top">
+                <strong>월 근태 현황</strong>
+            </div>
+
+            <div class="pop-container">
+                <div class="search-box">
+                    <table>
+                        <caption>부서, 성명, 대리로 구성된 월 근태 현황에 대한 표</caption>
+                        <colgroup>
+                            <col style="width: 7.3rem">
+                            <col style="width: 25%">
+                            <col style="width: 7.3rem">
+                            <col style="width: 25%">
+                            <col style="width: 7.3rem">
+                            <col style="width: 25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>부서</th>
+                                <td><input type="text" placeholder="검색어를 입력하세요" value="개발2팀" readonly></td>
+                                <th>성명</th>
+                                <td><input type="text" placeholder="검색어를 입력하세요" value="이디비" readonly></td>
+                                <th>대리</th>
+                                <td><input type="text" placeholder="검색어를 입력하세요" value="대리" readonly></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-wrap -cal mb40">
+                    <div class="situation-title">
+                        <strong class="date">
+                            <button type="button" class="prev">이전</button>
+                            <span><input type="text" id="datepicker" placeholder="2025.05" readonly></span>
+                            <button type="button" class="next">다음</button>
+                        </strong>
+                        <button type="button" class="btn -line2">오늘 </button>
+                    </div>
+
+                    <ul class="tablist -sm" role="tablist">
+                        <li class="cal-btn" role="tab"><a href="">달력</a></li>
+                        <li class="caslist-btn on" role="tab"><a href="">리스트</a></li>
+                    </ul>
+
+                    <div class="panels">
+                        <div role="tabpanel">
+                            <div class="calendar-wrap">
+                                <div id='calendar'></div>
+                            </div>
+                        </div>
+                        <div class="on" role="tabpanel">
+                            <div class="table-jq">
+                                <table id="grid01"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 변경이력 -->
+                <div class="table-jq">
+                    <div class="hgroup">
+                        <strong>변경이력</strong>
+                    </div>
+
+                    <table id="grid4"></table>
+                    <div id="pager4"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- <script src="js/include.js" defer></script> -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+$(document).ready(function () {
+    //달력
+    const calendarEl = document.getElementById('calendar');
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: "ko",
+        headerToolbar: {
+            left: '',
+            center: 'prev title next',
+            right: 'today'
+        },
+        dayCellContent: function (arg) {
+            const { date } = arg;
+            return date.getDate();
+        },
+        events: [
+            {
+                title: '현충일',
+                url: 'http://google.com/',
+                start: '2025-07-06',
+                color: '#FFD8FB'
+            },
+            {
+                title: '현충일2',
+                url: 'http://google.com/',
+                start: '2025-07-06',
+                color: '#C3F1AE'
+            },
+            {
+                title: '어린이날',
+                url: 'http://google.com/',
+                start: '2025-07-08',
+                color: '#FFD8FB'
+            },
+            {
+                title: '오후 반차',
+                url: 'http://google.com/',
+                start: '2025-07-20',
+                color: '#C3F1AE'
+            }
+        ],
+        height: 720,
+        expandRows: true
+    });
+    calendar.render();
+    calendarEl._fullCalendar = calendar;
+
+    //리스트
+    var localData1 = [
+        { 
+            inx1: "05.02 (금)", //일자
+            inx2: "07:53", //출근
+            inx3: "19:22", //퇴근
+            inx4: "-", //근태사항
+            inx5: "근무테스트", //근무유형
+            inx6: "07:00~19:00", //근무시간
+            inx7: "-", //휴게시간
+        },
+        { 
+            inx1: "05.02 (금)", //일자
+            inx2: "07:53", //출근
+            inx3: "19:22", //퇴근
+            inx4: "-", //근태사항
+            inx5: "근무테스트", //근무유형
+            inx6: "07:00~19:00", //근무시간
+            inx7: "07:00~19:00\n07:00~19:00", //휴게시간
+        },
+        { 
+            inx1: "05.02 (금)", //일자
+            inx2: "07:53", //출근
+            inx3: "19:22", //퇴근
+            inx4: "-", //근태사항
+            inx5: "근무테스트", //근무유형
+            inx6: "07:00~19:00", //근무시간
+            inx7: "-", //휴게시간
+        },
+        { 
+            inx1: "05.02 (금)", //일자
+            inx2: "07:53", //출근
+            inx3: "19:22", //퇴근
+            inx4: "-", //근태사항
+            inx5: "근무테스트", //근무유형
+            inx6: "07:00~19:00", //근무시간
+            inx7: "-", //휴게시간
+        },
+        { 
+            inx1: "05.02 (금)", //일자
+            inx2: "07:53", //출근
+            inx3: "19:22", //퇴근
+            inx4: "-", //근태사항
+            inx5: "근무테스트", //근무유형
+            inx6: "07:00~19:00", //근무시간
+            inx7: "-", //휴게시간
+        },
+        { 
+            inx1: "05.02 (금)", //일자
+            inx2: "07:53", //출근
+            inx3: "19:22", //퇴근
+            inx4: "-", //근태사항
+            inx5: "근무테스트", //근무유형
+            inx6: "07:00~19:00", //근무시간
+            inx7: "07:00~19:00\n07:00~19:00", //휴게시간
+        }
+    ];
+    $("#grid01").jqGrid({
+        datatype: "local", // 로컬 데이터를 사용합니다.
+        data: localData1, // 로컬 데이터를 그리드에 바인딩합니다.
+        colNames: [
+            '일자', 
+            '출근',
+            '퇴근',
+            '근태사항',
+            '근무유형',
+            '근무시간',
+            '휴게시간'
+        ], // 그리드 헤더 이름
+        colModel: [
+            { name: 'inx1', index: 'inx1', width: '8%', sortable: false},
+            { name: 'inx2', index: 'inx2', width: '8%', sortable: false},
+            { name: 'inx3', index: 'inx3', width: '8%', sortable: false},
+            { name: 'inx4', index: 'inx4', width: '8%', sortable: false},
+            { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+            { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+            { name: 'inx7', index: 'inx7', width: '10%', sortable: false}
+        ],
+        height: 'auto', // 그리드 높이를 자동 조절
+        autowidth: true, // 그리드 너비를 자동 조절
+    });
+    
+
+
+    // 변경이력
+    var localData4 = [
+        { 
+            inx1: "1", //No
+            inx2: "개발2팀/이디비/userm3", //대상자 정보
+            inx3: "2025.05.27\n09:44", //변경일시
+            inx4: "개발2팀/\n이디비", //변경자 정보
+            inx5: "211.147.44.106", //IP
+            inx6: "수정", //변경상태
+            inx7: "출근", //변경타입
+            inx8: "13:17:24", //변경전
+            inx9: "출근 후\n 버튼 미선택", //변경사유
+        }
+    ];
+    $("#grid4").jqGrid({
+        datatype: "local", // 로컬 데이터를 사용합니다.
+        data: localData4, // 로컬 데이터를 그리드에 바인딩합니다.
+        colNames: [
+            'No', 
+            '대상자 정보',
+            '변경일시',
+            '변경자 정보',
+            'IP',
+            '변경상태',
+            '변경타입',
+            '변경전',
+            '변경사유'
+        ], // 그리드 헤더 이름
+        colModel: [
+            { name: 'inx1', index: 'inx1', width: '3%', sortable: false},
+            { name: 'inx2', index: 'inx2', width: '12%', sortable: false},
+            { name: 'inx3', index: 'inx3', width: '8%', sortable: false},
+            { name: 'inx4', index: 'inx4', width: '8%', sortable: false},
+            { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+            { name: 'inx6', index: 'inx6', width: '7%', sortable: false},
+            { name: 'inx7', index: 'inx7', width: '7%', sortable: false},
+            { name: 'inx8', index: 'inx8', width: '7%', sortable: false},
+            { name: 'inx9', index: 'inx9', width: '10%', sortable: false}
+        ],
+        pager: '#pager4', // 페이징을 위한 요소
+        rowNum: 2,
+        sortname: 'id', // 기본 정렬할 컬럼
+        viewrecords: true, // 총 레코드 수 표시 여부
+        height: 'auto', // 그리드 높이를 자동 조절
+        autowidth: true, // 그리드 너비를 자동 조절
+        loadComplete: function () {
+            createCustomPager("grid4", "#pager4"); // 데이터 로드 후 커스텀 페이징 생성
+        }
+    });
+})
+</script>

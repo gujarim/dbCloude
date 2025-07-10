@@ -2447,16 +2447,24 @@ footer{
             }
         }
 
-        .date:has(button) span input{
-            width: rem(190);
+        .panels{
+            margin-top: rem(16);
         }
 
-        .calendar-wrap .fc-theme-standard .fc-header-toolbar{
-            margin-bottom: rem(16);
+        .situation-title{
+            padding-bottom: rem(42);
+            
+            .date:has(button) span input{
+                width: rem(150);
+            }
+            
+            .btn{
+                @include position(absolute, 0, rem(0), null, null);
+            }
         }
-        
-        .calendar-wrap .fc-theme-standard .fc-header-toolbar .fc-toolbar-chunk:has(.fc-toolbar-title){
-            margin-left: rem(80);
+
+        .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr{
+            display: none;
         }
     }
 }

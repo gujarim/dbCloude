@@ -92,6 +92,10 @@
                 line-height: rem(32);
                 color: var(--f-secondary);
                 font-weight: 600;
+
+                &:active{
+                    background-color: red;
+                }
             }
         }
     }
