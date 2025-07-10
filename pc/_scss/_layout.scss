@@ -1774,9 +1774,25 @@ footer{
         //위젯 400
         &.s400{
             &.board-wrap{
+                .tab-wrap{
+                    position: relative;
+                }
+
                 .tablist{
                     overflow: hidden;
                     overflow-x: auto;
+                    padding-right: rem(15);
+                    scrollbar-width: none;
+                    scroll-behavior: smooth;
+                    cursor: grab;
+
+                    &::after{
+                        content: '';
+                        width: rem(33);
+                        height: rem(33);
+                        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 75.76%);
+                        @include position(absolute, 0, 0, null, null);
+                    }
                 }
                 .notice-list{
                     .attach, .view, .num{
@@ -2392,7 +2408,7 @@ footer{
 
 // 테이블
 // 공통 테이블
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table){
+table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table){
     width: 100%;
     border-collapse: collapse;
     border-top: rem(1) solid var(--line-table);
@@ -2531,6 +2547,176 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             }
         }
     }
+}
+
+.tbl-wrap3{
+    table{
+        th{
+            @include font(rem(16), 600);
+            color: var(--f-base);
+            padding-right: rem(12);
+            vertical-align: top;
+            padding-top: rem(8);
+        }
+
+        td{
+            padding-bottom: rem(16);
+
+            input[type=text]{
+                width: 100%;
+                @include font(rem(16), 600);
+
+                &:read-only{
+                    color: var(--f-base);
+                }
+            }
+
+            textarea{
+                @include rounded(rem(8));
+                @include font(rem(16), 600);
+                color: var(--f-base);
+                width: 100%;
+                border: rem(1) solid var(--line-base);
+                min-height: rem(80);
+                padding: rem(12);
+
+                &:read-only{
+                    background-color: var(--bg-base);
+                }
+            }
+
+            select{
+                width: 100%;
+            }
+
+            .dot{
+                @include font(rem(13), 400);
+                color: var(--f-menu);
+                position: relative;
+                padding-left: rem(18);
+
+                &::before{
+                    content:'';
+                    width: rem(3);
+                    height: rem(3);
+                    @include rounded(100%);
+                    background-color: var(--f-menu);
+                    @include position(absolute, rem(7), null, null, rem(5));
+                }
+            }
+
+            .usagetime{
+                @include flex(flex, space-between, center);
+                gap: 0 rem(12);
+
+                input{
+                    width: rem(168);
+
+                }
+            }
+
+            .select-wrap{
+                flex: 1;
+                @include flex(flex, space-between, center);
+                gap: 0 rem(6);
+            }
+
+            .chk-color{
+                @include flex(flex, space-between, center);
+                padding: 0  0 rem(12);
+
+                input[type=checkbox]{
+                    width: rem(32);
+                    height: rem(32);
+                    @include rounded(rem(2));
+                    
+                    &.color1{
+                        background-color: #68BAAE;
+                    }
+                    &.color2{
+                        background-color: #7A7AB6;
+                    }
+                    &.color3{
+                        background-color: #EF8E43;
+                    }
+                    &.color4{
+                        background-color: #CD3833;
+                    }
+                    &.color5{
+                        background-color: #244061;
+                    }
+                    &.color6{
+                        background-color: #4B78DF;
+                    }
+                    &.color7{
+                        background-color: #80BD7A;
+                    }
+                    &.color8{
+                        background-color: #F09837;
+                    }
+                    &.color9{
+                        background-color: #4FAEEB;
+                    }
+                }
+            }
+
+            .date-wrap{
+                @include flex(flex, space-between, center);
+                gap: 0 rem(6);
+                margin-bottom: rem(16);
+            }
+
+            .week-wrap{
+                @include flex(flex, space-between, center);
+
+                .chk-week{
+                    @include flex(flex, space-between, center);
+                    gap: 0 rem(8);
+
+                    span{
+                        display: block;
+
+                        label{
+                            @include rounded(100%);
+                            width: rem(24);
+                            height: rem(24);
+                            line-height: rem(24);
+                            text-align: center;
+                            background-color: var(--bg-base);
+                        }
+
+                        input[type=checkbox]:checked{
+                            &~label{
+                                background-color: var(--f-primary);
+                                color: var(--f-white);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        tr{
+            &.line2{
+                th{
+                    &:last-of-type{
+                        padding-left: rem(40);
+                    }
+                }
+            }
+            
+            &:last-child{
+                td{
+                    &:last-of-type{
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    
 }
 
 // 버튼

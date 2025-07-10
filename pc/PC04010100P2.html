@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회의실 예약</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pop-wrap">
+        <div class="pop-box">
+            <div class="pop-top">
+                <strong>회의실 예약</strong>
+            </div>
+
+            <div class="pop-container">
+                <div class="tbl-wrap3 -line2">
+                    <table>
+                        <colgroup>
+                            <col style="width: 8.5rem">
+                            <col style="width: 16rem">
+                            <col style="width: 13rem">
+                            <col style="width: 16rem">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>회의실</th>
+                                <td colspan="3"><input type="text" value="2층 1-2" readonly></td>
+                            </tr>
+                            <tr>
+                                <th>회의실</th>
+                                <td colspan="3"><input type="text" placeholder="회의명을 입력해주세요"></td>
+                            </tr>
+                            <tr class="line2">
+                                <th>신청자</th>
+                                <td><input type="text" value="이디비" readonly></td>
+                                <th>참석인원</th>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">선택</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>참석자명</th>
+                                <td colspan="3"><textarea name="" id="" value="" placeholder="참석자명을 입력해 주세요"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th>사용시간</th>
+                                <td colspan="3">
+                                    <div class="usagetime">
+                                        <input type="text" value="2026.07.04" readonly>
+                                        <div class="select-wrap">
+                                            <select name="" id="">
+                                                <option value="">선택</option>
+                                            </select> ~
+                                            <select name="" id="">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용목적</th>
+                                <td colspan="3">
+                                    <textarea name="" id="" rows="4" placeholder="사용목적을 입력해 주세요"></textarea>
+                                    <p class="dot">입력하지 않을 경우 위에 입력하신 회의명으로 자동 입력됩니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>내색상</th>
+                                <td colspan="3">
+                                    <div class="chk-color">
+                                        <input type="checkbox" class="color1">
+                                        <input type="checkbox" class="color2">
+                                        <input type="checkbox" class="color3">
+                                        <input type="checkbox" class="color4">
+                                        <input type="checkbox" class="color5">
+                                        <input type="checkbox" class="color6">
+                                        <input type="checkbox" class="color7">
+                                        <input type="checkbox" class="color8">
+                                        <input type="checkbox" class="color9">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>반복설정</th>
+                                <td colspan="3">
+                                    <select name="" id="">
+                                        <option value="">선택</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>반복구간</th>
+                                <td colspan="3">
+                                    <div class="date-wrap">
+                                        <p class="input-calendar">
+                                            <input type="text" value="2025.08.04" readonly>
+                                            <button type="button">날짜 선택</button>
+                                        </p> ~
+                                        <p class="input-calendar">
+                                            <input type="text" value="2025.08.04">
+                                            <button type="button">날짜 선택</button>
+                                        </p>
+                                    </div>
+                                    <div class="week-wrap">
+                                        <span><input type="checkbox"  id="chk-week"><label for="chk-week">요일반복</label></span>
+                                        <p class="chk-week">
+                                            <span><input type="checkbox" id="mon" checked><label for="mon">월</label></span>
+                                            <span><input type="checkbox" id="tues"><label for="tues">화</label></span>
+                                            <span><input type="checkbox" id="wed" checked><label for="wed">수</label></span>
+                                            <span><input type="checkbox" id="thurs"><label for="thurs">목</label></span>
+                                            <span><input type="checkbox" id="fri" checked><label for="fri">금</label></span>
+                                            <span><input type="checkbox" id="sat"><label for="sat">토</label></span>
+                                            <span><input type="checkbox" id="sun"><label for="sun">일</label></span>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>추가사항</th>
+                                <td colspan="3"><textarea name="" id="" rows="4" value="" placeholder="ex) 참석자는 노트북 지참요망"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pop-btn">
+                <button type="button" class="btn -line">닫기</button>
+                <button type="button" class="btn -primary">확인</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>

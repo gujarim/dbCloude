@@ -351,7 +351,7 @@ input[type=text]{
     }
 }
 
-input[type=checkbox]:not(.chk-imprt){ // 테이블에 즐겨찾기빼고
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테이블에 즐겨찾기, 회의실예약 팝업 내색상, 요일선택 빼고
     @include bg(chk_off);
     width: rem(24);
     height: rem(24);
@@ -551,7 +551,7 @@ select{
         @include rounded(rem(20));
         gap: 0 rem(24);
         background-color: var(--f-white);
-        min-width: rem(480);
+        min-width: rem(600);
         overflow: hidden;
 
         .pop-top{
@@ -931,6 +931,7 @@ select{
         .chat-container{
             @include flex(flex, space-between);
             flex-direction: column;
+            gap: rem(12) 0;
             flex: 1;
             height: 100%;
             padding: rem(50) rem(50) rem(60);

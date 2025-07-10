@@ -2613,9 +2613,27 @@ footer .f-uniq select {
   margin-bottom: 1.2rem;
   padding-bottom: 1.2rem;
 }
+.main-wrap .box.s400.board-wrap .tab-wrap {
+  position: relative;
+}
 .main-wrap .box.s400.board-wrap .tablist {
   overflow: hidden;
   overflow-x: auto;
+  padding-right: 1.5rem;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.main-wrap .box.s400.board-wrap .tablist::after {
+  content: "";
+  width: 3.3rem;
+  height: 3.3rem;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(75.76%, #FFFFFF));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 75.76%);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .main-wrap .box.s400.board-wrap .notice-list .attach, .main-wrap .box.s400.board-wrap .notice-list .view, .main-wrap .box.s400.board-wrap .notice-list .num {
   display: none;
@@ -3174,19 +3192,19 @@ footer .f-uniq select {
   left: 0;
 }
 
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table) {
+table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) {
   width: 100%;
   border-collapse: collapse;
   border-top: 0.1rem solid var(--line-table);
   border-bottom: 0.1rem solid var(--line-table2);
 }
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table) th {
+table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) th {
   font-size: 1.6rem;
   font-weight: 600;
   border-bottom: 0.1rem solid var(--line-table3);
   background-color: var(--bg-base);
 }
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table) th .star {
+table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) th .star {
   color: var(--f-flase);
 }
 
@@ -3295,6 +3313,196 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 .tbl-wrap2.-sm table th {
   padding: 1.4rem 2.4rem;
+}
+
+.tbl-wrap3 table th {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--f-base);
+  padding-right: 1.2rem;
+  vertical-align: top;
+  padding-top: 0.8rem;
+}
+.tbl-wrap3 table td {
+  padding-bottom: 1.6rem;
+}
+.tbl-wrap3 table td input[type=text] {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.tbl-wrap3 table td input[type=text]:-moz-read-only {
+  color: var(--f-base);
+}
+.tbl-wrap3 table td input[type=text]:read-only {
+  color: var(--f-base);
+}
+.tbl-wrap3 table td textarea {
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--f-base);
+  width: 100%;
+  border: 0.1rem solid var(--line-base);
+  min-height: 8rem;
+  padding: 1.2rem;
+}
+.tbl-wrap3 table td textarea:-moz-read-only {
+  background-color: var(--bg-base);
+}
+.tbl-wrap3 table td textarea:read-only {
+  background-color: var(--bg-base);
+}
+.tbl-wrap3 table td select {
+  width: 100%;
+}
+.tbl-wrap3 table td .dot {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--f-menu);
+  position: relative;
+  padding-left: 1.8rem;
+}
+.tbl-wrap3 table td .dot::before {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 100%;
+  background-color: var(--f-menu);
+  position: absolute;
+  top: 0.7rem;
+  left: 0.5rem;
+}
+.tbl-wrap3 table td .usagetime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 1.2rem;
+}
+.tbl-wrap3 table td .usagetime input {
+  width: 16.8rem;
+}
+.tbl-wrap3 table td .select-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 0.6rem;
+}
+.tbl-wrap3 table td .chk-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 1.2rem;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox] {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.2rem;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color1 {
+  background-color: #68BAAE;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color2 {
+  background-color: #7A7AB6;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color3 {
+  background-color: #EF8E43;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color4 {
+  background-color: #CD3833;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color5 {
+  background-color: #244061;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color6 {
+  background-color: #4B78DF;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color7 {
+  background-color: #80BD7A;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color8 {
+  background-color: #F09837;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox].color9 {
+  background-color: #4FAEEB;
+}
+.tbl-wrap3 table td .date-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 0.6rem;
+  margin-bottom: 1.6rem;
+}
+.tbl-wrap3 table td .week-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.tbl-wrap3 table td .week-wrap .chk-week {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 0.8rem;
+}
+.tbl-wrap3 table td .week-wrap .chk-week span {
+  display: block;
+}
+.tbl-wrap3 table td .week-wrap .chk-week span label {
+  border-radius: 100%;
+  width: 2.4rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  background-color: var(--bg-base);
+}
+.tbl-wrap3 table td .week-wrap .chk-week span input[type=checkbox]:checked ~ label {
+  background-color: var(--f-primary);
+  color: var(--f-white);
+}
+.tbl-wrap3 table tr.line2 th:last-of-type {
+  padding-left: 4rem;
+}
+.tbl-wrap3 table tr:last-child td:last-of-type {
+  padding-bottom: 0;
 }
 
 .btn-wrap {
@@ -4200,17 +4408,17 @@ input[type=text]:read-only {
   margin-right: 2rem !important;
 }
 
-input[type=checkbox]:not(.chk-imprt) {
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) {
   background: url("../image/bg_chk_off.png") 0 0/contain no-repeat;
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
   margin-top: -0.3rem;
 }
-input[type=checkbox]:not(.chk-imprt):checked {
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
   background: url("../image/bg_chk_on.png") 0 0/contain no-repeat;
 }
-input[type=checkbox]:not(.chk-imprt) + label {
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label {
   font-size: 1.6rem;
   font-weight: 600;
   margin-left: 0.8rem;
@@ -4447,7 +4655,7 @@ select {
   border-radius: 2rem;
   gap: 0 2.4rem;
   background-color: var(--f-white);
-  min-width: 48rem;
+  min-width: 60rem;
   overflow: hidden;
 }
 .pop-wrap .pop-box .pop-top {
@@ -4913,6 +5121,7 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 1.2rem 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;

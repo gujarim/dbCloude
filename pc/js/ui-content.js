@@ -267,15 +267,52 @@ const sideNavToggle = () => {
 // 챗봇
 const chatToggle = () => {
     const charWrap = document.querySelector('.chat-wrap');
-    const bigsizebtn = charWrap.querySelector('.chat-sideMenu button');
+    const bigsizebtn = document.querySelector('.chat-sideMenu button');
+
+    if (!charWrap || !bigsizebtn) return;
 
     bigsizebtn.addEventListener('click', () => {
         charWrap.classList.toggle('open');
-    })
+    });
+};
+
+// 통합게시판 스크롤 (400X420)
+const tablistScroll = () => {
+    const tablist = document.querySelector('.board-wrap.s400 .tablist');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    tablist.addEventListener('mousedown', (e) => {
+        isDown = true;
+        tablist.classList.add('active');
+        startX = e.pageX - tablist.offsetLeft;
+        scrollLeft = tablist.scrollLeft;
+        tablist.style.cursor = 'grabbing';
+    });
+
+    tablist.addEventListener('mouseleave', () => {
+        isDown = false;
+        tablist.style.cursor = 'grab';
+    });
+
+    tablist.addEventListener('mouseup', () => {
+        isDown = false;
+        tablist.style.cursor = 'grab';
+    });
+
+    tablist.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - tablist.offsetLeft;
+        const walk = (x - startX) * 1.5; // 이동 감도 조절
+        tablist.scrollLeft = scrollLeft - walk;
+    });
 }
 
 window.addEventListener('load', () => {
     toggleTable();
     tab();
     chatToggle();
+    tablistScroll();
 });
