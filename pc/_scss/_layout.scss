@@ -2557,6 +2557,13 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             padding-right: rem(12);
             vertical-align: top;
             padding-top: rem(8);
+            position: relative;
+
+            .tooltip{
+                top: rem(10) !important;
+                right:rem(12) !important;
+                transform: translateY(0) !important;
+            }
         }
 
         td{

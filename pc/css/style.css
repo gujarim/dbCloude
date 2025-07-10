@@ -3322,6 +3322,13 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   padding-right: 1.2rem;
   vertical-align: top;
   padding-top: 0.8rem;
+  position: relative;
+}
+.tbl-wrap3 table th .tooltip {
+  top: 1rem !important;
+  right: 1.2rem !important;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
 }
 .tbl-wrap3 table td {
   padding-bottom: 1.6rem;
@@ -4507,6 +4514,9 @@ select {
   width: 2rem;
   height: 2rem;
   cursor: auto;
+}
+.tooltip:not(header .tooltip, .reservation-box table td .tooltip).-w button {
+  background: url("../image/bg_tooltip_W.png") 0 0/contain no-repeat;
 }
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip) div {
   position: absolute;

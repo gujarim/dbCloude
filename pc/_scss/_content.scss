@@ -451,6 +451,12 @@ select{
         height: rem(20);
         cursor: auto;
     }
+
+    &.-w{
+        button{
+            @include bg(tooltip_W);
+        }
+    }
     
     div{
         @include position(absolute, 0, null, null, rem(-27));
