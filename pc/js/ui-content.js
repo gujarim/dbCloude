@@ -305,7 +305,7 @@ const tablistScroll = () => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - tablist.offsetLeft;
-        const walk = (x - startX) * 1.5; // 이동 감도 조절
+        const walk = (x - startX) * 5; // 이동 감도 조절
         tablist.scrollLeft = scrollLeft - walk;
     });
 }
