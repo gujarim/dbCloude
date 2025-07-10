@@ -4692,7 +4692,7 @@ select option {
   cursor: auto;
 }
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip).-w button {
-  background: url("../image/bg_tooltip_W.png") 0 0/contain no-repeat;
+  background: url("../image/bg_tooltip_w.png") 0 0/contain no-repeat;
 }
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip) div {
   position: absolute;
