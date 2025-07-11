@@ -189,21 +189,21 @@ nav{
     width: rem(296);
     height: 100%;
 
-    .gnb{ // 1depth
+    .gnb:not(.laboratory-wrap ul){ // 1depth
         padding: rem(32) rem(6);
         border-right: rem(1) solid #E5EAEF;
         position: relative;
         z-index: 1;
         background-color: var(--f-white);
 
-        li{
-            a{
+        &>li{
+            &>a{
                 @include font(rem(14), 600);
                 @include rounded(rem(12));
                 color: var(--f-secondary);
                 display: block;
                 text-align: center;
-                padding: rem(18) 0 rem(15);
+                padding: rem(16) 0 rem(14);
 
                 &::before{
                     display: block !important;
@@ -274,10 +274,30 @@ nav{
                     }
                 }
             }
+            &.laboratory{
+                position: relative;
+                margin-top: rem(48);
+
+                &::before{
+                    content:'';
+                    width: rem(48);
+                    height: rem(1);
+                    background-color: var(--line-table3);
+                    @include position(absolute, rem(-24), null, null, rem(9));
+                }
+
+                >a{
+                    padding: rem(10) 0;
+
+                    &::before{
+                        @include icon(40, 'laboratory', 'pseudo');
+                    }
+                }
+            }
 
             //활성화
             &:hover{
-                a{
+                >a{
                     transition: all .3s;
 
                     &::before{
@@ -286,7 +306,7 @@ nav{
                 }
             }
             &:hover, &.on{
-                a{
+                >a{
                     font-weight: 700;
                     color: var(--f-primary);
                     background-color: rgba(25, 166, 25, 0.1);
@@ -357,7 +377,180 @@ nav{
                 }
             }
 
-            
+            .laboratory-wrap{
+                width: rem(300);
+                position: relative;
+                transform: translate(rem(-300), rem(300));
+                transition: ease-in-out .5s;
+
+                &.open{
+                    transform: translate(rem(-118), 0);
+
+                    .circle{
+                        // margin-top: rem(-300);
+                    }
+                }
+                
+                .circle{
+                    @include rounded(100%);
+                    will-change: transform; 
+                    transition: ease-in-out 0.56s;
+                    width: 100%;
+                    height: rem(300);
+                    background-color: rgba(255,255,255,.4);
+                    backdrop-filter: blur(rem(18));
+                    margin-top: rem(-300);
+                    cursor: grabbing;
+
+                    .circle-content{
+                        @include position(absolute, 50%, null, null, 50%);
+                        transform: translateX(-50%) translateY(-50%); 
+                        width: rem(60); 
+                        height: rem(60); 
+
+                        ul{
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            
+                            li{
+                                will-change: transform;
+                                transition: ease-in-out 0.56s;
+                                position:absolute;
+                                width: rem(60);
+                                height: rem(60);
+                                cursor: pointer;
+                                
+
+                                &:nth-child(1){
+                                    top:rem(-95); 
+                                    left:0;
+                                }
+                                &:nth-child(2){
+                                    top:rem(-66); 
+                                    left:rem(66);
+                                }
+                                &:nth-child(3){
+                                    top:0; 
+                                    left:rem(95);
+                                }
+                                &:nth-child(4){
+                                    top:rem(66); 
+                                    left:rem(66);
+                                }
+                                &:nth-child(5){
+                                    top:rem(95); 
+                                    left:0;
+                                }
+                                &:nth-child(6){
+                                    top:rem(66); 
+                                    left:rem(-66);
+                                }
+                                &:nth-child(7){
+                                    top:0; 
+                                    left:rem(-95);
+                                }
+                                &:nth-child(8){
+                                    top:rem(-66); 
+                                    left:rem(-66);
+                                }
+
+                                a{
+                                    @include font(rem(12), 600);
+                                    color: var(--f-secondary);
+                                    display: block;
+                                    text-align: center;
+                                    pointer-events: none; 
+                                    -webkit-user-select:none; 
+                                    -moz-user-select:none; 
+                                    -ms-user-select:none; 
+                                    user-select:none;
+
+                                    &::before{
+                                        content:'';
+                                        display: block !important;
+                                        margin: 0 auto rem(8);
+                                    }
+                                }
+
+                                &.business{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'business', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.work{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'work', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.bizplay{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'bizplay', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.dbnews{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'dbnews', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.cloudhp{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'cloudhp', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.smartoff{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'smartoff', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.shr{
+                                    a{
+                                        &::before{
+                                            @include icon(40, 'shr', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.book{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'book', 'pseudo');
+                                        }
+                                    }
+                                }
+                                &.securityservice{
+                                    a{
+                                        &::before{
+                                            @include icon(24, 'securityservice', 'pseudo');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                button{
+                    @include rounded(100%);
+                    @include bg(laboratory_close, 50% 50%, rem(19) rem(19), var(--bg-primary));
+                    @include position(absolute, 50%, null, null, 50%);
+                    @include fontHidden;
+                    transform: translate(-50%, -50%);
+                    width: rem(60);
+                    height: rem(60);
+                }
+            }
         }
     }
 
@@ -1585,7 +1778,7 @@ footer{
 
                 .slick-slide{
                     &> div {
-                        padding-right: 16px;
+                        padding-right: rem(16);
                     }
                 }
             }

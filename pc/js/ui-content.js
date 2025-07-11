@@ -328,6 +328,139 @@ const tablistScroll = () => {
     });
 }
 
+//메인 실험실(다이얼 돌리기)
+const laboratoryDial = () => {
+    const circle = document.querySelector('.circle');
+    if (!circle) return; // 예외 처리
+
+    const linkItems = circle.querySelectorAll('ul li');
+    const anchorItems = circle.querySelectorAll('ul li a');
+    const centerX = circle.clientWidth / 2;
+    const centerY = circle.clientHeight / 2;
+
+    let startAngle = 0;
+    let prevAngle = 0;
+    let currentAngle = 0;
+    let rotateStart = 0;
+    let rotateEnd = 0;
+    const angleStep = 3.5;
+
+    let isDragging = false;
+    let hasMoved = false;
+
+    circle.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        hasMoved = false;
+        startAngle = getAngle(e.clientX, e.clientY);
+        prevAngle = startAngle;
+        rotateStart = Number(circle.dataset.rotate);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        hasMoved = true;
+        prevAngle = currentAngle;
+        currentAngle = getAngle(e.clientX, e.clientY);
+        if (Math.abs(prevAngle - currentAngle) > 300) return;
+
+        const currentRotate = Number(circle.dataset.rotate);
+        circle.dataset.rotate = prevAngle < currentAngle
+            ? currentRotate - angleStep
+            : currentRotate + angleStep;
+
+        rotateEnd = Number(circle.dataset.rotate);
+        updateRotation();
+    });
+
+    document.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        // a 태그 위에서 마우스 뗐는지 확인
+        const isOverAnchor = e.target.closest('a');
+
+        // a 태그 위에서 마우스를 뗀 경우 snap 하지 않음
+        if (hasMoved && !isOverAnchor) {
+            snapToNearestAngle();
+        }
+    });
+
+    // Prevent link click when dragging
+    // anchorItems.forEach(anchor => {
+    //     anchor.addEventListener('click', (e) => {
+    //         if (hasMoved) {
+    //             e.preventDefault();
+    //             e.stopPropagation();
+    //         }
+    //         alert('ok');
+    //     });
+    // });
+
+    linkItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            if (hasMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
+            console.log(`${e.target.textContent}`);
+        });
+    });
+
+
+    function updateRotation() {
+        circle.style.transform = `rotate(${circle.dataset.rotate}deg)`;
+        linkItems.forEach(el => {
+            el.style.transform = `rotate(${-1 * circle.dataset.rotate}deg)`;
+        });
+    }
+
+    function getAngle(x, y) {
+        const dx = x - circle.offsetLeft - centerX;
+        const dy = -1 * (y - circle.offsetTop - centerY);
+        const radian = Math.atan2(dy, dx);
+        let degree = radian * 180 / Math.PI;
+        return degree < 0 ? degree + 360 : degree;
+    }
+
+    function snapToNearestAngle() {
+        let angle = Number(circle.dataset.rotate);
+        const step = parseInt(angle / 45);
+        const remainder = Math.abs(angle) % 45;
+
+        if (remainder > 22.5) {
+            angle = step * 45 + (rotateStart < rotateEnd ? 45 : -45);
+        } else {
+            angle = step * 45;
+        }
+
+        circle.dataset.rotate = angle;
+        updateRotation();
+    }
+};
+
+//메인 실험실 클릭시 다이얼 노출
+const laboratoryShow = () =>{
+    const btn = document.querySelector('.laboratory>a');
+    const container = document.querySelector('.laboratory-wrap');
+    const closeBtn = container.querySelector('button');
+
+    btn.addEventListener('click', e => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        container.classList.add('open');
+    })
+
+    closeBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        container.classList.remove('open');
+    })
+}
+
 window.addEventListener('load', () => {
     toggleTable();
     tab();

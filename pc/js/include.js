@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             navToggle();
             sideNavToggle();
+            laboratoryDial();
+            laboratoryShow();
         });
 
     // footer 불러오기
