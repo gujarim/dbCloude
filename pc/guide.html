@@ -21,8 +21,9 @@
         .tit-h3 span::after{content:'';width:100%;height:8px;background-color: rgba(25, 166, 25, 0.2);position: absolute;bottom:2px;left:0;}
         .guide-wrap{padding: 50px;}
         .gcontainer{padding: 30px 0;}
-        .gcontent{margin-bottom: 80px;}
+        .gcontent{margin-bottom: 80px;position: relative;}
         .address-wrap{border:1px solid #B4B8BD;padding: 24px;border-radius: 8px;}
+        span{display: inline-block}
     </style>
 </head>
 <body>
@@ -35,21 +36,44 @@
             <div class="gcontent">
                 <h2 class="tit-h2"><span>폰트</span></h2>
 
-                <h2 class="tit-h2">통합게시판</h2>
+                <p style="font-weight: 400;">Pretendard(400)</p>
+                <p style="font-weight: 500;">Pretendard(500)</p>
+                <p style="font-weight: 600;">Pretendard(600)</p>
+                <p style="font-weight: 700;">Pretendard(700)</p>
             </div>
 
             <!-- 타이틀 -->
             <div class="gcontent">
                 <h2 class="tit-h2"><span>타이틀</span></h2>
 
+                <h3 class="tit-h3"><span>서브페이지 타이틀</span></h3>
+                <div class="tit-box">
+                    <h2 class="tit-h2">회의실 예약</h2>
+                    <div class="btn-wrap">
+                        <button type="button" class="i-reservation">예약하기</button>
+                    </div>
+                </div>
+
+
+                <h3 class="tit-h3"><span>테이블 위 타이틀</span></h3>
                 <div class="hgroup">
-                    <p>조회결과 총 <em class="f-primary">143</em>건</p>
+                    <p>총 <em class="f-primary">143</em>건</p>
 
                     <div class="sort">
                         <select name="" id="">
                             <option value="">10개씩보기</option>
                         </select>
-                        <button type="button" class="btn -primary">일괄승인</button>
+                        <button type="button" class="btn -line">일괄승인</button>
+                    </div>
+                </div>
+
+                <div class="hgroup">
+                    <p>총 <em class="f-primary">143</em>건</p>
+
+                    <div class="sort">
+                        <select name="" id="">
+                            <option value="">10개씩보기</option>
+                        </select>
                     </div>
                 </div>
 
@@ -62,42 +86,78 @@
             <div class="gcontent">
                 <h2 class="tit-h2"><span>버튼</span></h2>
 
-                <button type="button" class="i-edit">글쓰기</button> <button type="button" class="i-calendar">신청</button> <button type="button" class="i-save">저장</button> <br>
-                <button type="button" class="i-search">조회</button> <button type="button" class="i-searchB">우편번호 검색</button><br>
-                <button type="button" class="btn -primary">일괄승인</button> <button type="button" class="btn -false">삭제</button><br>
-                <button type="button" class="btn -line">변경</button> <button type="button" class="btn -line false">삭제</button><br>
-                <button type="button" class="pay -ing">결재진행중</button> <button type="button" class="pay -complete">결재완료</button>
+                <button type="button" class="i-edit">글쓰기</button>
+                <button type="button" class="i-approval">승인</button>
+                <button type="button" class="i-companion">반려</button>
+                <button type="button" class="i-save">임시저장</button>
+                <button type="button" class="i-publicview">공람 </button>
+                <button type="button" class="i-print">인쇄</button>
+                <button type="button" class="i-listw">목록</button>
+                <button type="button" class="i-list">목록</button>
+                <button type="button" class="i-calendar">신청</button>
+
+                <button type="button" class="i-search">조회</button>
+
+                <button type="button" class="btn -line">일괄승인</button>
+
+                <button type="button" class="btn -secondary">추가</button>
+                <button type="button" class="btn -line">삭제</button>
+
+                <button type="button" class="i-add">추가</button>
+                <button type="button" class="i-del -la">삭제</button>
+                
             </div>
 
             <!-- 입력폼 -->
-             <div class="gcontent">
+            <div class="gcontent">
                 <h2 class="tit-h2"><span>입력폼</span></h2>
 
                 <input class="cbox" type="checkbox"> <input class="cbox" type="checkbox" checked> <input type="radio"> <input type="radio" checked><br><br>
 
-                <input type="text" value="텍스트입니다."> <input type="text" value="readonly" readonly> <br><br>
+                <input type="text" value="텍스트입니다."> <input type="text" value="readonly" readonly> 
+
+                <span class="input-calendar">
+                    <input type="text" value="2025.08.04">
+                    <button type="button">날짜 선택</button>
+                </span> <br><br>
 
                 <div class="address-wrap">
                     <p class="addr1"><input type="text"><button type="button" class="i-searchB">우편번호 검색</button></p>
                     <p class="addr2"><input type="text"><input type="text" placeholder="상세주소 입력"></p>
                 </div>
 
-                 <br><br>
+                <br><br>
 
                 <select name="" id="">
                     <option value="">선택</option>
                 </select>
-             </div>
+            </div>
 
             <!-- 플래그 -->
-             <div class="gcontent">
+            <div class="gcontent">
                 <h2 class="tit-h2"><span>플래그</span></h2>
 
                 <em class="flag -board">자유게시판</em> <em class="flag -board2">협력사게시판</em> <em class="flag -notice">공지사항</em>
-             </div>
+            </div>
+
+            <!-- 툴팁 -->
+            <div class="gcontent">
+                <h2 class="tit-h2"><span>툴팁</span></h2>
+
+                <div class="tooltip">
+                    <button>툴팁</button>
+                    <div>
+                        <p>
+                            <strong>[허용]</strong>으로 설정할 시, 상신자가 단독으로 문서를 상신할 수 있습니다. 이 경우, 상신과 동시에 결재가 완료됩니다.<br>
+                            <strong>[불가]</strong>로 설정할 시, 상신자 외의 결재자를 한 명 이상 반드시 추가해야 상신이 가능합니다.<br>
+                            <strong>단, 이 설정은 각 템플릿의 1인 결재 설정을 우선으로 합니다.</strong> 템플릿 별 1인 결재 허용 설정이 없는 경우에 한하여 적용됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <!-- 탭 -->
-             <div class="gcontent">
+            <div class="gcontent">
                 <h2 class="tit-h2"><span>탭</span></h2>
 
                 <div class="tab-wrap-box">
@@ -117,10 +177,10 @@
                         <li><a href="">발령사항</a></li>
                     </ul>
                 </div>
-             </div>
+            </div>
 
             <!-- 테이블 -->
-             <div class="gcontent">
+            <div class="gcontent">
                 <h2 class="tit-h2"><span>테이블</span></h2>
                 
                 <div class="tbl-wrap">
@@ -219,7 +279,7 @@
 </body>
 </html>
 
-<script src="js/include.js" defer></script>
+<!-- <script src="js/include.js" defer></script> -->
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
