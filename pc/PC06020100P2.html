@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>월 근태현황 (달력형)</title>
+    <title>월 근태현황 (리스트형)</title>
     
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
@@ -107,46 +107,57 @@ $(document).ready(function () {
     const calendarEl = document.getElementById('calendar');
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        locale: "ko",
-        headerToolbar: {
-            left: '',
-            center: 'prev title next',
-            right: 'today'
+    initialView: 'dayGridMonth',
+    locale: "ko",
+    headerToolbar: {
+        left: '',
+        center: 'prev title next',
+        right: 'today'
+    },
+    height: 560,
+    expandRows: true,
+
+    // 다른 달 날짜는 렌더링 자체 안함
+    fixedWeekCount: false,
+
+    // 현재 보여지는 달의 1일 ~ 다음 달 1일 전까지 보여줌
+    visibleRange: function(currentDate) {
+        const start = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const end = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+        return { start, end };
+    },
+
+    dayCellContent: function (arg) {
+        const { date } = arg;
+        return date.getDate();
+    },
+
+    events: [
+        {
+        title: '출근 07:53',
+        start: '2025-07-06',
+        color: '#ffffff'
         },
-        dayCellContent: function (arg) {
-            const { date } = arg;
-            return date.getDate();
+        {
+        title: '퇴근 18:10',
+        start: '2025-07-06',
+        color: '#ffffff'
         },
-        events: [
-            {
-                title: '현충일',
-                url: 'http://google.com/',
-                start: '2025-07-06',
-                color: '#FFD8FB'
-            },
-            {
-                title: '현충일2',
-                url: 'http://google.com/',
-                start: '2025-07-06',
-                color: '#C3F1AE'
-            },
-            {
-                title: '어린이날',
-                url: 'http://google.com/',
-                start: '2025-07-08',
-                color: '#FFD8FB'
-            },
-            {
-                title: '오후 반차',
-                url: 'http://google.com/',
-                start: '2025-07-20',
-                color: '#C3F1AE'
-            }
-        ],
-        height: 720,
-        expandRows: true
+        {
+        title: '어린이날',
+        url: 'http://google.com/',
+        start: '2025-07-08',
+        color: '#FFD8FB'
+        },
+        {
+        title: '오후 반차',
+        url: 'http://google.com/',
+        start: '2025-07-20',
+        color: '#C3F1AE'
+        }
+    ]
     });
+
     calendar.render();
     calendarEl._fullCalendar = calendar;
 

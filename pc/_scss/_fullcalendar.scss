@@ -133,8 +133,8 @@
             }
         }
         
-        .fc-license-message, .fc-daygrid-day.fc-day-other{
-            display: none;
+        .fc-license-message, .fc-daygrid-day.fc-day-other.fc-day-future{
+            // display: none;
         }
     }
 

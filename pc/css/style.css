@@ -699,9 +699,6 @@ ul, ol, li {
   line-height: 2.9rem;
   text-align: center;
 }
-.calendar-wrap .fc-theme-standard .fc-license-message, .calendar-wrap .fc-theme-standard .fc-daygrid-day.fc-day-other {
-  display: none;
-}
 .calendar-wrap .calendar-list {
   border-radius: 2rem;
   width: 33.4rem;
@@ -3261,6 +3258,22 @@ footer .f-uniq select {
 }
 .tab-wrap.-cal .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
   display: none;
+}
+.tab-wrap.-cal .fc-theme-standard .fc-daygrid-day-frame {
+  min-height: 10rem;
+}
+.tab-wrap.-cal .fc-daygrid-day-events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 5.4rem;
 }
 
 .star {

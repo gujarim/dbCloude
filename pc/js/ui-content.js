@@ -196,24 +196,31 @@ const tab = () => {
             tab.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // 현재 클릭한 tab-wrap 범위 지정
                 const currentWrap = tab.closest('.tab-wrap');
                 const localTabs = currentWrap.querySelectorAll('[role="tab"]');
                 const localPanels = currentWrap.querySelectorAll('[role="tabpanel"]');
 
-                // 모든 탭, 패널에서 on 제거
+                // 모든 탭/패널 비활성화
                 localTabs.forEach(t => t.classList.remove('on'));
                 localPanels.forEach(p => p.classList.remove('on'));
 
-                // 현재 탭 활성화
+                // 현재 탭/패널 활성화
                 tab.classList.add('on');
                 localPanels[index].classList.add('on');
 
-                // jqGrid 있을 경우 다시 그리기
-                resizeJqGrid(localPanels[index]);
+                const activePanel = localPanels[index];
 
-                // 중첩된 tab-wrap이 있다면 첫 번째 탭을 선택 상태로 초기화
-                const innerTabWrap = localPanels[index].querySelector('.tab-wrap');
+                // jqGrid 다시 그리기
+                resizeJqGrid(activePanel);
+
+                // ✅ FullCalendar 다시 그리기
+                const calendarEl = activePanel.querySelector('#calendar');
+                if (calendarEl && calendarEl._fullCalendar) {
+                    calendarEl._fullCalendar.render();
+                }
+
+                // 중첩된 tab-wrap 초기화
+                const innerTabWrap = activePanel.querySelector('.tab-wrap');
                 if (innerTabWrap) {
                     const innerTabs = innerTabWrap.querySelectorAll('[role="tab"]');
                     const innerPanels = innerTabWrap.querySelectorAll('[role="tabpanel"]');
@@ -225,7 +232,16 @@ const tab = () => {
                     innerTabs[0].classList.add('on');
                     innerPanels[0].classList.add('on');
 
-                    resizeJqGrid(innerPanels[0]);
+                    const innerActivePanel = innerPanels[0];
+
+                    // 중첩 jqGrid 다시 그리기
+                    resizeJqGrid(innerActivePanel);
+
+                    // ✅ 중첩 FullCalendar 다시 그리기
+                    const innerCalendarEl = innerActivePanel.querySelector('#calendar');
+                    if (innerCalendarEl && innerCalendarEl._fullCalendar) {
+                        innerCalendarEl._fullCalendar.render();
+                    }
                 }
             });
         });

@@ -87,6 +87,15 @@
                 const { date } = arg;
                 return date.getDate();
             },
+            // 다른 달 날짜는 렌더링 자체 안함
+            fixedWeekCount: false,
+
+            // 현재 보여지는 달의 1일 ~ 다음 달 1일 전까지 보여줌
+            visibleRange: function(currentDate) {
+                const start = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+                const end = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+                return { start, end };
+            },
             events: [
                 {
                     title: '현충일',

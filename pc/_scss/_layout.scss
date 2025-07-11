@@ -2453,7 +2453,7 @@ footer{
 
         .situation-title{
             padding-bottom: rem(42);
-            
+
             .date:has(button) span input{
                 width: rem(150);
             }
@@ -2465,6 +2465,16 @@ footer{
 
         .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr{
             display: none;
+        }
+
+        .fc-theme-standard .fc-daygrid-day-frame{
+            min-height: rem(100);
+        }
+
+        .fc-daygrid-day-events{
+            @include flex(flex, flex-end);
+            flex-direction: column;
+            min-height: rem(54);
         }
     }
 }
