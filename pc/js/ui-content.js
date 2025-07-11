@@ -213,7 +213,7 @@ const tab = () => {
                 // jqGrid 다시 그리기
                 resizeJqGrid(activePanel);
 
-                // ✅ FullCalendar 다시 그리기
+                // FullCalendar 다시 그리기
                 const calendarEl = activePanel.querySelector('#calendar');
                 if (calendarEl && calendarEl._fullCalendar) {
                     calendarEl._fullCalendar.render();
@@ -237,7 +237,7 @@ const tab = () => {
                     // 중첩 jqGrid 다시 그리기
                     resizeJqGrid(innerActivePanel);
 
-                    // ✅ 중첩 FullCalendar 다시 그리기
+                    // 중첩 FullCalendar 다시 그리기
                     const innerCalendarEl = innerActivePanel.querySelector('#calendar');
                     if (innerCalendarEl && innerCalendarEl._fullCalendar) {
                         innerCalendarEl._fullCalendar.render();
