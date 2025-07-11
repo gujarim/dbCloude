@@ -699,6 +699,9 @@ ul, ol, li {
   line-height: 2.9rem;
   text-align: center;
 }
+.calendar-wrap .fc-theme-standard .fc-license-message {
+  display: none;
+}
 .calendar-wrap .calendar-list {
   border-radius: 2rem;
   width: 33.4rem;
