@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재>사용자결재역할관리</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container -epayment"> <!-- [D] : 전자결재페이지만 class="containe -epayment" 추가해주세요. -->
+            <div class="tit-box">
+                <h2 class="tit-h2">사용자결재역할관리</h2>
+            </div>
+
+            <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
+                <table>
+                    <caption>조직명, 사용자, 결재역할으로 구성된 사용자결재역할관리에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>조직명</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
+                            <th>사용자</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>결재역할</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회</button>
+            </div>
+
+            <div class="file-wrap">
+                <div class="tree-wrap">
+                    <div>
+                        부서명
+                        <p>
+                            <input type="text">
+                            <button type="button">검색</button>
+                        </p>
+                    </div>
+                    <div id="file1"></div>
+                </div>
+                <div class="table-jq">
+                    <div class="hgroup">
+                        <strong>사용자조회</strong>
+                    </div>
+                    <table id="grid"></table>
+
+                    <div class="">
+                        <select name="" id="">
+                            <option value="">역할선택</option>
+                        </select>
+                        <p>
+                            <button type="button" class="sel-up">위로</button>
+                            <button type="button" class="sel-down">아래로</button>
+                        </p>
+                    </div>
+
+                    <div class="hgroup">
+                        <strong>사용자 역할 조회</strong>
+                    </div>
+                    <table id="grid2"></table>
+                </div>
+            </div>
+
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //사용자조회
+        var localData = [
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부장", //직위
+                inx7: "부서장", //부서장구분
+            },
+            {   
+                inx1: "2", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부장", //직위
+                inx7: "부서장", //부서장구분
+            },
+            {   
+                inx1: "3", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "", //직위
+                inx7: "부서장", //부서장구분
+            },
+            {   
+                inx1: "4", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "", //직위
+                inx7: "부서장", //부서장구분
+            },
+            {   
+                inx1: "5", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부장", //직위
+                inx7: "부서장", //부서장구분
+            },
+            {   
+                inx1: "6", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부장", //직위
+                inx7: "부서장", //부서장구분
+            }
+        ];
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순서',
+                '선택', 
+                '성명',
+                '이메일',
+                '부서',
+                '직위',
+                '부서장구분',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '10%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '10%', sortable: false},
+            ],
+            rowNum: 10,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 50,
+            multiselect: true,
+            multiselectWidth: 60,
+        });
+        
+        //사용자 역할조회
+        var localData2 = [
+            {   
+                inx1: "1", //순서
+                inx2: "파도", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부서장", //직위
+                inx7: "수정", //부서장구분
+            },
+            {   
+                inx1: "2", //순서
+                inx2: "파도", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부서장", //직위
+                inx7: "수정", //부서장구분
+            },
+            {   
+                inx1: "3", //순서
+                inx2: "파도", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부서장", //직위
+                inx7: "수정", //부서장구분
+            }
+        ];
+        $("#grid2").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData2, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순서',
+                '조직명', 
+                '성명',
+                '이메일',
+                '부서',
+                '결재역할',
+                '수정',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '12%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '7%', sortable: false,
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<button type="button" class="btn -line -sm">'+ cellvalue +'</button>';
+                    }
+                },
+            ],
+            rowNum: 10,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 50,
+        });
+
+        $('#file1').jstree({
+            'core' : {
+                'data' : [
+                    { 
+                        "text" : "파도",
+                        "state" : { "opened" : true },
+                        "type":"dep1",
+                        "children" : [
+                            { 
+                                "text" : "개발본부",
+                                "type":"file",
+                                // "state" : { "opened" : true },
+                                "children" : [
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" }
+                                ] 
+                            },
+                            { "text" : "지원팀" },
+                            { "text" : "기획팀" }
+                    ]}
+                ]
+            },
+            'plugins' : ["types"],
+            'types': {
+                'default':{
+                    "icon":"ico-hr-def" //기본 아이콘
+                },
+                'dep1':{
+                    "icon":"ico-hr-dep1", //depth1 아이콘
+                }
+            }
+        });
+    });
+</script>

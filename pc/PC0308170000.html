@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재>전체결재문서관리</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container -epayment"> <!-- [D] : 전자결재페이지만 class="containe -epayment" 추가해주세요. -->
+            <div class="tit-box">
+                <h2 class="tit-h2">전체결재문서관리</h2>
+            </div>
+
+            <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
+                <table>
+                    <caption>조직명, 문서KEY, 문서제목, 문서번호, 문서유형, 문서상태, 보안등급, 상신일자, 문서함, 보존연한, 결재자, 상신부서, 문서양식, 외부연동여부, 문서 내 단어검색으로 구성된 전체결재문서관리에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>조직명</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
+                            <th>문서KEY</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>문서제목</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>문서번호</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>문서유형</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>문서상태 </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>보안등급</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>상신일자</th>
+                            <td>
+                                <div class="date-wrap">
+                                    <p class="input-calendar">
+                                        <input type="text" value="2025.08.04">
+                                        <button type="button">날짜 선택</button>
+                                    </p> ~
+                                    <p class="input-calendar">
+                                        <input type="text" value="2025.08.04">
+                                        <button type="button">날짜 선택</button>
+                                    </p>
+                                </div>
+                            </td>
+                            <th>문서함</th>
+                            <td>
+                                <div class="flex">
+                                    <input type="text" readonly>
+                                    <button type="button" class="btn -line">찾기</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>보존연한</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>결재자</th>
+                            <td>
+                                <div class="flex">
+                                    <select name="" id="">
+                                        <option value="">상신</option>
+                                    </select>
+                                    <input type="text" readonly>
+                                    <button type="button" class="btn -line">찾기</button>
+                                </div>
+                            </td>
+                            <th>상신부서</th>
+                            <td>
+                                <div class="flex">
+                                    <input type="text" readonly>
+                                    <button type="button" class="btn -line">찾기</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>문서양식</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>외부연동여부</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>문서 내 단어검색</th>
+                            <td>
+                                <div class="flex">
+                                    <input type="text" placeholder="입력하세요">
+                                    <select name="" id="">
+                                        <option value="">AND</option>
+                                    </select>
+                                    <input type="text" placeholder="입력하세요">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회</button>
+            </div>
+
+            <div class="table-jq">
+                <div class="hgroup">
+                    <p>총 <em class="f-primary">143</em>건</p>
+
+                    <div class="sort">
+                        <select name="" id="">
+                            <option value="">10개씩보기</option>
+                        </select>
+                        <button type="button" class="btn -line">조회목록 엑셀 다운로드</button>
+                        <button type="button" class="btn -line">선택문서 엑셀 다운로드</button>
+                    </div>
+                </div>
+
+                <table id="grid"></table>
+                <div id="pager"></div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var localData = [
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "Abcd-2025-12", //문서번호 
+                inx4: "기안서", //문서제목
+                inx5: "기안서", //문서유형
+                inx6: "기안서", //문서양식
+                inx7: "결재진행중", //문서상태
+                inx8: "한디비/개발1팀", //작성자
+                inx9: "2025-05-01 15:44:57", //상신일시
+                inx10: "2025-05-01 15:44:57", //완료일시
+                inx11: "DOC-2025-118", //문서KEY
+            },
+        ];
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순서', 
+                '선택',
+                '문서번호', 
+                '문서제목',
+                '문서유형',
+                '문서양식',
+                '문서상태',
+                '작성자',
+                '상신일시',
+                '완료일시',
+                '문서KEY',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '3%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '3%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '6%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '4%', sortable: true},
+                { name: 'inx5', index: 'inx5', width: '4%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '4%', sortable: true},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false,
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<button type="button" class="btn -xsm -ing">결재진행중</button>';
+                        // 클래스 정리
+                        // class="btn -xsm -ing" : 결재진행중
+                        // class="btn -xsm -complete" : 결재완료
+                    }  
+                },
+                { name: 'inx8', index: 'inx8', width: '5%', sortable: true},
+                { name: 'inx9', index: 'inx9', width: '8%', sortable: false},
+                { name: 'inx10', index: 'inx10', width: '8%', sortable: true},
+                { name: 'inx11', index: 'inx11', width: '7%', sortable: false},
+            ],
+            pager: '#pager', // 페이징을 위한 요소
+            rowNum: 10,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 30,
+            multiselect: true,
+            multiselectWidth: 60,
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    });
+</script>

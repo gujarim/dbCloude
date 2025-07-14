@@ -2225,19 +2225,15 @@ footer{
 
 // 테이터 없음
 .no-data{
+    @include font(rem(14), 400);
     padding: rem(90) 0 rem(88);
+    color: var(--f-secondary);
+    text-align: center;
 
-    p{
-        @include font(rem(14), 400);
-        color: var(--f-secondary);
-        text-align: center;
-
-        &::before{
-            @include icon(60, 'ndata', 'pseudo');
-            margin:0 auto rem(16);
-            display: block;
-
-        }
+    &::before{
+        @include icon(60, 'ndata', 'pseudo');
+        margin:0 auto rem(16);
+        display: block;
     }
 }
 
@@ -2293,14 +2289,22 @@ footer{
         th{
             @include font(rem(16), 600);
             text-align: left;
-            padding-right: rem(30);
-            padding-left: rem(60);
+            padding: 0 rem(30) 0 rem(60);
+            position: relative;
             vertical-align: middle;
-            line-height: 160%;
 
             &:first-child{
                 padding-left: 0;
             }
+
+            .tooltip{
+                @include position(absolute !important, 50%, rem(24), null, null, 1);
+                transform: translateY(-27%);
+            }
+        }
+
+        td{
+            vertical-align: middle;
         }
     }
 
@@ -2898,6 +2902,7 @@ footer{
 
             &:checked{
                 &~label{
+                    @include rounded(rem(4));
                     background-color: rgba(25, 166, 25, 0.1);
                 }
             }

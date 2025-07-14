@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전자결재>문서작성</title>
+    <title>전자결재>문서유형순서관리</title>
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
@@ -19,45 +19,53 @@
 
         <div class="container -epayment"> <!-- [D] : 전자결재페이지만 class="containe -epayment" 추가해주세요. -->
             <div class="tit-box">
-                <h2 class="tit-h2">문서작성</h2>
+                <h2 class="tit-h2">문서유형순서관리</h2>
+                <div class="btn-wrap">
+                    <button type="button" class="i-save">순서저장</button>
+                </div>
             </div>
 
             <div class="search-box">
                 <button type="button" class="search-close">더보기</button>
                 <table>
-                    <caption>조직명, 문서유형, 문서양식으로 구성된 문서작성에 대한 표</caption>
+                    <caption>조직명, 언어로 구성된 문서유형순서관리에 대한 표</caption>
                     <colgroup>
                         <col style="width: 7.3rem">
-                        <col style="width: 25%">
+                        <col style="width: 42%">
                         <col style="width: 7.3rem">
-                        <col style="width: 25%">
-                        <col style="width: 7.3rem">
-                        <col style="width: 25%">
+                        <col style="width: 42%">
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th>조직명</th>
+                            <th>조직명<span class="star">*</span></th>
                             <td>
                                 <select name="" id="">
                                     <option value="">선택</option>
                                     <option value="" selected>DB INC</option>
                                 </select>
                             </td>
-                            <th>문서유형</th>
-                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
-                            <th>문서양식</th>
-                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>언어</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>한국어</option>
+                                </select>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="i-search">조회</button>
             </div>
 
             <div class="file-wrap">
                 <div id="file1" class="tree-wrap"></div>
                 <div class="table-jq">
+                    <p>
+                        <button type="button" class="sel-first">맨위로</button>
+                        <button type="button" class="sel-up">위로</button>
+                        <button type="button" class="sel-down">아래로</button>
+                        <button type="button" class="sel-last">맨아래로</button>
+                    </p>
                     <table id="grid"></table>
-                    <p class="info">*특정 문서를 더블클릭하여 새 문서를 작성하세요.</p>
                 </div>
             </div>
 
@@ -84,84 +92,117 @@
     $(document).ready(function () {
         var localData = [
             {   
-                inx1: "1", //No
-                inx2: "기안서", //문서양식
+                inx1: "선택", //선택
+                inx2: "1", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "2", //No
-                inx2: "경조금신청서", //문서양식
+                inx1: "선택", //선택
+                inx2: "2", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "3", //No
-                inx2: "교육신청서", //문서양식
+                inx1: "선택", //선택
+                inx2: "3", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "4", //No
-                inx2: "구매요청서", //문서양식
+                inx1: "선택", //선택
+                inx2: "4", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "5", //No
-                inx2: "업무협조전", //문서양식
+                inx1: "선택", //선택
+                inx2: "5", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "6", //No
-                inx2: "일반품의서", //문서양식
+                inx1: "선택", //선택
+                inx2: "6", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "7", //No
-                inx2: "지출결의서", //문서양식
+                inx1: "선택", //선택
+                inx2: "7", //순서
                 inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
             },
             {   
-                inx1: "8", //No
-                inx2: "연장/야간/휴일근무 신청서", //문서양식
-                inx3: "연장/야간/휴일근무 신청서", //문서유형
+                inx1: "선택", //선택
+                inx2: "8", //순서
+                inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
+            },
+            {   
+                inx1: "선택", //선택
+                inx2: "9", //순서
+                inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
+            },
+            {   
+                inx1: "선택", //선택
+                inx2: "10", //순서
+                inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
+            },
+            {   
+                inx1: "선택", //선택
+                inx2: "11", //순서
+                inx3: "기안서", //문서유형
+                inx4: "표시", //문서양식선택 화면표시
+            },
+            {   
+                inx1: "선택", //선택
+                inx2: "12", //순서
+                inx3: "초과근무신청서_HR연동", //문서유형
+                inx4: "표시안함", //문서양식선택 화면표시
             }
         ];
         $("#grid").jqGrid({
             datatype: "local", // 로컬 데이터를 사용합니다.
             data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
             colNames: [
-                'No', 
-                '문서양식',
+                '선택', 
+                '순서',
                 '문서유형',
+                '문서양식선택 화면표시',
             ], // 그리드 헤더 이름
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '10%', sortable: false,
-                    formatter: function(cellvalue, options, rowObject) {
-                        return cellvalue+'<em class="attach -doc"></em>';
-                    }
-                },
-                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '20%', sortable: false, align: "left", classes: "title"},
+                { name: 'inx4', index: 'inx4', width: '30%', sortable: false},
             ],
             rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
-            rownumbers: true, 
-            rownumWidth: 50,
+            // rownumbers: true, 
+            // rownumWidth: 50,
+            multiselect: true,
+            multiselectWidth: 60,
+            gridComplete: function () {
+                // 헤더 체크박스 제거
+                $("#cb_grid").remove();
+            }
         });
     
         $('#file1').jstree({
             'core' : {
                 'data' : [
                     { 
-                        "text" : "파도",
+                        "text" : "문서유형",
                         // "state" : { "opened" : true },
                         "type":"dep1",
                         "children" : [
-                            { 
-                                "text" : "기안서",
-                                "type":"file",
-                            },
+                            { "text" : "기안서" },
                             { 
                                 "text" : "일반품의서",
                                 "state" : { "selected" : true },
@@ -171,7 +212,11 @@
                             { "text" : "경조금신청서" },
                             { "text" : "교육신청서" },
                             { "text" : "지출결의서" },
-                            { "text" : "연장/야간/휴일근무신청서" }
+                            { "text" : "연장/야간/휴일근무신청서" },
+                            { "text" : "근태신청서_HR연동(화면표시안함)" },
+                            { "text" : "출장신청서_HR연동(화면표시안함)" },
+                            { "text" : "증명서신청_HR연동(화면표시안함)" },
+                            { "text" : "초과근무신청서_HR연동(화면표시안함)" }
                     ]}
                 ]
             },

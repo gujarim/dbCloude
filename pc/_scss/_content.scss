@@ -30,6 +30,7 @@
     &.-secondary{
         background-color: var(--bg-primary2);
         color: var(--f-primary);
+        padding: 0 rem(30);
     }
 
     &.-false{
@@ -40,6 +41,7 @@
     &.-line{
         border: rem(1) solid var(--line-base);
         padding: 0 rem(16);
+        background-color: var(--f-white);
 
         &.false{
             color: var(--f-flase);
@@ -116,6 +118,24 @@
     width: rem(120);
     &::before{
         @include icon(24, 'save', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-saveB{ //저장
+    color: var(--f-base);
+    border: rem(1) solid var(--line-base);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'saveB', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+.i-deleteB{ //삭제
+    color: var(--f-base);
+    border: rem(1) solid var(--line-base);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'deleteB', 'pseudo');
         margin-right: rem(4);
     }
 }
@@ -196,6 +216,25 @@
         margin-right: rem(4);
     }
 }
+.i-printB{ //인쇄
+    color: var(--f-base);
+    border: rem(1) solid var(--line-base);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'printB', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-reconsider{ //상신
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'reconsider', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
 .i-del{ //삭제
     @include font(rem(14), 600);
     @include rounded(rem(8));
@@ -442,6 +481,23 @@ input[type=radio]:not(.approval-line input){ //결재선선택 결재선상세 �
     }
 }
 
+.input-search{
+    position: relative;
+
+    input[type=text]{
+        padding-right: rem(40);
+        width: 100%;
+    }
+    
+    button{
+        @include bg(search, 98% 50%, rem(24) rem(24));
+        @include fontHidden;
+        @include position(absolute, 50%, rem(12), null, null);
+        transform: translateY(-50%);
+        height: rem(24);
+    }
+}
+
 select{
     @include rounded(rem(8));
     @include font(rem(16), 600);
@@ -514,6 +570,22 @@ select{
             font-weight: 600;
             color: var(--f-primary);
         }
+    }
+}
+
+ .flex{
+    @include flex(flex, space-between, center);
+    gap: 0 rem(8);
+
+    .input-calendar{
+        flex: 2;
+    }
+    select{
+        flex: 1;
+        min-width: auto;
+    }
+    input[type=text]{
+        flex:1;
     }
 }
 
@@ -639,11 +711,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                     gap: rem(12);
                 }
             }
-
-            .flex{
-                @include flex(flex, space-between, center);
-                gap: 0 rem(8);
-            }
         }
 
         tr{
@@ -735,6 +802,10 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                 }
             }
 
+            .date-wrap{
+                margin-bottom: rem(16);
+            }
+
             .select-wrap{
                 flex: 1;
                 @include flex(flex, space-between, center);
@@ -778,12 +849,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                         background-color: #4FAEEB;
                     }
                 }
-            }
-
-            .date-wrap{
-                @include flex(flex, space-between, center);
-                gap: 0 rem(6);
-                margin-bottom: rem(16);
             }
 
             .week-wrap{
@@ -1892,4 +1957,9 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             }
         }
     }
+}
+
+.date-wrap{
+    @include flex(flex, space-between, center);
+    gap: 0 rem(6);
 }

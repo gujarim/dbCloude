@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재>권한관리</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container -epayment"> <!-- [D] : 전자결재페이지만 class="containe -epayment" 추가해주세요. -->
+            <div class="tit-box">
+                <h2 class="tit-h2">권한관리</h2>
+            </div>
+
+            <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
+                <table>
+                    <caption>조직명, 부서, 사용자명, 보안등급, 관리자여부, 감시관리자여부, 연동관리자여부, 템플릿관리자여부, 시스템연동관리자여부, 적재데이터조회여부, 문서함관리자여부로 구성된 권한관리에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 25%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>조직명</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
+                            <th>부서</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                            <th>사용자명</th>
+                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>보안등급</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>관리자여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>감시관리자여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>연동관리자여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>템플릿관리자여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>시스템연동관리자여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="hidden">
+                            <th>적재데이터조회여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>문서함관리자여부
+                                <div class="tooltip">
+                                    <button>툴팁</button>
+                                    <div>
+                                        <p>
+                                            <strong>[사용]</strong>으로 설정할 시, 통보(팀통보)와 중복되는 결재자가 존재할 때 <strong>결재선에 포함된 사용자에게는 통보(팀통보) 도착 알림 메일을 전송하지 않습니다.</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회</button>
+            </div>
+
+            <div class="table-jq">
+                <div class="hgroup">
+                    <p>총 <em class="f-primary">143</em>건</p>
+
+                    <div class="sort">
+                        <select name="" id="">
+                            <option value="">10개씩보기</option>
+                        </select>
+                        <button type="button" class="btn -line">저장</button>
+                    </div>
+                </div>
+
+                <table id="grid"></table>
+                <div id="pager"></div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var localData = [
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+            {   
+                inx1: "1", //순번
+                inx2: "파도", //회사
+                inx3: "개발1팀", //부서 
+                inx4: "서디비", //사용자명
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "Y", //보안등급
+                inx7: "N", //관리자여부
+                inx8: "N", //감시관리자여부
+                inx9: "N", //연동관리자여부
+                inx10: "N", //템플릿관리자여부
+                inx11: "N", //시스템연동관리자여부
+                inx12: "Y", //적재데이터조회여부
+                inx13: "Y", //문서함관리자여부
+            },
+        ];
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순서', 
+                '회사',
+                '부서', 
+                '사용자명',
+                '이메일',
+                '보안등급',
+                '관리자여부',
+                '감시관리자여부',
+                '연동관리자여부',
+                '템플릿관리자여부',
+                '시스템연동관리자여부',
+                '적재데이터조회여부',
+                '문서함관리자여부'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '3%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '4%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '4%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '4%', sortable: true},
+                { name: 'inx5', index: 'inx5', width: '7%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: true},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '6%', sortable: true},
+                { name: 'inx9', index: 'inx9', width: '6%', sortable: false},
+                { name: 'inx10', index: 'inx10', width: '6%', sortable: true},
+                { name: 'inx11', index: 'inx11', width: '7%', sortable: false},
+                { name: 'inx12', index: 'inx12', width: '7%', sortable: true},
+                { name: 'inx13', index: 'inx13', width: '6%', sortable: false},
+            ],
+            pager: '#pager', // 페이징을 위한 요소
+            rowNum: 10,
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 30,
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    });
+</script>

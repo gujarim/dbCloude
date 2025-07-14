@@ -9,9 +9,18 @@
 
     .jstree-container-ul{
         a{
+            @include rounded(rem(4));
             @include font(rem(16), 600);
             color: var(--f-secondary);
             position: relative;
+            width: calc(100% - rem(24));
+            height: auto;
+            line-height: rem(26);
+            padding: 0 rem(4);
+
+            &:hover{
+                background-color: #FBFBFB;
+            }
         }
 
         .ico-hr-def{ // hr>인원현황조회
@@ -37,7 +46,7 @@
                 width: rem(16);
                 height: rem(16);
                 vertical-align: middle;
-                margin: rem(-3) rem(6) 0 0;
+                margin: rem(-3) rem(4) 0 0;
             }
 
             .jstree-themeicon{
@@ -48,13 +57,16 @@
             }
 
             .jstree-clicked{
-                background-color: transparent;
+                background-color: #E8F6E8;
                 box-shadow: none;
+                color: vaR(--f-base);
+                font-weight: 700;
             }
 
             &.jstree-open{
                 &>a{
                     color: var(--f-base);
+                    background-color: #E8F6E8;
                 }
             }
         }
@@ -62,13 +74,13 @@
         &>.jstree-node{
             position: relative;
 
-            &::after{
-                content:'';
-                width: rem(1);
-                height: calc(100% - rem(23));
-                background-color: var(--line-table3);
-                @include position(absolute, rem(23), null, null, rem(7));
-            }
+            // &::after{
+            //     content:'';
+            //     width: rem(1);
+            //     height: calc(100% - rem(23));
+            //     background-color: var(--line-table3);
+            //     @include position(absolute, rem(23), null, null, rem(7));
+            // }
 
             &>.jstree-ocl{
                 @include bg(dep1_down);

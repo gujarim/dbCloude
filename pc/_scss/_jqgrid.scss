@@ -201,6 +201,11 @@
                 }
             }
         }
+
+        .no-data{
+            padding: rem(43) 0 rem(40);
+            border-bottom: rem(1) solid var(--line-table2);
+        }
     }
 
     .btn-wrap{
