@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        h1{font-size: 32px;}
+        h1{font-size: 32px;font-weight: 700;}
         .tit-h2{font-size: 24px;margin-bottom:20px;}
         .tit-h2 span, .tit-h3 span{position: relative;}
         .tit-h2 span::after{content:'';width:100%;height:15px;background-color: rgba(25, 166, 25, 0.2);position: absolute;bottom:2px;left:0;}
@@ -24,13 +24,15 @@
         .gcontent{margin-bottom: 80px;position: relative;}
         .address-wrap{border:1px solid #B4B8BD;padding: 24px;border-radius: 8px;}
         span{display: inline-block}
+
+        #btn button{display: inline-block;}
     </style>
 </head>
 <body>
     <div class="guide-wrap">
-        <header>
+        <div class="header">
             <h1 class="tit-h1">DBInc 클라우드 그룹웨어-PC</h1>
-        </header>
+        </div>
         <div class="gcontainer">
             <!-- 폰트 -->
             <div class="gcontent">
@@ -83,50 +85,74 @@
             </div>
 
             <!-- 버튼 -->
-            <div class="gcontent">
+            <div class="gcontent" id="btn">
                 <h2 class="tit-h2"><span>버튼</span></h2>
+
+                <button type="button" class="btn -underline">취소</button>
+
+                <br><br>
 
                 <button type="button" class="i-edit">글쓰기</button>
                 <button type="button" class="i-approval">승인</button>
                 <button type="button" class="i-companion">반려</button>
                 <button type="button" class="i-save">임시저장</button>
+                <button type="button" class="i-save">저장</button>
                 <button type="button" class="i-publicview">공람 </button>
                 <button type="button" class="i-print">인쇄</button>
                 <button type="button" class="i-listw">목록</button>
                 <button type="button" class="i-list">목록</button>
                 <button type="button" class="i-calendar">신청</button>
+                <button type="button" class="i-reservation">예약하기</button>
+
+                <br><br>
 
                 <button type="button" class="i-search">조회</button>
+
+                <br><br>
 
                 <button type="button" class="btn -line">일괄승인</button>
 
                 <button type="button" class="btn -secondary">추가</button>
                 <button type="button" class="btn -line">삭제</button>
 
+                <br><br>
+                
                 <button type="button" class="i-add">추가</button>
                 <button type="button" class="i-del -la">삭제</button>
-                
+
+                <br><br>
+
+                <button type="button" class="detail-view">회의실 상세보기</button>
             </div>
 
             <!-- 입력폼 -->
             <div class="gcontent">
                 <h2 class="tit-h2"><span>입력폼</span></h2>
 
-                <input class="cbox" type="checkbox"> <input class="cbox" type="checkbox" checked> <input type="radio"> <input type="radio" checked><br><br>
+                <input type="checkbox"> <input type="checkbox" checked> <input type="radio"> <input type="radio" checked><br><br>
 
-                <input type="text" value="텍스트입니다."> <input type="text" value="readonly" readonly> 
+                <div class="rd-wrap">
+                    <input type="radio" name="ra" id="ra1"disabled>
+                    <label for="ra1">공개</label>
+                    <input type="radio" name="ra" id="ra2" checked disabled>
+                    <label for="ra2">비공개</label>
+                </div> <br>
+
+                <div class="chk-wrap">
+                    <input type="checkbox" id="chk4">
+                    <label for="chk4">기안자</label>
+                    <input type="checkbox" id="chk5">
+                    <label for="ch5k">이전 결재자</label>
+                    <input type="checkbox" id="chk6">
+                    <label for="chk6">결재 예정자</label>
+                </div> <br><br>
+
+                <input type="text" placeholder="텍스트입니다."> <input type="text" placeholder="readonly" readonly>
 
                 <span class="input-calendar">
                     <input type="text" value="2025.08.04">
                     <button type="button">날짜 선택</button>
                 </span> <br><br>
-
-                <div class="address-wrap">
-                    <p class="addr1"><input type="text"><button type="button" class="i-searchB">우편번호 검색</button></p>
-                    <p class="addr2"><input type="text"><input type="text" placeholder="상세주소 입력"></p>
-                </div>
-
-                <br><br>
 
                 <select name="" id="">
                     <option value="">선택</option>
@@ -138,6 +164,15 @@
                 <h2 class="tit-h2"><span>플래그</span></h2>
 
                 <em class="flag -board">자유게시판</em> <em class="flag -board2">협력사게시판</em> <em class="flag -notice">공지사항</em>
+
+                <em class="flag -notice -sm">공지</em> <em class="flag -board -sm">자유</em> <em class="flag -board2 -sm">협력사</em>
+
+                <em class="flag -dx -sm">트렌트</em>
+
+                <em class="attach -file">첨부파일</em>
+                <em class="attach -image">이미지</em>
+                <em class="attach -total">첨부파일, 이미지</em>
+                <em class="view">보기</em>
             </div>
 
             <!-- 툴팁 -->
@@ -160,22 +195,64 @@
             <div class="gcontent">
                 <h2 class="tit-h2"><span>탭</span></h2>
 
-                <div class="tab-wrap-box">
-                    <ul class="tablist -sm">
-                        <li class="on"><a href="">오늘</a></li>
-                        <li><a href="">일간</a></li>
-                        <li><a href="">월간</a></li>
+                <h3 class="tit-h3"><span>박스</span></h3>
+                <div class="tab-wrap -box">
+                    <ul class="tablist -sm" role="tablist">
+                        <li class="on" role="tab"><a href="">오늘</a></li>
+                        <li role="tab"><a href="">일간</a></li>
+                        <li role="tab"><a href="">월간</a></li>
                     </ul>
-                </div><br>
-                <div class="tab-wrap-line">
-                    <ul class="tablist">
-                        <li class="on"><a href="">겸직정보</a></li>
-                        <li><a href="">외부연결계정</a></li>
-                        <li><a href="">학력사항</a></li>
-                        <li><a href="">기술자격사항</a></li>
-                        <li><a href="">가족사항</a></li>
-                        <li><a href="">발령사항</a></li>
+                    <div class="panels">
+                        <div class="on" role="tabpanel">오늘</div>
+                        <div role="tabpanel">일간</div>
+                        <div role="tabpanel">월간</div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="tab-wrap -box2">
+                    <ul class="tablist" role="tablist">
+                        <li class="on" role="tab"><a href="">내캘린더</a></li>
+                        <li role="tab"><a href="">공유캘린더</a></li>
                     </ul>
+                    <div class="panels">
+                        <div class="on" role="tabpanel">내캘린더</div>
+                        <div role="tabpanel">공유캘린더</div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="tab-wrap -box3">
+                    <ul class="tablist" role="tablist">
+                        <li class="on" role="tab"><a href="">통합</a></li>
+                        <li role="tab"><a href="">공지사항</a></li>
+                        <li role="tab"><a href="">자유게시판</a></li>
+                    </ul>
+                    <div class="panels">
+                        <div class="on" role="tabpanel">통합</div>
+                        <div role="tabpanel">공지사항</div>
+                        <div role="tabpanel">자유게시판</div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <h3 class="tit-h3"><span>라인</span></h3>
+                <div class="tab-wrap -line">
+                    <ul class="tablist" role="tablist">
+                        <li class="on" role="tab"><a href="">부서별</a></li>
+                        <li role="tab"><a href="">직원구분별</a></li>
+                        <li role="tab"><a href="">직위별</a></li>
+                        <li role="tab"><a href="">성별</a></li>
+                    </ul>
+                    <div class="panels">
+                        <div class="on" role="tabpanel">부서별</div>
+                        <div role="tabpanel">직원구분별</div>
+                        <div role="tabpanel">직위별</div>
+                        <div role="tabpanel">성별</div>
+                    </div>
                 </div>
             </div>
 

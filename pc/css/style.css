@@ -3363,15 +3363,6 @@ footer .f-uniq select {
       -ms-flex-align: center;
           align-items: center;
 }
-.reservation-box table th .detail-view {
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 100%;
-  display: inline-block;
-  background: url("../image/bg_detail_view.png") 0 0/2rem 2rem no-repeat;
-  width: 2rem;
-  height: 2rem;
-}
 .reservation-box table td {
   border-right: 0.1rem solid var(--line-table3);
   border-bottom: 0.1rem solid var(--line-table3);
@@ -4128,6 +4119,16 @@ footer .f-uniq select {
   margin-left: 0.4rem;
 }
 
+.detail-view {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  background: url("../image/bg_detail_view.png") 0 0/2rem 2rem no-repeat;
+  width: 2rem;
+  height: 2rem;
+}
+
 .pay {
   font-size: 1.3rem;
   font-weight: 400;
@@ -4349,6 +4350,7 @@ select option {
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip) {
   position: relative;
+  width: 2rem;
 }
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip):hover {
   z-index: 2;

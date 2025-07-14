@@ -2519,13 +2519,6 @@ footer{
             p{
                 @include flex(flex, space-between, center);
             }
-
-            .detail-view{
-                @include fontHidden;
-                @include bg(detail_view, 0 0, rem(20) rem(20));
-                width: rem(20);
-                height: rem(20);
-            }
         }
 
         td{

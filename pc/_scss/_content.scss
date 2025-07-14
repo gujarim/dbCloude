@@ -232,6 +232,13 @@
     }
 }
 
+.detail-view{
+    @include fontHidden;
+    @include bg(detail_view, 0 0, rem(20) rem(20));
+    width: rem(20);
+    height: rem(20);
+}
+
 .pay{
     @include font(rem(13), 400);
     @include rounded(rem(14));
@@ -453,6 +460,7 @@ select{
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip){
     position: relative;
+    width: rem(20);
 
     &:hover{
         z-index: 2;
