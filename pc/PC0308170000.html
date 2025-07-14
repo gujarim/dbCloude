@@ -356,11 +356,11 @@
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '3%', hidden: true, sortable: false},
                 { name: 'inx2', index: 'inx2', width: '3%', hidden: true, sortable: false},
-                { name: 'inx3', index: 'inx3', width: '6%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
                 { name: 'inx4', index: 'inx4', width: '4%', sortable: true},
                 { name: 'inx5', index: 'inx5', width: '4%', sortable: false},
                 { name: 'inx6', index: 'inx6', width: '4%', sortable: true},
-                { name: 'inx7', index: 'inx7', width: '5%', sortable: false,
+                { name: 'inx7', index: 'inx7', width: '4%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<button type="button" class="btn -xsm -ing">결재진행중</button>';
                         // 클래스 정리
@@ -369,8 +369,8 @@
                     }  
                 },
                 { name: 'inx8', index: 'inx8', width: '5%', sortable: true},
-                { name: 'inx9', index: 'inx9', width: '8%', sortable: false},
-                { name: 'inx10', index: 'inx10', width: '8%', sortable: true},
+                { name: 'inx9', index: 'inx9', width: '6%', sortable: false},
+                { name: 'inx10', index: 'inx10', width: '6%', sortable: true},
                 { name: 'inx11', index: 'inx11', width: '7%', sortable: false},
             ],
             pager: '#pager', // 페이징을 위한 요소
@@ -382,7 +382,7 @@
             rownumbers: true, 
             rownumWidth: 30,
             multiselect: true,
-            multiselectWidth: 60,
+            multiselectWidth: 50,
             loadComplete: function () {
                 createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
             }
