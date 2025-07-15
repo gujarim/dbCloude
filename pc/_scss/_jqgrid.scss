@@ -74,6 +74,13 @@
                 padding: rem(17) 0;
                 text-align: center;
                 vertical-align: middle;
+
+                &.wrap-cell{
+                    white-space: normal !important;
+                    word-break: break-word  !important;
+                    height: auto !important;
+                    padding: rem(17) rem(8) !important;
+                }
             }
 
             tr.ui-row-ltr:last-of-type td{

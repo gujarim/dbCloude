@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재>문서함권한관리(권한자)</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container -epayment"> <!-- [D] : 전자결재페이지만 class="containe -epayment" 추가해주세요. -->
+            <div class="tit-box">
+                <h2 class="tit-h2">문서함권한관리</h2>
+            </div>
+
+            <div class="search-box">
+                <button type="button" class="search-close">더보기</button>
+                <table>
+                    <caption>조직명, 언어로 구성된 사용자결재역할관리에 대한 표</caption>
+                    <colgroup>
+                        <col style="width: 7.3rem">
+                        <col style="width: 42%">
+                        <col style="width: 7.3rem">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>조직명</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="" selected>DB INC</option>
+                                </select>
+                            </td>
+                            <th>언어</th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="">한국어</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="i-search">조회</button>
+            </div>
+
+            <div class="file-wrap -sm">
+                <div class="tree-wrap">
+                    <div class="tree-search">
+                        부서명
+                        <p class="input-search">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="button">검색</button>
+                        </p>
+                    </div>
+                    <div id="file1"></div>
+                </div>
+
+                <div class="table-jq">
+                    <div class="hgroup">
+                        <strong>권한자목록</strong>
+                        <p>총 <em class="f-primary">143</em>건</p>
+
+                        <div class="sort">
+                            <select name="" id="">
+                                <option value="">10개씩보기</option>
+                            </select>
+                            <button type="button" class="btn -line">조회</button>
+                            <button type="button" class="btn -line">추가</button>
+                            <button type="button" class="btn -line">삭제</button>
+                        </div>
+                    </div>
+                    <table id="grid1"></table>
+                    <div id="pager1"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //사용자조회
+        var localData = [
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "서디비", //성명
+                inx4: "개발본부", //부서
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "", //상태
+                inx7: "", //시작일시
+                inx8: "", //종료일시
+            }
+        ];
+        $("#grid1").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순서',
+                '선택', 
+                '성명',
+                '부서',
+                '이메일',
+                '상태',
+                '시작일시',
+                '종료일시',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '7%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '7%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false, align:'left', classes:'wrap-cell'},
+                { name: 'inx6', index: 'inx6', width: '7%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '12%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '12%', sortable: false},
+            ],
+            rowNum: 10,
+            pager: '#pager1', // 페이징을 위한 요소
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 50,
+            multiselect: true,
+            multiselectWidth: 50,
+            loadComplete: function () {
+                createCustomPager("grid1", "#pager1"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+        
+        
+        $('#file1').jstree({
+            'core' : {
+                'data' : [
+                    { 
+                        "text" : "파도",
+                        "state" : { "opened" : true },
+                        "type":"dep1",
+                        "children" : [
+                            { 
+                                "text" : "개발본부",
+                                "type":"file",
+                                // "state" : { "opened" : true },
+                                "children" : [
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" }
+                                ] 
+                            },
+                            { "text" : "지원팀" },
+                            { "text" : "기획팀" }
+                    ]}
+                ]
+            },
+            'plugins' : ["types"],
+            'types': {
+                'default':{
+                    "icon":"ico-hr-def" //기본 아이콘
+                },
+                'dep1':{
+                    "icon":"ico-hr-dep1", //depth1 아이콘
+                }
+            }
+        });
+    });
+</script>

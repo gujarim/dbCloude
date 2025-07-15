@@ -2057,13 +2057,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     gap: 0 rem(6);
 }
 
-.wrap-cell{
-    white-space: normal !important;
-    word-break: break-word  !important;
-    height: auto !important;
-    padding: 0 rem(8) !important;
-}
-
 .sel-btn{
     @include flex(flex, space-between, center);
     gap: 0 rem(8);
