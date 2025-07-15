@@ -419,7 +419,11 @@
                 { name: 'inx10', index: 'inx10', width: '6%', sortable: true},
                 { name: 'inx11', index: 'inx11', width: '7%', sortable: false},
                 { name: 'inx12', index: 'inx12', width: '7%', sortable: true},
-                { name: 'inx13', index: 'inx13', width: '6%', sortable: false},
+                { name: 'inx13', index: 'inx13', width: '6%', sortable: false,
+                    // formatter: function(cellvalue, options, rowObject) {
+                    //     return '<select><option>Y</option></select>';
+                    // }  
+                },
             ],
             pager: '#pager', // 페이징을 위한 요소
             rowNum: 10,
@@ -431,7 +435,7 @@
             rownumWidth: 30,
             loadComplete: function () {
                 createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
-            }
+            },
         });
     });
 </script>

@@ -25,24 +25,15 @@
             <div class="search-box">
                 <button type="button" class="search-close">더보기</button>
                 <table>
-                    <caption>조직명, 문서유형, 문서양식으로 구성된 문서작성에 대한 표</caption>
+                    <caption>문서유형, 문서양식으로 구성된 문서작성에 대한 표</caption>
                     <colgroup>
                         <col style="width: 7.3rem">
-                        <col style="width: 25%">
+                        <col style="width: 42%">
                         <col style="width: 7.3rem">
-                        <col style="width: 25%">
-                        <col style="width: 7.3rem">
-                        <col style="width: 25%">
+                        <col style="width: 42%">
                     </colgroup>
                     <tbody>
                         <tr>
-                            <th>조직명</th>
-                            <td>
-                                <select name="" id="">
-                                    <option value="">선택</option>
-                                    <option value="" selected>DB INC</option>
-                                </select>
-                            </td>
                             <th>문서유형</th>
                             <td><input type="text" placeholder="검색어를 입력하세요"></td>
                             <th>문서양식</th>
@@ -57,7 +48,7 @@
                 <div id="file1" class="tree-wrap"></div>
                 <div class="table-jq">
                     <table id="grid"></table>
-                    <p class="info">*특정 문서를 더블클릭하여 새 문서를 작성하세요.</p>
+                    <p class="info">특정 문서를 더블클릭하여 새 문서를 작성하세요.</p>
                 </div>
             </div>
 
@@ -133,13 +124,13 @@
                 '문서유형',
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '10%', sortable: false,
+                { name: 'inx1', index: 'inx1', width: '10%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false, align:"left", classes: "title",
                     formatter: function(cellvalue, options, rowObject) {
                         return cellvalue+'<em class="attach -doc"></em>';
                     }
                 },
-                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false, align:"left", classes: "title",},
             ],
             rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
@@ -147,7 +138,7 @@
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
-            rownumWidth: 50,
+            rownumWidth: 80,
         });
     
         $('#file1').jstree({

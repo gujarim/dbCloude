@@ -136,7 +136,7 @@
                 </div>
             </div>
 
-            <div class="btn-wrap">
+            <div class="btn-wrap -line">
                 <button type="button" class="i-reconsider">상신</button>
                 <button type="button" class="i-saveB">임시저장</button>
                 <button type="button" class="i-deleteB">삭제</button>
@@ -206,7 +206,6 @@
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
-            // emptyrecords: "표시할 데이터가 없습니다.",
             loadComplete: function(data) {
                 var grid = $("#grid1");
                 var records = grid.jqGrid('getGridParam', 'records');
@@ -214,7 +213,7 @@
                 if (records === 0) {
                     // 예: 사용자 정의 메시지 출력
                     grid.closest(".ui-jqgrid-view")
-                        .append("<div class='no-data'>데이터가 없습니다.</div>");
+                        .append("<div class='no-data'>지정된 결재선이 없습니다.</div>");
                 } else {
                     // 데이터 있으면 메시지 제거
                     grid.closest(".ui-jqgrid-view").find(".no-data").remove();
@@ -324,7 +323,7 @@
                 if (records === 0) {
                     // 예: 사용자 정의 메시지 출력
                     grid.closest(".ui-jqgrid-view")
-                        .append("<div class='no-data'>데이터가 없습니다.</div>");
+                        .append("<div class='no-data'>기결재문서가 없습니다.</div>");
                 } else {
                     // 데이터 있으면 메시지 제거
                     grid.closest(".ui-jqgrid-view").find(".no-data").remove();

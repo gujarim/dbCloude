@@ -34,7 +34,7 @@
             th{
                 .fc-scrollgrid-sync-inner{
                     text-align: right;
-                    background-color: #FBFBFB;
+                    background-color: var(--bg-hover);
 
                     a{
                         padding: rem(8);

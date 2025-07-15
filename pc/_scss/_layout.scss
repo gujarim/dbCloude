@@ -2421,9 +2421,14 @@ footer{
 
 // 버튼
 .btn-wrap{
+    @include flex(flex, flex-end);
     margin-top: rem(24);
-    display: flex;
-    justify-content: flex-end;
+
+    &.-line{
+        margin-top: rem(40);
+        padding-top: rem(24);
+        border-top: rem(1) solid var(--line-table2);
+    }
 
     button:not(:nth-last-of-type(1)){
         margin-right: rem(16);
@@ -2628,7 +2633,6 @@ footer{
         width: rem(1036);
         .ui-jqgrid{
             .ui-jqgrid-btable{
-                border-bottom: 0.1rem solid var(--line-table2);
                 tr.ui-row-ltr:not(:first-child) td{
                     color: var(--f-base);
                 }
@@ -2881,8 +2885,8 @@ footer{
     @include rounded(rem(8));
     border: rem(1) solid var(--line-base);
     padding: rem(12);
-    min-height: rem(360);
-    max-height: rem(360); 
+    min-height: rem(172);
+    max-height: rem(172); 
     overflow-y: auto;
 
     li{
@@ -2894,7 +2898,8 @@ footer{
             @include font(rem(16), 400);
             display: block;
             line-height: rem(28);
-                padding: 0 rem(8);
+            padding: 0 rem(8);
+            cursor: pointer;
         }
 
         input[type=radio], input[type=checkbox]{
@@ -2906,6 +2911,10 @@ footer{
                     background-color: rgba(25, 166, 25, 0.1);
                 }
             }
+        }
+
+        &:hover{
+            background-color: var(--bg-hover);
         }
     }
 }
