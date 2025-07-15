@@ -24,23 +24,27 @@
                     <table>
                         <caption>성명으로 구성된 사용자조회/선택에 대한 표</caption>
                         <colgroup>
-                            <col style="width: 7.3rem">
+                            <col style="width: 4.4rem">
                             <col style="width: auto">
                         </colgroup>
                         <tbody>
                             <tr>
                                 <th>성명</th>
-                                <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                                <td>
+                                    <p class="input-search">
+                                        <input type="text" placeholder="검색어를 입력하세요">
+                                        <button type="button">검색</button>
+                                    </p>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <button type="button" class="i-search">조회</button>
                 </div>
 
                 <div class="file-wrap">
                     <div class="tree-wrap">
-                        <div>
-                            조직<span class="star">*</span>
+                        <div class="tree-search">
+                            <p>조직<span class="star">*</span></p>
                             <select name="" id="">
                                 <option value="">선택</option>
                             </select>
@@ -79,6 +83,41 @@
         var localData = [
             {   
                 inx1: "1", //순서
+                inx2: "한디비", //성명
+                inx3: "재직", //재직상태
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+            },
+            {   
+                inx1: "2", //순서
+                inx2: "한디비", //성명
+                inx3: "재직", //재직상태
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+            },
+            {   
+                inx1: "3", //순서
+                inx2: "한디비", //성명
+                inx3: "재직", //재직상태
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+            },
+            {   
+                inx1: "4", //순서
+                inx2: "한디비", //성명
+                inx3: "재직", //재직상태
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+            },
+            {   
+                inx1: "5", //순서
+                inx2: "한디비", //성명
+                inx3: "재직", //재직상태
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+            },
+            {   
+                inx1: "6", //순서
                 inx2: "한디비", //성명
                 inx3: "재직", //재직상태
                 inx4: "test@pado.co.kr", //이메일

@@ -7,6 +7,24 @@
     border: rem(1) solid #DFE3E6;
     padding: rem(30) rem(24);
 
+    .tree-search{
+        @include font(rem(16), 600);
+        @include flex(flex, space-between, center);
+        gap: 0 rem(8);
+        color: var(--f-base);
+        border-bottom: rem(1) solid var(--line-table2);
+        padding-bottom: rem(24);
+        margin-bottom: rem(24);
+
+        p{
+            display: flex;
+        }
+
+        select{
+            width: 100%;
+        }
+    }
+
     .jstree-container-ul{
         a{
             @include rounded(rem(4));
@@ -94,6 +112,7 @@
             
             &>.jstree-children{
                 margin-top: rem(14);
+                margin-left: rem(19);
 
                 &:has(.jstree-closed, .jstree-open){
                     margin-left: rem(25);

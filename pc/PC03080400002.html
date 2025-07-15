@@ -59,12 +59,6 @@
             <div class="file-wrap">
                 <div id="file1" class="tree-wrap"></div>
                 <div class="table-jq">
-                    <p class="sel-btn">
-                        <button type="button" class="sel-first">맨위로</button>
-                        <button type="button" class="sel-up">위로</button>
-                        <button type="button" class="sel-down">아래로</button>
-                        <button type="button" class="sel-last">맨아래로</button>
-                    </p>
                     <table id="grid"></table>
                 </div>
             </div>
@@ -168,13 +162,17 @@
             datatype: "local", // 로컬 데이터를 사용합니다.
             data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
             colNames: [
-                '선택', 
+                '', 
                 '순서',
                 '문서유형',
                 '문서양식선택 화면표시',
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx1', index: 'inx1', width: '5%', sortable: false,
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<em class="list-drag">선택</em>';
+                    }  
+                },
                 { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
                 { name: 'inx3', index: 'inx3', width: '20%', sortable: false, align: "left", classes: "title"},
                 { name: 'inx4', index: 'inx4', width: '30%', sortable: false},
@@ -184,13 +182,16 @@
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
-            // rownumbers: true, 
-            // rownumWidth: 50,
-            multiselect: true,
-            multiselectWidth: 50,
             gridComplete: function () {
                 // 헤더 체크박스 제거
                 $("#cb_grid").remove();
+            }
+        });
+
+        $("#grid").sortableRows({
+            update: function (e, ui) {
+                let newOrder = $("#grid").jqGrid("getDataIDs");
+                console.log("새로운 순서:", newOrder);
             }
         });
     
