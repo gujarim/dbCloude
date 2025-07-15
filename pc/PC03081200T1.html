@@ -82,6 +82,24 @@
                     <table id="grid1"></table>
                     <div id="pager1"></div>
                 </div>
+
+                <div class="table-jq">
+                    <div class="hgroup">
+                        <strong>권한부서목록</strong>
+                        <p>총 <em class="f-primary">143</em>건</p>
+
+                        <div class="sort">
+                            <select name="" id="">
+                                <option value="">10개씩보기</option>
+                            </select>
+                            <button type="button" class="btn -line">조회</button>
+                            <button type="button" class="btn -line">추가</button>
+                            <button type="button" class="btn -line">삭제</button>
+                        </div>
+                    </div>
+                    <table id="grid2"></table>
+                    <div id="pager2"></div>
+                </div>
             </div>
 
         </div>
@@ -105,8 +123,8 @@
 
 <script>
     $(document).ready(function () {
-        //사용자조회
-        var localData = [
+        //권한자목록
+        var localData1 = [
             {   
                 inx1: "1", //순서
                 inx2: "선택", //선택
@@ -120,7 +138,7 @@
         ];
         $("#grid1").jqGrid({
             datatype: "local", // 로컬 데이터를 사용합니다.
-            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            data: localData1, // 로컬 데이터를 그리드에 바인딩합니다.
             colNames: [
                 '순서',
                 '선택', 
@@ -156,6 +174,53 @@
             }
         });
         
+        //권한부서목록
+        var localData2 = [
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "부서명", //부서명
+                inx4: "부서코드", //부서코드
+                inx5: "상태", //상태
+                inx6: "시작일시", //시작일시
+                inx7: "종료일시", //종료일시
+            }
+        ];
+        $("#grid2").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData2, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '순서',
+                '선택', 
+                '부서명',
+                '부서코드',
+                '상태',
+                '시작일시',
+                '종료일시',
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '7%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '7%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '7%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '12%', sortable: false},
+            ],
+            rowNum: 10,
+            pager: '#pager2', // 페이징을 위한 요소
+            sortname: 'id', // 기본 정렬할 컬럼
+            viewrecords: true, // 총 레코드 수 표시 여부
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            rownumbers: true, 
+            rownumWidth: 50,
+            multiselect: true,
+            multiselectWidth: 50,
+            loadComplete: function () {
+                createCustomPager("grid2", "#pager2"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
         
         $('#file1').jstree({
             'core' : {
