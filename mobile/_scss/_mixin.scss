@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+$root-px: 10;
+$font-name: '맑은고딕', sans-serif;
+
+//FONT
+@mixin font($font-size: null, $font-weight: null, $line-height: null){
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}
+
+@mixin spacing($ps-value){
+    letter-spacing: calc($px-value / 1000) * 1rem;
+}
+
+//UNIT
+@function rem($unit-px){
+    $changed-unit: calc($unit-px / $root-px) + rem;
+    @return $changed-unit;
+}
+
+//DOCUMENT
+@mixin appearance{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@mixin text-size-adjust{
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+@mixin uset-select{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+//CONTENTS
+@mixin hidden{
+    // position: absolute;
+    width: 0;
+    height: 0;
+    margin: -0.1rem;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+            clip-path: polygon(0 0, 0 0, 0 0);
+    line-height: inherit;
+}
+
+@mixin fontHidden{
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    display: inline-block;
+}
+
+@mixin rounded($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin shadow($x: null, $y: null, $blur: null, $speed: null, $color: rgba(0,0,0,.05)){
+    -webkit-box-shadow: $x $y $blur $speed $color;
+    -moz-box-shadow: $x $y $blur $speed $color;
+    box-shadow: $x $y $blur $speed $color;
+}
+
+@mixin transition($property, $duration, $effect: null, $delay: null){
+    -webkit-transition: $property $duration $effect $delay;
+    -moz-transition: $property $duration $effect $delay;
+    -o-transition: $property $duration $effect $delay;
+    transition: $property $duration $effect $delay;
+}
+
+@mixin transform($property){
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin gradient($direction, $color){
+    background-image: -webkit-linear-gradient($direction, $color);
+    background-image: -moz-linear-gradient($direction, $color);
+    background-image: -o-linear-gradient($direction, $color);
+    background-image: linear-gradient($direction, $color);
+}
+
+@mixin bg($bg-name, $position: 0 0, $size: contain, $color: null){
+    background: $color url('../image/bg_'+$bg-name+'.png') $position / $size no-repeat;
+}
+
+@mixin bg-url($bg-name){
+    background-image: url('../image/bg_'+$bg-name+'.png');
+}
+
+@mixin icon($size, $icon-name, $type: null){
+    @if($type == 'pseudo'){
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    width: rem($size);
+    height: rem($size);
+    background-image: url('../image/icon_'+$icon-name+'.png');
+}
+
+@mixin flex($mode: null, $justtify-content: null, $align-items: null, $flex-flow: null, $align-content: null){
+    display: $mode;
+    justify-content: $justtify-content;
+    align-items: $align-items;
+    flex-flow: $flex-flow;
+    align-content: $align-content;
+}
+
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null, $z-index: null){
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+@mixin position-center($type: absolute){
+    @if($type == fixed or $type == absolute){
+        position: $type;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@mixin border($direction: all, $color: #000, $weight: rem(1), $type: solid){
+    @if $direction == top{
+        border-top: $weight $type $color;
+    } @else if $direction == right{
+        border-right: $weight $type $color;
+    } @else if $direction == bottom{
+        border-bottom: $weight $type $color;
+    } @else if $direction == left{
+        border-left: $weight $type $color;
+    } @else{
+        border: $weight $type $color;
+    }
+}
+
+@mixin ellipsis($line: 1){
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @if($line == 1){
+        word-wrap: normal;
+        white-space: nowrap;
+    } @else{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+//FORMS
+@mixin placeholder{
+    &::-webkit-input-placeholder{
+        @content;
+    }
+    &::-moz-input-placeholder{
+        @content;
+    }
+    &::-ms-input-placeholder{
+        @content;
+    }
+    &::placeholder{
+        @content;
+    }
+}
+
+@mixin scrollbar{
+    &::-webkit-scrollbar{
+        width: rem(12);
+        height: rem(12);
+    }
+    &::-webkit-scrollbar-thumb{
+        background-clip: padding-box;
+        background-color: #f8f8f8;
+        border-radius: rem(6);
+        border: rem(4) solid transparent;
+    }
+}
+
+//키보드 접근 시 아웃라인
+@mixin outline($elem: null){
+    @if $elem != null{
+        &:focus-visible + #{$elem}{
+            outline: 2px solid black;
+        }
+    } @else {
+        &:focus-visible:not(.disabled){
+            outline: 2px solid black;
+        }
+        
+        &:focus:not(:focus-visible){
+            outline:none;
+        }
+    }
+}
