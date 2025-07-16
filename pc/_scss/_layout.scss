@@ -386,9 +386,9 @@ nav{
                 &.open{
                     transform: translate(rem(-118), 0);
 
-                    .circle{
-                        // margin-top: rem(-300);
-                    }
+                    // .circle{
+                    //     margin-top: rem(-300);
+                    // }
                 }
                 
                 .circle{
@@ -1005,11 +1005,6 @@ footer{
 
                         strong{
                             font-weight: 400;
-                        }
-
-                        .bdate{
-                            
-
                         }
                     }
 
@@ -2289,7 +2284,7 @@ footer{
         th{
             @include font(rem(16), 600);
             text-align: left;
-            padding: 0 rem(30) 0 rem(60);
+            padding: 0 rem(12) 0 rem(32);
             position: relative;
             vertical-align: middle;
 
@@ -2298,8 +2293,7 @@ footer{
             }
 
             .tooltip{
-                @include position(absolute !important, 50%, rem(24), null, null, 1);
-                transform: translateY(-27%);
+                display: inline-block;
             }
         }
 
@@ -2320,6 +2314,19 @@ footer{
 
     &:has(strong){
         align-items: center;
+
+        &:has(p){
+            align-items: flex-end;
+
+            strong{
+                grid-column: 1 / 4;
+                margin: rem(8) 0 rem(16);
+            }
+
+            p{
+                grid-column: 2 / 1;
+            }
+        }
     }
 
     &.-flexS{
@@ -2693,6 +2700,19 @@ footer{
             margin-bottom: 0;
         }
     }
+
+    .tree-container{
+        width: calc(100% - rem(320));
+
+        .tbl-wrap2{
+            margin-bottom: rem(32);
+        }
+
+        .table-jq{
+            width: auto;
+            // width: calc(100% - rem(320));  
+        }
+    }
 }
 
 .chat{
@@ -2969,10 +2989,10 @@ footer{
 
 .flex-layout{
     @include flex(flex, space-between);
-    gap: rem(16);
+    gap: rem(40);
 
     &>div{
-        flex:1;
+        width: calc(50% - rem(20));
     }
 
     .search-box table th{

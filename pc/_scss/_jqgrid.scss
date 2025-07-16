@@ -15,6 +15,7 @@
     }
 
     .ui-jqgrid{
+        // width: 100% !important;
         .ui-jqgrid-htable{
             table-layout: inherit;
             width:100% !important;
@@ -25,9 +26,11 @@
             th{
                 @include font(rem(16), 600);
                 background-color: var(--bg-base);
-                height: rem(48);
-                line-height: rem(48);
+                height: auto;
+                // line-height: rem(48);
                 position: relative;
+                vertical-align: middle;
+                padding: rem(14) 0;
 
                 &::after{
                     content:'';
@@ -40,6 +43,7 @@
 
                 div{
                     height: initial;
+                    line-height: 160%;
                 }
 
                 &.jqgh_rn{
@@ -83,6 +87,12 @@
                 }
             }
 
+            tr{
+                &.ui-state-hover{
+                    background-color: var(--bg-primary3);
+                }
+            }
+
             tr.ui-row-ltr:last-of-type td{
                 border-bottom: 0;
             }
@@ -93,10 +103,11 @@
                 }
 
                 select{
+                    @include font(rem(13), 600);
                     min-width: auto;
                     width: calc(100% - rem(24));
                     height: rem(32);
-                }
+                }   
             }
         }
 

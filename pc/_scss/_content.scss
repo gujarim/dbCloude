@@ -87,6 +87,21 @@
         border: rem(1) solid #B6C3E3;
         color: #2E55B7;
     }
+
+    &.-cancel{
+        border: rem(1) solid var(--line-base);
+    }
+
+    //아이콘
+    &.-search{
+        @include bg(searchB, 50% 50%, rem(20) rem(20), var(--f-white));
+        @include fontHidden;
+        @include rounded(rem(8));
+        width: rem(40);
+        height: rem(40);
+        padding: 0;
+        border: rem(1) solid var(--line-base);
+    }
 }
 
 [class^=i-]{
@@ -554,6 +569,11 @@ select{
     option{
         @include rounded(rem(8))
     }
+
+    &:disabled{
+        background-color: var(--bg-base);
+        color: var(--f-menu);
+    }
 }
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip){
@@ -648,6 +668,10 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     .tooltip{
         @include position(absolute !important, 50%, rem(24), null, null, 1);
         transform: translateY(-50%);
+    }
+
+    select{
+        min-width: auto;
     }
 }
 

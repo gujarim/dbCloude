@@ -24,21 +24,21 @@
 
             <div class="flex-layout">
                 <div>
-                    <div class="hgroup">
-                        <strong>분류코드</strong>
-                        <div class="sort">
-                            <button type="button" class="btn -line">조회</button>
-                            <button type="button" class="btn -line">등록</button>
+                    <div class="tbl-wrap2 mb16">
+                        <div class="hgroup">
+                            <strong>분류코드</strong>
+                            <div class="sort">
+                                <button type="button" class="btn -line">조회</button>
+                                <button type="button" class="btn -line">등록</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="search-box">
                         <table>
-                            <caption>분류코드명, 사용여부로 구성된 분류코드에 대한 표</caption>
+                            <caption>분류코드명, 사용여부로 구성된 추가정보입력에 대한 표</caption>
                             <colgroup>
-                                <col style="width: 7.3rem">
-                                <col style="width: 42%">
-                                <col style="width: 7.3rem">
-                                <col style="width: 42%">
+                                <col style="width: 12rem">
+                                <col style="width: 30rem">
+                                <col style="width: 12rem">
+                                <col style="width: 30rem">
                             </colgroup>
                             <tbody>
                                 <tr>
@@ -54,33 +54,39 @@
                             </tbody>
                         </table>
                     </div>
+
                     <div class="table-jq">
                         <table id="grid"></table>
                     </div>
                 </div>
+
                 <div>
-                    <div class="hgroup">
-                        <strong>코드상세</strong>
-                        <div class="sort">
-                            <button type="button" class="btn -line">조회</button>
-                            <button type="button" class="btn -line">등록</button>
+                    <div class="tbl-wrap2 mb16">
+                        <div class="hgroup">
+                            <strong>코드상세</strong>
+                            <div class="sort">
+                                <button type="button" class="btn -line">조회</button>
+                                <button type="button" class="btn -line">등록</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="search-box">
                         <table>
-                            <caption>조직명, 코드명, 사용여부로 구성된 분류코드에 대한 표</caption>
+                            <caption>조직명, 코드명, 사용여부로 구성된 코드상세에 대한 표</caption>
                             <colgroup>
-                                <col style="width: 7.3rem">
-                                <col style="width: 25%">
-                                <col style="width: 7.3rem">
-                                <col style="width: 25%">
-                                <col style="width: 7.3rem">
-                                <col style="width: 25%">
+                                <col style="width: 12rem">
+                                <col style="width: 20rem">
+                                <col style="width: 12rem">
+                                <col style="width: 40rem">
+                                <col style="width: 12rem">
+                                <col style="width: 20rem">
                             </colgroup>
                             <tbody>
                                 <tr>
                                     <th>조직명</th>
-                                    <td><input type="text" placeholder="검색어를 입력하세요"></td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">전체</option>
+                                        </select>
+                                    </td>
                                     <th>코드명</th>
                                     <td><input type="text" placeholder="검색어를 입력하세요"></td>
                                     <th>사용여부</th>
@@ -132,6 +138,16 @@
                 inx7: "수정", //한글코드
                 inx8: "수정", //영문코드
             },
+            {   
+                inx1: "1", //순서
+                inx2: "APPR_TYPE", //분류코드
+                inx3: "결제처리이력", //분류코드명 
+                inx4: "En_결재유형", //분류코드명(영문)
+                inx5: "사용", //사용여부
+                inx6: "공통", //조직
+                inx7: "수정", //한글코드
+                inx8: "등록", //영문코드
+            },
         ];
         $("#grid").jqGrid({
             datatype: "local", // 로컬 데이터를 사용합니다.
@@ -148,19 +164,19 @@
             ], // 그리드 헤더 이름
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '2%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '4%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '4%', sortable: false, classes:'wrap-cell', align:'left'},
                 { name: 'inx3', index: 'inx3', width: '4%', sortable: false},
                 { name: 'inx4', index: 'inx4', width: '5%', sortable: true},
                 { name: 'inx5', index: 'inx5', width: '3%', sortable: false},
                 { name: 'inx6', index: 'inx6', width: '2%', sortable: true},
                 { name: 'inx7', index: 'inx7', width: '3%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<button type="button" class="btn -sm -line">수정</button>';
+                        return '<button type="button" class="btn -sm -line">'+cellvalue+'</button>';
                     }  
                 },
                 { name: 'inx8', index: 'inx8', width: '3%', sortable: true,
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<button type="button" class="btn -sm -line">수정</button>';
+                        return '<button type="button" class="btn -sm -line">'+cellvalue+'</button>';
                     }  
                 },
             ],
@@ -181,13 +197,13 @@
         var localData2 = [
             {   
                 inx1: "1", //순서
-                inx2: "선택", //코드
-                inx3: "Abcd-2025-12", //코드명 
-                inx4: "기안서", //코드명(영문)
-                inx5: "기안서", //사용여부
-                inx6: "기안서", //조직
-                inx7: "결재진행중", //한글코드
-                inx8: "한디비/개발1팀", //영문코드
+                inx2: "Abcd-2025-12", //코드
+                inx3: "1등급", //코드명 
+                inx4: "En_1급", //코드명(영문)
+                inx5: "사용", //사용여부
+                inx6: "공통", //조직
+                inx7: "수정", //한글코드
+                inx8: "수정", //영문코드
             },
         ];
         $("#grid2").jqGrid({
@@ -205,19 +221,19 @@
             ], // 그리드 헤더 이름
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '2%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '4%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '4%', sortable: false, classes:'wrap-cell', align:'left'},
                 { name: 'inx3', index: 'inx3', width: '4%', sortable: false},
                 { name: 'inx4', index: 'inx4', width: '5%', sortable: true},
                 { name: 'inx5', index: 'inx5', width: '3%', sortable: false},
                 { name: 'inx6', index: 'inx6', width: '2%', sortable: true},
                 { name: 'inx7', index: 'inx7', width: '3%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<button type="button" class="btn -sm -line">수정</button>';
+                        return '<button type="button" class="btn -sm -line">'+cellvalue+'</button>';
                     }  
                 },
                 { name: 'inx8', index: 'inx8', width: '3%', sortable: true,
                     formatter: function(cellvalue, options, rowObject) {
-                        return '<button type="button" class="btn -sm -line">수정</button>';
+                        return '<button type="button" class="btn -sm -line">'+cellvalue+'</button>';
                     }  
                 },
             ],
