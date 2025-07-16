@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             document.getElementById("nav").innerHTML = data;
 
-            // navToggle();
-            // sideNavToggle();
+            menuToggle();
+            tab();
         });
 
     // footer 불러오기

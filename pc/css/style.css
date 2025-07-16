@@ -5446,16 +5446,16 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   max-height: 77rem;
   padding: 3.2rem 3.2rem 4rem;
 }
-.pop-wrap .pop-box .pop-container .search-box {
+.pop-wrap .pop-box .pop-container .search-box.-nobg {
   background-color: transparent;
   padding: 0;
   border: 0;
   margin-bottom: 2.4rem;
 }
-.pop-wrap .pop-box .pop-container .search-box table th {
+.pop-wrap .pop-box .pop-container .search-box.-nobg table th {
   padding: 0 0.8rem 0 2.4rem;
 }
-.pop-wrap .pop-box .pop-container .search-box table th:first-child {
+.pop-wrap .pop-box .pop-container .search-box.-nobg table th:first-child {
   padding-left: 0;
 }
 .pop-wrap .pop-box .pop-container .file-wrap .tree-wrap {

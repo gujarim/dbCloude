@@ -1,8 +1,5 @@
 <!-- nav -->
 <button type="button" class="menu-btn">메뉴열기</button>
-<ul class="side-menu">
-    <li><a href="">사이드 메뉴</a></li>
-</ul>
 
 <ul class="gnb">
     <li class="payment"><a href="">전자결재</a></li>
@@ -11,3 +8,57 @@
     <li class="mail"><a href="">메일</a></li>
     <li class="system"><a href="">회사시스템</a></li>
 </ul>
+
+<div class="side-menu">
+    <button type="button" class="menu-btn -close">메뉴닫기</button>
+
+    <div class="my-wrap">
+        <img src="image/profile.png" alt="">
+        <p><strong>이디비님</strong>개발팀/과장</p>
+        <em>qustball90@dbinc.com</em>
+
+        <div class="btn-wrap">
+            <button type="button" class="btn -lg -line2">PC버전</button>
+            <button type="button" class="btn -lg -line2">로그아웃</button>
+        </div>
+    </div>
+
+    <div class="tab-wrap">
+        <ul class="tablist" role="tablist">
+            <li class="payment on" role="tab"><a href="">전자결재</a></li>
+            <li class="board" role="tab"><a href="">게시판</a></li>
+            <li class="employeeck" role="tab"><a href="">임직원조회</a></li>
+            <li class="mail" role="tab"><a href="">메일</a></li>
+        </ul>
+        <div class="panels">
+            <div class="on" role="tabpanel">
+                <ul class="inner-menu">
+                    <li><a href="">상신함<em>3</em></a></li>
+                    <li><a href="">상신취소함</a></li>
+                    <li><a href="">반려함</a></li>
+                    <li><a href="">예결함<em>3</em></a></li>
+                    <li><a href="">미결함</a></li>
+                    <li><a href="">진행함</a></li>
+                    <li><a href="">완결함</a></li>
+                    <li><a href="">통보함</a></li>
+                    <li><a href="">별표문서함</a></li>
+                </ul>
+            </div>
+            <div role="tabpanel">
+                <ul class="inner-menu">
+                    <li><a href="">게시판1</a></li>
+                </ul>
+            </div>
+            <div role="tabpanel">
+                <ul class="inner-menu">
+                    <li><a href="">임직원조회1</a></li>
+                </ul>
+            </div>
+            <div role="tabpanel">
+                <ul class="inner-menu">
+                    <li><a href="">메일1</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
