@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             document.getElementById("header").innerHTML = data;
+
+            userInfoLayout();
         });
 
     // nav 불러오기

@@ -9,13 +9,27 @@ html,body{
 .wrap{
     &.main{
         background-color: var(--bg-menu);
+
+        header{
+            padding: rem(8) rem(20);
+
+            .logo{
+                display: block;
+            }
+        }
+
+        .container{
+            padding: rem(20) rem(20) rem(116);
+        }
     }
 }
 
 header{
-    padding: rem(10) rem(20);
+    padding: 0;
 
     .logo{
+        display: none;
+
         a{
             @include bg(logo, 0 0, rem(80) rem(29));
             @include fontHidden;
@@ -29,7 +43,7 @@ nav{
     .menu-btn{
         @include bg(menuBtn, 0 0, rem(32) rem(32));
         @include fontHidden;
-        @include position(absolute, rem(9), rem(20), null, null);
+        @include position(absolute, rem(8), rem(20), null, null);
         width: rem(32);
         height: rem(32);
 
@@ -239,7 +253,7 @@ nav{
 }
 
 .container{
-    padding: rem(20) rem(20) rem(116);
+    padding: rem(10) rem(20);
 
     .main-wrap{
         .box{
@@ -489,14 +503,5 @@ nav{
                 height: rem(16);
             }
         }
-    }
-}
-
-.btn-wrap{
-    @include flex(flex, space-between, center);
-    gap: 0 rem(12);
-
-    button{
-        flex: 1;
     }
 }

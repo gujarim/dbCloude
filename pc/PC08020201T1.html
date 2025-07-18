@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG>지식관리 상세</title>
+
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container">
+            <div class="tit-box">
+                <h2 class="tit-h2">지식관리</h2>
+            </div>
+
+            <div class="tab-wrap">
+                <ul class="tablist" role="tablist">
+                    <li class="on" role="tab"><a href="">지식 카테고리 정보</a></li>
+                    <li role="tab"><a href="">지식 카테고리 현황</a></li>
+                </ul>
+                <div class="panels">
+                    <div class="on" role="tabpanel">
+                        <div class="table-jq">
+                            <div class="hgroup">
+                                <strong>테스트 카테고리 3 지식 문서 목록</strong>
+
+                                <div class="sort">
+                                    <select name="" id="">
+                                        <option value="">직업</option>
+                                    </select>
+                                    <button type="button" class="btn -line2">지식문서 등록</button>
+                                </div>
+                            </div>
+
+                            <table id="grid"></table>
+                            <div id="pager"></div>
+                        </div>
+                    </div>
+                    <div role="tabpanel">지식 카테고리 현황</div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var localData = [
+            { 
+                inx1: "선택", //선택
+                inx2: "차량 대인 실무참고서.pdf", //지식문서명
+                inx3: "2025-05-12 12:00:57", //업로드 시간
+                inx4: "47.6MB", //파일크기
+                inx5: "지식 DB 등록 오류", //상태
+                inx6: "?", //직업
+            }
+        ];
+
+        $("#grid").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '선택', 
+                '지식문서명', 
+                '업로드 시간', 
+                '파일크기',
+                '상태',
+                '직업'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false, classes:'wrap-cell', align:'left'},
+                { name: 'inx3', index: 'inx3', width: '7%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '7%', sortable: false,
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<em class="flag -notice">'+cellvalue+'</em>';
+                        // class="attach -file" :  첨부파일
+                        // class="attach -image" : 이미지
+                        // class="attach -total" : 첨부파일, 이미지
+                    } 
+                },
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false}
+            ],
+            pager: '#pager', // 페이징을 위한 요소
+            rowNum: 10,
+            sortname: 'id', // 기본 정렬할 컬럼
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            multiselect: true,
+            multiselectWidth: 50,
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    });
+</script>

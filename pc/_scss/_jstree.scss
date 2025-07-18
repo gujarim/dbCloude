@@ -75,7 +75,7 @@
             }
 
             .jstree-clicked{
-                background-color: #E8F6E8;
+                background-color: var(--bg-primary3);
                 box-shadow: none;
                 color: vaR(--f-base);
                 font-weight: 700;
@@ -84,7 +84,7 @@
             &.jstree-open{
                 &>a{
                     color: var(--f-base);
-                    background-color: #E8F6E8;
+                    background-color: var(--bg-primary3);
                 }
             }
         }

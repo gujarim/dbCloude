@@ -112,6 +112,14 @@ caption{
 .mb32{margin-bottom: rem(32);}
 .mb16{margin-bottom: rem(16);}
 
+.align-left{
+    text-align: left !important;
+}
+
+.bold{
+    font-weight: 600 !important;
+}
+
 ul,ol,li{
     list-style: none;
 }
@@ -130,7 +138,7 @@ ul,ol,li{
 :root{
     --f-base: #000;
     --f-secondary: #606060;
-    --f-primary: #19A619;
+    --f-primary: #19A619; //컬러 - 메인 텍스트
     --f-flase: #EF503A;
     --f-true: #2E55B7; 
     --f-menu: #8C9094;
@@ -139,13 +147,15 @@ ul,ol,li{
     --bg-base: #F7F8F9;
     --bg-secondary: #7D848E;
     --bg-third: #FAFAFA;
-    --bg-primary: #19A619;
-    --bg-primary2: #E5F5E5;
-    --bg-primary3: #E8F6E8;
+    --bg-primary: #19A619; //컬러 - 메인 배경
+    --bg-primary2: #00854A; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #E8F6E8; //컬러 - 메인보다 연한 배경
     --bg-false: #FEF0ED;
     --bg-menu: #F2F6FC;
     --bg-hover: #FBFBFB;
+    --bg-mhover: #e5f5e5; //컬러 - 호버
 
+    --line-primary: #C4EBC4; //컬러 - 라인
     --line-base: #B4B8BD;
     --line-secondary: #EAEAEA;
     --line-table: #606060;
@@ -153,4 +163,241 @@ ul,ol,li{
     --line-table3: #ECEFF2;
     --line-false: #FAC3BB;
     --line-true: #B6C3E3;
+}
+
+//컬러별 색
+//로고
+//사이드메뉴 아이콘
+//체크, 라디오
+//jstree에 들어가는 아이콘
+.colorPurple{
+    --f-primary: #9050FF; //컬러 - 메인 텍스트
+
+    --bg-primary: #9050FF; //컬러 - 메인 배경 
+    --bg-primary2: #803BFF; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #F6F1FF; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #F3EDFF; //컬러 - 호버색
+
+    --line-primary: #E8DBFF; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorPurple);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorPurple);
+            }
+        }
+    }
+}
+
+.colorOrange{
+    --f-primary: #FF6F00; //컬러 - 메인 텍스트
+
+    --bg-primary: #FF6F00; //컬러 - 메인 배경 
+    --bg-primary2: #FF8940; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #FFF4EB ; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #FFF3ED; //컬러 - 호버색
+
+    --line-primary: #FFE8DE; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorOrange);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorOrange);
+            }
+        }
+    }
+}
+
+.colorMandarin{
+    --f-primary: #FFA100; //컬러 - 메인 텍스트
+
+    --bg-primary: #FFA100; //컬러 - 메인 배경 
+    --bg-primary2: #FF8800; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #FFF5E5; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #FFF8ED; //컬러 - 호버색
+
+    --line-primary: #FFEEDA; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorMandarin);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorMandarin);
+            }
+        }
+    }
+}
+
+.colorRed{
+    --f-primary: #FF5B6E; //컬러 - 메인 텍스트
+
+    --bg-primary: #FF5B6E; //컬러 - 메인 배경 
+    --bg-primary2: #FF4359; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #FFEFF1; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #FFF4F5; //컬러 - 호버색
+
+    --line-primary: #FFE6E6; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorRed);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorRed);
+            }
+        }
+    }
+}
+
+.colorCyan{
+    --f-primary: #16C0AF; //컬러 - 메인 텍스트
+
+    --bg-primary: #16C0AF; //컬러 - 메인 배경 
+    --bg-primary2: #0FD3C0; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #EBFBFA; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #E9FCFA; //컬러 - 호버색
+
+    --line-primary: #C1F2ED; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorCyan);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorCyan);
+            }
+        }
+    }
+}
+
+.colorNavy{
+    --f-primary: #1610C8; //컬러 - 메인 텍스트
+
+    --bg-primary: #1610C8; //컬러 - 메인 배경 
+    --bg-primary2: #554FF8; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #F4F3FF ; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #F3F3FF; //컬러 - 호버색
+
+    --line-primary: #D8D8F9; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorNavy);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorNavy);
+            }
+        }
+    }
+}
+
+.colorBlue{
+    --f-primary: #2788FF; //컬러 - 메인 텍스트
+
+    --bg-primary: #2788FF; //컬러 - 메인 배경 
+    --bg-primary2: #005BCB; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #EAF3FF; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #E3EFFF; //컬러 - 호버색
+
+    --line-primary: #CEE2FE; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorBlue);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorBlue);
+            }
+        }
+    }
+}
+
+.colorskyblue{
+    --f-primary: #1DB8EC; //컬러 - 메인 텍스트
+
+    --bg-primary: #1DB8EC; //컬러 - 메인 배경 
+    --bg-primary2: #18C5FF; //컬러 - 메인보다 진한 배경
+    --bg-primary3: #E5F8FF; //컬러 - 메인보다 연한 배경
+    --bg-mhover: #ECFAFF; //컬러 - 호버색
+
+    --line-primary: #D1F2FE; //컬러 - 라인
+
+    .wrap{
+        &.main{
+            header{
+                .logo{
+                    a{
+                        @include bg-url(logo_colorskyblue);
+                    }
+                }
+            }
+        }
+
+        footer{
+            .f-logo{
+                @include bg-url(logo_colorskyblue);
+            }
+        }
+    }
 }

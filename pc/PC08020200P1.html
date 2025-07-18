@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG>지식 카테고리 수정</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="pop-wrap -lg">
+        <div class="pop-box">
+            <div class="pop-top">
+                <strong>지식 카테고리 수정</strong>
+            </div>
+
+            <div class="pop-container">
+                <div class="rag-wrap">
+                    <div class="tbl-wrap3">
+                        <table>
+                            <colgroup>
+                                <col style="width: 9.5rem">
+                                <col style="width: auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>카테고리<span class="star">*</span></th>
+                                    <td><input type="text" value="테스트 카테고리 3" readonly></td>
+                                </tr>
+                                <tr>
+                                    <th>설명</th>
+                                    <td>
+                                        <textarea name="" id="" rows="5">테스트 카테고리 3</textarea>
+                                        <p>※ 설정값 수정 시 지식 DB에 재등록을 위해 새로운 전처리 과정이 진행되며, 기존 벡터 데이터는 새 문서로 대체됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>전처리 파이프라인<span class="star">*</span></th>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">기본 Word형(2단)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>임베딩 모델<span class="star">*</span></th>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">BGE M3</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사전선택</th>
+                                    <td>
+                                        <div class="rd-wrap">
+                                            <input type="radio" id="chk1" name="ck" checked>
+                                            <label for="chk1">사용</label>
+                                            <input type="radio" id="chk2" name="ck">
+                                            <label for="chk2">미사용</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>전처리 설정<span class="star">*</span></th>
+                                    <td>
+                                        <div class="rd-wrap">
+                                            <input type="radio" id="chk3" name="ck2" checked>
+                                            <label for="chk3">실시간 배치</label>
+                                            <input type="radio" id="chk4" name="ck2">
+                                            <label for="chk4">배치(저녁)</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="hgroup">
+                            <strong>사전선택</strong>
+                        </div>
+
+                        <div class="tbl-wrap2">
+                            <table>
+                                <caption>도메인명, 언어, 문서함, 생산년도, 분류번호로 구성된 문서함권한관리에 대한 표</caption>
+                                <colgroup>
+                                    <col style="width: 16rem">
+                                    <col style="width: auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>카테고리</th>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="">형태소 사전</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-jq">
+                            <table id="grid01"></table>
+                            <div id="pager"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pop-btn">
+                <button type="button" class="btn -line">닫기</button>
+                <button type="button" class="btn -primary">수정</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker.ko.min.js"></script>
+<script src="js/ui-content.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var localData1 = [
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            }
+        ];
+        $("#grid01").jqGrid({
+            datatype: "local", // 로컬 데이터를 사용합니다.
+            data: localData1, // 로컬 데이터를 그리드에 바인딩합니다.
+            colNames: [
+                '선택', 
+                '사전명',
+                '생성시간'
+            ], // 그리드 헤더 이름
+            colModel: [
+                { name: 'inx1', index: 'inx1', width: '8%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '7%', sortable: false}
+            ],
+            pager: '#pager', // 페이징을 위한 요소
+            rowNum: 10,
+            height: 'auto', // 그리드 높이를 자동 조절
+            autowidth: true, // 그리드 너비를 자동 조절
+            multiselect: true,
+            multiselectWidth: 50,
+            loadComplete: function () {
+                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+            }
+        });
+    })
+</script>

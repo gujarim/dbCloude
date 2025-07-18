@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판>통합게시판</title>
+    <title>메인>개인위젯설정</title>
 
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
@@ -19,63 +19,84 @@
 
         <div class="container">
             <div class="tit-box">
-                <h2 class="tit-h2">통합게시판</h2>
+                <h2 class="tit-h2">개인위젯설정</h2>
                 <div class="btn-wrap">
-                    <button type="button" class="i-edit">글쓰기</button>
+                    <button type="button" class="i-refresh">초기화</button>
+                    <button type="button" class="i-save">저장</button>
                 </div>
             </div>
 
-            <div class="search-box">
-                <button type="button" class="search-close">더보기</button>
-                <table>
-                    <caption>조직명, 제목, 작성자, 게시글번호로 구성된 통합게시판에 대한 표</caption>
-                    <colgroup>
-                        <col style="width: 7.3rem">
-                        <col style="width: 25%">
-                        <col style="width: 7.3rem">
-                        <col style="width: 25%">
-                        <col style="width: 7.3rem">
-                        <col style="width: 25%">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th>조직명</th>
-                            <td>
-                                <select name="" id="">
-                                    <option value="">선택</option>
-                                    <option value="" selected>DB INC</option>
-                                </select>
-                            </td>
-                            <th>제목</th>
-                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
-                            <th>작성자</th>
-                            <td><input type="text" placeholder="검색어를 입력하세요"></td>
-                        </tr>
-                        <tr class="hidden">
-                            <th>게시글번호</th>
-                            <td>
-                                <input type="text" placeholder="검색어를 입력하세요">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button type="button" class="i-search">조회</button>
-            </div>
-
-            <div class="table-jq">
-                <div class="hgroup">
-                    <p>총 <em class="f-primary">143</em>건</p>
-
-                    <div class="sort">
-                        <select name="" id="">
-                            <option value="">10개씩보기</option>
-                        </select>
+            <div class="widget-wrap">
+                <div class="widget-skin mb40">
+                    <div class="hgroup">
+                        <strong>위젯스킨</strong>
+                    </div>
+                    <div class="skin-wrap">
+                        <input type="radio" name="skinrd" class="color1" checked>
+                        <input type="radio" name="skinrd" class="color2">
+                        <input type="radio" name="skinrd" class="color3">
+                        <input type="radio" name="skinrd" class="color4">
+                        <input type="radio" name="skinrd" class="color5">
+                        <input type="radio" name="skinrd" class="color6">
+                        <input type="radio" name="skinrd" class="color7">
+                        <input type="radio" name="skinrd" class="color8">
+                        <input type="radio" name="skinrd" class="color9">
                     </div>
                 </div>
 
-                <table id="grid"></table>
-                <div id="pager"></div>
+                <div class="widget-set">
+                    <div class="hgroup">
+                        <strong>위젯설정</strong>
+                        <p>추가를 원하는 위젯을 선택하여 끌어다 놓으세요.</p>
+                    </div>
+
+                    <div class="set-wrap">
+                        <div class="set-container">
+                            <div class="set-top">
+                                <div class="line1">
+                                    <div class="on">내 캘린더<button type="button" class="btn -sm -line">삭제</button></div>
+                                    <div class="add"><button type="button" class=" ">위젯추가</button></div>
+                                </div>
+                                <div class="line2">
+                                    <div class="on">전자결재알림<button type="button" class="btn -sm -line">삭제</button></div>
+                                    <div class="on">DX포털<button type="button" class="btn -sm -line">삭제</button></div>
+                                    <div class="set-inner">
+                                        <div class="on">이벤트<button type="button" class="btn -sm -line">삭제</button></div>
+                                        <div class="on">드라이브<button type="button" class="btn -sm -line">삭제</button></div>
+                                    </div>
+                                </div>
+                                <div class="line3">
+                                    <div class="on">출퇴근<button type="button" class="btn -sm -line">삭제</button></div>
+                                    <div class="on">나의할일<button type="button" class="btn -sm -line">삭제</button></div>
+                                    <div class="on">우리회사 시스템<button type="button" class="btn -sm -line">삭제</button></div>
+                                </div>
+                            </div>
+                            <div class="set-bottom">
+                                <div class="add"><button type="button" class="widget-addBtn">위젯추가</button></div>
+                                <div class="add"><button type="button" class="widget-addBtn">위젯추가</button></div>
+                                <div class="on">통합게시판<button type="button" class="btn -sm -line">삭제</button></div>
+                            </div>
+                        </div>
+                        <div class="set-list">
+                            <strong>위젯목록</strong>
+                            <ul>
+                                <li>앨범형 게시판</li>
+                                <li>전자결재 미결목록</li>
+                                <li>이메일</li>
+                                <li>유AIs</li>
+                                <li>휴가현황</li>
+                                <li>앨범형 게시판</li>
+                                <li>우리회사 시스템</li>
+                                <li>드라이브</li>
+                                <li>드라이브1</li>
+                                <li>드라이브2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <p class="skin-info">해당영역에 위젯을 추가하면 스크롤이 발생할 수 있습니다.</p>
         </div>
 
         <footer id="footer"></footer>

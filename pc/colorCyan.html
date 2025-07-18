@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>챗봇</title>
+    <title>main</title>
     
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
@@ -11,13 +11,8 @@
     <link rel="stylesheet" href="css/datepicker.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        html,body{
-            overflow: hidden;
-        }
-    </style>
 </head>
-<body>
+<body class="colorCyan"> <!-- [D] 컬러값 변경시 클래스 추가 class="wrap ~"에 넣으셔도 됩니다. -->
     <div class="wrap main">
         <header id="header"></header>
         <nav id="nav"></nav>
@@ -533,81 +528,6 @@
         </div>
 
         <footer id="footer"></footer>
-
-        <div class="chat-wrap on"> 
-            <div class="chat-sideMenu">
-                <button type="button">채팅크게보기</button>
-                <ul>
-                    <li class="conversation on"><a href="">일반대화</a></li>
-                    <li class="regulations"><a href="">사내규정</a></li>
-                    <li class="secretary"><a href="">개인비서</a></li>
-                    <li class="newssummary"><a href="">뉴스요약</a></li>
-                    <li class="corporatesearch"><a href="">기업서치</a></li>
-                    <li class="workspace"><a href="">워크<br>스페이스</a></li>
-                </ul>
-            </div>
-            <div class="chat-list">
-                <div class="chat-head">
-                    <div class="chat-info">
-                        <a href="" class="logo">DBINC</a>
-                        <button type="button">홈</button>
-                    </div>
-
-                    <button type="button" class="add-chat">채팅 새로 만들기</button>
-
-                    <strong>최근채팅</strong>
-                    <ul class="recent-chat">
-                        <li class="conversation"><a href="">안녕하세요, 인사팀입니다. 일반대화 입니다.</a></li>
-                        <li class="regulations"><a href="">안녕하세요, 인사팀입니다. 사내규정 입니다.</a></li>
-                        <li class="secretary"><a href="">안녕하세요, 인사팀입니다. 개인비서 입니다.</a></li>
-                        <li class="newssummary"><a href="">안녕하세요, 인사팀입니다. 뉴스요약 입니다.</a></li>
-                        <li class="corporatesearch"><a href="">안녕하세요, 인사팀입니다. 기업서치 입니다.</a></li>
-                        <li class="workspace"><a href="">안녕하세요, 인사팀입니다. 워크스페이스 입니다.</a></li>
-                    </ul>
-
-                    <strong>추천채팅</strong>
-                    <ul class="recommended-chat">
-                        <li><a href="">Python 코드에 대해 알려줘</a></li>
-                        <li><a href="">외국인 친구와 영어로 대화할 때 외국인 친구와 영어로 대화할 때</a></li>
-                        <li><a href="">요즘 MZ세대들 사이에서 인기 요즘 MZ세대들 사이에서 인기</a></li>
-                    </ul>
-                </div>
-                <div class="chat-container">
-                    <div class="caht-title">
-                        <strong>지금 <em>유AIs</em>와 대화해 보세요.</strong>
-                        <p><em>김디비</em>님, 반갑습니다.<br> 무엇을 도와드릴까요?</p>
-                    </div>
-                    <ul class="chat-content">
-                        <li>
-                            <div>
-                                <p>Python 코드에 대해 알려줘</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>일반대화봇<em>10:48</em></strong>
-                                <p>Python은 고급 프로래밍 언어로, 읽기 쉽고 간결한 문법을 가지고 있어 초보자부터 전문가까지 널리 사용됩니다. Python은 다양한 분야에서 활용되며, 특히 웹 개발, 데이터 분석, 인공지능, 자동화 스크립트 작성 등에 많이 사용됩니다. 다음은 Python 코드의  기본 구조와 예제입니다:</p>
-                                <p>Python은 고급 프로래밍 언어로, 읽기 쉽고 간결한 문법을 가지고 있어 초보자부터 전문가까지 널리 사용됩니다. Python은 다양한 분야에서 활용되며, 특히 웹 개발, 데이터 분석, 인공지능, 자동화 스크립트 작성 등에 많이 사용됩니다. 다음은 Python 코드의  기본 구조와 예제입니다:</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="chat-text">
-                        <button type="button" class="btn -primary">일반대화봇</button>
-                        <div class="chat-area">
-                            <textarea name="" id="" placeholder="메시지를 입력하세요."></textarea>
-                            <div class="chat-btn">
-                                <button type="button" class="chat-plus">크게보기</button>
-                                <button type="button" class="chat-search">챗봇검색</button>
-                            </div>
-                        </div>
-                        <p>유 AIs는 GPT-4o 모델을 이용하여 실수를 할 수 있습니다. 중요한 정보를 확인하세요.</p>
-                    </div>
-                    <button type="button" class="chat-close">닫기</button>
-                    <button type="button" class="chat-up">맨위로 이동</button>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 </html>

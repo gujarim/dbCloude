@@ -1,8 +1,17 @@
 
 // 그리드 리사이징
-$(window).resize(function() {
-    var newWidth = $(".container").width(); // 부모 요소의 너비를 가져옵니다.
-    $(".table-jq table").jqGrid('setGridWidth', newWidth); // 그리드 너비를 조정합니다.
+// $(window).resize(function() {
+//     var newWidth = $(".container").width(); // 부모 요소의 너비를 가져옵니다.
+//     $(".table-jq table").jqGrid('setGridWidth', newWidth); // 그리드 너비를 조정합니다.
+// });
+
+$(window).resize(function () {
+    $(".table-jq").each(function () {
+        var $wrapper = $(this);
+        var $table = $wrapper.find("table");
+        var newWidth = $wrapper.width();
+        $table.jqGrid('setGridWidth', newWidth);
+    });
 });
 
 // 달력 한국어 출력
@@ -328,7 +337,7 @@ const tablistScroll = () => {
     });
 }
 
-//메인 실험실(다이얼 돌리기)
+// 메인>실험실(다이얼 돌리기)
 const laboratoryDial = () => {
     const circle = document.querySelector('.circle');
     if (!circle) return; // 예외 처리
@@ -440,7 +449,7 @@ const laboratoryDial = () => {
     }
 };
 
-//메인 실험실 클릭시 다이얼 노출
+// 메인>실험실 클릭시 다이얼 노출
 const laboratoryShow = () =>{
     const btn = document.querySelector('.laboratory>a');
     const container = document.querySelector('.laboratory-wrap');
@@ -461,9 +470,122 @@ const laboratoryShow = () =>{
     })
 }
 
+// 헤더 사용자 정보버튼 클릭시 정보 노출
+const userInfoLayout = () => {
+    const profile = document.querySelector('.profile');
+    if (!profile) return;
+
+    const profileWrap = profile.querySelector('.profile-wrap');
+    if (!profileWrap) return;
+
+    profile.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        profileWrap.classList.toggle('-open');
+    });
+
+    profileWrap.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+
+    // 문서 클릭 시 .profile 외부면 닫기
+    document.addEventListener('click', function (e) {
+        if (!profile.contains(e.target)) {
+            profileWrap.classList.remove('-open');
+        }
+    });
+};
+
+// 개인위젯설정>위젯설정 클릭시 삭제버튼 보임
+const widgetClick = () => {
+    const onElements = document.querySelectorAll('.set-container .on');
+
+    onElements.forEach(el => {
+        el.addEventListener('click', function (e) {
+            // 내부 버튼 클릭은 무시
+            if (e.target.tagName === 'BUTTON') return;
+
+            // 모든 요소에서 active 제거
+            onElements.forEach(item => item.classList.remove('active'));
+
+            // 클릭한 요소에 active 추가
+            this.classList.add('active');
+        });
+    });
+}
+
+// 개인위젯설정>위젯목록 드래그 하여 위젯설정 바꿈
+const widgetDrag = () => {
+    const setList = document.querySelector('.set-list ul');
+
+    // .set-list 항목을 드래그 가능하게
+    document.querySelectorAll('.set-list li').forEach(item => {
+        item.setAttribute('draggable', true);
+
+        item.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', item.textContent.trim());
+            item.classList.add('dragging');
+        });
+
+        item.addEventListener('dragend', () => {
+            item.classList.remove('dragging');
+        });
+    });
+
+    // .set-container .on 요소들을 drop 대상으로 설정
+    document.querySelectorAll('.set-container .on').forEach(target => {
+        target.setAttribute('droppable', true);
+
+        target.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            target.classList.add('drop-hover');
+        });
+
+        target.addEventListener('dragleave', () => {
+            target.classList.remove('drop-hover');
+        });
+
+        target.addEventListener('drop', (e) => {
+            e.preventDefault();
+            target.classList.remove('drop-hover');
+
+            const newText = e.dataTransfer.getData('text/plain');
+            const draggedItem = document.querySelector('.set-list li.dragging');
+
+            if (newText && draggedItem) {
+                // 기존 .on 안의 텍스트만 추출 (삭제 버튼 제외)
+                const oldText = target.cloneNode(true).childNodes[0].textContent.trim();
+
+                // 1. 기존 내용을 .set-list에 추가
+                const newLi = document.createElement('li');
+                newLi.textContent = oldText;
+                newLi.setAttribute('draggable', true);
+                setList.appendChild(newLi);
+
+                // 새로 추가된 항목도 다시 드래그 가능하게
+                newLi.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', newLi.textContent.trim());
+                    newLi.classList.add('dragging');
+                });
+                newLi.addEventListener('dragend', () => {
+                    newLi.classList.remove('dragging');
+                });
+
+                // .on 영역 내용 교체
+                target.innerHTML = `${newText}<button type="button" class="btn -sm -line">삭제</button>`;
+
+                // 드래그된 항목 제거
+                draggedItem.remove();
+            }
+        });
+    });
+}
+
 window.addEventListener('load', () => {
     toggleTable();
     tab();
     chatToggle();
     tablistScroll();
+    widgetClick();
+    widgetDrag();
 });

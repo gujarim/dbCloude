@@ -65,7 +65,7 @@ $font-name: '맑은고딕', sans-serif;
     border-radius: $radius;
 }
 
-@mixin shadow($x: null, $y: null, $blur: null, $speed: null, $color: rgba(0,0,0,.05)){
+@mixin shadow($x: null, $y: null, $blur: null, $speed: null, $color: rgba(0,0,0,.04)){
     -webkit-box-shadow: $x $y $blur $speed $color;
     -moz-box-shadow: $x $y $blur $speed $color;
     box-shadow: $x $y $blur $speed $color;

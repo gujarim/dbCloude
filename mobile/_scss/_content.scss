@@ -28,13 +28,446 @@
     }
 }
 
+.flag{
+    @include font(rem(12), 400);
+    @include rounded(rem(10));
+    height: rem(20);
+    line-height: rem(20);
+    border: rem(1) solid var(--line-table2);
+    display: inline-block;
+    padding: 0 rem(8);
 
-.chat-wrap{
+    &.-board{
+        border-color: #B6E3D0;
+        color: #0DA161;
+    }
+
+    &.-notice{
+        border-color: #B4DFF7;
+        color: #0696E5;
+    }
+
+    &.-partner{
+        border-color: #B6C3E3;
+        color: #2E55B7;
+    }
+}
+
+
+.chat{
     a{
         @include position(fixed, null, rem(20), rem(97), null, 1);
         @include bg(chat, 0 0, rem(60) rem(60));
         @include fontHidden;
         width: rem(60);
         height: rem(60);
+    }
+}
+
+.btn-wrap{
+    @include flex(flex, space-between, center);
+    gap: 0 rem(12);
+
+    button{
+        flex: 1;
+    }
+}
+
+.hgroup{
+
+    strong{
+        @include font(rem(20), 600);
+        line-height: rem(28);
+    }
+}
+
+.tab-wrap:not(nav .tab-wrap){
+    .panels{
+        &>div{
+            display: none;
+
+            &.on{
+                display: block;
+            }
+        }
+    }
+
+    &.-line{
+        position: relative;
+
+        .tablist{
+            @include flex(flex, flex-start, center);
+            gap: 0 rem(24);
+            margin: 0 rem(-20);
+            padding: 0 rem(20);
+            border-bottom: rem(1) solid var(--line-table3);
+            overflow: hidden;
+            overflow-x: auto;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            cursor: grab;
+
+            li{
+                flex: 1;
+
+                a{
+                    @include font(rem(16), 400);
+                    color: var(--f-secondary);
+                    display: inline-block;
+                    line-height: rem(48);
+                    position: relative;
+                }
+
+                &.on{
+                    a{
+                        color: var(--f-base);
+                        font-weight: 600;
+
+                        &::after{
+                            content:'';
+                            width: 100%;
+                            height: rem(2);
+                            background-color: var(--f-base);
+                            @include position(absolute, null, null, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+
+        .panels{
+            &>div{
+                padding: rem(24) 0;
+            }
+        }
+    }
+}
+
+.pop-wrap{
+    @include position(fixed, 0, null, null, 0, 11);
+    width: 100%;
+    height: 100%;
+    display: none;
+    
+    &.-open{
+        display: block;
+    }
+
+    &.-full{
+        background-color: var(--bg-menu);
+
+        .pop-btn{
+            background-color: var(--bg-menu);
+        }
+    }
+
+    &.-middle{
+        background-color: rgba(0,0,0,.6);
+        @include flex(none, center, center);
+
+        &.-open{
+            display: flex;
+        }
+
+        .pop-box{
+            @include rounded(rem(16));
+            width: calc(100% - rem(40));
+            height: calc(100% - rem(60));
+            background-color: var(--f-white);
+            padding: rem(16) 0;
+        }
+
+        .pop-container{
+            padding: rem(24) rem(16) 0;
+        }
+
+        .btn-close{
+            top: rem(23);
+        }
+    }
+
+    .pop-box{
+        @include flex(grid);
+        grid-template-rows: rem(48) 1fr;
+        height: 100%;
+        position: relative;
+
+        &:has(.pop-btn){
+            grid-template-rows: rem(48) 1fr rem(60);
+        }
+    }
+
+    .pop-top{
+        padding: rem(10) rem(20);
+
+        strong{
+            @include font(rem(20), 600);
+            line-height: rem(28);
+        }
+    }
+
+    .pop-container{
+        overflow-y: auto;
+        height: 100%;
+        padding: rem(24) rem(20);
+    }
+
+    .pop-btn{
+        @include position(sticky, null, null, 0, 0);
+        @include flex(flex, center, center);
+        gap: 0 rem(12);
+
+        button{
+            flex: 1;
+        }
+    }
+
+    .btn-close{
+        @include bg(menuBtn_close, 0 0, rem(32) rem(32));
+        @include fontHidden;
+        @include position(absolute, rem(8), rem(20), null, null);
+        width: rem(32);
+        height: rem(32);
+    }
+}
+
+.board-list{
+    li{
+        padding-bottom: rem(20);
+
+        &:not(:last-child){
+            margin-bottom: rem(20);
+            border-bottom: rem(1) solid var(--line-table3);
+        }
+
+        a{
+            em{
+                margin-bottom: rem(8);
+            }
+
+            strong{
+                display: block;
+                @include font(rem(16), 600);
+                margin-bottom: rem(4);
+            }
+
+            p{
+                em{
+                    color: var(--f-menu);
+                    position: relative;
+
+                    &::before{
+                        content:'';
+                        width: rem(1);
+                        height: rem(14);
+                        background-color: var(--line-table2);
+                        display: inline-block;
+                        margin: 0 rem(8);
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mycompany-system{
+    @include flex(flex, space-between, flex-start);
+    flex-wrap: wrap;
+    gap: rem(16) 0;
+
+    li{
+        width: calc(50% - rem(8));
+        text-align: center;
+
+        a{
+            @include rounded(rem(20));
+            @include shadow(0, rem(4), rem(8), 0);
+            display: block;
+            background-color: var(--f-white);
+            padding: rem(30) 0;
+
+            &::before{
+                display: block !important;
+                margin: 0 auto rem(12);
+            }
+
+        }
+        
+        &.ebills{
+            a{
+                &::before{
+                    @include icon(64, 'ebills', 'pseudo');
+                }
+            }
+        }
+
+        &.erros{
+            a{
+                &::before{
+                    @include icon(64, 'erros', 'pseudo');
+                }
+            }
+        }
+
+        &.fcs{
+            a{
+                &::before{
+                    @include icon(64, 'fcs', 'pseudo');
+                }
+            }
+        }
+
+        &.eppm{
+            a{
+                &::before{
+                    @include icon(64, 'eppm', 'pseudo');
+                }
+            }
+        }
+
+        &.googlecalendar{
+            a{
+                &::before{
+                    @include icon(64, 'googlecalendar', 'pseudo');
+                }
+            }
+        }
+
+        &.document{
+            a{
+                &::before{
+                    @include icon(64, 'document', 'pseudo');
+                }
+            }
+        }
+    }
+}
+
+.chat-wrap{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .chat-title{
+        display: block;
+        text-align: center;
+        @include font(rem(20), 600);
+        padding: rem(16) 0 rem(32);
+        
+        em{
+            color: var(--f-primary);
+        }
+
+        &::before{
+            @include icon(51, 'chat_icon', 'pseudo');
+            height: rem(71);
+            display: block;
+            margin: 0 auto rem(12);
+        }
+    }
+
+    .chat-hashtag{
+        @include flex(flex);
+        gap: rem(8);
+        flex-wrap: wrap;
+        margin-bottom: rem(28);
+
+        a{
+            @include rounded(rem(12));
+            background-color: #EEF2F5;
+            display: inline-block;
+            height: rem(32);
+            line-height: rem(32);
+            padding: 0 rem(16);
+        }
+    }
+
+    .chat-content{
+        overflow-y: auto;
+
+        li{
+            text-align: right;
+
+            div{
+                display: inline-block;
+
+                strong{
+                    @include font(rem(13), 500);
+                    display: block;
+                    position: relative;
+                    padding-left: rem(40);
+                    line-height: rem(32);
+
+                    &::before{
+                        @include icon(32, 'chat_profile', 'pseudo');
+                        @include position(absolute, 0, null, null, 0);
+                    }
+                }
+
+                p{
+                    @include rounded(rem(12));
+                    border-bottom-right-radius: rem(2);
+                    color: var(--f-primary);
+                    padding: rem(12) rem(16);
+                    text-align: left;
+                    word-break: break-all;
+                    border: rem(1) solid var(--bg-primary);
+
+                    &:not(:last-child){
+                        margin-bottom: rem(6);
+                    }
+                }
+            }
+
+            &:not(:last-child){
+                margin-bottom: rem(24);
+            }
+
+            &:nth-child(2n){
+                text-align: left;
+
+                div{
+                    p{
+                        border-bottom-right-radius: rem(12);
+                        border-top-left-radius: rem(2);
+                        background-color: var(--bg-primary);
+                        color: var(--f-white);
+                        margin-left: rem(24);
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-text{
+        @include position(sticky, null, null, 0, 0);
+        padding-top: rem(17);
+        background-color: var(--f-white);
+
+        .chat-area{
+            @include rounded(rem(111));
+            position: relative;
+            border: rem(1) solid var(--line-base);
+            padding: rem(11) rem(36) rem(11) rem(16);
+            height: rem(40);
+
+            textarea{
+                height: 100%;
+            }
+
+            button{
+                @include position(absolute, 50%, rem(16), null, null);
+                @include icon(20, 'chat_send', 'pseudo');
+                @include fontHidden;
+                transform: translateY(-50%);
+            }
+        }
+        p{
+            @include font(rem(12), 400);
+            text-align: center;
+            color: var(--f-menu);
+            margin-top: rem(12);
+        }
     }
 }
