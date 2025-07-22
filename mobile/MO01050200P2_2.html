@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팝업</title>
+    <title>전자결재>공람자 검색</title>
     
     <link rel="stylesheet" href="css/ui.jqgrid.css">
     <link rel="stylesheet" href="css/jstree.style.css">
@@ -11,20 +11,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="pop-wrap -full -open">
+    <div class="pop-wrap -full -bgwhite -open">
         <div class="pop-box">
             <div class="pop-top">
-                <strong>타이틀</strong>
+                <strong>공람자 검색</strong>
             </div>
 
             <div class="pop-container">
-                <div style="height:800px">내용입니다.</div>
+                <ul class="form-wrap">
+                    <li>
+                        <select name="" id="">
+                            <option value="">파도</option>
+                        </select>
+                    </li>
+                    <li>
+                        <p class="input-search">
+                            <input type="text" placeholder="검색어를 입력하세요" value="디비">
+                            <button type="button" class="icon -sarch">검색</button>
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="-interval">
+                    <p class="no-data">조회된 내역이 없습니다.</p>
+                </div>
             </div>
 
-            <div class="pop-btn">
-                <button type="button" class="btn -line">이전화면</button>
-                <button type="button" class="btn -primary">공람</button>
-            </div>
             <button type="button" class="btn-close">닫기</button>
         </div>
     </div>

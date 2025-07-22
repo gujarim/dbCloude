@@ -4,17 +4,29 @@
 html,body{
     font-family: "Pretendard";
     font-size: rem(14);
+    // height: 100%;
 }
 
 .wrap{
+    // height: 100%;
+    
     &.main{
         background-color: var(--bg-menu);
 
         header{
             padding: rem(8) rem(20);
+            background-color: var(--bg-menu);
 
             .logo{
                 display: block;
+            }
+        }
+
+        nav{
+            .nav-btn{
+                .menu-search, .menu-home{
+                    display: none;
+                }
             }
         }
 
@@ -22,10 +34,22 @@ html,body{
             padding: rem(20) rem(20) rem(116);
         }
     }
+
+    &.-detail{
+        .gnb{
+            display: none;
+        }
+
+        .container{
+            padding-bottom: 0;
+        }
+    }
 }
 
 header{
     padding: 0;
+    @include position(sticky, 0, null, null, 0, 1);
+    background-color: var(--f-white);
 
     .logo{
         display: none;
@@ -40,17 +64,10 @@ header{
 }
 
 nav{
-    .menu-btn{
-        @include bg(menuBtn, 0 0, rem(32) rem(32));
-        @include fontHidden;
-        @include position(absolute, rem(8), rem(20), null, null);
-        width: rem(32);
-        height: rem(32);
-
-        &.-close{
-            @include bg-url(menuBtn_close);
-            top: rem(24);
-        }
+    .nav-btn{
+        @include position(fixed, rem(8), rem(20), null, null, 2);
+        @include flex(flex,flex-end, center);
+        gap: 0 rem(12);
     }
 
     .gnb{
@@ -78,7 +95,6 @@ nav{
 
             &.payment{
                 a::before{
-                    
                     @include icon(32, 'menu_payment', 'pseudo');
                 }
             }
@@ -114,6 +130,10 @@ nav{
 
         &.-open{
             left: 0;
+        }
+
+        .menu-btn.-close{
+            @include position(absolute, rem(24), rem(20), null, null);
         }
 
         .my-wrap{
@@ -253,7 +273,12 @@ nav{
 }
 
 .container{
-    padding: rem(10) rem(20);
+    // height: 100%;
+    padding: 0 rem(20) rem(136);
+
+    &:has(.btn-wrap.-sticky){
+        padding-bottom: rem(224);
+    }
 
     .main-wrap{
         .box{
@@ -503,5 +528,48 @@ nav{
                 height: rem(16);
             }
         }
+    }
+}
+
+select{
+    @include rounded(rem(12));
+    @include font(rem(16), 600);
+    @include bg(select, right rem(12) center, rem(24));
+    border: rem(1) solid var(--line-table2);
+    height: rem(48);
+    padding: 0 rem(36) 0 rem(20);
+    background-color: var(--f-white);
+    width: 100%;
+
+    &:disabled{
+        background-color: var(--bg-base);
+        color: var(--f-menu);
+    }
+}
+
+input[type=text]{
+    @include rounded(rem(12));
+    @include font(rem(16), 600);
+    border: rem(1) solid var(--line-table2);
+    height: rem(48);
+    padding: 0 rem(20) 0;
+    background-color: var(--f-white);
+    width: 100%;
+}
+
+input[type=checkbox]{
+    @include bg(chk_off);
+    width: rem(24);
+    height: rem(24);
+    vertical-align: middle;
+    margin-top: rem(-3);
+
+    &:checked{
+        @include bg(chk_on);
+    }
+
+    &+label{
+        @include font(rem(16), 600);
+        margin-left: rem(8);
     }
 }

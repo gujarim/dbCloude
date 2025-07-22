@@ -67,7 +67,6 @@ legend {
   height: 0;
   margin: -0.1rem;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
   clip-path: polygon(0 0, 0 0, 0 0);
   line-height: inherit;
 }
@@ -149,7 +148,6 @@ caption {
   height: 0;
   margin: -0.1rem;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
   clip-path: polygon(0 0, 0 0, 0 0);
   line-height: inherit;
 }
@@ -231,6 +229,18 @@ ul, ol, li {
 .colorPurple .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorPurple.png");
 }
+.colorPurple input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorPurple.png");
+}
+.colorPurple input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorPurple.png");
+}
+.colorPurple .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorPurple.png");
+}
+.colorPurple .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorPurple.png");
+}
 
 .colorOrange {
   --f-primary: #FF6F00;
@@ -245,6 +255,18 @@ ul, ol, li {
 }
 .colorOrange .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorOrange.png");
+}
+.colorOrange input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorOrange.png");
+}
+.colorOrange input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorOrange.png");
+}
+.colorOrange .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorOrange.png");
+}
+.colorOrange .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorOrange.png");
 }
 
 .colorMandarin {
@@ -261,6 +283,18 @@ ul, ol, li {
 .colorMandarin .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorMandarin.png");
 }
+.colorMandarin input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorMandarin.png");
+}
+.colorMandarin input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorMandarin.png");
+}
+.colorMandarin .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorMandarin.png");
+}
+.colorMandarin .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorMandarin.png");
+}
 
 .colorRed {
   --f-primary: #FF5B6E;
@@ -275,6 +309,18 @@ ul, ol, li {
 }
 .colorRed .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorRed.png");
+}
+.colorRed input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorRed.png");
+}
+.colorRed input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorRed.png");
+}
+.colorRed .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorRed.png");
+}
+.colorRed .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorRed.png");
 }
 
 .colorCyan {
@@ -291,6 +337,18 @@ ul, ol, li {
 .colorCyan .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorCyan.png");
 }
+.colorCyan input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorCyan.png");
+}
+.colorCyan input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorCyan.png");
+}
+.colorCyan .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorCyan.png");
+}
+.colorCyan .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorCyan.png");
+}
 
 .colorNavy {
   --f-primary: #1610C8;
@@ -305,6 +363,18 @@ ul, ol, li {
 }
 .colorNavy .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorNavy.png");
+}
+.colorNavy input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorNavy.png");
+}
+.colorNavy input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorNavy.png");
+}
+.colorNavy .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorNavy.png");
+}
+.colorNavy .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorNavy.png");
 }
 
 .colorBlue {
@@ -321,6 +391,18 @@ ul, ol, li {
 .colorBlue .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorBlue.png");
 }
+.colorBlue input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorBlue.png");
+}
+.colorBlue input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorBlue.png");
+}
+.colorBlue .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorBlue.png");
+}
+.colorBlue .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorBlue.png");
+}
 
 .colorskyblue {
   --f-primary: #1DB8EC;
@@ -335,6 +417,18 @@ ul, ol, li {
 }
 .colorskyblue .wrap footer .f-logo {
   background-image: url("../image/bg_logo_colorskyblue.png");
+}
+.colorskyblue input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-image: url("../image/bg_checkbox_colorskyblue.png");
+}
+.colorskyblue input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-image: url("../image/bg_radio_colorskyblue.png");
+}
+.colorskyblue .tree-wrap .jstree-container-ul .ico-hr-dep1 {
+  background-image: url("../image/bg_dep1_colorskyblue.png");
+}
+.colorskyblue .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl {
+  background-image: url("../image/bg_dep1_down_colorskyblue.png");
 }
 
 .table-jq.-scroll .ui-jqgrid .ui-jqgrid-htable {
@@ -645,7 +739,8 @@ ul, ol, li {
   background: url("../image/bg_dep1_down.png") 0 0/contain no-repeat;
 }
 .tree-wrap .jstree-container-ul > .jstree-node.jstree-open > .jstree-ocl {
-  background: url("../image/bg_dep1_up.png") 0 0/contain no-repeat;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .tree-wrap .jstree-container-ul > .jstree-node > .jstree-children {
   margin-top: 1.4rem;
@@ -658,7 +753,8 @@ ul, ol, li {
   background: url("../image/bg_dep2_down.png") 0 0/contain no-repeat;
 }
 .tree-wrap .jstree-container-ul > .jstree-node > .jstree-children > li:not(.jstree-leaf).jstree-open > .jstree-ocl {
-  background: url("../image/bg_dep2_up.png") 0 0/contain no-repeat;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .tree-wrap .jstree-container-ul > .jstree-node > .jstree-children > li:not(:last-child) {
   margin-bottom: 1.6rem;
@@ -1469,8 +1565,7 @@ nav .gnb:not(.laboratory-wrap ul) > li .laboratory-wrap .circle {
   width: 100%;
   height: 30rem;
   background-color: rgba(255, 255, 255, 0.4);
-  -webkit-backdrop-filter: blur(1.8rem);
-          backdrop-filter: blur(1.8rem);
+  backdrop-filter: blur(1.8rem);
   margin-top: -30rem;
   cursor: -webkit-grabbing;
   cursor: grabbing;

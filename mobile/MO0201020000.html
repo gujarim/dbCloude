@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판>통합게시판 상세</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap -detail"> <!-- 상세보기 페이지 -detail 추가 class="wrap -detail" -->
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container">
+            <div class="hgroup">
+                <button type="button" class="icon -back">뒤로가기</button>
+                <strong>게시판</strong>
+            </div>
+
+            <div class="board-view">
+                <div class="board-box">
+                    <em class="flag -board">자유게시판</em>
+                    <div class="view-title">
+                        <img src="image/profile.png" alt="">
+                        <strong>서디비</strong>
+                        <p>개발1팀<em>25.06.12</em><em>조회 100</em></p>
+                    </div>
+                    <div class="edit-view">
+                        <strong>클라우드오피스 그룹웨어 사용자 교육</strong><br><br>
+                        <p>
+                            안녕하세요, 개발1팀 서디비 대리입니다.<br>
+                            5월 27일(화) 오후 2시부터 클라우드오피스 그룹웨어 사용자 교육이 진행됩니다.<br><br>
+
+                            많은 분들의 관심과 참여를 부탁드립니다.<br>
+                            감사합니다.
+                        </p>
+                    </div>
+                    <button type="button" class="attachment"><p>클라우드 교육시간표.xlsx</p> <em>12kb</em></button>
+                </div>
+
+                <div class="comment-wrap -interval">
+                    <strong class="comment-total">댓글 <em>3</em></strong>
+
+                    <ul>
+                        <li>
+                            <div class="cot-info">
+                                <img src="image/profile.png" alt="">
+                                <div>
+                                    <p class="cot-prof"><strong>박디비</strong>개발2팀<em>2025.06.20 10:55:47</em></p>
+                                    <p class="cot-contents">
+                                        이디비님, 예상 항목이 누락되었습니다. 수정하여 재상신 바랍니다.
+                                    </p>
+                                    <button type="button" class="i-reply on">답글쓰기</button>
+                                </div>
+                            </div>
+                            <ul class="reply-wrap">
+                                <li>
+                                    <div class="cot-info">
+                                        <img src="image/profile.png" alt="">
+                                        <div>
+                                            <p class="cot-prof"><strong>박디비</strong>개발2팀<em>2025.06.20 10:55:47</em></p>
+                                            <p class="cot-contents">
+                                                이디비님, 예상 항목이 누락되었습니다. 수정하여 재상신 바랍니다.
+                                            </p>
+                                            <button type="button" class="i-reply on">답글쓰기</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="cot-info">
+                                <img src="image/profile.png" alt="">
+                                <div class="">
+                                    <p class="cot-prof"><strong>박디비</strong>개발2팀<em>2025.06.20 10:55:47</em></p>
+                                    <p class="cot-contents">
+                                        이디비님, 예상 항목이 누락되었습니다. 수정하여 재상신 바랍니다.
+                                    </p>
+                                    <button type="button" class="i-reply">답글취소</button>
+                                </div>
+                            </div>
+                            <div class="comment-write">
+                                <img src="image/profile.png" alt="">
+                                <p>
+                                    <textarea name="" id="" placeholder="답글을 입력해주세요."></textarea>
+                                    <button tupe="button" class="icon -send">보내기</button>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="arrow-wrap">
+                    <li><a href="">이전글<p>전사공시</p></a></li>
+                    <li><a href="">다음글<p>[보안공지] 악성메일 유포에 따른 열람</p></a></li>
+                </ul>
+
+                <div class="comment-write">
+                    <img src="image/profile.png" alt="">
+                    <p>
+                        <textarea name="" id="" placeholder="답글을 입력해주세요.">답글을 입력해주세요.</textarea>
+                        <button tupe="button" class="icon -send">보내기</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <footer id="footer"></footer> -->
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/ui-content.js"></script>

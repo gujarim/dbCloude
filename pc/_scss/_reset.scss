@@ -166,10 +166,9 @@ ul,ol,li{
 }
 
 //컬러별 색
-//로고
+//로고 
 //사이드메뉴 아이콘
-//체크, 라디오
-//jstree에 들어가는 아이콘
+//라디오
 .colorPurple{
     --f-primary: #9050FF; //컬러 - 메인 텍스트
 
@@ -185,7 +184,7 @@ ul,ol,li{
             header{
                 .logo{
                     a{
-                        @include bg-url(logo_colorPurple);
+                        @include bg-url(logo_colorPurple); //헤더로고
                     }
                 }
             }
@@ -193,9 +192,29 @@ ul,ol,li{
 
         footer{
             .f-logo{
-                @include bg-url(logo_colorPurple);
+                @include bg-url(logo_colorPurple); //푸터로고
             }
         }
+    }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorPurple); //체크박스
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorPurple); //라디오
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{ //jstree 1depth 아이콘
+        @include bg-url(dep1_colorPurple);
+    }
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{ //jstree 1depth up/down 아이콘
+        @include bg-url(dep1_down_colorPurple);
     }
 }
 
@@ -226,6 +245,26 @@ ul,ol,li{
             }
         }
     }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorOrange);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorOrange);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorOrange);
+    }
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorOrange);
+    }
 }
 
 .colorMandarin{
@@ -254,6 +293,27 @@ ul,ol,li{
                 @include bg-url(logo_colorMandarin);
             }
         }
+    }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorMandarin);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorMandarin);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorMandarin);
+    }
+    
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorMandarin);
     }
 }
 
@@ -284,6 +344,26 @@ ul,ol,li{
             }
         }
     }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorRed);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorRed);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorRed);
+    }
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorRed);
+    }
 }
 
 .colorCyan{
@@ -312,6 +392,26 @@ ul,ol,li{
                 @include bg-url(logo_colorCyan);
             }
         }
+    }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorCyan);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorCyan);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorCyan);
+    }
+    
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorCyan);
     }
 }
 
@@ -342,6 +442,26 @@ ul,ol,li{
             }
         }
     }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorNavy);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorNavy);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorNavy);
+    }
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorNavy);
+    }
 }
 
 .colorBlue{
@@ -371,6 +491,26 @@ ul,ol,li{
             }
         }
     }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorBlue);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorBlue);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorBlue);
+    }
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorBlue);
+    }
 }
 
 .colorskyblue{
@@ -399,5 +539,25 @@ ul,ol,li{
                 @include bg-url(logo_colorskyblue);
             }
         }
+    }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
+        &:checked{
+            @include bg-url(checkbox_colorskyblue);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){
+        &:checked{
+            @include bg-url(radio_colorskyblue);
+        }
+    }
+
+    .tree-wrap .jstree-container-ul .ico-hr-dep1{
+        @include bg-url(dep1_colorskyblue);
+    }
+
+    .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
+        @include bg-url(dep1_down_colorskyblue);
     }
 }
