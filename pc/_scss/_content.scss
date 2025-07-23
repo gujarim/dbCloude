@@ -301,6 +301,13 @@
     }
 }
 
+.updown{
+    &::after{
+        @include icon(24, 'updown', 'pseudo');
+        margin: rem(-1) 0 0 rem(8);
+    }
+}
+
 .detail-view{
     @include fontHidden;
     @include bg(detail_view, 0 0, rem(20) rem(20));
@@ -787,8 +794,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             }
 
             label{
-                // min-width: rem(100);
-
                 &:not(:last-child){
                     margin-right: rem(50);
                 }
@@ -1348,6 +1353,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     &.-lg{
         .pop-box{
             min-width: rem(1160);
+            max-width: rem(1160);
         }
     }
 

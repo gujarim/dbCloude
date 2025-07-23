@@ -581,6 +581,32 @@ const widgetDrag = () => {
     });
 }
 
+//결재 진행상황 열고닫기
+const approvalToggle = () => {
+    const approvalButtons = document.querySelectorAll('.updown');
+
+    approvalButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const parentLi = this.closest('li'); // 현재 버튼이 속한 li
+            if (!parentLi) return;
+
+            // 토글 대상 찾기
+            const setProgress = parentLi.querySelector('.set-progress');
+            const subUl = parentLi.querySelector('ul');
+
+            // set-progress 토글
+            if (setProgress) {
+                setProgress.classList.toggle('-open');
+            }
+
+            // li안의 ul 토글 (set-progress가 없으면)
+            if (subUl && subUl !== setProgress) {
+                subUl.classList.toggle('-open');
+            }
+        });
+    });
+};
+
 window.addEventListener('load', () => {
     toggleTable();
     tab();
@@ -588,4 +614,5 @@ window.addEventListener('load', () => {
     tablistScroll();
     widgetClick();
     widgetDrag();
+    approvalToggle();
 });

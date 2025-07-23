@@ -230,7 +230,7 @@ html, body {
   display: none;
 }
 .wrap.-detail .container {
-  padding-bottom: 0;
+  padding-bottom: 1.6rem;
 }
 
 header {
@@ -867,6 +867,11 @@ input[type=checkbox] + label {
   border: 0.1rem solid #B4B8BD;
   background-color: var(--f-white);
 }
+.btn.-line3 {
+  border: 0.1rem solid #D2D6DA;
+  background-color: var(--f-white);
+  width: 100%;
+}
 .btn.-primary2 {
   border-radius: 0.8rem;
   background-color: var(--bg-primary2);
@@ -947,7 +952,43 @@ input[type=checkbox] + label {
   width: 2.4rem;
   height: 2.4rem;
   background-image: url("../image/icon_moreview.png");
-  margin-right: 0.4rem;
+  margin: 0.1rem 0.4rem 0 0;
+}
+
+.i-send {
+  border-radius: 0.8rem;
+  font-weight: 600;
+  height: 4rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0.1rem solid #B4B8BD;
+  width: 100%;
+  color: var(--f-base);
+  margin-top: 2.4rem;
+}
+.i-send::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../image/icon_send.png");
+  margin: 0.1rem 0.4rem 0 0;
+}
+
+.i-approval::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-image: url("../image/icon_approval.png");
+  margin: -0.1rem 0 0 1.2rem;
 }
 
 .icon {
@@ -1002,6 +1043,21 @@ input[type=checkbox] + label {
 .flag.-partner {
   border-color: #B6C3E3;
   color: #2E55B7;
+}
+.flag.-complete {
+  background-color: #F2F6FF;
+  border-color: #B6C3E3;
+  color: #2E55B7;
+}
+.flag.-true {
+  background-color: #ECFCF6;
+  border-color: #B6E3D0;
+  color: #0DA161;
+}
+.flag.-false {
+  background-color: #FFF5F3;
+  border-color: #FAC3BB;
+  color: #EF503A;
 }
 
 .menu-btn {
@@ -1067,6 +1123,7 @@ input[type=checkbox] + label {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-top: 0;
 }
 .btn-wrap.-sticky {
   position: fixed;
@@ -1088,7 +1145,7 @@ input[type=checkbox] + label {
   top: 0;
   left: 0;
   z-index: 1;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   padding-top: 1rem;
   background-color: var(--f-white);
 }
@@ -1164,6 +1221,45 @@ input[type=checkbox] + label {
 .tab-wrap:not(nav .tab-wrap).-line .panels > div {
   padding: 2.4rem 0 0;
 }
+.tab-wrap:not(nav .tab-wrap).-box .tablist {
+  border-radius: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F4F5F7;
+  padding: 0.4rem;
+  height: 5.6rem;
+}
+.tab-wrap:not(nav .tab-wrap).-box .tablist li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  height: 100%;
+}
+.tab-wrap:not(nav .tab-wrap).-box .tablist li.on a {
+  border-radius: 0.8rem;
+  font-weight: 600;
+  color: var(--f-base);
+  background-color: var(--f-white);
+  height: 100%;
+}
+.tab-wrap:not(nav .tab-wrap).-box .tablist li a {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #606366;
+  display: block;
+  line-height: 4.8rem;
+}
+.tab-wrap:not(nav .tab-wrap).-box .panels {
+  margin-top: 1.6rem;
+}
 
 .pop-wrap {
   position: fixed;
@@ -1184,7 +1280,7 @@ input[type=checkbox] + label {
   background-color: var(--bg-menu);
 }
 .pop-wrap.-full .pop-box:has(.pop-btn) {
-  grid-template-rows: 4.8rem 1fr 8.8rem;
+  grid-template-rows: 4.8rem 1fr 9.6rem;
 }
 .pop-wrap.-middle {
   background-color: rgba(0, 0, 0, 0.6);
@@ -1328,6 +1424,7 @@ input[type=checkbox] + label {
 .pop-wrap .pop-btn button.-line {
   border-color: #B4B8BD;
   color: var(--f-base);
+  background-color: var(--f-white);
 }
 .pop-wrap .btn-close {
   background: url("../image/bg_menuBtn_close.png") 0 0/3.2rem 3.2rem no-repeat;
@@ -1772,6 +1869,7 @@ input[type=checkbox] + label {
   padding: 2.4rem 2rem;
   margin: 0 -2rem;
   gap: 1.4rem;
+  margin-bottom: -13.6rem;
 }
 .comment-write img {
   width: 4rem;
@@ -2082,4 +2180,423 @@ input[type=checkbox] + label {
   gap: 0 1.2rem;
   grid-column: 2/2;
   grid-row: 1/3;
+}
+
+.box-edit {
+  background-color: #D9D9D9;
+}
+
+.epayment-wrap .epayment-tit {
+  display: grid;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2.4rem;
+}
+.epayment-wrap .epayment-tit strong {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 3.1rem;
+  grid-column: 1/1;
+  margin-bottom: 0.4rem;
+}
+.epayment-wrap .epayment-tit p {
+  grid-column: 2/1;
+  color: var(--f-menu);
+}
+.epayment-wrap .epayment-tit p em::before {
+  content: "";
+  width: 0.1rem;
+  height: 1.4rem;
+  background-color: var(--line-table2);
+  display: inline-block;
+  margin: 0 0.8rem;
+  vertical-align: middle;
+}
+.epayment-wrap .epayment-tit button {
+  grid-column: 3/3;
+  grid-row: 1/3;
+}
+.epayment-wrap .epayment-tit .btn-wrap {
+  grid-column: 1/4;
+  margin-top: 1.6rem;
+}
+.epayment-wrap .epayment-tit .btn-wrap button {
+  border-color: var(--line-table2);
+}
+.epayment-wrap .purchase-box {
+  margin: 2.4rem 0;
+  padding-top: 1.6rem;
+  border-top: 0.2rem solid var(--f-menu);
+}
+.epayment-wrap .btn-wrap {
+  margin-top: 6rem;
+}
+.epayment-wrap .btn-wrap button {
+  font-weight: 600;
+}
+
+.updownBtn {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  padding: 1.6rem 0;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+.updownBtn::after {
+  content: "";
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../image/bg_downB.png") 0 0/2.4rem 2.4rem no-repeat;
+  position: absolute;
+  top: 1.6rem;
+  right: 0;
+}
+.updownBtn em {
+  display: inline-block;
+  color: var(--f-primary);
+  margin-left: 0.4rem;
+}
+
+.-updownToggle {
+  border-bottom: 0.1rem solid var(--line-base);
+}
+.-updownToggle.on .updownBtn::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.-updownToggle.on ul {
+  display: block;
+}
+.-updownToggle ul {
+  margin-bottom: 3.2rem;
+  display: none;
+}
+
+.payment-document ul li:not(:last-child) {
+  border-bottom: 0.1rem solid var(--line-table3);
+}
+.payment-document ul li .title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  margin-bottom: 0.4rem;
+}
+.payment-document ul li .title em {
+  margin-left: 0.4rem;
+}
+.payment-document ul li .info {
+  color: var(--f-menu);
+}
+.payment-document ul li .info em {
+  display: inline-block;
+}
+.payment-document ul li .info em::before {
+  content: "";
+  width: 0.1rem;
+  height: 1.4rem;
+  background-color: var(--line-table2);
+  display: inline-block;
+  margin: 0 0.8rem;
+  vertical-align: middle;
+}
+
+.attachment-wrap ul li {
+  padding: 0.9rem 0;
+  line-height: 2.2rem;
+}
+.attachment-wrap ul li:not(:last-child) {
+  border-bottom: 0.1rem solid var(--line-table3);
+}
+.attachment-wrap ul li::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../image/icon_attachment.png");
+  margin-right: 0.8rem;
+}
+
+.comment-opinion {
+  border-bottom: 0;
+}
+
+.approval-wrap button {
+  margin-bottom: 1.6rem;
+}
+.approval-wrap ul li {
+  padding: 1.6rem 0;
+}
+.approval-wrap ul li:not(:last-child) {
+  border-bottom: 0.1rem solid var(--line-table3);
+}
+.approval-wrap ul li .title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  margin-bottom: 0.4rem;
+}
+.approval-wrap ul li .title em {
+  margin-left: 0.8rem;
+}
+.approval-wrap ul li .info {
+  color: var(--f-menu);
+  line-height: 2.2rem;
+}
+.approval-wrap ul li .info em {
+  display: inline-block;
+}
+.approval-wrap ul li .info em::before {
+  content: "";
+  width: 0.1rem;
+  height: 1.4rem;
+  background-color: var(--line-table2);
+  display: inline-block;
+  margin: 0 0.8rem;
+  vertical-align: middle;
+}
+.approval-wrap ul li .area {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 0.4rem;
+}
+.approval-wrap textarea {
+  border-radius: 1.2rem;
+  margin-top: 1.6rem;
+  border: 0.1rem solid var(--line-table2);
+  height: 9.6rem;
+  padding: 1rem 1.6rem;
+  width: 100%;
+}
+
+.payment-progress {
+  border-radius: 2rem;
+  background-color: var(--f-white);
+  padding: 2.4rem;
+}
+.payment-progress ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0 1.6rem;
+  position: relative;
+}
+.payment-progress ul li:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.payment-progress ul li:not(:last-child)::after {
+  content: "";
+  width: 0.3rem;
+  height: 4rem;
+  background-color: var(--f-menu);
+  border-radius: 11.1rem;
+  position: absolute;
+  top: 5.4rem;
+  bottom: 0;
+  left: 2.3rem;
+}
+.payment-progress ul li.on img {
+  border-color: var(--f-primary);
+}
+.payment-progress ul li.on > .img-view {
+  background-image: url("../image/bg_approval_on.png");
+  border-color: var(--f-primary);
+}
+.payment-progress ul li.on::after {
+  background-color: var(--bg-primary);
+}
+.payment-progress ul li:has(.-open) > .prgress-profile .i-approval:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.payment-progress ul li img, .payment-progress ul li .img-view, .payment-progress ul li .img-docview {
+  border-radius: 100%;
+  border: 0.3rem solid var(--f-menu);
+  width: 4.8rem;
+  height: 4.8rem;
+}
+.payment-progress ul li .img-view {
+  background: url("../image/bg_approval_off.png") 0 0/contain no-repeat;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-color: var(--f-menu);
+}
+.payment-progress ul li .img-docview {
+  background: url("../image/bg_approval_nchk.png") 0 0/contain no-repeat;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+}
+.payment-progress ul li .prgress-profile .status {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--f-secondary);
+  margin-bottom: 0.4rem;
+}
+.payment-progress ul li .prgress-profile .status em {
+  margin: 0 0 0 0.4rem;
+  display: inline-block;
+}
+.payment-progress ul li .prgress-profile strong, .payment-progress ul li .prgress-profile button {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  display: block;
+}
+.payment-progress ul li .prgress-profile strong span, .payment-progress ul li .prgress-profile button span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--f-secondary);
+  display: inline-block;
+  margin-left: 0.8rem;
+}
+.payment-progress ul li .prgress-profile strong span em, .payment-progress ul li .prgress-profile button span em {
+  border-left: 0.1rem solid var(--line-table3);
+  display: inline-block;
+  line-height: 1.2rem;
+  margin-left: 0.4rem;
+  padding-left: 0.8rem;
+  font-size: 1.3rem;
+}
+.payment-progress ul li .prgress-profile .day {
+  font-size: 1.3rem;
+  font-weight: 400;
+  display: block;
+  color: var(--f-secondary);
+  margin-top: 0.4rem;
+}
+.payment-progress ul li .in-progress1 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 3.5rem 0 0 5rem;
+  position: relative;
+  display: none;
+}
+.payment-progress ul li .in-progress1.-open {
+  display: block;
+}
+.payment-progress ul li .in-progress1::before {
+  content: "";
+  width: 2rem;
+  height: 0.3rem;
+  background-color: var(--bg-primary);
+  position: absolute;
+  top: 5.7rem;
+  left: 2.4rem;
+}
+.payment-progress ul li .in-progress1::after {
+  content: "";
+  width: 0.3rem;
+  height: 5.7rem;
+  background-color: var(--bg-primary);
+  position: absolute;
+  top: 0rem;
+  left: 2.4rem;
+}
+.payment-progress ul li .in-progress1 > li:not(:last-child) {
+  margin-bottom: 2.8rem;
+}
+.payment-progress ul li .in-progress1 > li:not(:last-child)::after {
+  height: calc(100% - 30px);
+  background-color: var(--f-menu);
+}
+.payment-progress ul li .in-progress1 > li.on::after {
+  height: calc(100% - 30px);
+  background-color: var(--bg-primary);
+}
+.payment-progress ul li .in-progress2 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 2.4rem 0 0 6rem;
+  display: none;
+}
+.payment-progress ul li .in-progress2.-open {
+  display: block;
+}
+.payment-progress ul li .in-progress2 li {
+  gap: 0 0.8rem;
+}
+.payment-progress ul li .in-progress2 li:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+.payment-progress ul li .in-progress2 li::after {
+  display: none;
+}
+.payment-progress ul li .in-progress2 li.on .img-docview {
+  background: url("../image/bg_approval_chk.png") 0 0/contain no-repeat;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+}
+.payment-progress ul li .in-progress2 li .status {
+  color: var(--f-base);
+}
+.payment-progress ul li .in-progress2 li .status em {
+  color: var(--f-secondary);
+}
+.payment-progress ul li .in-progress2 li strong span {
+  margin-left: 0;
+}
+.payment-progress ul li .-parallel {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: none;
+  padding-top: 5rem;
+}
+.payment-progress ul li .-parallel.-open {
+  display: block;
+}
+.payment-progress ul li .-parallel.on::before {
+  background-color: var(--f-primary);
+}
+.payment-progress ul li .-parallel::before {
+  content: "";
+  width: 0.3rem;
+  height: 4rem;
+  background-color: var(--f-menu);
+  border-radius: 11.1rem;
+  position: absolute;
+  top: 5.4rem;
+  bottom: 0;
+  left: 2.3rem;
+}
+.payment-progress ul li .-parallel li:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.payment-progress ul li .-parallel li:not(:last-child)::after {
+  height: calc(100% - 1rem);
+}
+.payment-progress ul li .-parallel li .prgress-profile .status em {
+  margin-left: 0;
+}
+.payment-progress ul li .-parallel li .prgress-profile strong, .payment-progress ul li .-parallel li .prgress-profile button {
+  color: var(--f-base);
 }

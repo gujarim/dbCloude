@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자결재>미결함 상세</title>
+    
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/jstree.style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap -detail"> <!-- 상세보기 페이지 -detail 추가 class="wrap -detail" -->
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <div class="container">
+            <div class="hgroup">
+                <button type="button" class="icon -back">뒤로가기</button>
+                <strong>문서상세</strong>
+            </div>
+
+            <div class="epayment-wrap">
+                <div class="epayment-tit">
+                    <strong>구매요청서</strong>
+                    <p>한디비<em>2025.05.22</em><em>15:44</em></p>
+                    <button type="button" class="icon -bookmark">즐겨찾기</button>
+
+                    <div class="btn-wrap">
+                        <button type="button" class="i-moreview">확대보기</button>
+                        <button type="button" class="i-send">공람발송</button>
+                    </div>
+                </div>
+                
+                <div class="purchase-box">
+                    <div class="box-edit" style="height:500px;"></div>
+                </div>
+
+                <div class="payment-document -updownToggle on">
+                    <button type="button" class="updownBtn">기결제문서<em>1</em></button>
+                    <ul>
+                        <li>
+                            <p class="title">PC구매요청서<em class="flag -complete">완결</em></p>
+                            <p class="info">김디비<em>2025.05.22 15:44:57</em></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="attachment-wrap -updownToggle">
+                    <button type="button" class="updownBtn">첨부파일<em>2</em></button>
+                    <ul>
+                        <li>pc_img1.jpg</li>
+                        <li>pc_img2.jpg</li>
+                    </ul>
+                </div>
+
+                <div class="comment-opinion -updownToggle">
+                    <button type="button" class="updownBtn">댓글의견<em>2</em></button>
+                </div>
+
+                <div class="tab-wrap -box -interval">
+                    <ul class="tablist" role="tablist">
+                        <li class="on" role="tab"><a href="">결재선</a></li>
+                        <li role="tab"><a href="">통보라인</a></li>
+                    </ul>
+                    <div class="panels">
+                        <div class="on" role="tabpanel">
+                            <div class="approval-wrap">
+                                <button type="button" class="btn -lg -line3">진행사항 보기</button>
+                                <ul>
+                                    <li>
+                                        <p class="title">이디비<em class="flag -true">완결</em></p>
+                                        <p class="info">개발2팀<em>주임</em><em>2025.05.22 15:44:57</em></p>
+                                        <p class="area">상신합니다.</p>
+                                    </li>
+                                    <li>
+                                        <p class="title">이디비<em class="flag -false">완결</em></p>
+                                        <p class="info">개발2팀<em>주임</em><em>2025.05.22 15:44:57</em></p>
+                                        <p class="area">상신합니다.</p>
+                                    </li>
+                                </ul>
+                                <textarea name="" id="" rows="3" placeholder="의견을 입력해주세요"></textarea>
+                            </div>
+                        </div>
+                        <div role="tabpanel">
+                            <p class="no-data">조회된 내역이 없습니다.</p>
+
+                            <div class="approval-wrap">
+                                <textarea name="" id="" rows="3" placeholder="의견을 입력해주세요"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-wrap">
+                    <button type="button" class="btn -xlg -line2">반려</button>
+                    <button type="button" class="btn -xlg -primary">승인</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <footer id="footer"></footer> -->
+    </div>
+</body>
+</html>
+
+<script src="js/include.js" defer></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/grid.locale-en.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/jstree.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/ui-content.js"></script>

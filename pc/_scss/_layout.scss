@@ -213,6 +213,13 @@ nav{
                 }
             }
 
+            img{
+                display: none;
+                width: rem(24);
+                height: rem(24);
+                margin: 0 auto rem(6);
+            }
+
             &.home{
                 a{
                     &::before{
@@ -312,71 +319,82 @@ nav{
                     font-weight: 700;
                     color: var(--f-primary);
                     background-color: var(--bg-mhover);
+
+                    img{
+                        display:block;
+                    }
                 }
 
-                &.home{
-                    a{
-                        &::before{
-                            @include icon(24, 'home_on', 'pseudo');
-                        }
+                &:not(.laboratory) a{
+                    &::before{
+                        display: none !important;
                     }
                 }
-                &.favorite{
-                    a{
-                        &::before{
-                            @include icon(24, 'favorite_on', 'pseudo');
-                        }
-                    }
-                }
-                &.mail{
-                    a{
-                        &::before{
-                            @include icon(24, 'mail_on', 'pseudo');
-                        }
-                    }
-                }
-                &.nboard{
-                    a{
-                        &::before{
-                            @include icon(24, 'nboard_on', 'pseudo');
-                        }
-                    }
-                }
-                &.epayment{
-                    a{
-                        &::before{
-                            @include icon(24, 'epayment_on', 'pseudo');
-                        }
-                    }
-                }
-                &.reservation{
-                    a{
-                        &::before{
-                            @include icon(24, 'reservation_on', 'pseudo');
-                        }
-                    }
-                }
-                &.drive{
-                    a{
-                        &::before{
-                            @include icon(24, 'drive_on', 'pseudo');
-                        }
-                    }
-                }
-                &.management{
-                    a{
-                        &::before{
-                            @include icon(24, 'management_on', 'pseudo');
-                        }
-                    }
-                }
-                &.hr{
-                    a{
-                        &::before{
-                            @include icon(24, 'hr_on', 'pseudo');
-                        }
-                    }
-                }
+
+
+                // &.home{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'home_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.favorite{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'favorite_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.mail{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'mail_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.nboard{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'nboard_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.epayment{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'epayment_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.reservation{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'reservation_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.drive{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'drive_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.management{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'management_on', 'pseudo');
+                //         }
+                //     }
+                // }
+                // &.hr{
+                //     a{
+                //         &::before{
+                //             @include icon(24, 'hr_on', 'pseudo');
+                //         }
+                //     }
+                // }
             }
 
             .laboratory-wrap{
@@ -387,10 +405,6 @@ nav{
 
                 &.open{
                     transform: translate(rem(-118), 0);
-
-                    // .circle{
-                    //     margin-top: rem(-300);
-                    // }
                 }
                 
                 .circle{
@@ -401,7 +415,7 @@ nav{
                     height: rem(300);
                     background-color: rgba(255,255,255,.4);
                     backdrop-filter: blur(rem(18));
-                    margin-top: rem(-300);
+                    margin-top: rem(-256);
                     cursor: grabbing;
 
                     .circle-content{
@@ -1521,7 +1535,6 @@ footer{
         .main-list{
             li{
                 a{
-                    // padding: rem(12) 0 0;
                     display: grid;
                     grid-template-columns: 3fr 1fr;
 
@@ -2712,7 +2725,6 @@ footer{
 
         .table-jq{
             width: auto;
-            // width: calc(100% - rem(320));  
         }
     }
 }
@@ -2887,27 +2899,72 @@ footer{
     ul{
         li{
             @include flex(flex, flex-start, center);
+            flex-wrap: wrap;
             gap: 0 rem(24);
             position: relative;
             
-            &:not(:last-child){
-                margin-bottom: rem(104);
+            &:not(:first-child){
+                margin-top: rem(104);
 
-                &::after{
+                &::before{
                     content:'';
                     width: rem(4);
-                    height: rem(100);
-                    background-color: var(--bg-primary);
+                    height: rem(90);
+                    background-color: var(--f-menu);
                     @include rounded(rem(111));
-                    @include position(absolute, null, null, rem(-100), rem(26));
+                    @include position(absolute, rem(-100), null, null, rem(26));
                 }
             }
 
-            img{
+            &.on{
+                img{
+                    border-color: var(--bg-primary);
+                }
+
+                &>.img-team{
+                    @include bg-url(approval_on);
+                    border-color: var(--bg-primary);
+                }
+                &>.img-chk{
+                    @include  bg-url(chk_on);
+                }
+
+                &::before{
+                    background-color: var(--bg-primary);
+                }
+            }
+
+            &:has(.-open){
+                &>.prgress-profile{
+                    .updown{
+                        
+                        &:after{
+                            transform: translateY(-2px) rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            img, .img-team, .img-docview{
                 @include rounded(100%);
-                border: rem(4) solid var(--f-primary);
+                border: rem(4) solid var(--f-menu);
                 width: rem(56);
                 height: rem(56);
+            }
+
+            .img-team{
+                @include bg(approval_off, 50% 50%, 100% 100%);
+                @include fontHidden;
+                width: rem(56);
+                height: rem(56);
+            }
+
+            .img-chk{
+                @include bg(chk_off, 50% 50%, rem(24) rem(24));
+                @include fontHidden;
+                width: rem(56);
+                height: rem(56);
+                border: 0;
             }
 
             .prgress-profile{
@@ -2945,6 +3002,171 @@ footer{
                     display: block;
                     color: var(--f-secondary);
                     margin-top: rem(6);
+                }
+            }
+
+            .set-progress{
+                @include flex(flex, flex-start, flex-start);
+                flex-basis: 100%;
+                display: none;
+                margin-top: rem(24);
+
+                &.-open{
+                    display: flex;
+                }
+            }
+
+            .in-progress0{
+                width: rem(320);
+
+                li{
+                    &::before{
+                        display: none;
+                    }
+
+                    &:not(:first-child){
+                        margin-top: rem(24);
+                    }
+
+                    .prgress-profile{
+                        strong{
+                            font-size: rem(16);
+                            line-height: rem(26);
+                        }
+
+                        .day{
+                            font-size: rem(13);
+                            margin-top: 0;
+                            color: var(--f-menu);
+                            line-height: rem(21);
+                        }
+                    }
+                }
+            }
+
+            .in-progress1{
+                @include flex(flex, flex-start, flex-start);
+                padding: rem(45) 0 0 0;
+                position: relative;
+
+                &>li{
+                    width: rem(348);
+
+                    &:not(:first-child){
+                        margin-top: 0;
+
+                        &::before{
+                            width: rem(70);
+                            height: rem(4);
+                            top: rem(25);
+                            left: rem(-107);
+                        }
+                    }
+
+                    &:first-child{
+                        &:before{
+                            content:'';
+                            width: rem(118);
+                            height: rem(4);
+                            background-color: var(--f-menu);
+                            @include position(absolute, rem(-90), null, null, rem(-90));
+                        }
+
+                        &:after{
+                            content:'';
+                            width: rem(4);
+                            height: rem(68);
+                            background-color: var(--f-menu);
+                            @include position(absolute, rem(-90), null, null, rem(27));
+                        }
+                        
+
+                        &.on{
+                            &:before, &:after{
+                                background-color: var(--bg-primary);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .in-progress2{
+                flex-basis: 100%;
+                padding: rem(24) 0 0 rem(84);
+                display: none;
+
+                &.-open{
+                    display: block;
+                }
+
+                li{
+
+                    &:not(:first-child){
+                        margin-top: rem(24);
+                    }
+
+                    &::before{
+                        display: none;
+                    }
+
+                    &.on{
+                        .img-docview{
+                            @include bg(approval_chk);
+                            @include fontHidden;
+                            width: rem(24);
+                            height: rem(24);
+                            border: 0;
+                        }
+                    }
+
+                    .status{
+
+                        em{
+                            color: var(--f-secondary);
+                            margin-left: 0;
+                        }
+                    }
+
+                    strong{
+                        @include font(rem(16), 600);
+                    }
+                }
+            }
+
+            .-parallel{
+                @include flex(flex, flex-start, center);
+                flex-basis: 100%;
+                padding-top: rem(105);
+                gap: 0 rem(60);
+
+                li{
+                    display: block;
+                    width: rem(175);
+
+                    &:not(:first-child){
+                        margin-top: 0;
+
+                        &::before{
+                            width: rem(130);
+                            height: rem(4);
+                            top: rem(24);
+                            left :rem(-149);
+                        }
+                    }
+
+                    &:first-child{
+                        &::before{
+                            content:'';
+                            width: rem(4);
+                            height: rem(90);
+                            background-color: var(--f-menu);
+                            @include rounded(rem(111));
+                            @include position(absolute, rem(-99), null, null, rem(26));
+                        }    
+                    }
+                    .prgress-profile{
+                        margin-top: rem(27);
+                    }
                 }
             }
         }

@@ -77,7 +77,54 @@ const menuToggle = () => {
     });
 }
 
+// 미결함 상세 열고닫기
+const outstandingToggle = () => {
+    const toggleBoxes = document.querySelectorAll(".-updownToggle");
+
+    toggleBoxes.forEach(box => {
+        const btn = box.querySelector(".updownBtn");
+        const ul = box.querySelector("ul");
+
+        btn.addEventListener("click", () => {
+            const isOpen = box.classList.contains("on");
+
+            if (isOpen) {
+                // 닫기
+                box.classList.remove("on");
+                if (ul) ul.style.display = "none";
+            } else {
+                // 열기
+                box.classList.add("on");
+                if (ul) ul.style.display = "block";
+            }
+        });
+
+        // 초기 상태 (on 없는 경우 ul 숨김)
+        if (!box.classList.contains("on") && ul) {
+            ul.style.display = "none";
+        }
+    });
+}
+
+//결재 진행상황 열고닫기
+const approvalToggle = () => {
+    document.querySelectorAll(".i-approval").forEach(button => {
+        button.addEventListener("click", () => {
+            // 현재 클릭된 버튼의 부모 요소 <strong>의 형제 중 다음 ul 찾기
+            const parentLi = button.closest("li");
+            if (!parentLi) return;
+
+            const nextUl = parentLi.querySelector("ul");
+            if (nextUl) {
+                nextUl.classList.toggle("-open");
+            }
+        });
+    });
+}
+
 window.addEventListener('load', () => {
     updownToggle();
     tab();
+    outstandingToggle();
+    approvalToggle();
 });
