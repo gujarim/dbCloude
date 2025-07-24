@@ -183,18 +183,6 @@ ul,ol,li{
         filter: brightness(0) saturate(100%) invert(35%) sepia(33%) saturate(5477%) hue-rotate(244deg) brightness(101%) contrast(101%);
     }
 
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorPurple); //체크박스
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorPurple); //라디오
-        }
-    }
-
     .tree-wrap .jstree-container-ul .ico-hr-dep1{ //jstree 1depth 아이콘
         @include bg-url(dep1_colorPurple);
     }
@@ -216,18 +204,6 @@ ul,ol,li{
 
     .wrap nav .gnb:not(.laboratory-wrap ul) li img{
         filter: brightness(0) saturate(100%) invert(67%) sepia(73%) saturate(5368%) hue-rotate(359deg) brightness(99%) contrast(109%);
-    }
-
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorOrange);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorOrange);
-        }
     }
 
     .tree-wrap .jstree-container-ul .ico-hr-dep1{
@@ -253,23 +229,10 @@ ul,ol,li{
         filter: brightness(0) saturate(100%) invert(68%) sepia(80%) saturate(2154%) hue-rotate(356deg) brightness(97%) contrast(111%);
     }
 
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorMandarin);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorMandarin);
-        }
-    }
-
     .tree-wrap .jstree-container-ul .ico-hr-dep1{
         @include bg-url(dep1_colorMandarin);
     }
     
-
     .tree-wrap .jstree-container-ul > .jstree-node > .jstree-ocl{
         @include bg-url(dep1_down_colorMandarin);
     }
@@ -287,18 +250,6 @@ ul,ol,li{
 
     .wrap nav .gnb:not(.laboratory-wrap ul) li img{
         filter: brightness(0) saturate(100%) invert(74%) sepia(64%) saturate(5967%) hue-rotate(318deg) brightness(99%) contrast(106%);
-    }
-
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorRed);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorRed);
-        }
     }
 
     .tree-wrap .jstree-container-ul .ico-hr-dep1{
@@ -324,18 +275,6 @@ ul,ol,li{
         filter: brightness(0) saturate(100%) invert(69%) sepia(53%) saturate(3615%) hue-rotate(128deg) brightness(95%) contrast(83%);
     }
 
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorCyan);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorCyan);
-        }
-    }
-
     .tree-wrap .jstree-container-ul .ico-hr-dep1{
         @include bg-url(dep1_colorCyan);
     }
@@ -357,18 +296,6 @@ ul,ol,li{
 
     .wrap nav .gnb:not(.laboratory-wrap ul) li img{
         filter: brightness(0) saturate(100%) invert(15%) sepia(72%) saturate(4185%) hue-rotate(230deg) brightness(95%) contrast(104%);
-    }
-
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorNavy);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorNavy);
-        }
     }
 
     .tree-wrap .jstree-container-ul .ico-hr-dep1{
@@ -394,18 +321,6 @@ ul,ol,li{
         filter: brightness(0) saturate(100%) invert(48%) sepia(88%) saturate(3323%) hue-rotate(197deg) brightness(100%) contrast(102%);
     }
 
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorBlue);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorBlue);
-        }
-    }
-
     .tree-wrap .jstree-container-ul .ico-hr-dep1{
         @include bg-url(dep1_colorBlue);
     }
@@ -427,18 +342,6 @@ ul,ol,li{
 
     .wrap nav .gnb:not(.laboratory-wrap ul) li img{
         filter: brightness(0) saturate(100%) invert(60%) sepia(46%) saturate(1937%) hue-rotate(157deg) brightness(99%) contrast(87%);
-    }
-
-    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){
-        &:checked{
-            @include bg-url(checkbox_colorskyblue);
-        }
-    }
-
-    input[type=radio]:not(.approval-line input, .skin-wrap input){
-        &:checked{
-            @include bg-url(radio_colorskyblue);
-        }
     }
 
     .tree-wrap .jstree-container-ul .ico-hr-dep1{

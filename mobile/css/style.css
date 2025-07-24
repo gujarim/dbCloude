@@ -352,6 +352,59 @@ nav .gnb li.system a::before {
   height: 3.2rem;
   background-image: url("../image/icon_menu_system.png");
 }
+nav .gnb li.on a {
+  color: var(--f-primary);
+}
+nav .gnb li.on.payment a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url("../image/icon_menu_payment_on.png");
+}
+nav .gnb li.on.board a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url("../image/icon_menu_board_on.png");
+}
+nav .gnb li.on.search a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url("../image/icon_menu_search_on.png");
+}
+nav .gnb li.on.mail a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url("../image/icon_menu_mail_on.png");
+}
+nav .gnb li.on.system a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url("../image/icon_menu_system_on.png");
+}
 nav .side-menu {
   position: fixed;
   top: 0;
@@ -415,7 +468,7 @@ nav .side-menu .tab-wrap .tablist li a {
   display: block;
 }
 nav .side-menu .tab-wrap .tablist li a::before {
-  margin-right: 0.6rem;
+  margin: -0.2rem 0.6rem 0 0;
 }
 nav .side-menu .tab-wrap .tablist li.on a {
   color: var(--f-primary);
@@ -429,7 +482,7 @@ nav .side-menu .tab-wrap .tablist li.on.payment a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_payment_on.png");
+  background-image: url("../image/icon_side_payment_on.png");
 }
 nav .side-menu .tab-wrap .tablist li.on.board a::before {
   content: "";
@@ -439,7 +492,7 @@ nav .side-menu .tab-wrap .tablist li.on.board a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_board_on.png");
+  background-image: url("../image/icon_side_board_on.png");
 }
 nav .side-menu .tab-wrap .tablist li.on.employeeck a::before {
   content: "";
@@ -449,7 +502,7 @@ nav .side-menu .tab-wrap .tablist li.on.employeeck a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_search_on.png");
+  background-image: url("../image/icon_side_search_on.png");
 }
 nav .side-menu .tab-wrap .tablist li.on.mail a::before {
   content: "";
@@ -459,7 +512,7 @@ nav .side-menu .tab-wrap .tablist li.on.mail a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_mail_on.png");
+  background-image: url("../image/icon_side_mail_on.png");
 }
 nav .side-menu .tab-wrap .tablist li.payment a::before {
   content: "";
@@ -469,7 +522,7 @@ nav .side-menu .tab-wrap .tablist li.payment a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_payment.png");
+  background-image: url("../image/icon_side_payment.png");
 }
 nav .side-menu .tab-wrap .tablist li.board a::before {
   content: "";
@@ -479,7 +532,7 @@ nav .side-menu .tab-wrap .tablist li.board a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_board.png");
+  background-image: url("../image/icon_side_board.png");
 }
 nav .side-menu .tab-wrap .tablist li.employeeck a::before {
   content: "";
@@ -489,7 +542,7 @@ nav .side-menu .tab-wrap .tablist li.employeeck a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_search.png");
+  background-image: url("../image/icon_side_search.png");
 }
 nav .side-menu .tab-wrap .tablist li.mail a::before {
   content: "";
@@ -499,7 +552,7 @@ nav .side-menu .tab-wrap .tablist li.mail a::before {
   background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  background-image: url("../image/icon_menu_mail.png");
+  background-image: url("../image/icon_side_mail.png");
 }
 nav .side-menu .tab-wrap .panels {
   -webkit-box-flex: 1;
@@ -812,6 +865,9 @@ select:disabled {
   background-color: var(--bg-base);
   color: var(--f-menu);
 }
+select.error {
+  border-color: var(--f-flase);
+}
 
 input[type=text] {
   border-radius: 1.2rem;
@@ -823,6 +879,12 @@ input[type=text] {
   background-color: var(--f-white);
   width: 100%;
 }
+input[type=text]:-moz-read-only {
+  background-color: var(--bg-base);
+}
+input[type=text]:disabled, input[type=text]:read-only {
+  background-color: var(--bg-base);
+}
 
 input[type=checkbox] {
   background: url("../image/bg_chk_off.png") 0 0/contain no-repeat;
@@ -832,12 +894,35 @@ input[type=checkbox] {
   margin-top: -0.3rem;
 }
 input[type=checkbox]:checked {
-  background: url("../image/bg_chk_on.png") 0 0/contain no-repeat;
+  background-image: url("../image/bg_chk_on.png");
+}
+input[type=checkbox]:checked:disabled {
+  background-image: url("../image/bg_chk_dis_on.png");
+}
+input[type=checkbox]:disabled {
+  background-image: url("../image/bg_chk_dis.png");
 }
 input[type=checkbox] + label {
   font-size: 1.6rem;
   font-weight: 600;
   margin-left: 0.8rem;
+}
+
+input[type=radio] {
+  background: url("../image/bg_rd_off.png") 0 0/contain no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  vertical-align: middle;
+  margin-top: -0.3rem;
+}
+input[type=radio]:checked {
+  background-image: url("../image/bg_rd_on.png");
+}
+input[type=radio]:checked:disabled {
+  background-image: url("../image/bg_rd_dis_on.png");
+}
+input[type=radio]:disabled {
+  background-image: url("../image/bg_rd_dis.png");
 }
 
 .btn {
@@ -1021,6 +1106,9 @@ input[type=checkbox] + label {
   height: 2.4rem;
   vertical-align: middle;
 }
+.icon.-bookmark.on {
+  background-image: url("../image/bg_bookmark_on.png");
+}
 
 .flag {
   font-size: 1.2rem;
@@ -1130,8 +1218,18 @@ input[type=checkbox] + label {
   bottom: 7.6rem;
   left: 0;
   width: 100%;
-  padding: 1.6rem 2rem;
+  padding: 0 2rem 1.6rem;
   background-color: var(--f-white);
+}
+.btn-wrap.-sticky::before {
+  content: "";
+  position: absolute;
+  top: -1.6rem;
+  left: 0;
+  width: 100%;
+  height: 1.6rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFFFFF), color-stop(99.99%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 
 .hgroup {
@@ -1189,8 +1287,6 @@ input[type=checkbox] + label {
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  cursor: -webkit-grab;
-  cursor: grab;
 }
 .tab-wrap:not(nav .tab-wrap).-line .tablist li {
   -webkit-box-flex: 1;
@@ -1273,14 +1369,22 @@ input[type=checkbox] + label {
 .pop-wrap.-open {
   display: block;
 }
-.pop-wrap.-bgwhite {
-  background-color: var(--f-white) !important;
-}
 .pop-wrap.-full {
   background-color: var(--bg-menu);
 }
 .pop-wrap.-full .pop-box:has(.pop-btn) {
-  grid-template-rows: 4.8rem 1fr 9.6rem;
+  grid-template-rows: 4.8rem 1fr 7.4rem;
+}
+.pop-wrap.-full .pop-btn::before {
+  background: -webkit-gradient(linear, left bottom, left top, from(#F2F6FC), color-stop(99.99%, rgb(242, 246, 252)), to(rgb(242, 246, 252)));
+  background: linear-gradient(360deg, #F2F6FC 0%, rgb(242, 246, 252) 99.99%, rgb(242, 246, 252) 100%);
+}
+.pop-wrap.-bgwhite {
+  background-color: var(--f-white) !important;
+}
+.pop-wrap.-bgwhite .pop-btn::before {
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFFFFF), color-stop(99.99%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 .pop-wrap.-middle {
   background-color: rgba(0, 0, 0, 0.6);
@@ -1342,6 +1446,9 @@ input[type=checkbox] + label {
   border-top: 0.1rem solid var(--line-table3);
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
+}
+.pop-wrap.-alert .pop-btn::before {
+  display: none;
 }
 .pop-wrap.-alert .pop-btn button {
   color: var(--f-secondary);
@@ -1408,9 +1515,16 @@ input[type=checkbox] + label {
       -ms-flex-align: center;
           align-items: center;
   gap: 0 0.8rem;
-  padding: 2.4rem 2rem 1.6rem;
-  background: -webkit-gradient(linear, left bottom, left top, from(#ffffff), color-stop(99.99%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(360deg, #ffffff 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  padding: 0 2rem 1.6rem;
+}
+.pop-wrap .pop-btn::before {
+  content: "";
+  position: absolute;
+  top: -2.4rem;
+  left: 0;
+  width: 100%;
+  height: 2.4rem;
+  background-color: var(--f-white);
 }
 .pop-wrap .pop-btn button {
   border-radius: 1.2rem;
@@ -1454,6 +1568,10 @@ input[type=checkbox] + label {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
+  line-height: 2.6rem;
+}
+.board-list li a p {
+  line-height: 2.2rem;
 }
 .board-list li a p em {
   color: var(--f-menu);
@@ -1706,6 +1824,7 @@ input[type=checkbox] + label {
 
 .board-view {
   padding-top: 2.4rem;
+  margin-bottom: -1.6rem;
 }
 .board-view .board-box .flag {
   margin-bottom: 1.6rem;
@@ -1869,7 +1988,6 @@ input[type=checkbox] + label {
   padding: 2.4rem 2rem;
   margin: 0 -2rem;
   gap: 1.4rem;
-  margin-bottom: -13.6rem;
 }
 .comment-write img {
   width: 4rem;
@@ -1896,6 +2014,7 @@ input[type=checkbox] + label {
   line-height: 4rem;
 }
 .comment-write p textarea {
+  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -2414,10 +2533,6 @@ input[type=checkbox] + label {
 .payment-progress ul li.on img {
   border-color: var(--f-primary);
 }
-.payment-progress ul li.on > .img-view {
-  background-image: url("../image/bg_approval_on.png");
-  border-color: var(--f-primary);
-}
 .payment-progress ul li.on::after {
   background-color: var(--bg-primary);
 }
@@ -2425,21 +2540,11 @@ input[type=checkbox] + label {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.payment-progress ul li img, .payment-progress ul li .img-view, .payment-progress ul li .img-docview {
+.payment-progress ul li img, .payment-progress ul li .img-docview {
   border-radius: 100%;
   border: 0.3rem solid var(--f-menu);
   width: 4.8rem;
   height: 4.8rem;
-}
-.payment-progress ul li .img-view {
-  background: url("../image/bg_approval_off.png") 0 0/contain no-repeat;
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 100%;
-  display: inline-block;
-  width: 4.8rem;
-  height: 4.8rem;
-  border-color: var(--f-menu);
 }
 .payment-progress ul li .img-docview {
   background: url("../image/bg_approval_nchk.png") 0 0/contain no-repeat;
@@ -2466,6 +2571,7 @@ input[type=checkbox] + label {
   font-weight: 600;
   line-height: 2.6rem;
   display: block;
+  color: var(--f-base);
 }
 .payment-progress ul li .prgress-profile strong span, .payment-progress ul li .prgress-profile button span {
   font-size: 1.4rem;
@@ -2521,11 +2627,10 @@ input[type=checkbox] + label {
   margin-bottom: 2.8rem;
 }
 .payment-progress ul li .in-progress1 > li:not(:last-child)::after {
-  height: calc(100% - 30px);
+  height: calc(100% - 3rem);
   background-color: var(--f-menu);
 }
 .payment-progress ul li .in-progress1 > li.on::after {
-  height: calc(100% - 30px);
   background-color: var(--bg-primary);
 }
 .payment-progress ul li .in-progress2 {
@@ -2599,4 +2704,7 @@ input[type=checkbox] + label {
 }
 .payment-progress ul li .-parallel li .prgress-profile strong, .payment-progress ul li .-parallel li .prgress-profile button {
   color: var(--f-base);
+}
+.payment-progress ul li .-parallel li .in-progress2 li:not(:last-child) {
+  margin-bottom: 1.6rem;
 }

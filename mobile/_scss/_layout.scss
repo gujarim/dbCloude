@@ -4,12 +4,9 @@
 html,body{
     font-family: "Pretendard";
     font-size: rem(14);
-    // height: 100%;
 }
 
-.wrap{
-    // height: 100%;
-    
+.wrap{    
     &.main{
         background-color: var(--bg-menu);
 
@@ -118,6 +115,38 @@ nav{
                     @include icon(32, 'menu_system', 'pseudo');
                 }
             }
+
+            &.on{
+                a{
+                    color: var(--f-primary);
+                }
+                
+                &.payment{
+                    a::before{
+                        @include icon(32, 'menu_payment_on', 'pseudo');
+                    }
+                }
+                &.board{
+                    a::before{
+                        @include icon(32, 'menu_board_on', 'pseudo');
+                    }
+                }
+                &.search{
+                    a::before{
+                        @include icon(32, 'menu_search_on', 'pseudo');
+                    }
+                }
+                &.mail{
+                    a::before{
+                        @include icon(32, 'menu_mail_on', 'pseudo');
+                    }
+                }
+                &.system{
+                    a::before{
+                        @include icon(32, 'menu_system_on', 'pseudo');
+                    }
+                }
+            }
         }
     }
 
@@ -178,7 +207,7 @@ nav{
                         display: block;
 
                         &::before{
-                            margin-right: rem(6);
+                            margin: rem(-2) rem(6) 0 0;
                         }
                     }
 
@@ -190,44 +219,44 @@ nav{
 
                         &.payment{
                             a::before{
-                                @include icon(20, 'menu_payment_on', 'pseudo');
+                                @include icon(20, 'side_payment_on', 'pseudo');
                             }
                         }
                         &.board{
                             a::before{
-                                @include icon(20, 'menu_board_on', 'pseudo');
+                                @include icon(20, 'side_board_on', 'pseudo');
                             }
                         }
                         &.employeeck{
                             a::before{
-                                @include icon(20, 'menu_search_on', 'pseudo');
+                                @include icon(20, 'side_search_on', 'pseudo');
                             }
                         }
                         &.mail{
                             a::before{
-                                @include icon(20, 'menu_mail_on', 'pseudo');
+                                @include icon(20, 'side_mail_on', 'pseudo');
                             }
                         }
                     }
 
                     &.payment{
                         a::before{
-                            @include icon(20, 'menu_payment', 'pseudo');
+                            @include icon(20, 'side_payment', 'pseudo');
                         }
                     }
                     &.board{
                         a::before{
-                            @include icon(20, 'menu_board', 'pseudo');
+                            @include icon(20, 'side_board', 'pseudo');
                         }
                     }
                     &.employeeck{
                         a::before{
-                            @include icon(20, 'menu_search', 'pseudo');
+                            @include icon(20, 'side_search', 'pseudo');
                         }
                     }
                     &.mail{
                         a::before{
-                            @include icon(20, 'menu_mail', 'pseudo');
+                            @include icon(20, 'side_mail', 'pseudo');
                         }
                     }
                 }
@@ -273,7 +302,6 @@ nav{
 }
 
 .container{
-    // height: 100%;
     padding: 0 rem(20) rem(136);
 
     &:has(.btn-wrap.-sticky){
@@ -545,6 +573,10 @@ select{
         background-color: var(--bg-base);
         color: var(--f-menu);
     }
+
+    &.error{
+        border-color: var(--f-flase);
+    }
 }
 
 input[type=text]{
@@ -555,6 +587,10 @@ input[type=text]{
     padding: 0 rem(20) 0;
     background-color: var(--f-white);
     width: 100%;
+
+    &:disabled, &:read-only{
+        background-color: var(--bg-base);
+    }
 }
 
 input[type=checkbox]{
@@ -565,11 +601,39 @@ input[type=checkbox]{
     margin-top: rem(-3);
 
     &:checked{
-        @include bg(chk_on);
+        @include bg-url(chk_on);
+
+        &:disabled{
+            @include bg-url(chk_dis_on);
+        }
+    }
+
+    &:disabled{
+        @include bg-url(chk_dis);
     }
 
     &+label{
         @include font(rem(16), 600);
         margin-left: rem(8);
+    }
+}
+
+input[type=radio]{
+    @include bg(rd_off);
+    width: rem(24);
+    height: rem(24);
+    vertical-align: middle;
+    margin-top: rem(-3);
+
+    &:checked{
+        @include bg-url(rd_on);
+
+        &:disabled{
+            @include bg-url(rd_dis_on);
+        }
+    }
+
+    &:disabled{
+        @include bg-url(rd_dis);
     }
 }

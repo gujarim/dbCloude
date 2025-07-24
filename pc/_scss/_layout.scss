@@ -2917,14 +2917,10 @@ footer{
             }
 
             &.on{
-                img{
+                &>img{
                     border-color: var(--bg-primary);
                 }
 
-                &>.img-team{
-                    @include bg-url(approval_on);
-                    border-color: var(--bg-primary);
-                }
                 &>.img-chk{
                     @include  bg-url(chk_on);
                 }
@@ -2939,22 +2935,15 @@ footer{
                     .updown{
                         
                         &:after{
-                            transform: translateY(-2px) rotate(180deg);
+                            transform: translateY(rem(-2)) rotate(180deg);
                         }
                     }
                 }
             }
 
-            img, .img-team, .img-docview{
+            img, .img-docview{
                 @include rounded(100%);
                 border: rem(4) solid var(--f-menu);
-                width: rem(56);
-                height: rem(56);
-            }
-
-            .img-team{
-                @include bg(approval_off, 50% 50%, 100% 100%);
-                @include fontHidden;
                 width: rem(56);
                 height: rem(56);
             }

@@ -151,6 +151,10 @@
         width: rem(24);
         height: rem(24);
         vertical-align: middle;
+
+        &.on{
+            @include bg-url(bookmark_on);
+        }
     }
 }
 
@@ -245,8 +249,16 @@
     &.-sticky{
         @include position(fixed, null, null, rem(76), 0);
         width: 100%;
-        padding: rem(16) rem(20);
+        padding: 0 rem(20) rem(16);
         background-color: var(--f-white);
+
+        &::before{
+            content:'';
+            @include position(absolute, rem(-16), null, null, 0);
+            width: 100%;
+            height: rem(16);
+            background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        }
     }
 }
 
@@ -295,7 +307,6 @@
             overflow-x: auto;
             scrollbar-width: none;
             scroll-behavior: smooth;
-            cursor: grab;
 
             li{
                 flex: 1;
@@ -381,16 +392,28 @@
         display: block;
     }
 
-    &.-bgwhite{
-        background-color: var(--f-white) !important;
-    }
-
     &.-full{
         background-color: var(--bg-menu);
 
         .pop-box{
             &:has(.pop-btn){
-                grid-template-rows: rem(48) 1fr rem(96);
+                grid-template-rows: rem(48) 1fr rem(74);
+            }
+        }
+
+        .pop-btn{
+            &::before{
+                background: linear-gradient(360deg, #F2F6FC 0%, rgba(242, 246, 252, 1) 99.99%, rgba(242, 246, 252, 1) 100%);
+            }
+        }
+    }
+
+    &.-bgwhite{
+        background-color: var(--f-white) !important;
+
+        .pop-btn{
+            &::before{
+                background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             }
         }
     }
@@ -447,6 +470,10 @@
             border-top: rem(1) solid var(--line-table3);
             border-bottom-left-radius: rem(20);
             border-bottom-right-radius: rem(20);
+
+            &::before{
+                display: none;
+            }
 
             button{
                 color: var(--f-secondary);
@@ -508,8 +535,15 @@
         @include position(sticky, null, null, 0, 0);
         @include flex(flex, center, center);
         gap: 0 rem(8);
-        padding: rem(24) rem(20) rem(16);
-        background: linear-gradient(360deg, #ffffff 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        padding: 0 rem(20) rem(16);
+
+        &::before{
+            content:'';
+            @include position(absolute, rem(-24), null, null, 0);
+            width: 100%;
+            height: rem(24);
+            background-color: var(--f-white);
+        }
 
         button{
             @include rounded(rem(12));
@@ -552,9 +586,12 @@
                 display: block;
                 @include font(rem(16), 600);
                 margin-bottom: rem(4);
+                line-height: rem(26);
             }
 
             p{
+                line-height: rem(22);
+
                 em{
                     color: var(--f-menu);
                     position: relative;
@@ -777,6 +814,7 @@
 
 .board-view{
     padding-top: rem(24);
+    margin-bottom: rem(-16);
 
     .board-box{
         .flag{
@@ -934,7 +972,7 @@
     padding: rem(24) rem(20);
     margin: 0 rem(-20);
     gap: rem(14);
-    margin-bottom: rem(-136);
+    // margin-bottom: rem(-136);
     
     img{
         width: rem(40);
@@ -952,6 +990,7 @@
         line-height: rem(40);
 
         textarea{
+            width: 100%;
             flex: 1;
             height: rem(40);
         }
@@ -1310,10 +1349,6 @@
 
 .-updownToggle{
     border-bottom: rem(1) solid var(--line-base);
-
-    // &:last-of-type{
-    //     border-bottom:0;
-    // }
     
     &.on{
         .updownBtn{
@@ -1481,12 +1516,6 @@
                     border-color: var(--f-primary);
                 }
 
-                &>.img-view{
-                    @include bg-url(approval_on);
-                    border-color: var(--f-primary);
-                    
-                }
-
                 &::after{
                     background-color: var(--bg-primary);
                 }
@@ -1503,19 +1532,11 @@
                 }
             }
 
-            img, .img-view, .img-docview{
+            img, .img-docview{
                 @include rounded(100%);
                 border: rem(3) solid var(--f-menu);
                 width: rem(48);
                 height: rem(48);
-            }
-
-            .img-view{
-                @include bg(approval_off);
-                @include fontHidden;
-                width: rem(48);
-                height: rem(48);
-                border-color: var(--f-menu);
             }
 
             .img-docview{
@@ -1541,6 +1562,7 @@
                     @include font(rem(16), 600);
                     line-height: rem(26);
                     display: block;
+                    color: var(--f-base);
 
                     span{
                         @include font(rem(14), 400);
@@ -1597,14 +1619,13 @@
                         margin-bottom: rem(28);
 
                         &::after{
-                            height: calc(100% - 30px);
+                            height: calc(100% - rem(30));
                             background-color: var(--f-menu);
                         }
                     }
                     
                     &.on{
                         &::after{
-                            height: calc(100% - 30px);
                             background-color: var(--bg-primary);
                         }
                     }
@@ -1699,6 +1720,14 @@
 
                         strong, button{
                             color: var(--f-base);
+                        }
+                    }
+
+                    .in-progress2{
+                        li{
+                            &:not(:last-child){
+                                margin-bottom: rem(16);
+                            }
                         }
                     }
                 }

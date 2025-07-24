@@ -227,12 +227,6 @@ ul, ol, li {
   -webkit-filter: brightness(0) saturate(100%) invert(35%) sepia(33%) saturate(5477%) hue-rotate(244deg) brightness(101%) contrast(101%);
           filter: brightness(0) saturate(100%) invert(35%) sepia(33%) saturate(5477%) hue-rotate(244deg) brightness(101%) contrast(101%);
 }
-.colorPurple input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorPurple.png");
-}
-.colorPurple input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorPurple.png");
-}
 .colorPurple .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorPurple.png");
 }
@@ -251,12 +245,6 @@ ul, ol, li {
 .colorOrange .wrap nav .gnb:not(.laboratory-wrap ul) li img {
   -webkit-filter: brightness(0) saturate(100%) invert(67%) sepia(73%) saturate(5368%) hue-rotate(359deg) brightness(99%) contrast(109%);
           filter: brightness(0) saturate(100%) invert(67%) sepia(73%) saturate(5368%) hue-rotate(359deg) brightness(99%) contrast(109%);
-}
-.colorOrange input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorOrange.png");
-}
-.colorOrange input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorOrange.png");
 }
 .colorOrange .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorOrange.png");
@@ -277,12 +265,6 @@ ul, ol, li {
   -webkit-filter: brightness(0) saturate(100%) invert(68%) sepia(80%) saturate(2154%) hue-rotate(356deg) brightness(97%) contrast(111%);
           filter: brightness(0) saturate(100%) invert(68%) sepia(80%) saturate(2154%) hue-rotate(356deg) brightness(97%) contrast(111%);
 }
-.colorMandarin input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorMandarin.png");
-}
-.colorMandarin input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorMandarin.png");
-}
 .colorMandarin .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorMandarin.png");
 }
@@ -301,12 +283,6 @@ ul, ol, li {
 .colorRed .wrap nav .gnb:not(.laboratory-wrap ul) li img {
   -webkit-filter: brightness(0) saturate(100%) invert(74%) sepia(64%) saturate(5967%) hue-rotate(318deg) brightness(99%) contrast(106%);
           filter: brightness(0) saturate(100%) invert(74%) sepia(64%) saturate(5967%) hue-rotate(318deg) brightness(99%) contrast(106%);
-}
-.colorRed input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorRed.png");
-}
-.colorRed input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorRed.png");
 }
 .colorRed .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorRed.png");
@@ -327,12 +303,6 @@ ul, ol, li {
   -webkit-filter: brightness(0) saturate(100%) invert(69%) sepia(53%) saturate(3615%) hue-rotate(128deg) brightness(95%) contrast(83%);
           filter: brightness(0) saturate(100%) invert(69%) sepia(53%) saturate(3615%) hue-rotate(128deg) brightness(95%) contrast(83%);
 }
-.colorCyan input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorCyan.png");
-}
-.colorCyan input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorCyan.png");
-}
 .colorCyan .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorCyan.png");
 }
@@ -351,12 +321,6 @@ ul, ol, li {
 .colorNavy .wrap nav .gnb:not(.laboratory-wrap ul) li img {
   -webkit-filter: brightness(0) saturate(100%) invert(15%) sepia(72%) saturate(4185%) hue-rotate(230deg) brightness(95%) contrast(104%);
           filter: brightness(0) saturate(100%) invert(15%) sepia(72%) saturate(4185%) hue-rotate(230deg) brightness(95%) contrast(104%);
-}
-.colorNavy input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorNavy.png");
-}
-.colorNavy input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorNavy.png");
 }
 .colorNavy .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorNavy.png");
@@ -377,12 +341,6 @@ ul, ol, li {
   -webkit-filter: brightness(0) saturate(100%) invert(48%) sepia(88%) saturate(3323%) hue-rotate(197deg) brightness(100%) contrast(102%);
           filter: brightness(0) saturate(100%) invert(48%) sepia(88%) saturate(3323%) hue-rotate(197deg) brightness(100%) contrast(102%);
 }
-.colorBlue input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorBlue.png");
-}
-.colorBlue input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorBlue.png");
-}
 .colorBlue .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorBlue.png");
 }
@@ -402,12 +360,6 @@ ul, ol, li {
   -webkit-filter: brightness(0) saturate(100%) invert(60%) sepia(46%) saturate(1937%) hue-rotate(157deg) brightness(99%) contrast(87%);
           filter: brightness(0) saturate(100%) invert(60%) sepia(46%) saturate(1937%) hue-rotate(157deg) brightness(99%) contrast(87%);
 }
-.colorskyblue input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-image: url("../image/bg_checkbox_colorskyblue.png");
-}
-.colorskyblue input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_colorskyblue.png");
-}
 .colorskyblue .tree-wrap .jstree-container-ul .ico-hr-dep1 {
   background-image: url("../image/bg_dep1_colorskyblue.png");
 }
@@ -420,6 +372,9 @@ ul, ol, li {
 }
 .table-jq.-scroll .ui-jqgrid .ui-jqgrid-btable {
   table-layout: fixed;
+}
+.table-jq:has(.no-data) .ui-jqgrid .ui-jqgrid-btable {
+  border-bottom: 0;
 }
 .table-jq .ui-jqgrid .ui-jqgrid-htable {
   table-layout: inherit;
@@ -4000,11 +3955,7 @@ footer .f-uniq select {
   top: -10rem;
   left: 2.6rem;
 }
-.payment-progress ul li.on img {
-  border-color: var(--bg-primary);
-}
-.payment-progress ul li.on > .img-team {
-  background-image: url("../image/bg_approval_on.png");
+.payment-progress ul li.on > img {
   border-color: var(--bg-primary);
 }
 .payment-progress ul li.on > .img-chk {
@@ -4014,21 +3965,12 @@ footer .f-uniq select {
   background-color: var(--bg-primary);
 }
 .payment-progress ul li:has(.-open) > .prgress-profile .updown:after {
-  -webkit-transform: translateY(-2px) rotate(180deg);
-          transform: translateY(-2px) rotate(180deg);
+  -webkit-transform: translateY(-0.2rem) rotate(180deg);
+          transform: translateY(-0.2rem) rotate(180deg);
 }
-.payment-progress ul li img, .payment-progress ul li .img-team, .payment-progress ul li .img-docview {
+.payment-progress ul li img, .payment-progress ul li .img-docview {
   border-radius: 100%;
   border: 0.4rem solid var(--f-menu);
-  width: 5.6rem;
-  height: 5.6rem;
-}
-.payment-progress ul li .img-team {
-  background: url("../image/bg_approval_off.png") 50% 50%/100% 100% no-repeat;
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 100%;
-  display: inline-block;
   width: 5.6rem;
   height: 5.6rem;
 }
@@ -4980,14 +4922,63 @@ input[type=text]:read-only {
 }
 
 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) {
-  background: url("../image/bg_chk_off.png") 0 0/contain no-repeat;
+  border-radius: 100%;
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
   margin-top: -0.3rem;
+  border: 0.1rem solid var(--line-base);
+  position: relative;
+}
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("../image/icon_chk_off.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-47%, -47%);
+          transform: translate(-47%, -47%);
+  height: 0.9rem;
 }
 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background: url("../image/bg_chk_on.png") 0 0/contain no-repeat;
+  background-color: var(--bg-primary);
+  border-color: var(--bg-primary);
+}
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("../image/icon_chk_on.png");
+  height: 0.9rem;
+}
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled {
+  background-color: var(--line-base);
+  border-color: var(--line-base);
+}
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("../image/icon_chk_on.png");
+  height: 0.9rem;
+  opacity: 1;
+}
+input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before {
+  opacity: 0.6;
 }
 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label {
   font-size: 1.6rem;
@@ -5006,19 +4997,43 @@ input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label 
 }
 
 input[type=radio]:not(.approval-line input, .skin-wrap input) {
-  background: url("../image/bg_radio_off.png") 0 0/contain no-repeat;
+  border-radius: 100%;
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
   margin-top: -0.3rem;
+  border: 0.1rem solid var(--line-base);
+  position: relative;
+}
+input[type=radio]:not(.approval-line input, .skin-wrap input)::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--line-base);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-image: url("../image/bg_radio_on.png");
+  background-color: var(--bg-primary);
+  border-color: var(--bg-primary);
+}
+input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before {
+  background-color: var(--f-white);
 }
 input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled {
-  background-image: url("../image/bg_radio_on_disabled.png");
+  background-color: var(--line-base);
 }
-input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled + label {
+input[type=radio]:not(.approval-line input, .skin-wrap input):disabled {
+  border-color: var(--line-base);
+}
+input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before {
+  background-color: var(--f-white);
+}
+input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label {
   color: var(--f-menu);
 }
 
@@ -5082,6 +5097,9 @@ select option {
 select:disabled {
   background-color: var(--bg-base);
   color: var(--f-menu);
+}
+select.error {
+  border-color: var(--f-flase);
 }
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip) {
@@ -5450,6 +5468,9 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 .tbl-wrap3 table td .chk-color input[type=checkbox].color9 {
   background-color: #4FAEEB;
+}
+.tbl-wrap3 table td .chk-color input[type=checkbox]:focus {
+  outline: 0.2rem solid var(--f-base);
 }
 .tbl-wrap3 table td .week-wrap {
   display: -webkit-box;
@@ -6263,7 +6284,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   width: 1.6rem;
   height: 1.6rem;
   background-image: url("../image/icon_add_chat.png");
-  margin-right: 0.4rem;
+  margin: -0.2rem 0.4rem 0 0;
 }
 .chat-wrap .chat-list .chat-head strong {
   font-size: 1.5rem;
@@ -6836,7 +6857,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   display: inline-block;
   border-radius: 100%;
   position: absolute;
-  bottom: 2.4rem;
+  bottom: 1.4rem;
   left: 0;
   width: 2rem;
   height: 2rem;

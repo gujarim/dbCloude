@@ -15,6 +15,12 @@
         }
     }
 
+    &:has(.no-data){
+        .ui-jqgrid .ui-jqgrid-btable{
+            border-bottom: 0;
+        }
+    }
+
     .ui-jqgrid{
         // width: 100% !important;
 

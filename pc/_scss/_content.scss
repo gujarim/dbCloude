@@ -508,14 +508,46 @@ input[type=text]{
 }
 
 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테이블에 즐겨찾기, 회의실예약 팝업 내색상/요일선택 빼고
-    @include bg(chk_off);
+    @include rounded(100%);
     width: rem(24);
     height: rem(24);
     vertical-align: middle;
     margin-top: rem(-3);
+    border: rem(1) solid var(--line-base);
+    position: relative;
+
+    &::before{
+        @include icon(14, 'chk_off', 'pseudo');
+        @include position(absolute, 50%, null, null, 50%);
+        transform: translate(-47%, -47%);
+        height: rem(9);
+    }
 
     &:checked{
-        @include bg(chk_on);
+        background-color: var(--bg-primary);
+        border-color: var(--bg-primary);
+
+        &::before{
+            @include icon(14, 'chk_on', 'pseudo');
+            height: rem(9);
+        }
+
+        &:disabled{
+            background-color: var(--line-base);
+            border-color: var(--line-base);
+
+            &::before{
+                @include icon(14, 'chk_on', 'pseudo');
+                height: rem(9);
+                opacity: 1;
+            }
+        }
+    }
+
+    &:disabled{
+        &::before{
+            opacity: 0.6;
+        }
     }
 
     &+label{
@@ -537,18 +569,44 @@ input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테�
 }
 
 input[type=radio]:not(.approval-line input, .skin-wrap input){ //결재선선택 결재선상세, 개인위젯설정 위젯스킨 빼고
-    @include bg(radio_off);
+    // @include bg(radio_off);
+    @include rounded(100%);
     width: rem(24);
     height: rem(24);
     vertical-align: middle;
     margin-top: rem(-3);
+    border: rem(1) solid var(--line-base);
+    position: relative;
 
-    &:checked{
-        @include bg-url(radio_on);
+    &::before{
+        content:'';
+        width: rem(12);
+        height: rem(12);
+        background-color: var(--line-base);
+        @include rounded(100%);
+        @include position(absolute, 50%, null, null, 50%);
+        transform: translate(-50%, -50%);
     }
 
-    &:checked:disabled{
-        @include bg-url(radio_on_disabled);
+    &:checked{
+        background-color: var(--bg-primary);
+        border-color: var(--bg-primary);
+
+        &::before{
+            background-color: var(--f-white);
+        }
+
+        &:disabled{
+            background-color: var(--line-base);
+        }
+    }
+
+    &:disabled{
+        border-color: var(--line-base);
+
+        &::before{
+            background-color: var(--f-white);
+        }
 
         +label{
             color: var(--f-menu);
@@ -608,6 +666,10 @@ select{
     &:disabled{
         background-color: var(--bg-base);
         color: var(--f-menu);
+    }
+
+    &.error{
+        border-color: var(--f-flase);
     }
 }
 
@@ -962,6 +1024,10 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                     }
                     &.color9{
                         background-color: #4FAEEB;
+                    }
+
+                    &:focus{
+                        outline: rem(2) solid var(--f-base);
                     }
                 }
             }
@@ -1708,7 +1774,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                 
                 &::before{
                     @include icon(16, 'add_chat', 'pseudo');
-                    margin-right: rem(4);
+                    margin: rem(-2) rem(4) 0 0;
                 }
             }
 
@@ -2179,7 +2245,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
             @include bg(img_edit, 50% 50%, rem(12) rem(12));
             @include fontHidden;
             @include rounded(100%);
-            @include position(absolute, null, null, rem(24), 0);
+            @include position(absolute, null, null, rem(14), 0);
             width: rem(20);
             height: rem(20);
             background-color: var(--line-base);

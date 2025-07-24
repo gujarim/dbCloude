@@ -30,9 +30,8 @@
 </head>
 <body>
     <div class="guide-wrap">
-        <div class="header">
-            <h1 class="tit-h1">DBInc 클라우드 그룹웨어-PC</h1>
-        </div>
+        <h1 class="tit-h1">DBInc 클라우드 그룹웨어-PC</h1>
+
         <div class="gcontainer">
             <!-- 폰트 -->
             <div class="gcontent">
@@ -151,7 +150,8 @@
             <div class="gcontent">
                 <h2 class="tit-h2"><span>입력폼</span></h2>
 
-                <input type="checkbox"> <input type="checkbox" checked> <input type="radio"> <input type="radio" checked><br><br>
+                <input type="checkbox"> <input type="checkbox" checked> <input type="checkbox" disabled> <input type="checkbox" checked disabled> <br><br>
+                <input type="radio"> <input type="radio" checked> <input type="radio" disabled> <input type="radio" checked disabled><br><br>
 
                 <div class="rd-wrap">
                     <input type="radio" name="ra" id="ra1"disabled>
@@ -169,7 +169,7 @@
                     <label for="chk6">결재 예정자</label>
                 </div> <br><br>
 
-                <input type="text" placeholder="텍스트입니다."> <input type="text" placeholder="readonly" readonly>
+                <input type="text" placeholder="텍스트입니다."> <input type="text" placeholder="readonly" readonly> <input type="text" placeholder="disabled" disabled>
 
                 <span class="input-calendar">
                     <input type="text" value="2025.08.04">
@@ -177,6 +177,14 @@
                 </span> <br><br>
 
                 <select name="" id="">
+                    <option value="">선택</option>
+                </select>
+
+                <select name="" id="" disabled>
+                    <option value="">선택</option>
+                </select>
+
+                <select name="" id="" class="error">
                     <option value="">선택</option>
                 </select>
             </div>

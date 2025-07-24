@@ -201,11 +201,11 @@ $font-name: '맑은고딕', sans-serif;
 @mixin outline($elem: null){
     @if $elem != null{
         &:focus-visible + #{$elem}{
-            outline: 2px solid black;
+            outline: rem(2) solid black;
         }
     } @else {
         &:focus-visible:not(.disabled){
-            outline: 2px solid black;
+            outline: rem(2) solid black;
         }
         
         &:focus:not(:focus-visible){
