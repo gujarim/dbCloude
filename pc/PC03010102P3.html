@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="pop-wrap">
+    <div class="pop-wrap -lg">
         <div class="pop-box">
             <div class="pop-top">
                 <strong>결재선 편집</strong>
@@ -174,6 +174,28 @@
                 inx7: "부장", //직위
                 inx8: "부서장", //부서장구분
                 inx9: "-", //겸직여부
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "한디비", //성명
+                inx4: "재직", //재직상태
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "개발본부", //부서
+                inx7: "부장", //직위
+                inx8: "부서장", //부서장구분
+                inx9: "-", //겸직여부
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "한디비", //성명
+                inx4: "재직", //재직상태
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "개발본부", //부서
+                inx7: "부장", //직위
+                inx8: "부서장", //부서장구분
+                inx9: "-", //겸직여부
             }
         ];
         $("#grid").jqGrid({
@@ -191,25 +213,28 @@
                 '겸직여부',
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '3%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '3%', hidden: true, sortable: false},
-                { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
-                { name: 'inx4', index: 'inx4', width: '6%', sortable: false},
+                { name: 'inx1', index: 'inx1', width: '1%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '1%', hidden: true, sortable: false},
+                { name: 'inx3', index: 'inx3', width: '4%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
                 { name: 'inx5', index: 'inx5', width: '7%', sortable: false, classes:'wrap-cell', align:'left'},
                 { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
-                { name: 'inx7', index: 'inx7', width: '5%', sortable: false},
-                { name: 'inx8', index: 'inx8', width: '6%', sortable: false},
-                { name: 'inx9', index: 'inx9', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '4%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '5%', sortable: false},
+                { name: 'inx9', index: 'inx9', width: '4%', sortable: false},
             ],
             rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
-            height: 'auto', // 그리드 높이를 자동 조절
+            height: 338, // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
-            rownumWidth: 40,
+            rownumWidth: 30,
             multiselect: true,
-            multiselectWidth: 50,
+            multiselectWidth: 40,
+            shrinkToFit: true,
+            scroll: 1,
+            resizable: true,
         });
 
         //그리드2
@@ -320,7 +345,31 @@
                                 ] 
                             },
                             { "text" : "지원팀" },
-                            { "text" : "기획팀" }
+                            { "text" : "기획팀" },
+                            { 
+                                "text" : "개발본부",
+                                "type":"file",
+                                // "state" : { "opened" : true },
+                                "children" : [
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" }
+                                ] 
+                            },
+                            { 
+                                "text" : "개발본부",
+                                "type":"file",
+                                // "state" : { "opened" : true },
+                                "children" : [
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" }
+                                ] 
+                            }
                     ]}
                 ]
             },
@@ -333,6 +382,11 @@
                     "icon":"ico-hr-dep1", //depth1 아이콘
                 }
             }
+        });
+    
+        $('#file1').css({
+            'height': '250px',
+            'overflow-y': 'auto'
         });
     });
 </script>

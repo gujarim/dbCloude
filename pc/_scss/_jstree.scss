@@ -25,6 +25,10 @@
         }
     }
 
+    .jstree{
+        overflow: hidden;
+    }
+
     .jstree-container-ul{
         a{
             @include rounded(rem(4));

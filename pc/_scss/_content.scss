@@ -768,7 +768,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 
     th{
         @include font(rem(16), 600);
-        border-bottom: rem(1) solid var(--line-table3);
+        border-bottom: rem(1) solid #D2D6DA;
         background-color: var(--bg-base);
     }
 
@@ -839,7 +839,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         td{
             @include font(rem(16), 400);
             padding: rem(14) rem(24);
-            border-bottom: rem(1) solid var(--line-table3);
+            border-bottom: rem(1) solid #D2D6DA;
             vertical-align: middle;
 
             input[type=text]{

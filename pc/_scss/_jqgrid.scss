@@ -1,6 +1,12 @@
 @charset "UTF-8";
 @import "mixin";
 
+.ui-widget-header {
+    background: none !important;
+    border: none !important;
+    color: inherit !important;
+  height: 0 !important;
+}
 .table-jq{
     // width: 100%;
     
@@ -29,23 +35,21 @@
             width:100% !important;
             border-top: rem(1) solid var(--line-table);
             border-bottom: rem(1) solid var(--line-table2);
-            border-collapse: collapse;
+            background-color: var(--bg-base);
 
             th{
                 @include font(rem(16), 600);
-                background-color: var(--bg-base);
                 height: auto;
-                // line-height: rem(48);
                 position: relative;
                 vertical-align: middle;
-                padding: rem(14) 0;
+                padding: rem(10) 0;
 
-                &::after{
-                    content:'';
+                .ui-jqgrid-resize{
                     width: rem(1);
-                    height: rem(16);
+                    height: rem(16) !important;
                     background-color: var(--line-table2);
-                    @include position(absolute, 50%, 0, null, null);
+                    @include position(absolute, 50%, 0, null, null, 1);
+                    margin:0;
                     margin-top: rem(-8);
                 }
 
@@ -61,7 +65,11 @@
                 }
 
                 &:last-child{
-                    &::after{
+                    // &::after{
+                    //     display: none;
+                    // }
+
+                    .ui-jqgrid-resize{
                         display: none;
                     }
                 }
@@ -82,16 +90,13 @@
                 @include font(rem(16), 400);
                 color: var(--f-secondary);
                 border:0;
-                border-bottom: rem(1) solid var(--line-table3);
-                padding: rem(17) 0;
+                border-bottom: rem(1) solid #D2D6DA;
+                padding: rem(13) 0;
                 text-align: center;
                 vertical-align: middle;
 
                 &.wrap-cell{
-                    white-space: normal !important;
-                    word-break: break-word  !important;
-                    height: auto !important;
-                    padding: rem(17) rem(8) !important;
+                    padding: rem(13) rem(8) !important;
                 }
             }
 
@@ -246,6 +251,10 @@
         .no-data{
             padding: rem(43) 0 rem(40);
             border-bottom: rem(1) solid var(--line-table2);
+        }
+
+        .ui-jqgrid-bdiv { 
+            overflow-x: auto; 
         }
     }
 

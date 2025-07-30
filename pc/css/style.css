@@ -367,6 +367,13 @@ ul, ol, li {
   background-image: url("../image/bg_dep1_down_colorskyblue.png");
 }
 
+.ui-widget-header {
+  background: none !important;
+  border: none !important;
+  color: inherit !important;
+  height: 0 !important;
+}
+
 .table-jq.-scroll .ui-jqgrid .ui-jqgrid-htable {
   table-layout: fixed;
 }
@@ -381,25 +388,25 @@ ul, ol, li {
   width: 100% !important;
   border-top: 0.1rem solid var(--line-table);
   border-bottom: 0.1rem solid var(--line-table2);
-  border-collapse: collapse;
+  background-color: var(--bg-base);
 }
 .table-jq .ui-jqgrid .ui-jqgrid-htable th {
   font-size: 1.6rem;
   font-weight: 600;
-  background-color: var(--bg-base);
   height: auto;
   position: relative;
   vertical-align: middle;
-  padding: 1.4rem 0;
+  padding: 1rem 0;
 }
-.table-jq .ui-jqgrid .ui-jqgrid-htable th::after {
-  content: "";
+.table-jq .ui-jqgrid .ui-jqgrid-htable th .ui-jqgrid-resize {
   width: 0.1rem;
-  height: 1.6rem;
+  height: 1.6rem !important;
   background-color: var(--line-table2);
   position: absolute;
   top: 50%;
   right: 0;
+  z-index: 1;
+  margin: 0;
   margin-top: -0.8rem;
 }
 .table-jq .ui-jqgrid .ui-jqgrid-htable th div {
@@ -409,7 +416,7 @@ ul, ol, li {
 .table-jq .ui-jqgrid .ui-jqgrid-htable th.jqgh_rn::after {
   display: none;
 }
-.table-jq .ui-jqgrid .ui-jqgrid-htable th:last-child::after {
+.table-jq .ui-jqgrid .ui-jqgrid-htable th:last-child .ui-jqgrid-resize {
   display: none;
 }
 .table-jq .ui-jqgrid .ui-jqgrid-htable th[aria-selected=true] {
@@ -426,16 +433,13 @@ ul, ol, li {
   font-weight: 400;
   color: var(--f-secondary);
   border: 0;
-  border-bottom: 0.1rem solid var(--line-table3);
-  padding: 1.7rem 0;
+  border-bottom: 0.1rem solid #D2D6DA;
+  padding: 1.3rem 0;
   text-align: center;
   vertical-align: middle;
 }
 .table-jq .ui-jqgrid .ui-jqgrid-btable tr.ui-row-ltr:not(:first-child) td.wrap-cell {
-  white-space: normal !important;
-  word-break: break-word !important;
-  height: auto !important;
-  padding: 1.7rem 0.8rem !important;
+  padding: 1.3rem 0.8rem !important;
 }
 .table-jq .ui-jqgrid .ui-jqgrid-btable tr.ui-state-hover {
   background-color: var(--bg-primary3);
@@ -565,6 +569,9 @@ ul, ol, li {
   padding: 4.3rem 0 4rem;
   border-bottom: 0.1rem solid var(--line-table2);
 }
+.table-jq .ui-jqgrid .ui-jqgrid-bdiv {
+  overflow-x: auto;
+}
 .table-jq .btn-wrap {
   margin-top: 1.6rem;
 }
@@ -618,6 +625,9 @@ ul, ol, li {
 }
 .tree-wrap .tree-search select {
   width: 100%;
+}
+.tree-wrap .jstree {
+  overflow: hidden;
 }
 .tree-wrap .jstree-container-ul a {
   border-radius: 0.4rem;
@@ -1691,6 +1701,30 @@ nav .sub-gnb > ul > li .sidem-refresh {
   height: 2rem;
   margin: -0.4rem 0 0 0.8rem;
   vertical-align: middle;
+}
+nav .sub-gnb > ul > li .sidem-refresh.-ing {
+  -webkit-animation: rotate-refresh 1.5s linear infinite;
+          animation: rotate-refresh 1.5s linear infinite;
+}
+@-webkit-keyframes rotate-refresh {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-refresh {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 nav .side-btn {
   position: absolute;
@@ -5211,7 +5245,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) th {
   font-size: 1.6rem;
   font-weight: 600;
-  border-bottom: 0.1rem solid var(--line-table3);
+  border-bottom: 0.1rem solid #D2D6DA;
   background-color: var(--bg-base);
 }
 table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) .tooltip {
@@ -5271,7 +5305,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   font-size: 1.6rem;
   font-weight: 400;
   padding: 1.4rem 2.4rem;
-  border-bottom: 0.1rem solid var(--line-table3);
+  border-bottom: 0.1rem solid #D2D6DA;
   vertical-align: middle;
 }
 .tbl-wrap2 table td input[type=text] {
