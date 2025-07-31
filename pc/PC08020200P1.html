@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -24,19 +25,19 @@
                     <div class="tbl-wrap3">
                         <table>
                             <colgroup>
-                                <col style="width: 9.5rem">
+                                <col style="width: 13.5rem">
                                 <col style="width: auto">
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>카테고리<span class="star">*</span></th>
+                                    <th>카테고리명<span class="star">*</span></th>
                                     <td><input type="text" value="테스트 카테고리 3" readonly></td>
                                 </tr>
                                 <tr>
                                     <th>설명</th>
                                     <td>
                                         <textarea name="" id="" rows="5">테스트 카테고리 3</textarea>
-                                        <p>※ 설정값 수정 시 지식 DB에 재등록을 위해 새로운 전처리 과정이 진행되며, 기존 벡터 데이터는 새 문서로 대체됩니다.</p>
+                                        <p class="dot">설정값 수정 시 지식 DB에 재등록을 위해 새로운 전처리 과정이 진행되며, 기존 벡터 데이터는 새 문서로 대체됩니다.</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -81,35 +82,30 @@
                         </table>
                     </div>
 
-                    <div>
+                    <div class="rag-popbox">
                         <div class="hgroup">
                             <strong>사전선택</strong>
-                        </div>
 
-                        <div class="tbl-wrap2">
-                            <table>
-                                <caption>도메인명, 언어, 문서함, 생산년도, 분류번호로 구성된 문서함권한관리에 대한 표</caption>
-                                <colgroup>
-                                    <col style="width: 16rem">
-                                    <col style="width: auto">
-                                </colgroup>
-                                <tbody>
-                                    <tr>
-                                        <th>카테고리</th>
-                                        <td>
-                                            <select name="" id="">
-                                                <option value="">형태소 사전</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="sort flex">
+                                <p>카테고리</p>
+                                <select name="" id="">
+                                    <option value="">형태소 사전</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="table-jq">
                             <table id="grid01"></table>
                             <div id="pager"></div>
                         </div>
+
+                        <ul class="rag-box -sm">
+                            <li>
+                                <p><strong>선택된 사전 2</strong></p>
+                                <p><strong>선택된 형태소 사전</strong>테스트사전</p>
+                                <p><strong>선택된 동의어 사전</strong>기본 동의어 사전11</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -123,8 +119,8 @@
 </body>
 </html>
 
-<script src="js/include.js" defer></script>
-<script src="js/jquery-3.6.0.min.js"></script>
+<!-- <script src="js/include.js" defer></script> -->
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -142,6 +138,46 @@
                 inx1: "선택", //선택
                 inx2: "형태소 사전_01", //사전명
                 inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
+            },
+            { 
+                inx1: "선택", //선택
+                inx2: "형태소 사전_01", //사전명
+                inx3: "2025-05-12 12:00:57", //생성시간
             }
         ];
         $("#grid01").jqGrid({
@@ -153,18 +189,19 @@
                 '생성시간'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '8%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '10%', sortable: false},
-                { name: 'inx3', index: 'inx3', width: '7%', sortable: false}
+                { name: 'inx1', index: 'inx1', width: 30, hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: 100, sortable: false, align: 'left'},
+                { name: 'inx3', index: 'inx3', width: 100, sortable: false}
             ],
             pager: '#pager', // 페이징을 위한 요소
-            rowNum: 10,
+            rowNum: 5,
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             multiselect: true,
-            multiselectWidth: 50,
+            multiselectWidth: 30,
+            shrinkToFit :false,
             loadComplete: function () {
-                createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
+                createCustomPager("grid01", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
             }
         });
     })

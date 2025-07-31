@@ -763,6 +763,11 @@ footer{
             }
         }
     }
+
+    &.hidden{
+        padding: rem(32) 0 0;
+        @include hidden;
+    }
 }
 
 .main-wrap{

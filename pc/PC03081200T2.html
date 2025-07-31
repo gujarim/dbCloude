@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -152,7 +153,7 @@
 </html>
 
 <script src="js/include.js" defer></script>
-<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -294,18 +295,18 @@
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
                 { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
-                { name: 'inx3', index: 'inx3', width: '7%', sortable: false},
-                { name: 'inx4', index: 'inx4', width: '7%', sortable: false},
-                { name: 'inx5', index: 'inx5', width: '10%', sortable: false, align:'left', classes:'wrap-cell'},
-                { name: 'inx6', index: 'inx6', width: '7%', sortable: false},
-                { name: 'inx7', index: 'inx7', width: '12%', sortable: false},
-                { name: 'inx8', index: 'inx8', width: '12%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '4%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '4%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '8%', sortable: false, align:'left'},
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '7%', sortable: false},
+                { name: 'inx8', index: 'inx8', width: '7%', sortable: false},
             ],
             rowNum: 10,
             pager: '#pager1', // 페이징을 위한 요소
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
-            height: 'auto', // 그리드 높이를 자동 조절
+            height: 343, // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
             rownumWidth: 50,
@@ -433,17 +434,17 @@
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
                 { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
-                { name: 'inx3', index: 'inx3', width: '7%', sortable: false},
-                { name: 'inx4', index: 'inx4', width: '7%', sortable: false},
-                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '3%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
+                { name: 'inx5', index: 'inx5', width: '3%', sortable: false},
                 { name: 'inx6', index: 'inx6', width: '7%', sortable: false},
-                { name: 'inx7', index: 'inx7', width: '12%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '7%', sortable: false},
             ],
             rowNum: 10,
             pager: '#pager2', // 페이징을 위한 요소
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
-            height: 'auto', // 그리드 높이를 자동 조절
+            height: 343, // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
             rownumWidth: 50,
@@ -467,9 +468,19 @@
                                 "type":"file",
                                 // "state" : { "opened" : true },
                                 "children" : [
-                                    { 
-                                        "text" : "개발1팀",
-                                    },
+                                    { "text" : "개발1팀" },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" },
+                                    { "text" : "개발1팀" },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" },
+                                    { "text" : "개발1팀" },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" },
+                                    { "text" : "개발1팀" },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" },
+                                    { "text" : "개발1팀" },
                                     { "text" : "개발2팀" },
                                     { "text" : "개발3팀" }
                                 ] 
@@ -488,6 +499,10 @@
                     "icon":"ico-hr-dep1", //depth1 아이콘
                 }
             }
+        });
+        $('#file1').css({
+            'height': '643px',
+            'overflow-y': 'auto'
         });
     });
 </script>

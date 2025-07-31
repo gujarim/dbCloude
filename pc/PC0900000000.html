@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -84,7 +85,7 @@
 </html>
 
 <script src="js/include.js" defer></script>
-<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -112,7 +113,7 @@
                 inx1: "2", //순번
                 inx2: "선택", //선택
                 inx3: "자유게시판", //게시판분류
-                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2]", //제목
+                inx4: "클라우드오피스 그룹웨어 사용자 교육 안내[2] 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 끝", //제목
                 inx5: "첨부파일, 사진", //첨부파일
                 inx6: "49", //조회수
                 inx7: "한디비", //작성자
@@ -234,7 +235,7 @@
                         // class="flag -notice" : 공지사항
                     }  
                 },
-                { name: 'inx4', index: 'inx4', width: '30%', align: 'left', classes: "title", sortable: false},
+                { name: 'inx4', index: 'inx4', width: '20%', align: 'left', sortable: false},
                 { name: 'inx5', index: 'inx5', width: '5%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<em class="attach -file"></em>';
@@ -250,12 +251,14 @@
             pager: '#pager', // 페이징을 위한 요소
             rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
-            height: 'auto', // 그리드 높이를 자동 조절
+            height: 320, // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
             rownumWidth: 50,
             multiselect: true,
             multiselectWidth: 50,
+            // scroll:1,
+            // shrinkToFit :false,
             loadComplete: function () {
                 createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
             }

@@ -269,7 +269,7 @@ const sideNavToggle = () => {
         //그리드 다시 그려주기(탭안에 그리드 제외됨)
         const allGridsInContainer = document.querySelectorAll('.container table[id^="grid"]');
         allGridsInContainer.forEach(grid => {
-            const tableJq = grid.closest('.table-jq');
+            const tableJq = grid.closest('.table-jq') || grid.closest('#ggg');
             if (tableJq) {
                 const width = tableJq.clientWidth;
                 $(grid).jqGrid('setGridWidth', width);
@@ -413,7 +413,6 @@ const laboratoryDial = () => {
                 e.stopPropagation();
                 return;
             }
-            console.log(`${e.target.textContent}`);
         });
     });
 

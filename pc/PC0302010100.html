@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -88,7 +89,7 @@
 </html>
 
 <script src="js/include.js" defer></script>
-<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -323,6 +324,8 @@
             rownumWidth: 50,
             multiselect: true,
             multiselectWidth: 50,
+            // scroll:1,
+            // shrinkToFit :false,
             loadComplete: function () {
                 createCustomPager("grid", "#pager"); // 데이터 로드 후 커스텀 페이징 생성
             }

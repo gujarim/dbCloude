@@ -84,25 +84,10 @@
                 color: vaR(--f-base);
                 font-weight: 700;
             }
-
-            &.jstree-open{
-                &>a{
-                    color: var(--f-base);
-                    background-color: var(--bg-primary3);
-                }
-            }
         }
 
         &>.jstree-node{
             position: relative;
-
-            // &::after{
-            //     content:'';
-            //     width: rem(1);
-            //     height: calc(100% - rem(23));
-            //     background-color: var(--line-table3);
-            //     @include position(absolute, rem(23), null, null, rem(7));
-            // }
 
             &>.jstree-ocl{
                 @include bg(dep1_down);

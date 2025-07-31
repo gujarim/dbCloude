@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -100,7 +101,7 @@
 </html>
 
 <script src="js/include.js" defer></script>
-<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -146,7 +147,7 @@
                 inx1: "4", //순서
                 inx2: "선택", //선택
                 inx3: "서디비", //성명
-                inx4: "test@pado.co.kr", //이메일
+                inx4: "testtesttesttest@pado.co.kr", //이메일
                 inx5: "개발본부", //부서
                 inx6: "", //직위
                 inx7: "부서장", //부서장구분
@@ -185,27 +186,47 @@
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
                 { name: 'inx2', index: 'inx2', width: '5%', hidden: true, sortable: false},
-                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
-                { name: 'inx4', index: 'inx4', width: '10%', sortable: false, classes:'wrap-cell', align:'left'},
-                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
-                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
-                { name: 'inx7', index: 'inx7', width: '10%', sortable: false},
+                { name: 'inx3', index: 'inx3', width: '7%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '8%', sortable: false, align:'left'},
+                { name: 'inx5', index: 'inx5', width: '5%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false},
             ],
             rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
-            height: 'auto', // 그리드 높이를 자동 조절
+            height: 205, // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
             rownumWidth: 50,
             multiselect: true,
             multiselectWidth: 50,
+            // scroll:1,
+            // shrinkToFit :false,
         });
         
         //사용자 역할조회
         var localData2 = [
             {   
                 inx1: "1", //순서
+                inx2: "파도", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부서장", //직위
+                inx7: "수정", //부서장구분
+            },
+            {   
+                inx1: "2", //순서
+                inx2: "파도", //선택
+                inx3: "서디비", //성명
+                inx4: "test@pado.co.kr", //이메일
+                inx5: "개발본부", //부서
+                inx6: "부서장", //직위
+                inx7: "수정", //부서장구분
+            },
+            {   
+                inx1: "3", //순서
                 inx2: "파도", //선택
                 inx3: "서디비", //성명
                 inx4: "test@pado.co.kr", //이메일
@@ -247,11 +268,11 @@
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
                 { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
-                { name: 'inx3', index: 'inx3', width: '10%', sortable: false},
-                { name: 'inx4', index: 'inx4', width: '12%', sortable: false, classes:'wrap-cell', align:'left'},
-                { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
-                { name: 'inx6', index: 'inx6', width: '10%', sortable: false},
-                { name: 'inx7', index: 'inx7', width: '7%', sortable: false,
+                { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
+                { name: 'inx4', index: 'inx4', width: '7%', sortable: false, align:'left'},
+                { name: 'inx5', index: 'inx5', width: '5%', sortable: false},
+                { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '5%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<button type="button" class="btn -line -sm">'+ cellvalue +'</button>';
                     }
@@ -260,10 +281,12 @@
             rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
-            height: 'auto', // 그리드 높이를 자동 조절
+            height: 135, // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             rownumbers: true, 
             rownumWidth: 50,
+            // scroll:1,
+            // shrinkToFit :false,
         });
 
         $('#file1').jstree({
@@ -274,6 +297,34 @@
                         "state" : { "opened" : true },
                         "type":"dep1",
                         "children" : [
+                            { 
+                                "text" : "개발본부",
+                                "type":"file",
+                                // "state" : { "opened" : true },
+                                "children" : [
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" }
+                                ] 
+                            },
+                            { "text" : "지원팀" },
+                            { "text" : "기획팀" },
+                            { 
+                                "text" : "개발본부",
+                                "type":"file",
+                                // "state" : { "opened" : true },
+                                "children" : [
+                                    { 
+                                        "text" : "개발1팀",
+                                    },
+                                    { "text" : "개발2팀" },
+                                    { "text" : "개발3팀" }
+                                ] 
+                            },
+                            { "text" : "지원팀" },
+                            { "text" : "기획팀" },
                             { 
                                 "text" : "개발본부",
                                 "type":"file",
@@ -300,6 +351,10 @@
                     "icon":"ico-hr-dep1", //depth1 아이콘
                 }
             }
+        });
+        $('#file1').css({
+            'height': '500px',
+            'overflow-y': 'auto'
         });
     });
 </script>

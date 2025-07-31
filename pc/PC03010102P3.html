@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -105,7 +106,7 @@
 </html>
 
 <!-- <script src="js/include.js" defer></script> -->
-<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -120,6 +121,50 @@
     $(document).ready(function () {
         //그리드1
         var localData = [
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "한디비", //성명
+                inx4: "재직", //재직상태
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "개발본부", //부서
+                inx7: "부장", //직위
+                inx8: "부서장", //부서장구분
+                inx9: "-", //겸직여부
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "한디비", //성명
+                inx4: "재직", //재직상태
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "개발본부", //부서
+                inx7: "부장", //직위
+                inx8: "부서장", //부서장구분
+                inx9: "-", //겸직여부
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "한디비", //성명
+                inx4: "재직", //재직상태
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "개발본부", //부서
+                inx7: "부장", //직위
+                inx8: "부서장", //부서장구분
+                inx9: "-", //겸직여부
+            },
+            {   
+                inx1: "1", //순서
+                inx2: "선택", //선택
+                inx3: "한디비", //성명
+                inx4: "재직", //재직상태
+                inx5: "test@pado.co.kr", //이메일
+                inx6: "개발본부", //부서
+                inx7: "부장", //직위
+                inx8: "부서장", //부서장구분
+                inx9: "-", //겸직여부
+            },
             {   
                 inx1: "1", //순서
                 inx2: "선택", //선택
@@ -217,7 +262,7 @@
                 { name: 'inx2', index: 'inx2', width: '1%', hidden: true, sortable: false},
                 { name: 'inx3', index: 'inx3', width: '4%', sortable: false},
                 { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
-                { name: 'inx5', index: 'inx5', width: '7%', sortable: false, classes:'wrap-cell', align:'left'},
+                { name: 'inx5', index: 'inx5', width: '7%', sortable: false, align:'left'},
                 { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
                 { name: 'inx7', index: 'inx7', width: '4%', sortable: false},
                 { name: 'inx8', index: 'inx8', width: '5%', sortable: false},
@@ -304,7 +349,7 @@
                         }
                     }
                 },
-                { name: 'inx3', index: 'inx3', width: '10%', sortable: false,
+                { name: 'inx3', index: 'inx3', width: '8%', sortable: false,
                     formatter: function(cellvalue, options, rowObject) {
                         return '<select><option>'+ cellvalue +'</option></select>';
                     }
@@ -312,7 +357,7 @@
                 { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
                 { name: 'inx5', index: 'inx5', width: '5%', sortable: false},
                 { name: 'inx6', index: 'inx6', width: '5%', sortable: false},
-                { name: 'inx7', index: 'inx7', width: '10%', sortable: false},
+                { name: 'inx7', index: 'inx7', width: '8%', sortable: false},
                 { name: 'inx8', index: 'inx8', width: '5%', sortable: false},
             ],
             rowNum: 10,

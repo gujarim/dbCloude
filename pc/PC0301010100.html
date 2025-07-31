@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jstree.style.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/messi.css">
     <link rel="stylesheet" href="css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -60,7 +61,7 @@
 </html>
 
 <script src="js/include.js" defer></script>
-<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/fullcalendar.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/grid.locale-en.js"></script>
@@ -128,6 +129,51 @@
                 inx1: "8", //No
                 inx2: "연장/야간/휴일근무 신청서", //문서양식
                 inx3: "연장/야간/휴일근무 신청서", //문서유형
+            },
+            {   
+                inx1: "7", //No
+                inx2: "지출결의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "8", //No
+                inx2: "연장/야간/휴일근무 신청서", //문서양식
+                inx3: "연장/야간/휴일근무 신청서", //문서유형
+            },
+            {   
+                inx1: "6", //No
+                inx2: "일반품의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "7", //No
+                inx2: "지출결의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "8", //No
+                inx2: "연장/야간/휴일근무 신청서", //문서양식
+                inx3: "연장/야간/휴일근무 신청서", //문서유형
+            },
+            {   
+                inx1: "8", //No
+                inx2: "연장/야간/휴일근무 신청서", //문서양식
+                inx3: "연장/야간/휴일근무 신청서", //문서유형
+            },
+            {   
+                inx1: "6", //No
+                inx2: "일반품의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "7", //No
+                inx2: "지출결의서", //문서양식
+                inx3: "기안서", //문서유형
+            },
+            {   
+                inx1: "8", //No
+                inx2: "연장/야간/휴일근무 신청서", //문서양식
+                inx3: "연장/야간/휴일근무 신청서", //문서유형
             }
         ];
         $("#grid").jqGrid({
@@ -139,15 +185,15 @@
                 '문서유형',
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: '10%', hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: '10%', sortable: false, align:"left", classes: "title",
+                { name: 'inx1', index: 'inx1', width: '5%', hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: '10%', sortable: false, align:"left",
                     formatter: function(cellvalue, options, rowObject) {
                         return cellvalue+'<em class="attach -doc"></em>';
                     }
                 },
-                { name: 'inx3', index: 'inx3', width: '10%', sortable: false, align:"left", classes: "title",},
+                { name: 'inx3', index: 'inx3', width: '10%', sortable: false, align:"left"},
             ],
-            rowNum: 10,
+            // rowNum: 10,
             sortname: 'id', // 기본 정렬할 컬럼
             viewrecords: true, // 총 레코드 수 표시 여부
             height: 432, // 그리드 높이를 자동 조절
@@ -172,6 +218,12 @@
                                 "text" : "일반품의서",
                                 "state" : { "selected" : true },
                             },
+                            { "text" : "구매요청서" },
+                            { "text" : "업무협조전" },
+                            { "text" : "경조금신청서" },
+                            { "text" : "교육신청서" },
+                            { "text" : "지출결의서" },
+                            { "text" : "연장/야간/휴일근무신청서" },
                             { "text" : "구매요청서" },
                             { "text" : "업무협조전" },
                             { "text" : "경조금신청서" },
