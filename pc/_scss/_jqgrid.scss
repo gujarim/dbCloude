@@ -7,6 +7,7 @@
     color: inherit !important;
     height: 0 !important;
 }
+
 .table-jq{
     box-sizing: border-box;
     overflow-x: hidden;
@@ -24,7 +25,6 @@
         width: 100%;
 
         .ui-jqgrid-htable{
-            width:100% !important;
             border-collapse: collapse;
             border-top: rem(1) solid var(--line-table);
             border-bottom: rem(1) solid var(--line-table2);
@@ -59,12 +59,8 @@
                 }
 
                 &:last-child{
-                    // &::after{
-                    //     display: none;
-                    // }
-
                     .ui-jqgrid-resize{
-                        display: none;
+                        background-color: transparent;
                     }
                 }
 
@@ -75,7 +71,6 @@
         }
 
         .ui-jqgrid-btable{
-            width:100% !important;
             border-collapse: collapse;
             border-bottom: 0.1rem solid var(--line-table2);
             box-sizing: border-box;
@@ -85,7 +80,7 @@
                 color: var(--f-secondary);
                 border:0;
                 border-bottom: rem(1) solid #D2D6DA;
-                padding: rem(6) rem(8);
+                padding: rem(8) rem(8);
                 text-align: center;
                 vertical-align: middle;
                 @include ellipsis(1);
@@ -268,6 +263,74 @@
             background-color: var(--f-menu);
             @include rounded(100%);
             @include position(absolute, rem(8), null, null, rem(4));
+        }
+    }
+}
+
+.jconfirm{
+    background-color: rgba(0,0,0,.6);
+
+    .jconfirm-box.jconfirm-type-info{
+        @include rounded(rem(20));
+        padding: rem(12) 0 0;
+        border-top: 0;
+        box-shadow: none;
+
+        div.jconfirm-title-c{
+            @include font(rem(18), 700);
+            padding: 0 rem(24) rem(8);
+
+            .jconfirm-icon-c{
+                display: none;
+            }
+        }
+
+        div.jconfirm-content-pane{
+            margin: 0;
+            padding: rem(12) rem(24) rem(24);
+        }
+
+        div.jconfirm-content-pane .jconfirm-content{
+            font-size: rem(14) !important;
+        }
+    }
+
+    &.jconfirm-white .jconfirm-box .jconfirm-buttons, &.jconfirm-light .jconfirm-box .jconfirm-buttons{
+        @include flex(flex, center, center);
+        gap: 0 rem(8);
+        border-top: rem(1) solid #DFE3E6;
+        padding: rem(8) 0;
+        float: none;
+
+        button{
+            @include rounded(rem(8));
+            font-size: rem(13);
+            height: rem(40);
+            padding:0;
+            line-height: normal;
+            min-width: rem(75);
+            margin: 0;
+            
+            &.btn-info{
+                background-color: var(--bg-primary) !important;
+                color: var(--f-white);
+                min-width: rem(75);
+
+                &:hover{
+                    background-color: var(--bg-mhover2);
+                }
+            }
+
+            &.btn-default{
+                border: rem(1) solid var(--line-base);
+                background-color: var(--f-white) !important;
+                min-width: rem(75);
+                color: var(--f-base) !important;
+
+                &:hover{
+                    background-color: var(--bg-hover);
+                }
+            }
         }
     }
 }

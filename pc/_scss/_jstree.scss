@@ -43,6 +43,10 @@
             &:hover{
                 background-color: var(--bg-hover);
             }
+
+            &.jstree-search{
+                color: var(--f-primary);
+            }
         }
 
         .ico-hr-def{ // hr>인원현황조회

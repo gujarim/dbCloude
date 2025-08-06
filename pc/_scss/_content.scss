@@ -2295,8 +2295,8 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     background-color: var(--f-white);
     width: rem(357);
     padding: rem(24);
-    grid-template-columns: rem(56) 1fr;
-    gap: rem(24);
+    grid-template-columns: rem(80) 1fr;
+    // gap: rem(24);
     display: none;
 
     &.-open{
@@ -2356,15 +2356,45 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
         }
     }
 
+    .account-list{
+        grid-column: 1 / 3;
+        border-top: rem(1) solid var(--line-table3);
+        margin-top: rem(16);
+        padding-top: rem(16);
+        
+        li{
+            &::before{
+                content:'';
+                width: rem(3);
+                height: rem(3);
+                @include rounded(100%);
+                background-color: var(--f-secondary);
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: rem(8);
+            }
+
+            &:not(:last-child){
+                margin-bottom: rem(4);
+            }
+
+            a{
+                @include font(rem(12), 400);
+                color: var(--f-secondary);
+            }
+        }
+    }
+
     .btn-wrap{
         grid-column: 1 / 3;
         justify-content: space-between;
-        margin-top: 0;
+        margin-top: rem(24);
         gap: 0 rem(4);
 
         button{
             flex: 1;
             margin-right: 0;
+            height: rem(32);
         }
     }
 }

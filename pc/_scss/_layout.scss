@@ -147,10 +147,10 @@ header{
         @include flex(flex, space-between, center);
         gap: 0 rem(8);
 
-        li{
+        >li{
             position: relative;
             
-            a{
+            >a{
                 width: rem(32);
                 height: rem(32);
             }
@@ -173,7 +173,7 @@ header{
                 }
             }
             &.profile{
-                a{
+                >a{
                     @include bg(profile, 0 0, rem(32) rem(32));
                     @include fontHidden;
                 }
