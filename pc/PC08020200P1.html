@@ -189,16 +189,16 @@
                 '생성시간'
             ], // 그리드 헤더 이름
             colModel: [
-                { name: 'inx1', index: 'inx1', width: 30, hidden: true, sortable: false},
-                { name: 'inx2', index: 'inx2', width: 100, sortable: false, align: 'left'},
-                { name: 'inx3', index: 'inx3', width: 100, sortable: false}
+                { name: 'inx1', index: 'inx1', width: 50, hidden: true, sortable: false},
+                { name: 'inx2', index: 'inx2', width: 180, sortable: false, align: 'left'},
+                { name: 'inx3', index: 'inx3', width: 300, sortable: false}
             ],
             pager: '#pager', // 페이징을 위한 요소
             rowNum: 5,
             height: 'auto', // 그리드 높이를 자동 조절
             autowidth: true, // 그리드 너비를 자동 조절
             multiselect: true,
-            multiselectWidth: 30,
+            multiselectWidth: 50,
             shrinkToFit :false,
             loadComplete: function () {
                 createCustomPager("grid01", "#pager"); // 데이터 로드 후 커스텀 페이징 생성

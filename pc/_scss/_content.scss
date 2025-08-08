@@ -2284,8 +2284,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     .tbl-wrap2{
         margin-bottom: rem(16);
     }
-
-    .rag-popbox{}
 }
 
 .profile-wrap{
@@ -2296,7 +2294,6 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
     width: rem(357);
     padding: rem(24);
     grid-template-columns: rem(80) 1fr;
-    // gap: rem(24);
     display: none;
 
     &.-open{

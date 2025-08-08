@@ -2,7 +2,6 @@
 
 .tree-wrap{
     width: rem(464);
-    // flex: 1;
     @include rounded(rem(20));
     border: rem(1) solid #DFE3E6;
     padding: rem(30) rem(24);
@@ -127,12 +126,6 @@
                     &:not(:last-child){
                         margin-bottom: rem(16);
                     }
-
-                    // &>a{
-                    //     &.jstree-clicked{
-                    //         color: var(--f-base);
-                    //     }
-                    // }
 
                     &>.jstree-children{
                         margin-top: rem(10);

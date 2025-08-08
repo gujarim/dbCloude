@@ -34,6 +34,7 @@ a {
     -webkit-tap-highlight-color: transparent;
     color: var(--f-base);
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 img {

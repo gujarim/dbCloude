@@ -1,10 +1,4 @@
-
 // 그리드 리사이징
-// $(window).resize(function() {
-//     var newWidth = $(".container").width(); // 부모 요소의 너비를 가져옵니다.
-//     $(".table-jq table").jqGrid('setGridWidth', newWidth); // 그리드 너비를 조정합니다.
-// });
-
 $(window).resize(function () {
     $(".table-jq").each(function () {
         var $wrapper = $(this);
@@ -555,7 +549,7 @@ const widgetDrag = () => {
                 // 기존 .on 안의 텍스트만 추출 (삭제 버튼 제외)
                 const oldText = target.cloneNode(true).childNodes[0].textContent.trim();
 
-                // 1. 기존 내용을 .set-list에 추가
+                // 기존 내용을 .set-list에 추가
                 const newLi = document.createElement('li');
                 newLi.textContent = oldText;
                 newLi.setAttribute('draggable', true);

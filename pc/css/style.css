@@ -55,6 +55,8 @@ a {
   -webkit-tap-highlight-color: transparent;
   color: var(--f-base);
   text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 img {
@@ -7012,6 +7014,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 .rag-wrap .tbl-wrap2 {
   margin-bottom: 1.6rem;
 }
+
 .profile-wrap {
   position: absolute;
   top: 4rem;
