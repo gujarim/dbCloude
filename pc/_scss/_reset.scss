@@ -70,6 +70,201 @@ ul,ol,li{
     outline: none;
 }
 
+.btn, [class^=i-], .more, .prev, .next, .refresh, .chat-sideMenu button, .chat-head button, .chat-plus, .chat-search, .chat-close, .chat-up, .detail-view, .sel-up, .sel-down, .sel-first, .sel-last, .sel-prev, .sel-next, .input-calendar button, .tooltip button, .add button, .search-close, .input-search button, .updown, .download, .r-prev, .r-next, .llst-close, .sidem-refresh, .system-wrap-btn, .page-btn{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: inherit;
+    letter-spacing: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+// button::-moz-focus-inner, input::-moz-focus-inner {
+//     border: 0;
+//     padding: 0;
+// }
+
+.guide-wrap, .uniq, .search-box, .table-jq .ui-jqgrid, .cot-uniq, .hgroup, .alpa-wrap, .tbl-wrap, .tbl-wrap2, .tbl-wrap3, .file-wrap, .attach-wrap, .skin-wrap, .input-search, .input-calendar{
+    //reset
+    select, textarea, input, label {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    select, textarea, input:not([class^=checkbox]) {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    input[type=search] {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 var(--f-base);
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    input, textarea, select {
+        line-height: inherit;
+    }
+
+    input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+        color: var(--f-menu);
+        letter-spacing: -0.05rem;
+    }
+
+    input::placeholder, textarea::placeholder, select::placeholder {
+        color: var(--f-menu);
+        letter-spacing: -0.05rem;
+    }
+    //reset
+
+    //커스텀 스타일
+    input[type=text]{
+        @include rounded(rem(8)); 
+        @include font(rem(14), 600);
+        border: rem(1) solid var(--line-base);
+        height: rem(40);
+        padding: 0 rem(12);
+        background-color: var(--f-white);
+
+        &:read-only{
+            background-color: var(--bg-base);
+            color: var(--f-menu);
+        }
+    }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테이블에 즐겨찾기, 회의실예약 팝업 내색상/요일선택 빼고
+        @include rounded(100%);
+        width: rem(24);
+        height: rem(24);
+        vertical-align: middle;
+        margin-top: rem(-3);
+        border: rem(1) solid var(--line-base);
+        position: relative;
+
+        &::before{
+            @include icon(14, 'chk_off', 'pseudo');
+            @include position(absolute, 50%, null, null, 50%);
+            transform: translate(-47%, -47%);
+            height: rem(9);
+        }
+
+        &:checked{
+            background-color: var(--bg-primary);
+            border-color: var(--bg-primary);
+
+            &::before{
+                @include icon(14, 'chk_on', 'pseudo');
+                height: rem(9);
+            }
+
+            &:disabled{
+                background-color: var(--line-base);
+                border-color: var(--line-base);
+
+                &::before{
+                    @include icon(14, 'chk_on', 'pseudo');
+                    height: rem(9);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:disabled{
+            &::before{
+                opacity: 0.6;
+            }
+        }
+
+        &+label{
+            @include font(rem(16), 600);
+            margin-left: rem(8);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){ //결재선선택 결재선상세, 개인위젯설정 위젯스킨 빼고
+        // @include bg(radio_off);
+        @include rounded(100%);
+        width: rem(24);
+        height: rem(24);
+        vertical-align: middle;
+        margin-top: rem(-3);
+        border: rem(1) solid var(--line-base);
+        position: relative;
+
+        &::before{
+            content:'';
+            width: rem(12);
+            height: rem(12);
+            background-color: var(--line-base);
+            @include rounded(100%);
+            @include position(absolute, 50%, null, null, 50%);
+            transform: translate(-50%, -50%);
+        }
+
+        &:checked{
+            background-color: var(--bg-primary);
+            border-color: var(--bg-primary);
+
+            &::before{
+                background-color: var(--f-white);
+            }
+
+            &:disabled{
+                background-color: var(--line-base);
+            }
+        }
+
+        &:disabled{
+            border-color: var(--line-base);
+
+            &::before{
+                background-color: var(--f-white);
+            }
+
+            +label{
+                color: var(--f-menu);
+            }
+        }
+    }
+
+    select{
+        @include rounded(rem(8));
+        @include font(rem(16), 600);
+        @include bg(select24, right rem(12) center, rem(24));
+        border: rem(1) solid var(--line-base);
+        height: rem(40);
+        padding: 0 rem(30) 0 rem(12);
+        background-color: var(--f-white);
+        min-width: rem(143);
+        color: var(--f-secondary);
+
+        option{
+            @include rounded(rem(8))
+        }
+
+        &:disabled{
+            background-color: var(--bg-base);
+            color: var(--f-menu);
+        }
+
+        &.error{
+            border-color: var(--f-flase);
+        }
+    }
+}
+
 /* Root */
 :root {
     font-size: 0.625rem;
