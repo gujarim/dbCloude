@@ -3,7 +3,7 @@
 
 html, body{
     height: 100%;
-    font-family: "Pretendard";
+    font-family: "Pretendard", sans-serif;
     font-size: rem(14);
 
     &:has(.container .calendar-wrap){
@@ -984,108 +984,21 @@ footer{
             }
         }
 
-        &.system-wrap{
-            .hgroup{
-                margin-bottom: rem(32);
-            }
+        &.uals-wrap{
+            height: rem(158);
 
-            ul{
-                @include flex(flex, space-between, center);
-                flex-wrap: wrap;
-                gap: rem(12) 0;
-                padding-bottom: rem(35);
-
-                li{
-                    width: 33.33%;
-                    height: rem(84);
-                    text-align: center;
-                    position: relative;
-
-                    a{
-                        @include font(rem(13), 400);
-                        color: var(--f-secondary);
-                        display: block;
-
-                        &::before{
-                            content:'';
-                            display: block !important;
-                            margin: 0 auto rem(8);
-                        }
-                    }
-
-                    em{
-                        @include font(rem(12), 600);
-                        @include rounded(rem(12));
-                        @include position(absolute, rem(2), rem(25), null, null);
-                        color: var(--f-white);
-                        background-color: var(--bg-primary);
-                        padding: 0 rem(4);
-                        height: rem(15);
-                    }
-
-                    &.business{
-                        a{
-                            &::before{
-                                @include icon(40, 'business', 'pseudo');
-                            }
-                        }
-                    }
-                    &.work{
-                        a{
-                            &::before{
-                                @include icon(40, 'work', 'pseudo');
-                            }
-                        }
-                    }
-                    &.bizplay{
-                        a{
-                            &::before{
-                                @include icon(40, 'bizplay', 'pseudo');
-                            }
-                        }
-                    }
-                    &.dbnews{
-                        a{
-                            &::before{
-                                @include icon(40, 'dbnews', 'pseudo');
-                            }
-                        }
-                    }
-                    &.cloudhp{
-                        a{
-                            &::before{
-                                @include icon(40, 'cloudhp', 'pseudo');
-                            }
-                        }
-                    }
-                    &.smartoff{
-                        a{
-                            &::before{
-                                @include icon(40, 'smartoff', 'pseudo');
-                            }
-                        }
-                    }
-                    &.shr{
-                        a{
-                            &::before{
-                                @include icon(40, 'shr', 'pseudo');
-                            }
-                        }
-                    }
-                    &.book{
-                        a{
-                            &::before{
-                                @include icon(40, 'book', 'pseudo');
-                            }
-                        }
-                    }
-                    &.securityservice{
-                        a{
-                            &::before{
-                                @include icon(40, 'securityservice', 'pseudo');
-                            }
-                        }
-                    }
+            p{
+                &::before{
+                    content:'';
+                    width: rem(3);
+                    height: rem(20);
+                    background-color: var(--bg-primary);
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+                input{
+                    border:0;
+                    padding: 0 rem(8);
                 }
             }
         }
@@ -2186,6 +2099,147 @@ footer{
     }
 }
 
+.system-wrap{
+    .hgroup{
+        margin-bottom: rem(32);
+    }
+
+    ul{
+        @include flex(flex, space-between, center);
+        flex-wrap: wrap;
+        gap: rem(12) 0;
+        padding-bottom: rem(35);
+
+        li{
+            width: 33.33%;
+            height: rem(84);
+            text-align: center;
+            position: relative;
+
+            a{
+                @include font(rem(13), 400);
+                color: var(--f-secondary);
+                display: block;
+
+                &::before{
+                    content:'';
+                    display: block !important;
+                    margin: 0 auto rem(8);
+                }
+            }
+
+            em{
+                @include font(rem(12), 600);
+                @include rounded(rem(12));
+                @include position(absolute, rem(2), rem(25), null, null);
+                color: var(--f-white);
+                background-color: var(--bg-primary);
+                padding: 0 rem(4);
+                height: rem(15);
+            }
+
+            &.business{
+                a{
+                    &::before{
+                        @include icon(40, 'business', 'pseudo');
+                    }
+                }
+            }
+            &.work{
+                a{
+                    &::before{
+                        @include icon(40, 'work', 'pseudo');
+                    }
+                }
+            }
+            &.bizplay{
+                a{
+                    &::before{
+                        @include icon(40, 'bizplay', 'pseudo');
+                    }
+                }
+            }
+            &.dbnews{
+                a{
+                    &::before{
+                        @include icon(40, 'dbnews', 'pseudo');
+                    }
+                }
+            }
+            &.cloudhp{
+                a{
+                    &::before{
+                        @include icon(40, 'cloudhp', 'pseudo');
+                    }
+                }
+            }
+            &.smartoff{
+                a{
+                    &::before{
+                        @include icon(40, 'smartoff', 'pseudo');
+                    }
+                }
+            }
+            &.shr{
+                a{
+                    &::before{
+                        @include icon(40, 'shr', 'pseudo');
+                    }
+                }
+            }
+            &.book{
+                a{
+                    &::before{
+                        @include icon(40, 'book', 'pseudo');
+                    }
+                }
+            }
+            &.securityservice{
+                a{
+                    &::before{
+                        @include icon(40, 'securityservice', 'pseudo');
+                    }
+                }
+            }
+            &.last{
+                a{
+                    @include fontHidden;
+                    font-size: 0;
+                    color: transparent;
+
+                    &::before{
+                        @include icon(56, 'moreBtn', 'pseudo');
+                    }
+                }
+            }
+        }
+    }
+
+    .system-wrap-btn{
+        @include fontHidden;
+        position: relative;
+        width: 100%;
+        height: rem(148);
+
+        &::before{
+            content:'';
+            @include rounded(100%);
+            @include position(absolute, 0, 0, null, null);
+            width: rem(148);
+            height: rem(148);
+            background-color: #F3F8FF;
+        }
+
+        &::after{
+            content:'';
+            @include bg(system_wrap, 100% 50%, rem(133) rem(120));
+            @include position(absolute, rem(15), rem(56), null, null);
+            width: rem(133);
+            height: rem(120);
+        }
+    }
+}
+
 // 테이터 없음
 .no-data{
     @include font(rem(14), 400);
@@ -2271,7 +2325,7 @@ footer{
     }
 
     select, input[type=text]{
-        width: 100%;
+        width: 100% !important;
     }
 }
 
@@ -3109,6 +3163,13 @@ footer{
                     .prgress-profile{
                         margin-top: rem(27);
                     }
+                }
+            }
+
+            .updown{
+                &::after{
+                    @include icon(24, 'updown', 'pseudo');
+                    margin: rem(-1) 0 0 rem(8);
                 }
             }
         }

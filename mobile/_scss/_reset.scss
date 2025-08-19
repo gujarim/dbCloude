@@ -45,12 +45,12 @@ legend {
     @include hidden;
 }
 
-select, textarea, input, label, button {
+select.select-box, input[type=text].input-text, input[type=checkbox].input-chk, input[type=radio].input-rd, label, button {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
 }
 
-select, textarea, input:not([class^=checkbox]) {
+select.select-box, input[type=text].input-text, input[type=checkbox].input-chk, input[type=radio].input-rd, textarea.textarea-box{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -67,30 +67,32 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     padding: 0;
 }
 
-select:-moz-focusring {
+select.select-box:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 var(--f-base);
 }
 
-select::-ms-expand {
+select.select-box::-ms-expand {
     display: none;
 }
 
-input, textarea, select {
+select.select-box, input[type=text].input-text, input[type=checkbox].input-chk, input[type=radio].input-rd, textarea.textarea-box{
     line-height: inherit;
 }
-input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
-    color: var(--f-menu);
-    letter-spacing: -0.05rem;
-    font-size: rem(14);
-}
-input::placeholder, textarea::placeholder, select::placeholder {
+
+select.select-box::-moz-placeholder, input[type=text].input-text::-moz-placeholder, input[type=checkbox].input-chk::-moz-placeholder, input[type=radio].input-rd::-moz-placeholder, textarea.textarea-box::-moz-placeholder{
     color: var(--f-menu);
     letter-spacing: -0.05rem;
     font-size: rem(14);
 }
 
-button {
+select.select-box::placeholder, input[type=text].input-text::placeholder, input[type=checkbox].input-chk::placeholder, input[type=radio].input-rd::placeholder, textarea.textarea-box::placeholder{
+    color: var(--f-menu);
+    letter-spacing: -0.05rem;
+    font-size: rem(14);
+}
+
+.icon, .btn, [class^=i-], [class^=menu-], .search-box button, .box.-work button, .chat-text button, .btn-close, .updownBtn, .attachment{
     border: none;
     background-color: transparent;
     padding: 0;

@@ -71,12 +71,12 @@ legend {
   line-height: inherit;
 }
 
-select, textarea, input, label, button {
+select.select-box, input[type=text].input-text, input[type=checkbox].input-chk, input[type=radio].input-rd, label, button {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
 }
 
-select, textarea, input:not([class^=checkbox]) {
+select.select-box, input[type=text].input-text, input[type=checkbox].input-chk, input[type=radio].input-rd, textarea.textarea-box {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -93,50 +93,50 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0;
 }
 
-select:-moz-focusring {
+select.select-box:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 var(--f-base);
 }
 
-select::-ms-expand {
+select.select-box::-ms-expand {
   display: none;
 }
 
-input, textarea, select {
+select.select-box, input[type=text].input-text, input[type=checkbox].input-chk, input[type=radio].input-rd, textarea.textarea-box {
   line-height: inherit;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+select.select-box::-moz-placeholder, input[type=text].input-text::-moz-placeholder, input[type=checkbox].input-chk::-moz-placeholder, input[type=radio].input-rd::-moz-placeholder, textarea.textarea-box::-moz-placeholder {
   color: var(--f-menu);
   letter-spacing: -0.05rem;
   font-size: 1.4rem;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+select.select-box::-webkit-input-placeholder, input[type=text].input-text::-webkit-input-placeholder, input[type=checkbox].input-chk::-webkit-input-placeholder, input[type=radio].input-rd::-webkit-input-placeholder, textarea.textarea-box::-webkit-input-placeholder {
   color: var(--f-menu);
   letter-spacing: -0.05rem;
   font-size: 1.4rem;
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
+select.select-box:-ms-input-placeholder, input[type=text].input-text:-ms-input-placeholder, input[type=checkbox].input-chk:-ms-input-placeholder, input[type=radio].input-rd:-ms-input-placeholder, textarea.textarea-box:-ms-input-placeholder {
   color: var(--f-menu);
   letter-spacing: -0.05rem;
   font-size: 1.4rem;
 }
 
-input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
+select.select-box::-ms-input-placeholder, input[type=text].input-text::-ms-input-placeholder, input[type=checkbox].input-chk::-ms-input-placeholder, input[type=radio].input-rd::-ms-input-placeholder, textarea.textarea-box::-ms-input-placeholder {
   color: var(--f-menu);
   letter-spacing: -0.05rem;
   font-size: 1.4rem;
 }
 
-input::placeholder, textarea::placeholder, select::placeholder {
+select.select-box::placeholder, input[type=text].input-text::placeholder, input[type=checkbox].input-chk::placeholder, input[type=radio].input-rd::placeholder, textarea.textarea-box::placeholder {
   color: var(--f-menu);
   letter-spacing: -0.05rem;
   font-size: 1.4rem;
 }
 
-button {
+.icon, .btn, [class^=i-], [class^=menu-], .search-box button, .box.-work button, .chat-text button, .btn-close, .updownBtn, .attachment {
   border: none;
   background-color: transparent;
   padding: 0;
@@ -850,7 +850,7 @@ nav .side-menu .tab-wrap .panels .inner-menu li a em {
   height: 1.6rem;
 }
 
-select {
+select.select-box {
   border-radius: 1.2rem;
   font-size: 1.6rem;
   font-weight: 600;
@@ -861,15 +861,15 @@ select {
   background-color: var(--f-white);
   width: 100%;
 }
-select:disabled {
+select.select-box:disabled {
   background-color: var(--bg-base);
   color: var(--f-menu);
 }
-select.error {
+select.select-box.error {
   border-color: var(--f-flase);
 }
 
-input[type=text] {
+input[type=text].input-text {
   border-radius: 1.2rem;
   font-size: 1.6rem;
   font-weight: 600;
@@ -879,49 +879,49 @@ input[type=text] {
   background-color: var(--f-white);
   width: 100%;
 }
-input[type=text]:-moz-read-only {
+input[type=text].input-text:-moz-read-only {
   background-color: var(--bg-base);
 }
-input[type=text]:disabled, input[type=text]:read-only {
+input[type=text].input-text:disabled, input[type=text].input-text:read-only {
   background-color: var(--bg-base);
 }
 
-input[type=checkbox] {
+input[type=checkbox].input-chk {
   background: url("../image/bg_chk_off.png") 0 0/contain no-repeat;
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
   margin-top: -0.3rem;
 }
-input[type=checkbox]:checked {
+input[type=checkbox].input-chk:checked {
   background-image: url("../image/bg_chk_on.png");
 }
-input[type=checkbox]:checked:disabled {
+input[type=checkbox].input-chk:checked:disabled {
   background-image: url("../image/bg_chk_dis_on.png");
 }
-input[type=checkbox]:disabled {
+input[type=checkbox].input-chk:disabled {
   background-image: url("../image/bg_chk_dis.png");
 }
-input[type=checkbox] + label {
+input[type=checkbox].input-chk + label {
   font-size: 1.6rem;
   font-weight: 600;
   margin-left: 0.8rem;
 }
 
-input[type=radio] {
+input[type=radio].input-rd {
   background: url("../image/bg_rd_off.png") 0 0/contain no-repeat;
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
   margin-top: -0.3rem;
 }
-input[type=radio]:checked {
+input[type=radio].input-rd:checked {
   background-image: url("../image/bg_rd_on.png");
 }
-input[type=radio]:checked:disabled {
+input[type=radio].input-rd:checked:disabled {
   background-image: url("../image/bg_rd_dis_on.png");
 }
-input[type=radio]:disabled {
+input[type=radio].input-rd:disabled {
   background-image: url("../image/bg_rd_dis.png");
 }
 
@@ -1794,6 +1794,7 @@ input[type=radio]:disabled {
 }
 .chat-wrap .chat-text .chat-area textarea {
   height: 100%;
+  width: 100%;
 }
 .chat-wrap .chat-text .chat-area button {
   position: absolute;

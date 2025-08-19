@@ -1,6 +1,253 @@
 @charset "UTF-8";
 @import "mixin";
 
+.uniq, .search-box, .table-jq .ui-jqgrid, .cot-uniq, .hgroup, .alpa-wrap, .tbl-wrap, .tbl-wrap2, .tbl-wrap3, .file-wrap, .attach-wrap, .skin-wrap, .input-search{
+    //reset
+    select, textarea, input, label, button {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    select, textarea, input:not([class^=checkbox]) {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    input[type=search] {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 var(--f-base);
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    input, textarea, select {
+        line-height: inherit;
+    }
+
+    input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+        color: var(--f-menu);
+        letter-spacing: -0.05rem;
+    }
+
+    input::placeholder, textarea::placeholder, select::placeholder {
+        color: var(--f-menu);
+        letter-spacing: -0.05rem;
+    }
+
+    button::-moz-focus-inner, input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        line-height: inherit;
+        letter-spacing: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+    }
+    //reset
+
+    //커스텀 스타일
+    input[type=text]{
+        @include rounded(rem(8)); 
+        @include font(rem(14), 600);
+        border: rem(1) solid var(--line-base);
+        height: rem(40);
+        padding: 0 rem(12);
+        background-color: var(--f-white);
+
+        &:read-only{
+            background-color: var(--bg-base);
+            color: var(--f-menu);
+        }
+    }
+
+    input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테이블에 즐겨찾기, 회의실예약 팝업 내색상/요일선택 빼고
+        @include rounded(100%);
+        width: rem(24);
+        height: rem(24);
+        vertical-align: middle;
+        margin-top: rem(-3);
+        border: rem(1) solid var(--line-base);
+        position: relative;
+
+        &::before{
+            @include icon(14, 'chk_off', 'pseudo');
+            @include position(absolute, 50%, null, null, 50%);
+            transform: translate(-47%, -47%);
+            height: rem(9);
+        }
+
+        &:checked{
+            background-color: var(--bg-primary);
+            border-color: var(--bg-primary);
+
+            &::before{
+                @include icon(14, 'chk_on', 'pseudo');
+                height: rem(9);
+            }
+
+            &:disabled{
+                background-color: var(--line-base);
+                border-color: var(--line-base);
+
+                &::before{
+                    @include icon(14, 'chk_on', 'pseudo');
+                    height: rem(9);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:disabled{
+            &::before{
+                opacity: 0.6;
+            }
+        }
+
+        &+label{
+            @include font(rem(16), 600);
+            margin-left: rem(8);
+        }
+    }
+
+    input[type=radio]:not(.approval-line input, .skin-wrap input){ //결재선선택 결재선상세, 개인위젯설정 위젯스킨 빼고
+        // @include bg(radio_off);
+        @include rounded(100%);
+        width: rem(24);
+        height: rem(24);
+        vertical-align: middle;
+        margin-top: rem(-3);
+        border: rem(1) solid var(--line-base);
+        position: relative;
+
+        &::before{
+            content:'';
+            width: rem(12);
+            height: rem(12);
+            background-color: var(--line-base);
+            @include rounded(100%);
+            @include position(absolute, 50%, null, null, 50%);
+            transform: translate(-50%, -50%);
+        }
+
+        &:checked{
+            background-color: var(--bg-primary);
+            border-color: var(--bg-primary);
+
+            &::before{
+                background-color: var(--f-white);
+            }
+
+            &:disabled{
+                background-color: var(--line-base);
+            }
+        }
+
+        &:disabled{
+            border-color: var(--line-base);
+
+            &::before{
+                background-color: var(--f-white);
+            }
+
+            +label{
+                color: var(--f-menu);
+            }
+        }
+    }
+
+    select{
+        @include rounded(rem(8));
+        @include font(rem(16), 600);
+        @include bg(select24, right rem(12) center, rem(24));
+        border: rem(1) solid var(--line-base);
+        height: rem(40);
+        padding: 0 rem(30) 0 rem(12);
+        background-color: var(--f-white);
+        min-width: rem(143);
+        color: var(--f-secondary);
+
+        option{
+            @include rounded(rem(8))
+        }
+
+        &:disabled{
+            background-color: var(--bg-base);
+            color: var(--f-menu);
+        }
+
+        &.error{
+            border-color: var(--f-flase);
+        }
+    }
+
+    .i-del{ //삭제
+        @include rounded(rem(8));
+        @include flex(flex, center, center);
+        @include font(rem(14), 600);
+        border: rem(1) solid var(--line-base);
+        background-color: var(--f-white);
+        color: var(--f-secondary);
+        width: rem(65);
+        height: rem(32);
+        margin: 0 auto;
+
+        &::after{
+            @include icon(16, 'del', 'pseudo');
+            margin-left: rem(4);
+        }
+
+        &.la{
+            &::after{
+                @include icon(20, 'del', 'pseudo');
+            }
+        }
+    }
+
+    .i-search{ //조회하기
+        @include rounded(rem(8));
+        @include font(rem(18), 600);
+        @include flex(flex, center, center);
+        color: var(--f-white);
+        background-color: var(--bg-secondary);
+        width: rem(103);
+        height: rem(40);
+        &::before{
+            @include icon(20, 'search', 'pseudo');
+            margin: rem(1) rem(4) 0 0;
+        }
+    }
+
+    .i-searchB{ //우편번호 검색
+        @include rounded(rem(8));
+        @include flex(flex, center, center);
+        @include font(rem(14), 600);
+        border: rem(1) solid var(--line-base);
+        color: var(--f-base); 
+        width: rem(132);
+        height: rem(40);
+        &::before{
+            @include icon(20, 'search_b', 'pseudo');
+            margin: 0 rem(4) 0 0;
+        }
+    }
+}
+
 // 서브 공통 타이틀
 .tit-h2{
     @include font(rem(34), 700);
@@ -109,202 +356,180 @@
     }
 }
 
-[class^=i-]{
-    @include rounded(rem(8));
-    @include font(rem(18), 600);
-    @include flex(flex, center, center);
-    height: rem(48);
-    color: var(--f-white);
-}
-
-.i-edit{ //기안서올리기, 글쓰기
-    background-color: var(--bg-primary);
-    padding: 0 rem(22);
-
-    &::before{
-        @include icon(24, 'edit', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-calendar{ //신청
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'calendar', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-save{ //저장
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'save', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-saveB{ //저장
-    color: var(--f-base);
-    border: rem(1) solid var(--line-base);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'saveB', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-deleteB{ //삭제
-    color: var(--f-base);
-    border: rem(1) solid var(--line-base);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'deleteB', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-search{ //조회하기
-    background-color: var(--bg-secondary);
-    width: rem(103);
-    height: rem(40);
-    &::before{
-        @include icon(20, 'search', 'pseudo');
-        margin: rem(1) rem(4) 0 0;
-    }
-}
-.i-searchB{ //우편번호 검색
-    @include font(rem(14), 600);
-    border: rem(1) solid var(--line-base);
-    color: var(--f-base); 
-    width: rem(132);
-    height: rem(40);
-    &::before{
-        @include icon(20, 'search_b', 'pseudo');
-        margin: 0 rem(4) 0 0;
-    }
-}
-.i-reservation{ //예약하기
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'reservationW', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-list{ //목록
-    color: var(--f-base);
-    border: rem(1) solid var(--line-base);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'list', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-listw{ //목록2
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'list_white', 'pseudo');
-        margin:rem(3) rem(4) 0 0;
-    }
-}
-.i-refresh{ //초기화
-    color: var(--f-base);
-    border: rem(1) solid var(--line-base);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'refresh', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-approval{ //승인
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'approval', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-companion{ //반려
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'companion', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-publicview{ //공람
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'publicview', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-print{ //인쇄
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'print', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-.i-printB{ //인쇄
-    color: var(--f-base);
-    border: rem(1) solid var(--line-base);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'printB', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-
-.i-reconsider{ //상신
-    background-color: var(--bg-primary);
-    width: rem(120);
-    &::before{
-        @include icon(24, 'reconsider', 'pseudo');
-        margin-right: rem(4);
-    }
-}
-
-.i-del{ //삭제
-    @include font(rem(14), 600);
-    @include rounded(rem(8));
-    border: rem(1) solid var(--line-base);
-    background-color: var(--f-white);
-    color: var(--f-secondary);
-    width: rem(65);
-    height: rem(32);
-    margin: 0 auto;
-    &::after{
-        @include icon(16, 'del', 'pseudo');
-        margin-left: rem(4);
+.btn-wrap{
+    [class^=i-]{
+        @include rounded(rem(8));
+        @include font(rem(18), 600);
+        @include flex(flex, center, center);
+        height: rem(48);
+        color: var(--f-white);
     }
 
-    &.la{
-        &::after{
-            @include icon(20, 'del', 'pseudo');
+    .i-edit{ //기안서올리기, 글쓰기
+        background-color: var(--bg-primary);
+        padding: 0 rem(22);
+
+        &::before{
+            @include icon(24, 'edit', 'pseudo');
+            margin-right: rem(4);
         }
     }
-}
-
-.i-add{ //추가
-    @include font(rem(14), 600);
-    @include rounded(rem(8));
-    border: rem(1) solid var(--line-base);
-    background-color: var(--f-white);
-    color: var(--f-secondary);
-    width: rem(65);
-    height: rem(32);
-    margin: 0 auto;
-    &::after{
-        @include icon(20, 'add', 'pseudo');
-        margin-left: rem(4);
+    .i-calendar{ //신청
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'calendar', 'pseudo');
+            margin-right: rem(4);
+        }
     }
-}
+    .i-save{ //저장
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'save', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-saveB{ //저장
+        color: var(--f-base);
+        border: rem(1) solid var(--line-base);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'saveB', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-deleteB{ //삭제
+        color: var(--f-base);
+        border: rem(1) solid var(--line-base);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'deleteB', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-reservation{ //예약하기
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'reservationW', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-list{ //목록
+        color: var(--f-base);
+        border: rem(1) solid var(--line-base);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'list', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-listw{ //목록2
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'list_white', 'pseudo');
+            margin:rem(3) rem(4) 0 0;
+        }
+    }
+    .i-refresh{ //초기화
+        color: var(--f-base);
+        border: rem(1) solid var(--line-base);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'refresh', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-approval{ //승인
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'approval', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-companion{ //반려
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'companion', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-publicview{ //공람
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'publicview', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-print{ //인쇄
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'print', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+    .i-printB{ //인쇄
+        color: var(--f-base);
+        border: rem(1) solid var(--line-base);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'printB', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
 
-.updown{
-    &::after{
-        @include icon(24, 'updown', 'pseudo');
-        margin: rem(-1) 0 0 rem(8);
+    .i-reconsider{ //상신
+        background-color: var(--bg-primary);
+        width: rem(120);
+        &::before{
+            @include icon(24, 'reconsider', 'pseudo');
+            margin-right: rem(4);
+        }
+    }
+
+    .i-add{ //추가
+        @include font(rem(14), 600);
+        @include rounded(rem(8));
+        border: rem(1) solid var(--line-base);
+        background-color: var(--f-white);
+        color: var(--f-secondary);
+        width: rem(65);
+        height: rem(32);
+        margin: 0 auto;
+
+        &::after{
+            @include icon(20, 'add', 'pseudo');
+            margin-left: rem(4);
+        }
+    }
+
+    .i-del{ //삭제
+        @include rounded(rem(8));
+        @include flex(flex, center, center);
+        @include font(rem(14), 600);
+        border: rem(1) solid var(--line-base);
+        background-color: var(--f-white);
+        color: var(--f-secondary);
+        width: rem(65);
+        height: rem(32);
+        margin: 0 auto;
+
+        &::after{
+            @include icon(16, 'del', 'pseudo');
+            margin-left: rem(4);
+        }
+
+        &.la{
+            &::after{
+                @include icon(20, 'del', 'pseudo');
+            }
+        }
     }
 }
 
@@ -498,22 +723,6 @@
     height: rem(24);
 }
 
-
-
-input[type=text]{
-    @include rounded(rem(8)); 
-    @include font(rem(14), 600);
-    border: rem(1) solid var(--line-base);
-    height: rem(40);
-    padding: 0 rem(12);
-    background-color: var(--f-white);
-
-    &:read-only{
-        background-color: var(--bg-base);
-        color: var(--f-menu);
-    }
-}
-
 .chk-wrap{
     &.-line{
         width: rem(231);
@@ -532,55 +741,6 @@ input[type=text]{
     }
 }
 
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테이블에 즐겨찾기, 회의실예약 팝업 내색상/요일선택 빼고
-    @include rounded(100%);
-    width: rem(24);
-    height: rem(24);
-    vertical-align: middle;
-    margin-top: rem(-3);
-    border: rem(1) solid var(--line-base);
-    position: relative;
-
-    &::before{
-        @include icon(14, 'chk_off', 'pseudo');
-        @include position(absolute, 50%, null, null, 50%);
-        transform: translate(-47%, -47%);
-        height: rem(9);
-    }
-
-    &:checked{
-        background-color: var(--bg-primary);
-        border-color: var(--bg-primary);
-
-        &::before{
-            @include icon(14, 'chk_on', 'pseudo');
-            height: rem(9);
-        }
-
-        &:disabled{
-            background-color: var(--line-base);
-            border-color: var(--line-base);
-
-            &::before{
-                @include icon(14, 'chk_on', 'pseudo');
-                height: rem(9);
-                opacity: 1;
-            }
-        }
-    }
-
-    &:disabled{
-        &::before{
-            opacity: 0.6;
-        }
-    }
-
-    &+label{
-        @include font(rem(16), 600);
-        margin-left: rem(8);
-    }
-}
-
 .rd-wrap{
     label{
         @include font(rem(16), 600);
@@ -589,52 +749,6 @@ input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input){ // 테�
 
         &:not(:last-child){
             margin-right: rem(24);
-        }
-    }
-}
-
-input[type=radio]:not(.approval-line input, .skin-wrap input){ //결재선선택 결재선상세, 개인위젯설정 위젯스킨 빼고
-    // @include bg(radio_off);
-    @include rounded(100%);
-    width: rem(24);
-    height: rem(24);
-    vertical-align: middle;
-    margin-top: rem(-3);
-    border: rem(1) solid var(--line-base);
-    position: relative;
-
-    &::before{
-        content:'';
-        width: rem(12);
-        height: rem(12);
-        background-color: var(--line-base);
-        @include rounded(100%);
-        @include position(absolute, 50%, null, null, 50%);
-        transform: translate(-50%, -50%);
-    }
-
-    &:checked{
-        background-color: var(--bg-primary);
-        border-color: var(--bg-primary);
-
-        &::before{
-            background-color: var(--f-white);
-        }
-
-        &:disabled{
-            background-color: var(--line-base);
-        }
-    }
-
-    &:disabled{
-        border-color: var(--line-base);
-
-        &::before{
-            background-color: var(--f-white);
-        }
-
-        +label{
-            color: var(--f-menu);
         }
     }
 }
@@ -669,32 +783,8 @@ input[type=radio]:not(.approval-line input, .skin-wrap input){ //결재선선택
         @include fontHidden;
         @include position(absolute, 50%, rem(12), null, null);
         transform: translateY(-50%);
+        width: rem(24);
         height: rem(24);
-    }
-}
-
-select{
-    @include rounded(rem(8));
-    @include font(rem(16), 600);
-    @include bg(select24, right rem(12) center, rem(24));
-    border: rem(1) solid var(--line-base);
-    height: rem(40);
-    padding: 0 rem(30) 0 rem(12);
-    background-color: var(--f-white);
-    min-width: rem(143);
-    color: var(--f-secondary);
-
-    option{
-        @include rounded(rem(8))
-    }
-
-    &:disabled{
-        background-color: var(--bg-base);
-        color: var(--f-menu);
-    }
-
-    &.error{
-        border-color: var(--f-flase);
     }
 }
 
@@ -785,7 +875,7 @@ select{
 
 // 테이블
 // 공통 테이블
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table){
+.tbl-wrap table, .tbl-wrap2 table{
     width: 100%;
     border-collapse: collapse;
     border-top: rem(1) solid var(--line-table);
@@ -1069,6 +1159,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 
                         label{
                             @include rounded(100%);
+                            font-size: rem(14);
                             width: rem(24);
                             height: rem(24);
                             line-height: rem(24);
@@ -1564,6 +1655,25 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
                 @include bg(seldown_pop);
                 width: rem(40);
                 height: rem(32);
+            }
+
+            .system-wrap{
+                ul{
+                    width: rem(448);
+                    margin: 0 auto;
+                    padding: 0;
+
+                    li{
+                        height: rem(108);
+
+                        a{
+                            &::before{
+                                width: rem(56) !important;
+                                height: rem(56) !important;
+                            }
+                        }
+                    }
+                }
             }
         }
 

@@ -73,78 +73,6 @@ legend {
   line-height: inherit;
 }
 
-select, textarea, input, label, button {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-tap-highlight-color: transparent;
-}
-
-select, textarea, input:not([class^=checkbox]) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-input[type=search] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 var(--f-base);
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-input, textarea, select {
-  line-height: inherit;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
-  color: var(--f-menu);
-  letter-spacing: -0.05rem;
-}
-
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
-  color: var(--f-menu);
-  letter-spacing: -0.05rem;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
-  color: var(--f-menu);
-  letter-spacing: -0.05rem;
-}
-
-input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
-  color: var(--f-menu);
-  letter-spacing: -0.05rem;
-}
-
-input::placeholder, textarea::placeholder, select::placeholder {
-  color: var(--f-menu);
-  letter-spacing: -0.05rem;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  line-height: inherit;
-  letter-spacing: inherit;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-}
-
 caption {
   width: 0;
   height: 0;
@@ -1131,7 +1059,7 @@ ul, ol, li {
 
 html, body {
   height: 100%;
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   font-size: 1.4rem;
 }
 html:has(.container .calendar-wrap), body:has(.container .calendar-wrap) {
@@ -2257,142 +2185,20 @@ footer .f-uniq select {
 .main-wrap .box.payment-wrap .list li:not(:last-child) {
   margin-bottom: 1.6rem;
 }
-.main-wrap .box.system-wrap .hgroup {
-  margin-bottom: 3.2rem;
+.main-wrap .box.uals-wrap {
+  height: 15.8rem;
 }
-.main-wrap .box.system-wrap ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 1.2rem 0;
-  padding-bottom: 3.5rem;
-}
-.main-wrap .box.system-wrap ul li {
-  width: 33.33%;
-  height: 8.4rem;
-  text-align: center;
-  position: relative;
-}
-.main-wrap .box.system-wrap ul li a {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--f-secondary);
-  display: block;
-}
-.main-wrap .box.system-wrap ul li a::before {
+.main-wrap .box.uals-wrap p::before {
   content: "";
-  display: block !important;
-  margin: 0 auto 0.8rem;
-}
-.main-wrap .box.system-wrap ul li em {
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 1.2rem;
-  position: absolute;
-  top: 0.2rem;
-  right: 2.5rem;
-  color: var(--f-white);
+  width: 0.3rem;
+  height: 2rem;
   background-color: var(--bg-primary);
-  padding: 0 0.4rem;
-  height: 1.5rem;
-}
-.main-wrap .box.system-wrap ul li.business a::before {
-  content: "";
-  display: inline-block;
   vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_business.png");
-}
-.main-wrap .box.system-wrap ul li.work a::before {
-  content: "";
   display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_work.png");
 }
-.main-wrap .box.system-wrap ul li.bizplay a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_bizplay.png");
-}
-.main-wrap .box.system-wrap ul li.dbnews a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_dbnews.png");
-}
-.main-wrap .box.system-wrap ul li.cloudhp a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_cloudhp.png");
-}
-.main-wrap .box.system-wrap ul li.smartoff a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_smartoff.png");
-}
-.main-wrap .box.system-wrap ul li.shr a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_shr.png");
-}
-.main-wrap .box.system-wrap ul li.book a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_book.png");
-}
-.main-wrap .box.system-wrap ul li.securityservice a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 4rem;
-  height: 4rem;
-  background-image: url("../image/icon_securityservice.png");
+.main-wrap .box.uals-wrap p input {
+  border: 0;
+  padding: 0 0.8rem;
 }
 .main-wrap .box.attendance-wrap {
   display: grid;
@@ -3300,6 +3106,190 @@ footer .f-uniq select {
   display: flex;
 }
 
+.system-wrap .hgroup {
+  margin-bottom: 3.2rem;
+}
+.system-wrap ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.2rem 0;
+  padding-bottom: 3.5rem;
+}
+.system-wrap ul li {
+  width: 33.33%;
+  height: 8.4rem;
+  text-align: center;
+  position: relative;
+}
+.system-wrap ul li a {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--f-secondary);
+  display: block;
+}
+.system-wrap ul li a::before {
+  content: "";
+  display: block !important;
+  margin: 0 auto 0.8rem;
+}
+.system-wrap ul li em {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 1.2rem;
+  position: absolute;
+  top: 0.2rem;
+  right: 2.5rem;
+  color: var(--f-white);
+  background-color: var(--bg-primary);
+  padding: 0 0.4rem;
+  height: 1.5rem;
+}
+.system-wrap ul li.business a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_business.png");
+}
+.system-wrap ul li.work a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_work.png");
+}
+.system-wrap ul li.bizplay a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_bizplay.png");
+}
+.system-wrap ul li.dbnews a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_dbnews.png");
+}
+.system-wrap ul li.cloudhp a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_cloudhp.png");
+}
+.system-wrap ul li.smartoff a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_smartoff.png");
+}
+.system-wrap ul li.shr a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_shr.png");
+}
+.system-wrap ul li.book a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_book.png");
+}
+.system-wrap ul li.securityservice a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../image/icon_securityservice.png");
+}
+.system-wrap ul li.last a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  font-size: 0;
+  color: transparent;
+}
+.system-wrap ul li.last a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5.6rem;
+  height: 5.6rem;
+  background-image: url("../image/icon_moreBtn.png");
+}
+.system-wrap .system-wrap-btn {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 14.8rem;
+}
+.system-wrap .system-wrap-btn::before {
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14.8rem;
+  height: 14.8rem;
+  background-color: #F3F8FF;
+}
+.system-wrap .system-wrap-btn::after {
+  content: "";
+  background: url("../image/bg_system_wrap.png") 100% 50%/13.3rem 12rem no-repeat;
+  position: absolute;
+  top: 1.5rem;
+  right: 5.6rem;
+  width: 13.3rem;
+  height: 12rem;
+}
+
 .no-data {
   font-size: 1.4rem;
   font-weight: 400;
@@ -3403,7 +3393,7 @@ footer .f-uniq select {
   vertical-align: middle;
 }
 .search-box select, .search-box input[type=text] {
-  width: 100%;
+  width: 100% !important;
 }
 
 .hgroup:not(.-main) {
@@ -4308,6 +4298,17 @@ footer .f-uniq select {
 .payment-progress ul li .-parallel li .prgress-profile {
   margin-top: 2.7rem;
 }
+.payment-progress ul li .updown::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_updown.png");
+  margin: -0.1rem 0 0 0.8rem;
+}
 
 .approval-line {
   border-radius: 0.8rem;
@@ -4356,6 +4357,308 @@ footer .f-uniq select {
 }
 .flex-layout .search-box table th:first-child {
   padding-left: 0;
+}
+
+.uniq select, .uniq textarea, .uniq input, .uniq label, .uniq button, .search-box select, .search-box textarea, .search-box input, .search-box label, .search-box button, .table-jq .ui-jqgrid select, .table-jq .ui-jqgrid textarea, .table-jq .ui-jqgrid input, .table-jq .ui-jqgrid label, .table-jq .ui-jqgrid button, .cot-uniq select, .cot-uniq textarea, .cot-uniq input, .cot-uniq label, .cot-uniq button, .hgroup select, .hgroup textarea, .hgroup input, .hgroup label, .hgroup button, .alpa-wrap select, .alpa-wrap textarea, .alpa-wrap input, .alpa-wrap label, .alpa-wrap button, .tbl-wrap select, .tbl-wrap textarea, .tbl-wrap input, .tbl-wrap label, .tbl-wrap button, .tbl-wrap2 select, .tbl-wrap2 textarea, .tbl-wrap2 input, .tbl-wrap2 label, .tbl-wrap2 button, .tbl-wrap3 select, .tbl-wrap3 textarea, .tbl-wrap3 input, .tbl-wrap3 label, .tbl-wrap3 button, .file-wrap select, .file-wrap textarea, .file-wrap input, .file-wrap label, .file-wrap button, .attach-wrap select, .attach-wrap textarea, .attach-wrap input, .attach-wrap label, .attach-wrap button, .skin-wrap select, .skin-wrap textarea, .skin-wrap input, .skin-wrap label, .skin-wrap button, .input-search select, .input-search textarea, .input-search input, .input-search label, .input-search button {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+.uniq select, .uniq textarea, .uniq input:not([class^=checkbox]), .search-box select, .search-box textarea, .search-box input:not([class^=checkbox]), .table-jq .ui-jqgrid select, .table-jq .ui-jqgrid textarea, .table-jq .ui-jqgrid input:not([class^=checkbox]), .cot-uniq select, .cot-uniq textarea, .cot-uniq input:not([class^=checkbox]), .hgroup select, .hgroup textarea, .hgroup input:not([class^=checkbox]), .alpa-wrap select, .alpa-wrap textarea, .alpa-wrap input:not([class^=checkbox]), .tbl-wrap select, .tbl-wrap textarea, .tbl-wrap input:not([class^=checkbox]), .tbl-wrap2 select, .tbl-wrap2 textarea, .tbl-wrap2 input:not([class^=checkbox]), .tbl-wrap3 select, .tbl-wrap3 textarea, .tbl-wrap3 input:not([class^=checkbox]), .file-wrap select, .file-wrap textarea, .file-wrap input:not([class^=checkbox]), .attach-wrap select, .attach-wrap textarea, .attach-wrap input:not([class^=checkbox]), .skin-wrap select, .skin-wrap textarea, .skin-wrap input:not([class^=checkbox]), .input-search select, .input-search textarea, .input-search input:not([class^=checkbox]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.uniq input[type=search], .search-box input[type=search], .table-jq .ui-jqgrid input[type=search], .cot-uniq input[type=search], .hgroup input[type=search], .alpa-wrap input[type=search], .tbl-wrap input[type=search], .tbl-wrap2 input[type=search], .tbl-wrap3 input[type=search], .file-wrap input[type=search], .attach-wrap input[type=search], .skin-wrap input[type=search], .input-search input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.uniq select:-moz-focusring, .search-box select:-moz-focusring, .table-jq .ui-jqgrid select:-moz-focusring, .cot-uniq select:-moz-focusring, .hgroup select:-moz-focusring, .alpa-wrap select:-moz-focusring, .tbl-wrap select:-moz-focusring, .tbl-wrap2 select:-moz-focusring, .tbl-wrap3 select:-moz-focusring, .file-wrap select:-moz-focusring, .attach-wrap select:-moz-focusring, .skin-wrap select:-moz-focusring, .input-search select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 var(--f-base);
+}
+.uniq select::-ms-expand, .search-box select::-ms-expand, .table-jq .ui-jqgrid select::-ms-expand, .cot-uniq select::-ms-expand, .hgroup select::-ms-expand, .alpa-wrap select::-ms-expand, .tbl-wrap select::-ms-expand, .tbl-wrap2 select::-ms-expand, .tbl-wrap3 select::-ms-expand, .file-wrap select::-ms-expand, .attach-wrap select::-ms-expand, .skin-wrap select::-ms-expand, .input-search select::-ms-expand {
+  display: none;
+}
+.uniq input, .uniq textarea, .uniq select, .search-box input, .search-box textarea, .search-box select, .table-jq .ui-jqgrid input, .table-jq .ui-jqgrid textarea, .table-jq .ui-jqgrid select, .cot-uniq input, .cot-uniq textarea, .cot-uniq select, .hgroup input, .hgroup textarea, .hgroup select, .alpa-wrap input, .alpa-wrap textarea, .alpa-wrap select, .tbl-wrap input, .tbl-wrap textarea, .tbl-wrap select, .tbl-wrap2 input, .tbl-wrap2 textarea, .tbl-wrap2 select, .tbl-wrap3 input, .tbl-wrap3 textarea, .tbl-wrap3 select, .file-wrap input, .file-wrap textarea, .file-wrap select, .attach-wrap input, .attach-wrap textarea, .attach-wrap select, .skin-wrap input, .skin-wrap textarea, .skin-wrap select, .input-search input, .input-search textarea, .input-search select {
+  line-height: inherit;
+}
+.uniq input::-moz-placeholder, .uniq textarea::-moz-placeholder, .uniq select::-moz-placeholder, .search-box input::-moz-placeholder, .search-box textarea::-moz-placeholder, .search-box select::-moz-placeholder, .table-jq .ui-jqgrid input::-moz-placeholder, .table-jq .ui-jqgrid textarea::-moz-placeholder, .table-jq .ui-jqgrid select::-moz-placeholder, .cot-uniq input::-moz-placeholder, .cot-uniq textarea::-moz-placeholder, .cot-uniq select::-moz-placeholder, .hgroup input::-moz-placeholder, .hgroup textarea::-moz-placeholder, .hgroup select::-moz-placeholder, .alpa-wrap input::-moz-placeholder, .alpa-wrap textarea::-moz-placeholder, .alpa-wrap select::-moz-placeholder, .tbl-wrap input::-moz-placeholder, .tbl-wrap textarea::-moz-placeholder, .tbl-wrap select::-moz-placeholder, .tbl-wrap2 input::-moz-placeholder, .tbl-wrap2 textarea::-moz-placeholder, .tbl-wrap2 select::-moz-placeholder, .tbl-wrap3 input::-moz-placeholder, .tbl-wrap3 textarea::-moz-placeholder, .tbl-wrap3 select::-moz-placeholder, .file-wrap input::-moz-placeholder, .file-wrap textarea::-moz-placeholder, .file-wrap select::-moz-placeholder, .attach-wrap input::-moz-placeholder, .attach-wrap textarea::-moz-placeholder, .attach-wrap select::-moz-placeholder, .skin-wrap input::-moz-placeholder, .skin-wrap textarea::-moz-placeholder, .skin-wrap select::-moz-placeholder, .input-search input::-moz-placeholder, .input-search textarea::-moz-placeholder, .input-search select::-moz-placeholder {
+  color: var(--f-menu);
+  letter-spacing: -0.05rem;
+}
+.uniq input::-webkit-input-placeholder, .uniq textarea::-webkit-input-placeholder, .uniq select::-webkit-input-placeholder, .search-box input::-webkit-input-placeholder, .search-box textarea::-webkit-input-placeholder, .search-box select::-webkit-input-placeholder, .table-jq .ui-jqgrid input::-webkit-input-placeholder, .table-jq .ui-jqgrid textarea::-webkit-input-placeholder, .table-jq .ui-jqgrid select::-webkit-input-placeholder, .cot-uniq input::-webkit-input-placeholder, .cot-uniq textarea::-webkit-input-placeholder, .cot-uniq select::-webkit-input-placeholder, .hgroup input::-webkit-input-placeholder, .hgroup textarea::-webkit-input-placeholder, .hgroup select::-webkit-input-placeholder, .alpa-wrap input::-webkit-input-placeholder, .alpa-wrap textarea::-webkit-input-placeholder, .alpa-wrap select::-webkit-input-placeholder, .tbl-wrap input::-webkit-input-placeholder, .tbl-wrap textarea::-webkit-input-placeholder, .tbl-wrap select::-webkit-input-placeholder, .tbl-wrap2 input::-webkit-input-placeholder, .tbl-wrap2 textarea::-webkit-input-placeholder, .tbl-wrap2 select::-webkit-input-placeholder, .tbl-wrap3 input::-webkit-input-placeholder, .tbl-wrap3 textarea::-webkit-input-placeholder, .tbl-wrap3 select::-webkit-input-placeholder, .file-wrap input::-webkit-input-placeholder, .file-wrap textarea::-webkit-input-placeholder, .file-wrap select::-webkit-input-placeholder, .attach-wrap input::-webkit-input-placeholder, .attach-wrap textarea::-webkit-input-placeholder, .attach-wrap select::-webkit-input-placeholder, .skin-wrap input::-webkit-input-placeholder, .skin-wrap textarea::-webkit-input-placeholder, .skin-wrap select::-webkit-input-placeholder, .input-search input::-webkit-input-placeholder, .input-search textarea::-webkit-input-placeholder, .input-search select::-webkit-input-placeholder {
+  color: var(--f-menu);
+  letter-spacing: -0.05rem;
+}
+.uniq input:-ms-input-placeholder, .uniq textarea:-ms-input-placeholder, .uniq select:-ms-input-placeholder, .search-box input:-ms-input-placeholder, .search-box textarea:-ms-input-placeholder, .search-box select:-ms-input-placeholder, .table-jq .ui-jqgrid input:-ms-input-placeholder, .table-jq .ui-jqgrid textarea:-ms-input-placeholder, .table-jq .ui-jqgrid select:-ms-input-placeholder, .cot-uniq input:-ms-input-placeholder, .cot-uniq textarea:-ms-input-placeholder, .cot-uniq select:-ms-input-placeholder, .hgroup input:-ms-input-placeholder, .hgroup textarea:-ms-input-placeholder, .hgroup select:-ms-input-placeholder, .alpa-wrap input:-ms-input-placeholder, .alpa-wrap textarea:-ms-input-placeholder, .alpa-wrap select:-ms-input-placeholder, .tbl-wrap input:-ms-input-placeholder, .tbl-wrap textarea:-ms-input-placeholder, .tbl-wrap select:-ms-input-placeholder, .tbl-wrap2 input:-ms-input-placeholder, .tbl-wrap2 textarea:-ms-input-placeholder, .tbl-wrap2 select:-ms-input-placeholder, .tbl-wrap3 input:-ms-input-placeholder, .tbl-wrap3 textarea:-ms-input-placeholder, .tbl-wrap3 select:-ms-input-placeholder, .file-wrap input:-ms-input-placeholder, .file-wrap textarea:-ms-input-placeholder, .file-wrap select:-ms-input-placeholder, .attach-wrap input:-ms-input-placeholder, .attach-wrap textarea:-ms-input-placeholder, .attach-wrap select:-ms-input-placeholder, .skin-wrap input:-ms-input-placeholder, .skin-wrap textarea:-ms-input-placeholder, .skin-wrap select:-ms-input-placeholder, .input-search input:-ms-input-placeholder, .input-search textarea:-ms-input-placeholder, .input-search select:-ms-input-placeholder {
+  color: var(--f-menu);
+  letter-spacing: -0.05rem;
+}
+.uniq input::-ms-input-placeholder, .uniq textarea::-ms-input-placeholder, .uniq select::-ms-input-placeholder, .search-box input::-ms-input-placeholder, .search-box textarea::-ms-input-placeholder, .search-box select::-ms-input-placeholder, .table-jq .ui-jqgrid input::-ms-input-placeholder, .table-jq .ui-jqgrid textarea::-ms-input-placeholder, .table-jq .ui-jqgrid select::-ms-input-placeholder, .cot-uniq input::-ms-input-placeholder, .cot-uniq textarea::-ms-input-placeholder, .cot-uniq select::-ms-input-placeholder, .hgroup input::-ms-input-placeholder, .hgroup textarea::-ms-input-placeholder, .hgroup select::-ms-input-placeholder, .alpa-wrap input::-ms-input-placeholder, .alpa-wrap textarea::-ms-input-placeholder, .alpa-wrap select::-ms-input-placeholder, .tbl-wrap input::-ms-input-placeholder, .tbl-wrap textarea::-ms-input-placeholder, .tbl-wrap select::-ms-input-placeholder, .tbl-wrap2 input::-ms-input-placeholder, .tbl-wrap2 textarea::-ms-input-placeholder, .tbl-wrap2 select::-ms-input-placeholder, .tbl-wrap3 input::-ms-input-placeholder, .tbl-wrap3 textarea::-ms-input-placeholder, .tbl-wrap3 select::-ms-input-placeholder, .file-wrap input::-ms-input-placeholder, .file-wrap textarea::-ms-input-placeholder, .file-wrap select::-ms-input-placeholder, .attach-wrap input::-ms-input-placeholder, .attach-wrap textarea::-ms-input-placeholder, .attach-wrap select::-ms-input-placeholder, .skin-wrap input::-ms-input-placeholder, .skin-wrap textarea::-ms-input-placeholder, .skin-wrap select::-ms-input-placeholder, .input-search input::-ms-input-placeholder, .input-search textarea::-ms-input-placeholder, .input-search select::-ms-input-placeholder {
+  color: var(--f-menu);
+  letter-spacing: -0.05rem;
+}
+.uniq input::placeholder, .uniq textarea::placeholder, .uniq select::placeholder, .search-box input::placeholder, .search-box textarea::placeholder, .search-box select::placeholder, .table-jq .ui-jqgrid input::placeholder, .table-jq .ui-jqgrid textarea::placeholder, .table-jq .ui-jqgrid select::placeholder, .cot-uniq input::placeholder, .cot-uniq textarea::placeholder, .cot-uniq select::placeholder, .hgroup input::placeholder, .hgroup textarea::placeholder, .hgroup select::placeholder, .alpa-wrap input::placeholder, .alpa-wrap textarea::placeholder, .alpa-wrap select::placeholder, .tbl-wrap input::placeholder, .tbl-wrap textarea::placeholder, .tbl-wrap select::placeholder, .tbl-wrap2 input::placeholder, .tbl-wrap2 textarea::placeholder, .tbl-wrap2 select::placeholder, .tbl-wrap3 input::placeholder, .tbl-wrap3 textarea::placeholder, .tbl-wrap3 select::placeholder, .file-wrap input::placeholder, .file-wrap textarea::placeholder, .file-wrap select::placeholder, .attach-wrap input::placeholder, .attach-wrap textarea::placeholder, .attach-wrap select::placeholder, .skin-wrap input::placeholder, .skin-wrap textarea::placeholder, .skin-wrap select::placeholder, .input-search input::placeholder, .input-search textarea::placeholder, .input-search select::placeholder {
+  color: var(--f-menu);
+  letter-spacing: -0.05rem;
+}
+.uniq button::-moz-focus-inner, .uniq input::-moz-focus-inner, .search-box button::-moz-focus-inner, .search-box input::-moz-focus-inner, .table-jq .ui-jqgrid button::-moz-focus-inner, .table-jq .ui-jqgrid input::-moz-focus-inner, .cot-uniq button::-moz-focus-inner, .cot-uniq input::-moz-focus-inner, .hgroup button::-moz-focus-inner, .hgroup input::-moz-focus-inner, .alpa-wrap button::-moz-focus-inner, .alpa-wrap input::-moz-focus-inner, .tbl-wrap button::-moz-focus-inner, .tbl-wrap input::-moz-focus-inner, .tbl-wrap2 button::-moz-focus-inner, .tbl-wrap2 input::-moz-focus-inner, .tbl-wrap3 button::-moz-focus-inner, .tbl-wrap3 input::-moz-focus-inner, .file-wrap button::-moz-focus-inner, .file-wrap input::-moz-focus-inner, .attach-wrap button::-moz-focus-inner, .attach-wrap input::-moz-focus-inner, .skin-wrap button::-moz-focus-inner, .skin-wrap input::-moz-focus-inner, .input-search button::-moz-focus-inner, .input-search input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.uniq button, .search-box button, .table-jq .ui-jqgrid button, .cot-uniq button, .hgroup button, .alpa-wrap button, .tbl-wrap button, .tbl-wrap2 button, .tbl-wrap3 button, .file-wrap button, .attach-wrap button, .skin-wrap button, .input-search button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: inherit;
+  letter-spacing: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.uniq input[type=text], .search-box input[type=text], .table-jq .ui-jqgrid input[type=text], .cot-uniq input[type=text], .hgroup input[type=text], .alpa-wrap input[type=text], .tbl-wrap input[type=text], .tbl-wrap2 input[type=text], .tbl-wrap3 input[type=text], .file-wrap input[type=text], .attach-wrap input[type=text], .skin-wrap input[type=text], .input-search input[type=text] {
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 0.1rem solid var(--line-base);
+  height: 4rem;
+  padding: 0 1.2rem;
+  background-color: var(--f-white);
+}
+.uniq input[type=text]:-moz-read-only, .search-box input[type=text]:-moz-read-only, .table-jq .ui-jqgrid input[type=text]:-moz-read-only, .cot-uniq input[type=text]:-moz-read-only, .hgroup input[type=text]:-moz-read-only, .alpa-wrap input[type=text]:-moz-read-only, .tbl-wrap input[type=text]:-moz-read-only, .tbl-wrap2 input[type=text]:-moz-read-only, .tbl-wrap3 input[type=text]:-moz-read-only, .file-wrap input[type=text]:-moz-read-only, .attach-wrap input[type=text]:-moz-read-only, .skin-wrap input[type=text]:-moz-read-only, .input-search input[type=text]:-moz-read-only {
+  background-color: var(--bg-base);
+  color: var(--f-menu);
+}
+.uniq input[type=text]:read-only, .search-box input[type=text]:read-only, .table-jq .ui-jqgrid input[type=text]:read-only, .cot-uniq input[type=text]:read-only, .hgroup input[type=text]:read-only, .alpa-wrap input[type=text]:read-only, .tbl-wrap input[type=text]:read-only, .tbl-wrap2 input[type=text]:read-only, .tbl-wrap3 input[type=text]:read-only, .file-wrap input[type=text]:read-only, .attach-wrap input[type=text]:read-only, .skin-wrap input[type=text]:read-only, .input-search input[type=text]:read-only {
+  background-color: var(--bg-base);
+  color: var(--f-menu);
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input), .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) {
+  border-radius: 100%;
+  width: 2.4rem;
+  height: 2.4rem;
+  vertical-align: middle;
+  margin-top: -0.3rem;
+  border: 0.1rem solid var(--line-base);
+  position: relative;
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("../image/icon_chk_off.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-47%, -47%);
+          transform: translate(-47%, -47%);
+  height: 0.9rem;
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
+  background-color: var(--bg-primary);
+  border-color: var(--bg-primary);
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("../image/icon_chk_on.png");
+  height: 0.9rem;
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled {
+  background-color: var(--line-base);
+  border-color: var(--line-base);
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("../image/icon_chk_on.png");
+  height: 0.9rem;
+  opacity: 1;
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before {
+  opacity: 0.6;
+}
+.uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .search-box input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .table-jq .ui-jqgrid input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .cot-uniq input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .hgroup input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .alpa-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .tbl-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .tbl-wrap2 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .tbl-wrap3 input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .file-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .attach-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .skin-wrap input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label, .input-search input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 0.8rem;
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input), .search-box input[type=radio]:not(.approval-line input, .skin-wrap input), .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input), .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input), .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input), .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input), .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input), .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input), .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input), .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input), .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input), .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input), .input-search input[type=radio]:not(.approval-line input, .skin-wrap input) {
+  border-radius: 100%;
+  width: 2.4rem;
+  height: 2.4rem;
+  vertical-align: middle;
+  margin-top: -0.3rem;
+  border: 0.1rem solid var(--line-base);
+  position: relative;
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input)::before, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input)::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--line-base);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
+  background-color: var(--bg-primary);
+  border-color: var(--bg-primary);
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before {
+  background-color: var(--f-white);
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled {
+  background-color: var(--line-base);
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input):disabled {
+  border-color: var(--line-base);
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before {
+  background-color: var(--f-white);
+}
+.uniq input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .search-box input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .table-jq .ui-jqgrid input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .cot-uniq input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .hgroup input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .alpa-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .tbl-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .tbl-wrap2 input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .tbl-wrap3 input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .file-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .attach-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .skin-wrap input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label, .input-search input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label {
+  color: var(--f-menu);
+}
+.uniq select, .search-box select, .table-jq .ui-jqgrid select, .cot-uniq select, .hgroup select, .alpa-wrap select, .tbl-wrap select, .tbl-wrap2 select, .tbl-wrap3 select, .file-wrap select, .attach-wrap select, .skin-wrap select, .input-search select {
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: url("../image/bg_select24.png") right 1.2rem center/2.4rem no-repeat;
+  border: 0.1rem solid var(--line-base);
+  height: 4rem;
+  padding: 0 3rem 0 1.2rem;
+  background-color: var(--f-white);
+  min-width: 14.3rem;
+  color: var(--f-secondary);
+}
+.uniq select option, .search-box select option, .table-jq .ui-jqgrid select option, .cot-uniq select option, .hgroup select option, .alpa-wrap select option, .tbl-wrap select option, .tbl-wrap2 select option, .tbl-wrap3 select option, .file-wrap select option, .attach-wrap select option, .skin-wrap select option, .input-search select option {
+  border-radius: 0.8rem;
+}
+.uniq select:disabled, .search-box select:disabled, .table-jq .ui-jqgrid select:disabled, .cot-uniq select:disabled, .hgroup select:disabled, .alpa-wrap select:disabled, .tbl-wrap select:disabled, .tbl-wrap2 select:disabled, .tbl-wrap3 select:disabled, .file-wrap select:disabled, .attach-wrap select:disabled, .skin-wrap select:disabled, .input-search select:disabled {
+  background-color: var(--bg-base);
+  color: var(--f-menu);
+}
+.uniq select.error, .search-box select.error, .table-jq .ui-jqgrid select.error, .cot-uniq select.error, .hgroup select.error, .alpa-wrap select.error, .tbl-wrap select.error, .tbl-wrap2 select.error, .tbl-wrap3 select.error, .file-wrap select.error, .attach-wrap select.error, .skin-wrap select.error, .input-search select.error {
+  border-color: var(--f-flase);
+}
+.uniq .i-del, .search-box .i-del, .table-jq .ui-jqgrid .i-del, .cot-uniq .i-del, .hgroup .i-del, .alpa-wrap .i-del, .tbl-wrap .i-del, .tbl-wrap2 .i-del, .tbl-wrap3 .i-del, .file-wrap .i-del, .attach-wrap .i-del, .skin-wrap .i-del, .input-search .i-del {
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 0.1rem solid var(--line-base);
+  background-color: var(--f-white);
+  color: var(--f-secondary);
+  width: 6.5rem;
+  height: 3.2rem;
+  margin: 0 auto;
+}
+.uniq .i-del::after, .search-box .i-del::after, .table-jq .ui-jqgrid .i-del::after, .cot-uniq .i-del::after, .hgroup .i-del::after, .alpa-wrap .i-del::after, .tbl-wrap .i-del::after, .tbl-wrap2 .i-del::after, .tbl-wrap3 .i-del::after, .file-wrap .i-del::after, .attach-wrap .i-del::after, .skin-wrap .i-del::after, .input-search .i-del::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url("../image/icon_del.png");
+  margin-left: 0.4rem;
+}
+.uniq .i-del.la::after, .search-box .i-del.la::after, .table-jq .ui-jqgrid .i-del.la::after, .cot-uniq .i-del.la::after, .hgroup .i-del.la::after, .alpa-wrap .i-del.la::after, .tbl-wrap .i-del.la::after, .tbl-wrap2 .i-del.la::after, .tbl-wrap3 .i-del.la::after, .file-wrap .i-del.la::after, .attach-wrap .i-del.la::after, .skin-wrap .i-del.la::after, .input-search .i-del.la::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../image/icon_del.png");
+}
+.uniq .i-search, .search-box .i-search, .table-jq .ui-jqgrid .i-search, .cot-uniq .i-search, .hgroup .i-search, .alpa-wrap .i-search, .tbl-wrap .i-search, .tbl-wrap2 .i-search, .tbl-wrap3 .i-search, .file-wrap .i-search, .attach-wrap .i-search, .skin-wrap .i-search, .input-search .i-search {
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--f-white);
+  background-color: var(--bg-secondary);
+  width: 10.3rem;
+  height: 4rem;
+}
+.uniq .i-search::before, .search-box .i-search::before, .table-jq .ui-jqgrid .i-search::before, .cot-uniq .i-search::before, .hgroup .i-search::before, .alpa-wrap .i-search::before, .tbl-wrap .i-search::before, .tbl-wrap2 .i-search::before, .tbl-wrap3 .i-search::before, .file-wrap .i-search::before, .attach-wrap .i-search::before, .skin-wrap .i-search::before, .input-search .i-search::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../image/icon_search.png");
+  margin: 0.1rem 0.4rem 0 0;
+}
+.uniq .i-searchB, .search-box .i-searchB, .table-jq .ui-jqgrid .i-searchB, .cot-uniq .i-searchB, .hgroup .i-searchB, .alpa-wrap .i-searchB, .tbl-wrap .i-searchB, .tbl-wrap2 .i-searchB, .tbl-wrap3 .i-searchB, .file-wrap .i-searchB, .attach-wrap .i-searchB, .skin-wrap .i-searchB, .input-search .i-searchB {
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 0.1rem solid var(--line-base);
+  color: var(--f-base);
+  width: 13.2rem;
+  height: 4rem;
+}
+.uniq .i-searchB::before, .search-box .i-searchB::before, .table-jq .ui-jqgrid .i-searchB::before, .cot-uniq .i-searchB::before, .hgroup .i-searchB::before, .alpa-wrap .i-searchB::before, .tbl-wrap .i-searchB::before, .tbl-wrap2 .i-searchB::before, .tbl-wrap3 .i-searchB::before, .file-wrap .i-searchB::before, .attach-wrap .i-searchB::before, .skin-wrap .i-searchB::before, .input-search .i-searchB::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../image/icon_search_b.png");
+  margin: 0 0.4rem 0 0;
 }
 
 .tit-h2 {
@@ -4454,7 +4757,7 @@ footer .f-uniq select {
   border: 0.1rem solid var(--line-base);
 }
 
-[class^=i-] {
+.btn-wrap [class^=i-] {
   border-radius: 0.8rem;
   font-size: 1.8rem;
   font-weight: 600;
@@ -4470,12 +4773,11 @@ footer .f-uniq select {
   height: 4.8rem;
   color: var(--f-white);
 }
-
-.i-edit {
+.btn-wrap .i-edit {
   background-color: var(--bg-primary);
   padding: 0 2.2rem;
 }
-.i-edit::before {
+.btn-wrap .i-edit::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4486,12 +4788,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_edit.png");
   margin-right: 0.4rem;
 }
-
-.i-calendar {
+.btn-wrap .i-calendar {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-calendar::before {
+.btn-wrap .i-calendar::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4502,12 +4803,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_calendar.png");
   margin-right: 0.4rem;
 }
-
-.i-save {
+.btn-wrap .i-save {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-save::before {
+.btn-wrap .i-save::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4518,13 +4818,12 @@ footer .f-uniq select {
   background-image: url("../image/icon_save.png");
   margin-right: 0.4rem;
 }
-
-.i-saveB {
+.btn-wrap .i-saveB {
   color: var(--f-base);
   border: 0.1rem solid var(--line-base);
   width: 12rem;
 }
-.i-saveB::before {
+.btn-wrap .i-saveB::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4535,13 +4834,12 @@ footer .f-uniq select {
   background-image: url("../image/icon_saveB.png");
   margin-right: 0.4rem;
 }
-
-.i-deleteB {
+.btn-wrap .i-deleteB {
   color: var(--f-base);
   border: 0.1rem solid var(--line-base);
   width: 12rem;
 }
-.i-deleteB::before {
+.btn-wrap .i-deleteB::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4552,49 +4850,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_deleteB.png");
   margin-right: 0.4rem;
 }
-
-.i-search {
-  background-color: var(--bg-secondary);
-  width: 10.3rem;
-  height: 4rem;
-}
-.i-search::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 2rem;
-  height: 2rem;
-  background-image: url("../image/icon_search.png");
-  margin: 0.1rem 0.4rem 0 0;
-}
-
-.i-searchB {
-  font-size: 1.4rem;
-  font-weight: 600;
-  border: 0.1rem solid var(--line-base);
-  color: var(--f-base);
-  width: 13.2rem;
-  height: 4rem;
-}
-.i-searchB::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 2rem;
-  height: 2rem;
-  background-image: url("../image/icon_search_b.png");
-  margin: 0 0.4rem 0 0;
-}
-
-.i-reservation {
+.btn-wrap .i-reservation {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-reservation::before {
+.btn-wrap .i-reservation::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4605,13 +4865,12 @@ footer .f-uniq select {
   background-image: url("../image/icon_reservationW.png");
   margin-right: 0.4rem;
 }
-
-.i-list {
+.btn-wrap .i-list {
   color: var(--f-base);
   border: 0.1rem solid var(--line-base);
   width: 12rem;
 }
-.i-list::before {
+.btn-wrap .i-list::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4622,12 +4881,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_list.png");
   margin-right: 0.4rem;
 }
-
-.i-listw {
+.btn-wrap .i-listw {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-listw::before {
+.btn-wrap .i-listw::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4638,13 +4896,12 @@ footer .f-uniq select {
   background-image: url("../image/icon_list_white.png");
   margin: 0.3rem 0.4rem 0 0;
 }
-
-.i-refresh {
+.btn-wrap .i-refresh {
   color: var(--f-base);
   border: 0.1rem solid var(--line-base);
   width: 12rem;
 }
-.i-refresh::before {
+.btn-wrap .i-refresh::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4655,12 +4912,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_refresh.png");
   margin-right: 0.4rem;
 }
-
-.i-approval {
+.btn-wrap .i-approval {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-approval::before {
+.btn-wrap .i-approval::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4671,12 +4927,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_approval.png");
   margin-right: 0.4rem;
 }
-
-.i-companion {
+.btn-wrap .i-companion {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-companion::before {
+.btn-wrap .i-companion::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4687,12 +4942,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_companion.png");
   margin-right: 0.4rem;
 }
-
-.i-publicview {
+.btn-wrap .i-publicview {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-publicview::before {
+.btn-wrap .i-publicview::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4703,12 +4957,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_publicview.png");
   margin-right: 0.4rem;
 }
-
-.i-print {
+.btn-wrap .i-print {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-print::before {
+.btn-wrap .i-print::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4719,13 +4972,12 @@ footer .f-uniq select {
   background-image: url("../image/icon_print.png");
   margin-right: 0.4rem;
 }
-
-.i-printB {
+.btn-wrap .i-printB {
   color: var(--f-base);
   border: 0.1rem solid var(--line-base);
   width: 12rem;
 }
-.i-printB::before {
+.btn-wrap .i-printB::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4736,12 +4988,11 @@ footer .f-uniq select {
   background-image: url("../image/icon_printB.png");
   margin-right: 0.4rem;
 }
-
-.i-reconsider {
+.btn-wrap .i-reconsider {
   background-color: var(--bg-primary);
   width: 12rem;
 }
-.i-reconsider::before {
+.btn-wrap .i-reconsider::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4752,8 +5003,7 @@ footer .f-uniq select {
   background-image: url("../image/icon_reconsider.png");
   margin-right: 0.4rem;
 }
-
-.i-del {
+.btn-wrap .i-add {
   font-size: 1.4rem;
   font-weight: 600;
   border-radius: 0.8rem;
@@ -4764,40 +5014,7 @@ footer .f-uniq select {
   height: 3.2rem;
   margin: 0 auto;
 }
-.i-del::after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1.6rem;
-  height: 1.6rem;
-  background-image: url("../image/icon_del.png");
-  margin-left: 0.4rem;
-}
-.i-del.la::after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 2rem;
-  height: 2rem;
-  background-image: url("../image/icon_del.png");
-}
-
-.i-add {
-  font-size: 1.4rem;
-  font-weight: 600;
-  border-radius: 0.8rem;
-  border: 0.1rem solid var(--line-base);
-  background-color: var(--f-white);
-  color: var(--f-secondary);
-  width: 6.5rem;
-  height: 3.2rem;
-  margin: 0 auto;
-}
-.i-add::after {
+.btn-wrap .i-add::after {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -4808,17 +5025,46 @@ footer .f-uniq select {
   background-image: url("../image/icon_add.png");
   margin-left: 0.4rem;
 }
-
-.updown::after {
+.btn-wrap .i-del {
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 0.1rem solid var(--line-base);
+  background-color: var(--f-white);
+  color: var(--f-secondary);
+  width: 6.5rem;
+  height: 3.2rem;
+  margin: 0 auto;
+}
+.btn-wrap .i-del::after {
   content: "";
   display: inline-block;
   vertical-align: middle;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 2.4rem;
-  height: 2.4rem;
-  background-image: url("../image/icon_updown.png");
-  margin: -0.1rem 0 0 0.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url("../image/icon_del.png");
+  margin-left: 0.4rem;
+}
+.btn-wrap .i-del.la::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../image/icon_del.png");
 }
 
 .detail-view {
@@ -5042,24 +5288,6 @@ footer .f-uniq select {
   height: 2.4rem;
 }
 
-input[type=text] {
-  border-radius: 0.8rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  border: 0.1rem solid var(--line-base);
-  height: 4rem;
-  padding: 0 1.2rem;
-  background-color: var(--f-white);
-}
-input[type=text]:-moz-read-only {
-  background-color: var(--bg-base);
-  color: var(--f-menu);
-}
-input[type=text]:read-only {
-  background-color: var(--bg-base);
-  color: var(--f-menu);
-}
-
 .chk-wrap.-line {
   width: 23.1rem;
 }
@@ -5071,71 +5299,6 @@ input[type=text]:read-only {
   margin-right: 2rem !important;
 }
 
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) {
-  border-radius: 100%;
-  width: 2.4rem;
-  height: 2.4rem;
-  vertical-align: middle;
-  margin-top: -0.3rem;
-  border: 0.1rem solid var(--line-base);
-  position: relative;
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input)::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1.4rem;
-  height: 1.4rem;
-  background-image: url("../image/icon_chk_off.png");
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-47%, -47%);
-          transform: translate(-47%, -47%);
-  height: 0.9rem;
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked {
-  background-color: var(--bg-primary);
-  border-color: var(--bg-primary);
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1.4rem;
-  height: 1.4rem;
-  background-image: url("../image/icon_chk_on.png");
-  height: 0.9rem;
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled {
-  background-color: var(--line-base);
-  border-color: var(--line-base);
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):checked:disabled::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1.4rem;
-  height: 1.4rem;
-  background-image: url("../image/icon_chk_on.png");
-  height: 0.9rem;
-  opacity: 1;
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input):disabled::before {
-  opacity: 0.6;
-}
-input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-left: 0.8rem;
-}
-
 .rd-wrap label {
   font-size: 1.6rem;
   font-weight: 600;
@@ -5144,47 +5307,6 @@ input[type=checkbox]:not(.chk-imprt, .chk-color input, .chk-week input) + label 
 }
 .rd-wrap label:not(:last-child) {
   margin-right: 2.4rem;
-}
-
-input[type=radio]:not(.approval-line input, .skin-wrap input) {
-  border-radius: 100%;
-  width: 2.4rem;
-  height: 2.4rem;
-  vertical-align: middle;
-  margin-top: -0.3rem;
-  border: 0.1rem solid var(--line-base);
-  position: relative;
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input)::before {
-  content: "";
-  width: 1.2rem;
-  height: 1.2rem;
-  background-color: var(--line-base);
-  border-radius: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input):checked {
-  background-color: var(--bg-primary);
-  border-color: var(--bg-primary);
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input):checked::before {
-  background-color: var(--f-white);
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input):checked:disabled {
-  background-color: var(--line-base);
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input):disabled {
-  border-color: var(--line-base);
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input):disabled::before {
-  background-color: var(--f-white);
-}
-input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label {
-  color: var(--f-menu);
 }
 
 .input-calendar {
@@ -5226,30 +5348,8 @@ input[type=radio]:not(.approval-line input, .skin-wrap input):disabled + label {
   right: 1.2rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  width: 2.4rem;
   height: 2.4rem;
-}
-
-select {
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  background: url("../image/bg_select24.png") right 1.2rem center/2.4rem no-repeat;
-  border: 0.1rem solid var(--line-base);
-  height: 4rem;
-  padding: 0 3rem 0 1.2rem;
-  background-color: var(--f-white);
-  min-width: 14.3rem;
-  color: var(--f-secondary);
-}
-select option {
-  border-radius: 0.8rem;
-}
-select:disabled {
-  background-color: var(--bg-base);
-  color: var(--f-menu);
-}
-select.error {
-  border-color: var(--f-flase);
 }
 
 .tooltip:not(header .tooltip, .reservation-box table td .tooltip) {
@@ -5352,19 +5452,19 @@ select.error {
           flex: 1;
 }
 
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) {
+.tbl-wrap table, .tbl-wrap2 table {
   width: 100%;
   border-collapse: collapse;
   border-top: 0.1rem solid var(--line-table);
   border-bottom: 0.1rem solid var(--line-table2);
 }
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) th {
+.tbl-wrap table th, .tbl-wrap2 table th {
   font-size: 1.6rem;
   font-weight: 600;
   border-bottom: 0.1rem solid #D2D6DA;
   background-color: var(--bg-base);
 }
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) .tooltip {
+.tbl-wrap table .tooltip, .tbl-wrap2 table .tooltip {
   position: absolute !important;
   top: 50%;
   right: 2.4rem;
@@ -5372,7 +5472,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-wrap table, .calendar-wrapM table, .datepicker table, .tbl-wrap3 table) select {
+.tbl-wrap table select, .tbl-wrap2 table select {
   min-width: auto;
 }
 
@@ -5650,6 +5750,7 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
 }
 .tbl-wrap3 table td .week-wrap .chk-week span label {
   border-radius: 100%;
+  font-size: 1.4rem;
   width: 2.4rem;
   height: 2.4rem;
   line-height: 2.4rem;
@@ -6140,6 +6241,18 @@ table:not(.search-box table, .table-jq table, .reservation-box table, .calendar-
   background: url("../image/bg_seldown_pop.png") 0 0/contain no-repeat;
   width: 4rem;
   height: 3.2rem;
+}
+.pop-wrap .pop-box .pop-container .system-wrap ul {
+  width: 44.8rem;
+  margin: 0 auto;
+  padding: 0;
+}
+.pop-wrap .pop-box .pop-container .system-wrap ul li {
+  height: 10.8rem;
+}
+.pop-wrap .pop-box .pop-container .system-wrap ul li a::before {
+  width: 5.6rem !important;
+  height: 5.6rem !important;
 }
 .pop-wrap .pop-box .pop-btn {
   display: -webkit-box;

@@ -559,7 +559,7 @@ nav{
     }
 }
 
-select{
+select.select-box{
     @include rounded(rem(12));
     @include font(rem(16), 600);
     @include bg(select, right rem(12) center, rem(24));
@@ -579,7 +579,7 @@ select{
     }
 }
 
-input[type=text]{
+input[type=text].input-text{
     @include rounded(rem(12));
     @include font(rem(16), 600);
     border: rem(1) solid var(--line-table2);
@@ -593,7 +593,7 @@ input[type=text]{
     }
 }
 
-input[type=checkbox]{
+input[type=checkbox].input-chk{
     @include bg(chk_off);
     width: rem(24);
     height: rem(24);
@@ -618,7 +618,7 @@ input[type=checkbox]{
     }
 }
 
-input[type=radio]{
+input[type=radio].input-rd{
     @include bg(rd_off);
     width: rem(24);
     height: rem(24);

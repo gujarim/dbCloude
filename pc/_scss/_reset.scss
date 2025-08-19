@@ -46,65 +46,6 @@ legend {
     @include hidden;
 }
 
-select, textarea, input, label, button {
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    -webkit-tap-highlight-color: transparent;
-}
-
-select, textarea, input:not([class^=checkbox]) {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-input[type=search] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-
-// input[type=checkbox], input[type=radio]{
-//     position: absolute;
-// }
-
-button::-moz-focus-inner, input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 var(--f-base);
-}
-
-select::-ms-expand {
-    display: none;
-}
-
-input, textarea, select {
-    line-height: inherit;
-}
-input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
-    color: var(--f-menu);
-    letter-spacing: -0.05rem;
-}
-input::placeholder, textarea::placeholder, select::placeholder {
-    color: var(--f-menu);
-    letter-spacing: -0.05rem;
-}
-
-button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    line-height: inherit;
-    letter-spacing: inherit;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-}
-
 caption{
     @include hidden;
 }
@@ -168,9 +109,6 @@ ul,ol,li{
 }
 
 //컬러별 색
-//로고 
-//사이드메뉴 아이콘
-//라디오
 .colorPurple{
     --f-primary: #9050FF; //컬러 - 메인 텍스트
 
