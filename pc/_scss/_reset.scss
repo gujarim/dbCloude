@@ -4,29 +4,27 @@
 
 /* Reset Asll Element */
 html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i, hr,
+h1, h2, h3, h4, h5, h6, p,
+em, img, kbd, q, samp,
+small, strong, i,
 dl, dt, dd, ol, ul, li,
-form, fieldset, legend, label, button, input, select, textarea,
+form, fieldset, legend, label, button, input, select,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 main, menu, nav, footer, header, hgroup, section, summary,
-time, mark, audio, video, meter, progress {
+time, mark, audio, video, meter, progress{
     margin: 0;
     padding: 0;
-    border: 0;
+    // border: 0;
     outline: 0;
     font-size: inherit;
     font-family: inherit;
-    vertical-align: initial;
+    vertical-align: inherit;
     background: transparent;
     box-sizing: border-box;
 }
 
-em, address, i {
+em {
     font-style: normal;
 }
 
@@ -35,6 +33,10 @@ a {
     color: var(--f-base);
     text-decoration: none;
     box-sizing: border-box;
+}
+
+ul,ol{
+    list-style: none;
 }
 
 img {
@@ -62,15 +64,11 @@ caption{
     font-weight: 600 !important;
 }
 
-ul,ol,li{
-    list-style: none;
-}
-
 :focus {
     outline: none;
 }
 
-.btn, [class^=i-], .more, .prev, .next, .refresh, .chat-sideMenu button, .chat-head button, .chat-plus, .chat-search, .chat-close, .chat-up, .detail-view, .sel-up, .sel-down, .sel-first, .sel-last, .sel-prev, .sel-next, .input-calendar button, .tooltip button, .add button, .search-close, .input-search button, .updown, .download, .r-prev, .r-next, .llst-close, .sidem-refresh, .system-wrap-btn, .page-btn{
+.btn, [class^=i-], .more, .prev, .next, .refresh, .chat-sideMenu button, .chat-head button, .chat-plus, .chat-search, .chat-close, .chat-up, .detail-view, .sel-up, .sel-down, .sel-first, .sel-last, .sel-prev, .sel-next, .input-calendar button, .tooltip button, .add button, .search-close, .input-search button, .updown, .download, .r-prev, .r-next, .llst-close, .sidem-refresh, .system-wrap-btn, .page-btn, .side-btn, .tbl-close{
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -81,16 +79,16 @@ ul,ol,li{
     -moz-appearance: none;
     appearance: none;
 }
-// button::-moz-focus-inner, input::-moz-focus-inner {
-//     border: 0;
-//     padding: 0;
-// }
 
-.guide-wrap, .uniq, .search-box, .table-jq .ui-jqgrid, .cot-uniq, .hgroup, .alpa-wrap, .tbl-wrap, .tbl-wrap2, .tbl-wrap3, .file-wrap, .attach-wrap, .skin-wrap, .input-search, .input-calendar{
+.guide-wrap, .uniq, .search-box, .table-jq .ui-jqgrid, .cot-uniq, .hgroup, .alpa-wrap, .tbl-wrap, .tbl-wrap2, .tbl-wrap3, .file-wrap, .attach-wrap, .skin-wrap, .input-search, .input-calendar, footer{
     //reset
     select, textarea, input, label {
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
         -webkit-tap-highlight-color: transparent;
+    }
+
+    select{
+        border: 0;
     }
 
     select, textarea, input:not([class^=checkbox]) {
@@ -262,6 +260,20 @@ ul,ol,li{
         &.error{
             border-color: var(--f-flase);
         }
+    }
+}
+
+.chat-area, .tbl-wrap3, .alpa-wrap{
+    textarea{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: inherit;
+        font-family: inherit;
+        vertical-align: inherit;
+        background: transparent;
+        box-sizing: border-box;
     }
 }
 

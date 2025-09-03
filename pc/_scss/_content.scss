@@ -361,6 +361,7 @@
 .flag{
     @include font(rem(12), 400);
     @include rounded(rem(14));
+    font-style: normal;
     display: block;
     margin: 0 auto;
     width: rem(68);
@@ -2648,5 +2649,23 @@
             margin-right: rem(24);
             display: inline-block;
         }
+    }
+}
+
+#docHtmlDataEdit, #editor_kukudocs, #docHtmlData, #docHtmlDataInclude, #DOC_HTML_DATA{
+    em{
+        font-style: italic;
+    }
+
+    a{
+        text-decoration: underline;
+    }
+
+    ul{
+        list-style-type: disc;
+    }
+
+    ol{
+        list-style-type: decimal;
     }
 }

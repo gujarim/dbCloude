@@ -2,7 +2,6 @@
 @import "mixin";
 
 html, body{
-    height: 100%;
     font-family: "Pretendard", sans-serif;
     font-size: rem(14);
 
@@ -15,7 +14,7 @@ html, body{
     }
 }
 
-.wrap{
+div.wrap{
     height: 100%;
     display: grid;
     grid-template-columns: rem(296) 1fr;
@@ -616,7 +615,7 @@ nav{
     }
 }
 
-.container{
+div.container{
     grid-column: 2 / 4;
     margin: 0 rem(50) rem(28);
 }
@@ -1231,6 +1230,7 @@ footer{
                                     color: var(--f-menu);
 
                                     i{
+                                        font-style: normal;
                                         border-left: rem(1) solid var(--line-table3);
                                         padding-left: rem(4);
                                     }
