@@ -754,6 +754,34 @@ caption {
   top: 0.8rem;
   left: 0.4rem;
 }
+.table-jq .tree-wrap {
+  width: auto;
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+}
+.table-jq .tree-wrap .ui-icon {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  background: url("../image/bg_select24.png") 95% 50%/2.4rem no-repeat;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  margin: 0 0 0.8rem;
+}
+.table-jq .tree-wrap .ui-icon.tree-minus {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.table-jq .tree-wrap .ui-icon.tree-plus {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
 
 .jconfirm {
   background-color: rgba(0, 0, 0, 0.6);
@@ -4683,6 +4711,10 @@ footer .f-uniq select {
           align-items: center;
   height: 4.8rem;
   color: var(--f-white);
+  vertical-align: middle;
+}
+[class^=i-]::before {
+  vertical-align: top !important;
 }
 
 .i-edit {
@@ -5097,6 +5129,244 @@ footer .f-uniq select {
   margin: 0 0.4rem 0 0;
 }
 
+.i-reportCancle {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-reportCancle::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_reportCancle.png");
+  margin-right: 0.4rem;
+}
+
+.i-documentCopy {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-documentCopy::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_documentCopy.png");
+  margin-right: 0.4rem;
+}
+
+.i-rejection {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-rejection::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_rejection.png");
+  margin-right: 0.4rem;
+}
+
+.i-receive {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-receive::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_receive.png");
+  margin-right: 0.4rem;
+}
+
+.i-receiveCancel {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-receiveCancel::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_receiveCancel.png");
+  margin-right: 0.4rem;
+}
+
+.i-iclose {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-iclose::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_iclose.png");
+  margin-right: 0.4rem;
+}
+
+.i-iselect {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-iselect::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_iselect.png");
+  margin-right: 0.4rem;
+}
+
+.i-iedit {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-iedit::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_iedit.png");
+  margin-right: 0.4rem;
+}
+
+.i-download {
+  background-color: var(--bg-primary);
+  width: 12rem;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+}
+.i-download::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_download.png");
+  position: absolute;
+  top: 50%;
+  left: 1.4rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.i-iadd {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-iadd::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_iadd.png");
+  margin-right: 0.4rem;
+}
+
+.i-bring {
+  background-color: var(--bg-primary);
+  width: 12rem;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+}
+.i-bring::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_bring.png");
+  position: absolute;
+  top: 50%;
+  left: 1.4rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.i-shareCondition {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-shareCondition::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_shareCondition.png");
+  margin-right: 0.4rem;
+}
+
+.i-irefresh {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-irefresh::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_irefresh.png");
+  margin-right: 0.4rem;
+}
+
+.i-handOperated {
+  background-color: var(--bg-primary);
+  width: 12rem;
+}
+.i-handOperated::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url("../image/icon_handOperated.png");
+  margin-right: 0.4rem;
+}
+
 .detail-view {
   overflow: hidden;
   white-space: nowrap;
@@ -5217,6 +5487,28 @@ footer .f-uniq select {
   height: 1.6rem;
   vertical-align: middle;
   margin: -0.4rem 0 0 0.6rem;
+}
+
+.leave {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  background: url("../image/bg_leave.png") 0 0/2rem 2rem no-repeat;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+}
+
+.retired {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  background: url("../image/bg_retired.png") 0 0/2rem 2rem no-repeat;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
 }
 
 .view {

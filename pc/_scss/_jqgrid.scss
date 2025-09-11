@@ -263,6 +263,29 @@
             @include position(absolute, rem(8), null, null, rem(4));
         }
     }
+
+    .tree-wrap{
+        width: auto;
+        border-radius: 0;
+        border:0;
+        padding:0;
+
+        .ui-icon{
+            @include fontHidden;
+            @include bg(select24, 95% 50%, rem(24));
+            transform: rotate(-180deg);
+            transition: transform .2s;
+            margin: 0 0 rem(8);
+
+            &.tree-minus{
+                transform: rotate(0);
+            }
+
+            &.tree-plus{
+                transform: rotate(-90deg);
+            }
+        }
+    }
 }
 
 .jconfirm{

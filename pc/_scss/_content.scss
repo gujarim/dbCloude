@@ -115,6 +115,11 @@
     @include flex(flex, center, center);
     height: rem(48);
     color: var(--f-white);
+    vertical-align: middle;
+
+    &::before{
+        vertical-align: top !important;
+    }
 }
 
 .i-edit{ //기안서올리기, 글쓰기
@@ -335,6 +340,142 @@
     }
 }
 
+.i-reportCancle{ //상신취소
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'reportCancle', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-documentCopy{ //문서복사
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'documentCopy', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-rejection{ //합의거부
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'rejection', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-receive{ //접수
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'receive', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-receiveCancel{ //접수취소
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'receiveCancel', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-iclose{ //닫기
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'iclose', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-iselect{ //선택
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'iselect', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-iedit{ //수정
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'iedit', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-download{ //조회목록 다운로드
+    background-color: var(--bg-primary);
+    width: rem(120);
+    position: relative;
+    padding-left: rem(20);
+    font-size: rem(16);
+
+    &::before{
+        @include icon(24, 'download', 'pseudo');
+        @include position(absolute, 50%, null, null, rem(14));
+        transform: translateY(-50%);
+    }
+}
+
+.i-iadd{ //추가
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'iadd', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-bring{ //구매요청 불러오기
+    background-color: var(--bg-primary);
+    width: rem(120);
+    position: relative;
+    padding-left: rem(20);
+    font-size: rem(16);
+
+    &::before{
+        @include icon(24, 'bring', 'pseudo');
+        @include position(absolute, 50%, null, null, rem(14));
+        transform: translateY(-50%);
+    }
+}
+
+.i-shareCondition{ //공유현황
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'shareCondition', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-irefresh{ //새로고침
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'irefresh', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
+.i-handOperated{ //수동수신
+    background-color: var(--bg-primary);
+    width: rem(120);
+    &::before{
+        @include icon(24, 'handOperated', 'pseudo');
+        margin-right: rem(4);
+    }
+}
+
 .detail-view{
     @include fontHidden;
     @include bg(detail_view, 0 0, rem(20) rem(20));
@@ -454,6 +595,22 @@
         vertical-align: middle;
         margin: rem(-4) 0 0 rem(6);
     }
+}
+
+.leave{
+    @include fontHidden;
+    @include bg(leave, 0 0, rem(20) rem(20));
+    width: rem(20);
+    height: rem(20);
+    margin-right: rem(8);
+}
+
+.retired{
+    @include fontHidden;
+    @include bg(retired, 0 0, rem(20) rem(20));
+    width: rem(20);
+    height: rem(20);
+    margin-right: rem(8);
 }
 
 .view{

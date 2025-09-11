@@ -281,7 +281,13 @@
             ], // 그리드 헤더 이름
             colModel: [
                 { name: 'inx1', index: 'inx1', width: '5%', sortable: false},
-                { name: 'inx2', index: 'inx2', width: '5%', sortable: false},
+                { name: 'inx2', index: 'inx2', width: '5%', sortable: false,
+                    formatter: function(cellvalue, options, rowObject) {
+                        return '<em class="leave">휴가자</em>' + cellvalue;
+                    }
+                    // <em class="leave">휴가자</em>
+                    // <em class="retired">퇴사자</em>
+                },
                 { name: 'inx3', index: 'inx3', width: '5%', sortable: false},
                 { name: 'inx4', index: 'inx4', width: '5%', sortable: false},
                 { name: 'inx5', index: 'inx5', width: '10%', sortable: false},
