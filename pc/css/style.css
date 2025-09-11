@@ -4695,6 +4695,18 @@ footer .f-uniq select {
   padding: 0;
   border: 0.1rem solid var(--line-base);
 }
+.btn.-refresh {
+  background: var(--f-white) url("../image/bg_irefresh.png") 50% 50%/2.4rem 2.4rem no-repeat;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  display: inline-block;
+  border-radius: 0.8rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: 0.1rem solid var(--line-base);
+}
 
 [class^=i-] {
   border-radius: 0.8rem;

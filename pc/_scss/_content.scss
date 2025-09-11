@@ -107,6 +107,16 @@
         padding: 0;
         border: rem(1) solid var(--line-base);
     }
+
+    &.-refresh{
+        @include bg(irefresh, 50% 50%, rem(24) rem(24), var(--f-white));
+        @include fontHidden;
+        @include rounded(rem(8));
+        width: rem(40);
+        height: rem(40);
+        padding: 0;
+        border: rem(1) solid var(--line-base);
+    }
 }
 
 [class^=i-]{
