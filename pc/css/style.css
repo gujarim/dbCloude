@@ -946,19 +946,23 @@ caption {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
+.tree-wrap .jstree-container-ul > .jstree-node li:not(.jstree-leaf) > .jstree-ocl {
+  background: url("../image/bg_dep2_down.png") 0 0/contain no-repeat;
+}
+.tree-wrap .jstree-container-ul > .jstree-node li:not(.jstree-leaf).jstree-open > .jstree-ocl {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.tree-wrap .jstree-container-ul > .jstree-node .jstree-children {
+  margin-top: 1.4rem;
+  margin-left: 1.9rem;
+}
 .tree-wrap .jstree-container-ul > .jstree-node > .jstree-children {
   margin-top: 1.4rem;
   margin-left: 1.9rem;
 }
 .tree-wrap .jstree-container-ul > .jstree-node > .jstree-children:has(.jstree-closed, .jstree-open) {
   margin-left: 2.5rem;
-}
-.tree-wrap .jstree-container-ul > .jstree-node > .jstree-children > li:not(.jstree-leaf) > .jstree-ocl {
-  background: url("../image/bg_dep2_down.png") 0 0/contain no-repeat;
-}
-.tree-wrap .jstree-container-ul > .jstree-node > .jstree-children > li:not(.jstree-leaf).jstree-open > .jstree-ocl {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 .tree-wrap .jstree-container-ul > .jstree-node > .jstree-children > li:not(:last-child) {
   margin-bottom: 1.6rem;

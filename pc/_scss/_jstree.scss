@@ -101,6 +101,21 @@
                     transform: rotate(180deg);
                 }
             }
+
+            li:not(.jstree-leaf){
+
+                &>.jstree-ocl{
+                    @include bg(dep2_down);
+                }
+
+                &.jstree-open>.jstree-ocl{
+                    transform: rotate(180deg);
+                }
+            }
+            .jstree-children{
+                margin-top: rem(14);
+                margin-left: rem(19);
+            }
             
             &>.jstree-children{
                 margin-top: rem(14);
@@ -111,17 +126,6 @@
                 }
 
                 &>li{
-
-                    &:not(.jstree-leaf){
-
-                        &>.jstree-ocl{
-                            @include bg(dep2_down);
-                        }
-
-                        &.jstree-open>.jstree-ocl{
-                            transform: rotate(180deg);
-                        }
-                    }
  
                     &:not(:last-child){
                         margin-bottom: rem(16);
