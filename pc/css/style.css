@@ -604,6 +604,9 @@ caption {
 .table-jq .ui-jqgrid .ui-jqgrid-btable tr.ui-state-hover {
   background-color: var(--bg-primary3);
 }
+.table-jq .ui-jqgrid .ui-jqgrid-btable tr.ui-state-highlight td {
+  background-color: var(--bg-primary3);
+}
 .table-jq .ui-jqgrid .ui-jqgrid-btable tr.ui-row-ltr:last-of-type td {
   border-bottom: 0;
 }
